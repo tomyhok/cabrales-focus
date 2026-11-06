@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   hotspotCards.forEach((c) => c.addEventListener('click', () => activateHotspot(c.getAttribute('data-hotspot'))));
 
   /* ------------------------------------------------------------------------
-     7. SIMULADOR EN VIVO DE "LOS 5 SEGUNDOS & ZOOM IN DEL BÚHO"
+     7. SIMULADOR EN VIVO DE "LA TRANSFORMACIÓN EN 5 SEGUNDOS & ZOOM NARRATIVO"
      ------------------------------------------------------------------------ */
   const fiveSecBox = document.getElementById('five-sec-box');
   const fiveSecStatus = document.getElementById('five-sec-status-text');
@@ -200,20 +200,20 @@ document.addEventListener('DOMContentLoaded', () => {
     fiveSecBox.classList.add('calm-active');
 
     fiveSecStatus.innerHTML =
-      'Estado actual: <strong style="color: var(--cyan);">*Pssshhh* · CALM FOCUS ACTIVADO</strong> — La L-Teanina + Cold Brew silencian el ruido mental.';
+      'Estado actual (Escenas 6 a 8 · Planos 19–27): <strong style="color: var(--cyan);">PREPARACIÓN, ESCUCHA Y REVANCHA GANADA</strong> — Celular en silencio boca abajo, apertura de lata (Plano 20) y fundido con el isotipo del búho.';
     noiseChipsContainer.innerHTML = `
-      <span class="noise-chip">✅ Pulso Firme (0% Taquicardia)</span>
-      <span class="noise-chip">✅ Sinapsis Cian/Violeta Activa</span>
-      <span class="noise-chip">✅ Ondas Alfa (100mg L-Teanina)</span>
-      <span class="noise-chip">✅ Visión del Búho: Precisión Total</span>
+      <span class="noise-chip">✅ [Plano 19] Celular en silencio y lejos del mouse</span>
+      <span class="noise-chip">✅ [Plano 20] Apertura limpia de lata Focus (2:23)</span>
+      <span class="noise-chip">✅ [Plano 22] “Dale. Una cosa a la vez”</span>
+      <span class="noise-chip">✅ [ Planos 25–27] Victoria 1v1 (“Ahora sí”) + Transición Búho</span>
     `;
 
     fiveSecInterval = setInterval(() => {
       remaining = Math.max(0, remaining - 0.05);
-      fiveSecTimer.textContent = `0${remaining.toFixed(2)} s · FOCO EN EJE`;
+      fiveSecTimer.textContent = `0${remaining.toFixed(2)} s · PREPARACIÓN Y REVANCHA`;
       if (remaining <= 0) {
         clearInterval(fiveSecInterval);
-        fiveSecTimer.textContent = '🦉 PRECISIÓN QUE SE TOMA';
+        fiveSecTimer.textContent = '🦉 “AHORA SÍ” · PRECISIÓN QUE SE TOMA';
       }
     }, 50);
   }
@@ -223,12 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!fiveSecBox) return;
     fiveSecBox.classList.remove('calm-active');
     fiveSecStatus.innerHTML =
-      'Estado actual: <strong>RUIDO MENTAL ACTIVO</strong> — Exceso de pestañas abiertas, fatiga visual y dispersión cognitiva.';
+      'Estado actual (Escena 1 · Plano 03): <strong>RONDA 1v1 PERDIDA POR DISTRACCIÓN</strong> — Celular encendido junto al mouse, notificación entrante y mirada fuera del monitor.';
     noiseChipsContainer.innerHTML = `
-      <span class="noise-chip">⚠️ 42 Pestañas Abiertas</span>
-      <span class="noise-chip">⚠️ Error de Compilación (02:14 AM)</span>
-      <span class="noise-chip">⚠️ Ronda 12-12 en Overtime</span>
-      <span class="noise-chip">⚠️ Niebla Mental Post-Almuerzo</span>
+      <span class="noise-chip">📱 [0:24] Notificación del celular junto al mouse</span>
+      <span class="noise-chip">👀 Mirada apartada en pleno 1v1</span>
+      <span class="noise-chip">💀 “Lo tenía… miré para otro lado”</span>
+      <span class="noise-chip">📄 Informe de Solange interrumpido por mensajes</span>
     `;
     fiveSecTimer.textContent = '05.00 s';
   }
@@ -239,6 +239,194 @@ document.addEventListener('DOMContentLoaded', () => {
     btnTop5Sec.addEventListener('click', () => {
       document.getElementById('universo').scrollIntoView({ behavior: 'smooth' });
       setTimeout(triggerFiveSecondsExperience, 450);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     7B. CORTOMETRAJE «TURNO DE NOCHE»: REPRODUCTOR & GUION HÍBRIDO (29 PLANOS)
+     ------------------------------------------------------------------------ */
+  const shortfilmVideo = document.getElementById('shortfilm-video');
+  const shortfilmFileInput = document.getElementById('shortfilm-file-input');
+  const tcButtons = document.querySelectorAll('.tc-btn');
+  const sceneTabBtns = document.querySelectorAll('.scene-tab-btn');
+  const scriptSceneContent = document.getElementById('script-scene-content');
+
+  const HYBRID_SCRIPT_SCENES = {
+    1: {
+      title: 'Escena 1 · La derrota (0:00 a 0:45) — Interior habitación, noche 1 (Ropa A)',
+      desc: 'Bruno queda solo en la ronda (1v1). Una notificación en el celular junto al mouse le hace apartar la mirada; reacciona tarde y pierde.',
+      badge: 'Planos 01 al 04',
+      seek: 0,
+      shots: [
+        ['Plano 01', '0:00–0:10', '<strong>PG lateral:</strong> Bruno juega concentrado; el celular está junto al mouse, <strong>sin lata en el escritorio</strong>.', 'Luz de monitor y lámpara cálida rebotada; sonido de teclado mecánico y respiración.'],
+        ['Plano 02', '0:10–0:22', '<strong>Captura propia de partida:</strong> situación uno contra uno (1v1) en VALORANT, manteniendo cobertura.', 'Pasos del rival en auriculares; rótulo en pantalla: <em>“Último jugador. Una oportunidad”</em>.'],
+        ['Plano 03', '0:22–0:35', '<strong>PP (Primer Plano):</strong> Bruno mira el celular al encenderse y vuelve tarde la vista al monitor.', 'Sonido de notificación (<code>0:24–0:27</code>) y sonido de derrota sincronizados con la mirada.'],
+        ['Plano 04', '0:35–0:45', '<strong>PM (Plano Medio):</strong> se baja los auriculares al cuello y toma el celular con frustración.', 'Voz y subtítulo (<code>0:38–0:42</code>): <em>“Lo tenía… miré para otro lado”</em>.']
+      ]
+    },
+    2: {
+      title: 'Escena 2 · El descubrimiento (0:45 a 1:15) — Interior habitación, misma noche',
+      desc: 'Bruno scrollea en su teléfono, vuelve a la publicación P3 de Suga y guarda la invitación a Modo Focus en Dot Baires Shopping.',
+      badge: 'Planos 05 al 08',
+      seek: 45,
+      shots: [
+        ['Plano 05', '0:45–0:51', '<strong>PD sobre hombro:</strong> Bruno pasa dos publicaciones ficticias en el feed de su teléfono.', 'Ángulo picado suave; sonido ambiente nocturno del cuarto.'],
+        ['Plano 06', '0:51–0:59', '<strong>Inserto:</strong> detiene el scroll y vuelve hacia atrás hasta la publicación <strong>P3 con Suga y la lata</strong>.', 'Captura del mockup local; entra música suave de fondo (sin voz de Suga).'],
+        ['Plano 07', '0:59–1:09', '<strong>P3 a pantalla completa:</strong> invitación a <em>Modo Focus en Dot Baires Shopping</em>.', 'Texto legible en pantalla; pie: <em>“Colaboración propuesta · Simulación académica”</em>.'],
+        ['Plano 08', '1:09–1:15', '<strong>PP:</strong> Bruno asiente convencido, guarda la publicación y bloquea el teléfono.', 'Voz y subtítulo (<code>1:10–1:13</code>): <em>“Mañana paso”</em>. Corte directo a día.']
+      ]
+    },
+    3: {
+      title: 'Escena 3 · La llegada (1:15 a 1:40) — Exterior y acceso de Dot Baires Shopping, día siguiente (Ropa B)',
+      desc: 'Con otra remera (Ropa B), Bruno llega a Dot Baires Shopping a la luz del día, consulta la invitación guardada y cruza el acceso.',
+      badge: 'Planos 09 al 11',
+      seek: 75,
+      shots: [
+        ['Plano 09', '1:15–1:24', '<strong>PG exterior:</strong> fachada de Dot Baires Shopping; Bruno camina hacia el acceso principal.', 'Luz natural diurna; rótulo sobreimpreso: <em>“Al día siguiente”</em>.'],
+        ['Plano 10', '1:24–1:32', '<strong>PM lateral:</strong> consulta la publicación P3 guardada en su celular y vuelve a guardar el teléfono en el bolsillo.', 'Sonido de ambiente urbano diurno; sin diálogo.'],
+        ['Plano 11', '1:32–1:40', '<strong>PG desde atrás:</strong> Bruno cruza las puertas de entrada del shopping.', 'Sonido de pasos; puente sonoro de transición hacia el interior.']
+      ]
+    },
+    4: {
+      title: 'Escena 4 · La entrega (1:40 a 1:55) — Interior sugerido de Dot Baires Shopping',
+      desc: 'Resolución de producción austera y precisa: solo dos manos en plano detalle donde una ofrece la lata cerrada y Bruno la recibe.',
+      badge: 'Planos 12 al 14',
+      seek: 100,
+      shots: [
+        ['Plano 12', '1:40–1:45', '<strong>PD (Plano Detalle):</strong> la mano de Bruno espera a izquierda de cuadro; entra una <strong>lata cerrada de Cabrales Focus</strong> desde la derecha.', 'Cámara fija apoyada; fondo interior neutro sin necesidad de montar un stand físico.'],
+        ['Plano 13', '1:45–1:51', '<strong>Mismo PD continuo:</strong> Bruno recibe la lata mano a mano.', 'Ambos integrantes del equipo (Franco y Tomas) aportan una mano en cuadro; cámara fija.'],
+        ['Plano 14', '1:51–1:55', '<strong>PD:</strong> Bruno gira suavemente el envase hasta que se lee con claridad <strong>Focus · Coffee Cold Brew</strong>.', 'Iluminación cuidada sin reflejo molesto; sonido sutil del roce metálico del envase.']
+      ]
+    },
+    5: {
+      title: 'Escena 5 · La salida (1:55 a 2:10) — Exterior de Dot Baires Shopping, día',
+      desc: 'Bruno sale del shopping llevando la lata cerrada en la mano, la observa y regresa para preparar su noche.',
+      badge: 'Planos 15 al 17',
+      seek: 115,
+      shots: [
+        ['Plano 15', '1:55–2:01', '<strong>PG:</strong> Bruno cruza la salida hacia el exterior llevando la lata en la misma mano.', 'Luz natural diurna y ambiente exterior.'],
+        ['Plano 16', '2:01–2:06', '<strong>PM:</strong> camina, mira la lata cerrada con expectativa y continúa su paso.', 'Regla de continuidad: <strong>no la abre ni bebe en la calle</strong>; cámara fija.'],
+        ['Plano 17', '2:06–2:10', '<strong>PD:</strong> la lata cerrada baja junto a su cuerpo y sale de cuadro.', 'Corte por movimiento directo al escritorio nocturno.']
+      ]
+    },
+    6: {
+      title: 'Escena 6 · La preparación (2:10 a 2:45) — Interior habitación, noche del segundo día (Ropa B)',
+      desc: 'Bruno prepara su espacio antes de jugar: silencia y aparta el celular, abre la lata en el Plano 20 y se acomoda los auriculares.',
+      badge: 'Planos 18 al 22',
+      seek: 130,
+      shots: [
+        ['Plano 18', '2:10–2:17', '<strong>PG igual al Plano 01:</strong> simetría visual con el inicio, pero ahora la <strong>lata está a la izquierda del teclado</strong>.', 'Rótulo: <em>“Esa noche”</em>; misma iluminación nocturna de habitación.'],
+        ['Plano 19', '2:17–2:23', '<strong>PD:</strong> Bruno activa el modo silencio y deja el <strong>celular boca abajo y lejos del mouse</strong>.', 'Sonido nítido de bloqueo del teléfono, ejecutado <em>antes</em> de abrir la lata.'],
+        ['Plano 20', '2:23–2:28', '<strong>PD:</strong> abre la anilla de la lata con la etiqueta mirando hacia cámara.', 'Subtítulo (<code>2:23–2:25 [Se abre la lata]</code>); apertura limpia y realista, sin destellos mágicos.'],
+        ['Plano 21', '2:28–2:35', '<strong>PM:</strong> toma un sorbo, apoya la lata, respira hondo y se coloca los auriculares.', 'La música ambiente baja y entra progresivamente el audio táctico del juego.'],
+        ['Plano 22', '2:35–2:45', '<strong>PM sobre hombro:</strong> entra en partida con la lata visible a la izquierda del teclado.', 'Voz y subtítulo (<code>2:38–2:42</code>): <em>“Dale. Una cosa a la vez”</em>.']
+      ]
+    },
+    7: {
+      title: 'Escena 7 · La victoria (2:45 a 3:25) — Misma noche, revancha en VALORANT',
+      desc: 'Nuevo uno contra uno en el mismo mapa y zona: Bruno escucha, espera sin distracciones, sale de cobertura y gana la ronda.',
+      badge: 'Planos 23 al 26',
+      seek: 165,
+      shots: [
+        ['Plano 23', '2:45–2:55', '<strong>Captura propia de partida:</strong> nuevo 1v1 en el mismo mapa y zona que el Plano 02.', 'Rótulo: <em>“Otra ronda. La misma oportunidad”</em>; pasos del rival claros.'],
+        ['Plano 24', '2:55–3:05', '<strong>PM:</strong> Bruno escucha con atención y espera el momento exacto; lata en primer término lateral.', 'Celular en silencio; continuidad total del audio de juego.'],
+        ['Plano 25', '3:05–3:17', '<strong>Captura:</strong> sale de cobertura con precisión, dispara y gana la ronda (resultado visible 3 s).', 'Captura real propia preparada; sonido y subtítulo (<code>3:15–3:18 [Victoria de ronda]</code>).'],
+        ['Plano 26', '3:17–3:25', '<strong>PP:</strong> Bruno exhala aliviado, sonríe y sostiene la mirada hacia cámara los últimos 2 segundos.', 'Voz y subtítulo (<code>3:19–3:22</code>): <em>“Ahora sí”</em>. No hay otra escena de abandono del juego después.']
+      ]
+    },
+    8: {
+      title: 'Escena 8 · El cierre y créditos (3:25 a 3:50) — Transición gráfica, packshot y ficha académica',
+      desc: 'Los ojos de Bruno se funden con los ojos gráficos del isotipo del búho, dando paso al producto, el llamado a Club Focus y las cartelas de créditos.',
+      badge: 'Planos 27 al 29',
+      seek: 205,
+      shots: [
+        ['Plano 27', '3:25–3:29', '<strong>Gráfica (Transición):</strong> los ojos gráficos del isotipo del búho aparecen exactamente alineados con la mirada de Bruno del Plano 26.', 'Fundido encadenado de 8 a 12 fotogramas; nota musical breve de identidad.'],
+        ['Plano 28', '3:29–3:35', '<strong>Packshot de lata:</strong> <em>“Cabrales Focus. Precisión que se toma”</em>. CTA: <em>“Elegí Focus para tu próxima partida. Compralo en Club Focus”</em>.', 'Pie legal legible: <em>“Producto y compra simulados · Proyecto académico”</em>.'],
+        ['Plano 29', '3:35–3:50', '<strong>Dos cartelas de créditos (8 s y 7 s):</strong> nombres por rol efectivo y ficha académica de la cátedra.', '<strong>Franco Denk y Tomas Hokama</strong>; música, recursos y herramientas efectivamente utilizados.']
+      ]
+    }
+  };
+
+  function renderScriptScene(sceneNum) {
+    const data = HYBRID_SCRIPT_SCENES[sceneNum];
+    if (!data || !scriptSceneContent) return;
+
+    const rowsHtml = data.shots
+      .map(
+        ([shot, time, action, tech]) => `
+        <tr>
+          <td><code>${shot}</code><br />${time}</td>
+          <td>${action}</td>
+          <td>${tech}</td>
+        </tr>
+      `
+      )
+      .join('');
+
+    scriptSceneContent.innerHTML = `
+      <div class="scene-summary-bar">
+        <div>
+          <strong>${data.title}</strong>
+          <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 2px;">${data.desc}</p>
+        </div>
+        <span class="scene-shot-count">${data.badge}</span>
+      </div>
+      <div class="shots-table-wrap">
+        <table class="shots-table">
+          <thead>
+            <tr>
+              <th>Plano y Tiempo</th>
+              <th>Imagen y Acción</th>
+              <th>Cámara, Luz y Sonido</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  sceneTabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      sceneTabBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      const sNum = btn.getAttribute('data-scene');
+      renderScriptScene(sNum);
+    });
+  });
+
+  tcButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const sec = parseFloat(btn.getAttribute('data-seek') || '0');
+      tcButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // También sincroniza la pestaña del guion técnico correspondiente
+      const matchEntry = Object.entries(HYBRID_SCRIPT_SCENES).find(([, val]) => val.seek === sec);
+      if (matchEntry) {
+        const [sceneKey] = matchEntry;
+        sceneTabBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-scene') === sceneKey));
+        renderScriptScene(sceneKey);
+      }
+
+      if (shortfilmVideo) {
+        shortfilmVideo.currentTime = sec;
+        shortfilmVideo.play().catch(() => {});
+      }
+    });
+  });
+
+  if (shortfilmFileInput && shortfilmVideo) {
+    shortfilmFileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        shortfilmVideo.src = url;
+        shortfilmVideo.load();
+        shortfilmVideo.play().catch(() => {});
+      }
     });
   }
 
