@@ -468,208 +468,306 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     9. SIMULADOR INTERACTIVO DE INSTAGRAM STORIES (DIAGNÓSTICO DE RUIDO)
+     9. PREVISUALIZADORES INTERACTIVOS DE LOS VIDEOS P1 (25s), P4 (30s) Y P5 (40s)
+     ------------------------------------------------------------------------ */
+  const p1Beats = document.querySelectorAll('#p1-beats-grid [data-p1-time]');
+  const p1Preview = document.getElementById('p1-beat-preview');
+  p1Beats.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      p1Beats.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (p1Preview) {
+        p1Preview.innerHTML = `
+          <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800; text-transform: uppercase;">${btn.getAttribute('data-p1-time')}</span>
+          <h5 style="font-family: var(--font-heading); font-size: 0.95rem; margin: 4px 0;">${btn.getAttribute('data-p1-title')}</h5>
+          <p style="font-size: 0.76rem; color: var(--text-secondary);">${btn.getAttribute('data-p1-desc')}</p>
+        `;
+      }
+    });
+  });
+
+  const p4Beats = document.querySelectorAll('#p4-beats-grid [data-p4-time]');
+  const p4Preview = document.getElementById('p4-beat-preview');
+  p4Beats.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      p4Beats.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (p4Preview) {
+        p4Preview.innerHTML = `
+          <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">${btn.getAttribute('data-p4-time')}</span>
+          <p style="font-size: 0.8rem; color: #d6bcfa; margin-top: 4px;">🎤 ${btn.getAttribute('data-p4-q')}</p>
+          <p style="font-size: 0.84rem; color: var(--white); font-weight: 700; margin-top: 4px;">☀️ ${btn.getAttribute('data-p4-a')}</p>
+        `;
+      }
+    });
+  });
+
+  const p5Beats = document.querySelectorAll('#p5-beats-grid [data-p5-time]');
+  const p5Preview = document.getElementById('p5-beat-preview');
+  p5Beats.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      p5Beats.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (p5Preview) {
+        p5Preview.innerHTML = `
+          <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">${btn.getAttribute('data-p5-time')}</span>
+          <h5 style="font-family: var(--font-heading); font-size: 0.92rem; margin: 4px 0;">${btn.getAttribute('data-p5-title')}</h5>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">${btn.getAttribute('data-p5-desc')}</p>
+        `;
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     9B. SIMULADOR INTERACTIVO DE P6 — SECUENCIA DE 4 INSTAGRAM STORIES
      ------------------------------------------------------------------------ */
   const storyBody = document.getElementById('story-dynamic-body');
   const storyStepIndicator = document.getElementById('story-step-indicator');
   const sbar1 = document.getElementById('sbar-1');
   const sbar2 = document.getElementById('sbar-2');
   const sbar3 = document.getElementById('sbar-3');
+  const sbar4 = document.getElementById('sbar-4');
   const btnRestartStory = document.getElementById('btn-restart-story');
+
+  function setStoryBars(step) {
+    if (sbar1) sbar1.classList.toggle('filled', step >= 1);
+    if (sbar2) sbar2.classList.toggle('filled', step >= 2);
+    if (sbar3) sbar3.classList.toggle('filled', step >= 3);
+    if (sbar4) sbar4.classList.toggle('filled', step >= 4);
+  }
 
   function renderStoryStep1() {
     if (!storyBody) return;
-    sbar1.classList.add('filled');
-    sbar2.classList.remove('filled');
-    sbar3.classList.remove('filled');
-    storyStepIndicator.textContent = 'Story 1/3 · Encuesta';
+    setStoryBars(1);
+    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 1/4 · Encuesta';
 
     storyBody.innerHTML = `
       <div style="text-align: center; margin-bottom: 12px;">
-        <span style="font-size: 0.7rem; color: var(--cyan); font-weight: 800; letter-spacing: 0.08em;">TEST INTERACTIVO DEL BÚHO</span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.12rem; margin-top: 4px;">
-          ¿QUÉ RUIDO TE ESTÁ QUEMANDO LA CABEZA HOY?
+        <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800; letter-spacing: 0.08em;">P6 · TU MOMENTO FOCUS (STORY 1/4)</span>
+        <h4 style="font-family: var(--font-heading); font-size: 1.08rem; margin-top: 6px;">
+          ANTES DE EMPEZAR, ¿QUÉ TE DISTRAE MÁS?
         </h4>
+        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 4px;">
+          Sticker interactivo de encuesta (votación de 2 opciones):
+        </p>
       </div>
-      <button class="story-option-btn" data-branch="bruno">
-        💻 1. Código que no compila / Estudio a las 02:00 AM
+      <button class="story-option-btn" data-p6-s1="Notificaciones">
+        📱 A. Notificaciones (mensajes y alertas del celular)
       </button>
-      <button class="story-option-btn" data-branch="solange">
-        📊 2. 40 pestañas abiertas y entrega a las 15:30 hs
-      </button>
-      <button class="story-option-btn" data-branch="bruno">
-        🎮 3. Rondas perdidas en Overtime por falta de reflejos
+      <button class="story-option-btn" data-p6-s1="Varias tareas">
+        🗂️ B. Varias tareas abiertas al mismo tiempo
       </button>
     `;
 
-    storyBody.querySelectorAll('.story-option-btn').forEach((btn) => {
+    storyBody.querySelectorAll('[data-p6-s1]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        renderStoryStep2(btn.getAttribute('data-branch'));
+        renderStoryStep2(btn.getAttribute('data-p6-s1'));
       });
     });
   }
 
-  function renderStoryStep2(branch) {
-    sbar2.classList.add('filled');
-    storyStepIndicator.textContent = 'Story 2/3 · Diagnóstico';
+  function renderStoryStep2(choice1) {
+    setStoryBars(2);
+    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 2/4 · Encuesta';
 
-    const isBruno = branch === 'bruno';
+    storyBody.innerHTML = `
+      <div style="text-align: center; margin-bottom: 12px;">
+        <span style="display: inline-block; padding: 3px 10px; border-radius: 99px; background: rgba(4,189,251,0.16); color: var(--cyan); font-size: 0.68rem; font-weight: 800; margin-bottom: 6px;">
+          Elegiste: ${choice1} ✔
+        </span>
+        <h4 style="font-family: var(--font-heading); font-size: 1.08rem;">
+          ¿CUÁNDO HACÉS TU PAUSA?
+        </h4>
+        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 4px;">
+          Segunda encuesta para identificar el contexto cotidiano:
+        </p>
+      </div>
+      <button class="story-option-btn" data-p6-s2="Estudio">
+        📚 A. Estudio (lecturas, parciales o entregas)
+      </button>
+      <button class="story-option-btn" data-p6-s2="Trabajo">
+        💻 B. Trabajo (informes, reuniones o turnos largos)
+      </button>
+    `;
+
+    storyBody.querySelectorAll('[data-p6-s2]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        renderStoryStep3(choice1, btn.getAttribute('data-p6-s2'));
+      });
+    });
+  }
+
+  function renderStoryStep3(choice1, choice2) {
+    setStoryBars(3);
+    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 3/4 · Caja Abierta';
+
     storyBody.innerHTML = `
       <div style="text-align: center;">
-        <span style="display: inline-block; padding: 4px 10px; border-radius: 99px; background: rgba(138,79,255,0.22); color: #d6bcfa; font-size: 0.7rem; font-weight: 800; margin-bottom: 8px;">
-          ${isBruno ? '🦉 RESULTADO: PERFIL NOCTURNO (MODO BRUNO)' : '☀️ RESULTADO: PERFIL ANALÍTICO (MODO SOLANGE)'}
-        </span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.08rem; margin-bottom: 8px;">
-          ${isBruno ? 'Tu enemigo no es el sueño: es el temblor del azúcar.' : 'Tu cerebro no pide más café caliente: pide claridad fría.'}
+        <span style="font-size: 0.68rem; color: #d6bcfa; font-weight: 800; letter-spacing: 0.08em;">STORY 3/4 · CAJA DE RESPUESTAS (ESCUCHA ACTIVA)</span>
+        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin: 6px 0;">
+          ¿QUÉ HACÉS PARA VOLVER A UNA TAREA?
         </h4>
-        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 14px;">
-          ${
-            isBruno
-              ? 'Receta del Búho: Cabrales Focus frío a 6°C. 100mg de L-Teanina para sostener el aim y la lógica sin taquicardia.'
-              : 'Receta del Búho: Cold Brew con leche de coco y 0% azúcar. Liviano, plant-based y 4 horas de foco limpio.'
-          }
-        </p>
-        <button class="btn-primary" id="story-to-step3" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.8rem;">
-          🥫 Ver mi Lata + Playlist Recomendada ➔
+        <input
+          type="text"
+          id="p6-open-input"
+          value="Pongo el celular boca abajo 10 min y tomo algo frío"
+          style="width: 100%; padding: 9px 11px; border-radius: 10px; border: 1px solid var(--cyan); background: rgba(9,3,3,0.85); color: #fff; font-size: 0.78rem; margin: 8px 0 10px;"
+        />
+        <button class="btn-primary" id="p6-to-step4" style="width: 100%; justify-content: center; padding: 9px; font-size: 0.78rem;">
+          Enviar respuesta y pasar a Story 4/4 ➔
         </button>
       </div>
     `;
 
-    document.getElementById('story-to-step3').addEventListener('click', () => renderStoryStep3(isBruno));
+    document.getElementById('p6-to-step4').addEventListener('click', () => {
+      const val = document.getElementById('p6-open-input').value || 'Silenciar notificaciones';
+      renderStoryStep4(choice1, choice2, val);
+    });
   }
 
-  function renderStoryStep3(isBruno) {
-    sbar3.classList.add('filled');
-    storyStepIndicator.textContent = 'Story 3/3 · Conversión';
+  function renderStoryStep4(choice1, choice2, ritual) {
+    setStoryBars(4);
+    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 4/4 · Link a App';
     playCanOpenAndCalmChord();
 
     storyBody.innerHTML = `
       <div style="text-align: center;">
-        <img src="assets/can_hero.png" alt="Cabrales Focus" style="height: 155px; width: auto; margin: 0 auto 10px; filter: drop-shadow(0 0 16px rgba(4,189,251,0.4));" />
-        <h4 style="font-family: var(--font-heading); font-size: 1.05rem;">PRECISIÓN QUE SE TOMA</h4>
-        <p style="font-size: 0.76rem; color: var(--text-secondary); margin: 4px 0 12px;">
-          Tu sesión de 25 minutos sin ruido está lista en el Hub.
+        <span style="font-size: 0.66rem; color: var(--cyan); font-weight: 800;">STORY 4/4 · REMISIÓN NARRATIVA SIN COMPRA</span>
+        <h4 style="font-family: var(--font-heading); font-size: 1.02rem; margin: 6px 0;">
+          “CONOCÉ LA HISTORIA DE SOLANGE Y COMPARTÍ LA TUYA”
+        </h4>
+        <p style="font-size: 0.74rem; color: var(--text-secondary); margin-bottom: 10px;">
+          Tu aporte (<em>${choice1} · ${choice2} · “${ritual}”</em>) nutre la escucha de la comunidad. Solo se publican aportes con autorización expresa.
         </p>
-        <button class="story-option-btn" id="story-open-hub" style="text-align: center; background: var(--grad-focus); color: #090303; font-weight: 800;">
-          🔗 ${isBruno ? '🎧 ABRIR PLAYLIST MODO CLUTCH + POMODORO' : '🎧 ABRIR PLAYLIST MODO DEEP WORK + POMODORO'}
-        </button>
+        <a href="#journey" class="story-option-btn" style="display: block; text-align: center; background: var(--grad-focus); color: #090303; font-weight: 800; text-decoration: none;">
+          🔗 ABRIR HISTORIAS FOCUS / ARCHIVO DE VENTANAS
+        </a>
       </div>
     `;
-
-    document.getElementById('story-open-hub').addEventListener('click', () => {
-      document.querySelector('[data-lab="hub"]').click();
-    });
   }
 
   renderStoryStep1();
   if (btnRestartStory) btnRestartStory.addEventListener('click', renderStoryStep1);
 
   /* ------------------------------------------------------------------------
-     10. CARRUSEL INTERACTIVO DE 5 SLIDES (L-TEANINA VS ENERGIZANTES)
+     10. CARRUSEL INTERACTIVO P2 DE 6 PLACAS («CONOCÉ CABRALES FOCUS»)
      ------------------------------------------------------------------------ */
   const carouselSlides = [
     {
-      tag: 'SLIDE 1 DE 5 · PORTADA DE IMPACTO',
+      tag: 'PLACA 1 DE 6 · QUÉ ES CABRALES FOCUS',
       html: `
-        <div style="display: grid; grid-template-columns: 1fr 180px; gap: 20px; align-items: center;">
+        <div style="display: grid; grid-template-columns: 1fr 170px; gap: 20px; align-items: center;">
           <div>
-            <span style="color: #ff8080; font-size: 0.76rem; font-weight: 800;">MITO VS. NEUROCIENCIA</span>
-            <h3 style="font-family: var(--font-heading); font-size: 1.65rem; line-height: 1.15; margin: 8px 0 12px;">
-              POR QUÉ EL EXCESO DE AZÚCAR TE HACE PERDER LA PARTIDA (Y EL PARCIAL)
+            <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">1 · CONCEPTO DE PRODUCTO</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.15; margin: 8px 0 12px;">
+              COFFEE COLD BREW LISTO PARA TOMAR EN LATA DE 240 ML
             </h3>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-              Confundimos estar acelerados con estar enfocados. Deslizá para entender cómo funciona la fórmula <strong>Calm Focus</strong> de Cabrales Focus 👉
+            <p style="color: var(--text-secondary); font-size: 0.88rem;">
+              Una extensión académica de <strong>Cabrales S.A.</strong> pensada para acompañar rutinas adultas de estudio, trabajo y gaming con el sello <em>“Precisión que se toma”</em>.
             </p>
           </div>
           <div style="text-align: center;">
-            <img src="assets/can_hero.png" alt="Cabrales Focus" style="height: 240px; width: auto;" />
+            <img src="assets/can_hero.png" alt="Cabrales Focus" style="height: 230px; width: auto;" />
           </div>
         </div>
       `,
     },
     {
-      tag: 'SLIDE 2 DE 5 · LA TRAMPA DEL PICO Y CRASH',
+      tag: 'PLACA 2 DE 6 · QUÉ CONTIENE (FICHA ACADÉMICA)',
       html: `
         <div>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 8px;">
-            Curva de Estimulación: Energizante Tradicional vs. Cabrales Focus
+          <span style="color: #d6bcfa; font-size: 0.75rem; font-weight: 800;">2 · COMPOSICIÓN PROPUESTA POR LATA (240 ML)</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 12px;">
+            Café 100% Arábica de Brasil extraído en frío, azúcar y L-teanina
           </h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
-            Los energizantes azucarados disparan la insulina y el cortisol (línea roja) provocando un desplome a los 45 minutos. <strong>Cabrales Focus</strong> sostiene ondas Alfa estables durante 4 horas (curva cian-violeta).
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px;">
+            <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
+              <strong style="color: var(--cyan); font-size: 1.05rem;">80 mg Cafeína</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Proveniente íntegramente del café arábica (sin cafeína sintética añadida).</p>
+            </div>
+            <div style="padding: 14px; border-radius: 12px; background: rgba(138,79,255,0.1); border: 1px solid rgba(138,79,255,0.35);">
+              <strong style="color: #d6bcfa; font-size: 1.05rem;">100 mg L-Teanina</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Objetivo académico de formulación funcional por envase de 240 ml.</p>
+            </div>
+            <div style="padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--white); font-size: 1.05rem;">6 g de Azúcar</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Sin leche, sin crema ni saborizantes añadidos. Valores de diseño académico.</p>
+            </div>
+          </div>
+        </div>
+      `,
+    },
+    {
+      tag: 'PLACA 3 DE 6 · CÓMO SE ELABORA EL COLD BREW',
+      html: `
+        <div>
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">3 · PROCESO DE EXTRACCIÓN EN FRÍO</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
+            Extracción en frío vs. Café caliente enfriado
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="padding: 16px; border-radius: 14px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
+              <strong style="color: var(--cyan);">❄️ Verdadero Cold Brew (Agua + Café)</strong>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                Infusionado directamente en frío con granos 100% arábica de Brasil (inspirado en <em>Cabrales Brasil</em>), logrando un perfil limpio, suave y de baja acidez natural.
+              </p>
+            </div>
+            <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ff8080;">☕ Diferencia con café enfriado</strong>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                No es un espresso preparado con agua caliente y luego enfriado con hielo; conserva sus notas tostadas originales listo en lata.
+              </p>
+            </div>
+          </div>
+        </div>
+      `,
+    },
+    {
+      tag: 'PLACA 4 DE 6 · QUÉ LO DIFERENCIA',
+      html: `
+        <div>
+          <span style="color: #d6bcfa; font-size: 0.75rem; font-weight: 800;">4 · IDENTIDAD & DIFERENCIAL</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
+            Portabilidad, Herencia Cafetera e Identidad Focus
+          </h4>
+          <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Combina la trayectoria cafetera de <strong>Cabrales</strong> con un formato portátil para el escritorio o la mochila, el isotipo del búho y la incorporación propuesta de L-teanina, comunicando <em>“Cold brew con azúcar y L-teanina, listo para acompañar tu rutina”</em> sin promesas exageradas ni eficacia clínica validada.
           </p>
-          <svg viewBox="0 0 600 190" style="width: 100%; height: auto; background: rgba(255,255,255,0.02); border-radius: 14px; padding: 10px; border: 1px solid rgba(255,255,255,0.08);">
-            <defs>
-              <linearGradient id="focusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#04bdfb" />
-                <stop offset="100%" stop-color="#8a4fff" />
-              </linearGradient>
-            </defs>
-            <!-- Línea Base -->
-            <line x1="40" y1="150" x2="570" y2="150" stroke="rgba(255,255,255,0.18)" stroke-dasharray="4" />
-            <!-- Curva Roja: Pico y Crash -->
-            <path d="M 40 150 Q 110 15, 160 35 T 260 175 L 560 178" fill="none" stroke="#ff5252" stroke-width="3.5" />
-            <text x="125" y="26" fill="#ff8080" font-size="11" font-weight="bold">Pico + Taquicardia (30m)</text>
-            <text x="265" y="168" fill="#ff8080" font-size="11" font-weight="bold">Crash & Fatiga (60m)</text>
-            <!-- Curva Cian-Violeta: Calm Focus -->
-            <path d="M 40 150 C 110 65, 220 58, 380 62 C 470 65, 530 85, 565 110" fill="none" stroke="url(#focusGrad)" stroke-width="4.5" />
-            <text x="270" y="48" fill="#04bdfb" font-size="12" font-weight="bold">Cabrales Focus: 4 Horas de Calm Focus Sostenido</text>
-          </svg>
         </div>
       `,
     },
     {
-      tag: 'SLIDE 3 DE 5 · LA SINERGIA: CAFEÍNA + 100 MG L-TEANINA',
-      html: `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-          <div style="padding: 18px; border-radius: 16px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
-            <strong style="color: var(--cyan); font-size: 0.95rem;">☕ Extracto Cold Brew Cabrales</strong>
-            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 6px;">
-              Macerado en frío durante 16 horas. Menos acidez estomacal y liberación progresiva de cafeína natural que activa la atención ejecutiva.
-            </p>
-          </div>
-          <div style="padding: 18px; border-radius: 16px; background: rgba(138,79,255,0.1); border: 1px solid rgba(138,79,255,0.35);">
-            <strong style="color: #d6bcfa; font-size: 0.95rem;">🧠 100 mg de L-Teanina Pura</strong>
-            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 6px;">
-              Aminoácido natural que estimula las ondas cerebrales Alfa: actúa como un “amortiguador” neuronal que bloquea la ansiedad y el temblor de manos.
-            </p>
-          </div>
-        </div>
-      `,
-    },
-    {
-      tag: 'SLIDE 4 DE 5 · BASE PLANT-BASED & 0% AZÚCAR',
+      tag: 'PLACA 5 DE 6 · CÓMO SE CONSUME',
       html: `
         <div>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 10px;">
-            Diseñado para no pesarte a las 2:00 AM ni a las 15:00 hs
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">5 · MODO DE CONSUMO Y ETIQUETA</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
+            Servir frío, listo para tomar, sin preparar ni diluir
           </h4>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px;">
-            <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.04);">
-              <strong style="color: var(--cyan);">🥥 Leche de Coco</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Textura sedosa, 100% libre de lactosa y de digestión ligera.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div style="padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.04);">
+              <strong style="color: var(--white);">🥫 Directo de la lata de 240 ml</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Acompaña pausas de estudio, trabajo o preparación antes de una partida competitiva.</p>
             </div>
-            <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.04);">
-              <strong style="color: #b794f4;">⚡ 0% Azúcar Agregada</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Sin calorías vacías ni picos de insulina que den sueño después.</p>
-            </div>
-            <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.04);">
-              <strong style="color: var(--white);">🥫 Lata Slim 240 ml</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Aluminio 100% reciclable que enfría en minutos y cabe en tu setup.</p>
+            <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.28);">
+              <strong style="color: var(--cyan);">🔓 Código QR único bajo la anilla</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Al abrir la lata accedés a un código único de un solo uso para registrar en la app <em>Club Focus</em>.</p>
             </div>
           </div>
         </div>
       `,
     },
     {
-      tag: 'SLIDE 5 DE 5 · CALL TO ACTION TRANSMEDIA',
+      tag: 'PLACA 6 DE 6 · APP GRATUITA CLUB FOCUS (CTA)',
       html: `
         <div style="text-align: center;">
-          <img src="assets/owl_mascot.png" alt="El Búho" style="width: 68px; height: 68px; margin-bottom: 10px;" />
-          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px;">
-            GUARDÁ ESTE POST PARA TU PRÓXIMA NOCHE DE ENTREGA
+          <img src="assets/owl_mascot.png" alt="El Búho" style="width: 62px; height: 62px; margin-bottom: 8px;" />
+          <span style="display: block; color: var(--cyan); font-size: 0.74rem; font-weight: 800;">6 · ECOSISTEMA DIGITAL Y FIDELIZACIÓN</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.45rem; margin: 6px 0 8px;">
+            DESCARGÁ GRATIS LA APP «CLUB FOCUS»
           </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto 14px;">
-            Entrá al link de nuestra bio (<code>cabrales.com.ar/focus</code>) y activá el temporizador Pomodoro de 25 minutos junto a las playlists oficiales.
+          <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto 14px;">
+            Leé <strong>Historias Focus</strong> (sin necesidad de compra), encontrá puntos de venta en el mapa, hacé pedidos en la eShop y sumá puntos con cada lata para canjear descuentos, merchandising o bonos del <em>FiReMAJOR 2027</em>.
           </p>
           <span class="stage-pill">🦉 Cabrales Focus · Precisión que se toma</span>
         </div>

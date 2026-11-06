@@ -1090,147 +1090,454 @@
   <div class="section-divider"></div>
 
   <!-- ========================================================================
-       07. ETAPA 2: LABORATORIO DE PIEZAS TRANSMEDIA REALIZADAS (SIMULADORES EN VIVO)
+       07. LAS 6 PUBLICACIONES OBLIGATORIAS DE REDES SOCIALES (P1 A P6)
        ======================================================================== -->
   <section id="laboratorio">
     <div class="section-header reveal">
-      <span class="stage-pill stage-2">Etapa 2 · Producción & Realización Transmedia</span>
-      <h2 class="section-title">Laboratorio de <span class="text-gradient">Piezas Transmedia en Vivo</span></h2>
+      <span class="stage-pill stage-2">Producción Transmedia · 3 Videos (95 s) + 2 Imágenes + 1 Secuencia Libre</span>
+      <h2 class="section-title">Las 6 Publicaciones Oficiales: <span class="text-gradient">P1 a P6 en Redes Sociales</span></h2>
       <p class="section-subtitle">
-        No solo planificamos la estrategia: <strong>realizá y probá en vivo cada pieza producida</strong> durante la exposición oral seleccionando los módulos interactivos a continuación.
+        Cumplimiento estricto de la consigna de la Entrega Final: <strong>3 piezas audiovisuales verticales (P1 25 s, P4 30 s y P5 40 s = 95 s totales)</strong>, <strong>2 piezas gráficas (P2 carrusel de 6 placas y P3 placa con Suga)</strong> y <strong>1 formato libre interactivo (P6 secuencia de 4 IG Stories + destacado guía)</strong>, aplicando las fórmulas de copy <strong>AIDA</strong>, <strong>RTM</strong> y <strong>CGU</strong>.
       </p>
     </div>
 
-    <!-- Botonera de los 6 Módulos Transmedia -->
+    <!-- Botonera de las 6 Publicaciones Obligatorias + Perfil Simulado -->
     <div class="lab-selector reveal">
-      <button class="lab-tab active" data-lab="perfil">📱 1. Perfil Simulado @cabralesfocus</button>
-      <button class="lab-tab" data-lab="stories">⚡ 2. Simulador IG Stories (Diagnóstico)</button>
-      <button class="lab-tab" data-lab="carrusel">🧪 3. Carrusel L-Teanina vs. Energizantes</button>
-      <button class="lab-tab" data-lab="hub">🌐 4. Hub Web Pomodoro + Spotify</button>
-      <button class="lab-tab" data-lab="spot">🎬 5. Spot Hero “El Búho y los 5 Seg”</button>
-      <button class="lab-tab" data-lab="activaciones">🎁 6. Kit Streamers Twitch & Guerrilla QR</button>
+      <button class="lab-tab active" data-lab="p1">🎬 P1 · Teaser Precuela (25s)</button>
+      <button class="lab-tab" data-lab="p2">📊 P2 · Carrusel 6 Placas</button>
+      <button class="lab-tab" data-lab="p3">🎯 P3 · Suga & Modo Focus (AIDA)</button>
+      <button class="lab-tab" data-lab="p4">🎤 P4 · Pausa con Solange (CGU · 30s)</button>
+      <button class="lab-tab" data-lab="p5">🔥 P5 · Última Bala Major (RTM · 40s)</button>
+      <button class="lab-tab" data-lab="p6">⚡ P6 · 4 IG Stories + Guía App</button>
+      <button class="lab-tab" data-lab="perfil">📱 Grilla @cabralesfocus</button>
     </div>
 
     <!-- ======================================================================
-         MÓDULO 1: PERFIL OFICIAL SIMULADO @CABRALESFOCUS
+         P1: «ANTES DE ENCONTRAR FOCUS» (TIKTOK / IG REELS · 25 S · PRECUELA)
          ====================================================================== -->
-    <div class="lab-pane active" id="lab-perfil">
+    <div class="lab-pane active" id="lab-p1">
       <div class="simulator-split">
-        <!-- Teléfono con Perfil de Instagram Simulado -->
+        <!-- Mockup Vertical 9:16 TikTok / Reels -->
         <div class="phone-mockup">
           <div class="phone-notch"></div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.85rem; font-weight: 700;">
-            <span>@cabralesfocus <span style="color: var(--cyan);">✔</span></span>
-            <span style="font-size: 0.72rem; color: var(--text-muted);">Cabrales S.A.</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.78rem; font-weight: 700;">
+            <span>🎵 TikTok / Reels · 9:16 (1080×1920)</span>
+            <span style="color: var(--cyan);">Duración: 25 s</span>
           </div>
 
-          <div class="ig-profile-header">
-            <div class="ig-avatar-ring">
-              <div class="ig-avatar-inner">
-                <img src="assets/owl_mascot.png" alt="Avatar @cabralesfocus" />
+          <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(4,189,251,0.35); background: #070304; aspect-ratio: 9/14; display: flex; flex-direction: column; justify-content: space-between; padding: 14px;">
+            <img src="assets/doc1_image9.png" alt="Bruno P1 Precuela" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.42;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, #090303 12%, rgba(9,3,3,0.3) 55%, rgba(9,3,3,0.75) 100%);"></div>
+
+            <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;">
+              <span style="padding: 4px 10px; border-radius: 99px; background: rgba(138,79,255,0.35); border: 1px solid var(--violet); font-size: 0.68rem; font-weight: 800; color: #fff;">
+                P1 · TEASER & PRECUELA
+              </span>
+              <span style="font-size: 0.7rem; color: var(--cyan); font-weight: 700;">00:25</span>
+            </div>
+
+            <!-- Visualizador del plano activo de P1 -->
+            <div id="p1-beat-preview" style="position: relative; z-index: 2; padding: 14px; border-radius: 12px; background: rgba(9,3,3,0.84); border: 1px solid rgba(4,189,251,0.35); text-align: center;">
+              <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800; text-transform: uppercase;">TRAMO 1 · 0:00 A 0:06 S</span>
+              <h5 style="font-family: var(--font-heading); font-size: 0.95rem; margin: 4px 0;">Bruno frente a la notebook</h5>
+              <p style="font-size: 0.76rem; color: var(--text-secondary);">Atención fragmentada tratando de estudiar/trabajar; luz de pantalla y fatiga.</p>
+            </div>
+
+            <!-- Pie de interfaz TikTok -->
+            <div style="position: relative; z-index: 2; font-size: 0.74rem;">
+              <strong style="color: var(--white);">@cabralesfocus ✔</strong>
+              <p style="color: var(--text-secondary); margin-top: 3px; line-height: 1.35;">
+                Hay días en los que el foco parece estar en otra parte. Bruno todavía no sabe lo que se va a cruzar… 🦉🥫
+              </p>
+              <div style="margin-top: 6px; padding: 5px 8px; border-radius: 6px; background: rgba(255,255,255,0.08); font-size: 0.68rem; color: var(--cyan);">
+                🔗 Comentario fijado: Mirá «Turno de noche» completo en nuestro canal de YouTube
               </div>
-            </div>
-            <div class="ig-stats">
-              <div><strong>48</strong><span>posts</span></div>
-              <div><strong>34.8K</strong><span>seguidores</span></div>
-              <div><strong>1941</strong><span>siguiendo</span></div>
-            </div>
-          </div>
-
-          <div class="ig-bio">
-            <strong>Cabrales Focus | Coffee Cold Brew RTD 🦉</strong><br />
-            Precisión que se toma. Apagá el ruido, encendé tu foco.<br />
-            ❄️ Cold Brew + 🥥 Leche de Coco + 🧠 100mg L-Teanina (0% Azúcar)<br />
-            👇 Activá tus 25 min sin ruido y encontrá tu Guarida:<br />
-            <a href="#laboratorio" onclick="document.querySelector('[data-lab=hub]').click(); return false;">🔗 cabrales.com.ar/focus</a>
-          </div>
-
-          <!-- Highlights -->
-          <div class="ig-highlights">
-            <div class="ig-hl-item" data-hl="El Búho: Observador empático de tus noches de estudio y gaming.">
-              <div class="ig-hl-circle">🦉</div><span>El Búho</span>
-            </div>
-            <div class="ig-hl-item" data-hl="Fórmula Calm Focus: Cafeína natural + 100mg L-Teanina sin taquicardia.">
-              <div class="ig-hl-circle">🧠</div><span>L-Teanina</span>
-            </div>
-            <div class="ig-hl-item" data-hl="3 Playlists oficiales en Spotify para ondas cerebrales Alfa.">
-              <div class="ig-hl-circle">🎧</div><span>Playlists</span>
-            </div>
-            <div class="ig-hl-item" data-hl="Puntos de estudio y universidades con beneficios QR.">
-              <div class="ig-hl-circle">📍</div><span>Guaridas</span>
-            </div>
-            <div class="ig-hl-item" data-hl="Comunidad de prosumidores compartiendo su setup nocturno.">
-              <div class="ig-hl-circle">⚡</div><span>#ModoFocus</span>
-            </div>
-          </div>
-
-          <!-- Feed de 9 posteos coherentes -->
-          <div class="ig-feed-grid">
-            <div class="ig-post-tile" data-post-title="Lanzamiento Oficial: Precisión que se toma" data-post-copy="No nacimos para gritar. Nacimos para los que a las 2:00 AM siguen buscando la jugada exacta. Nuevo Cabrales Focus 240ml. #PrecisiónQueSeToma">
-              <img src="assets/can_front.png" alt="Post 1 Lata" />
-              <span class="ig-post-badge">📌 PINNED</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="El Principio de los 5 Segundos" data-post-copy="Entre cerrar todo y resolver el código hay exactamente 5 segundos. El Búho te observa. Respirá, abrí tu lata y volvé al eje.">
-              <img src="assets/owl_mascot.png" alt="Post 2 El Búho" style="padding: 14px; object-fit: contain;" />
-              <span class="ig-post-badge">🎬 REEL</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Anatomía del Foco: L-Teanina + Café" data-post-copy="¿Por qué el azúcar de los energizantes te hace perder la partida? Deslizá para ver la curva de Calm Focus de Cabrales Focus.">
-              <img src="assets/doc1_image10.png" alt="Post 3 Sinapsis" />
-              <span class="ig-post-badge">📊 CARRUSEL</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Modo Bruno: Rondas Nocturnas sin Tilt" data-post-copy="02:15 AM. Overtime 12-12. Pulso firme, cero temblor. Bruno ya eligió su aliado en el escritorio.">
-              <img src="assets/doc1_image9.png" alt="Post 4 Bruno" />
-              <span class="ig-post-badge">🎮 GAMING</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Modo Solange: Claridad a las 15:00 hs" data-post-copy="Cuando las planillas se multiplican a mitad de la tarde, el Cold Brew con leche de coco devuelve la nitidez mental.">
-              <img src="assets/doc1_image6.png" alt="Post 5 Solange" />
-              <span class="ig-post-badge">💻 DEEP WORK</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Estrategia Pura: Pensá 3 jugadas adelante" data-post-copy="La potencia sin control es ruido. La cafeína con L-Teanina es estrategia.">
-              <img src="assets/doc1_image11.png" alt="Post 6 Ajedrez" />
-              <span class="ig-post-badge">♟️ FOCO</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Kit Modo Focus: Edición Streamers & Creadores" data-post-copy="Cuatro latas heladas, taza negro mate oficial del Búho y acceso directo a las sesiones de foco en Discord.">
-              <img src="assets/kit_modo_focus.png" onerror="this.src='assets/doc1_image12.jpg'" alt="Post 7 Kit" />
-              <span class="ig-post-badge">🎁 KIT VIP</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="La Guarida del Búho en tu Facultad" data-post-copy="¿Te pesan los párpados en la página 14? Buscá el código QR del Búho en las mesas de biblioteca.">
-              <img src="assets/guarida_buho_ooh.png" onerror="this.src='assets/doc1_image15.png'" alt="Post 8 Guarida" />
-              <span class="ig-post-badge">📍 OOH QR</span>
-            </div>
-            <div class="ig-post-tile" data-post-title="Tradición Cabrales desde 1941, evolucionada" data-post-copy="Más de 80 años tostando el mejor café argentino, ahora en una lata slim de 240ml fría y funcional.">
-              <img src="assets/can_hero.png" alt="Post 9 Lata 3D" style="object-fit: contain; padding: 6px;" />
-              <span class="ig-post-badge">❄️ 240 ML</span>
             </div>
           </div>
         </div>
 
-        <!-- Inspector del Posteo Seleccionado -->
+        <!-- Ficha, Copy Oficial y Escaleta de 25 s de P1 -->
         <div class="glass-card">
-          <span class="stage-pill stage-2">Diseño de Perfil en Red Social Simulada</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 10px;" id="ig-preview-title">
-            Arquitectura de @cabralesfocus (Instagram & TikTok)
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 1 · Audiovisual 1 de 3 · TikTok / IG Reels</span>
+            <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">Formato: 9:16 (1080×1920) · 25 s</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.55rem; margin-bottom: 10px;">
+            P1 — «Antes de encontrar Focus» (Teaser y Precuela)
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.94rem; margin-bottom: 18px;" id="ig-preview-copy">
-            Hacé clic en cualquiera de los <strong>9 posteos de la grilla o en las Historias Destacadas</strong> del teléfono a la izquierda para inspeccionar el copywriting, el objetivo narrativo y su conexión dentro del ecosistema transmedia.
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+            Primera aparición de <strong>Cabrales Focus</strong> en redes sociales. Ocurre <strong>cronológicamente antes del cortometraje de YouTube</strong>: Bruno intenta estudiar o trabajar en su notebook, relee el mismo párrafo, se distrae, bosteza, cierra la laptop y se retira. Al irse, el encuadre revela una lata de <em>Cabrales Focus</em> apoyada en otro escritorio: <strong>el espectador descubre la existencia del producto antes que el propio protagonista</strong> (ironía dramática, sin mostrar una transformación mágica).
           </p>
 
-          <div style="padding: 18px; border-radius: 16px; background: rgba(4, 189, 251, 0.08); border: 1px solid rgba(4, 189, 251, 0.3); margin-bottom: 18px;">
-            <strong style="color: var(--cyan); font-size: 0.84rem; display: block; margin-bottom: 6px;">Coherencia Estética & Narrativa:</strong>
-            <ul style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 18px; display: flex; flex-direction: column; gap: 6px;">
-              <li><strong>Grilla Dark-Mode Nativa:</strong> Predominio absoluto del negro mate (<code>#090303</code>) y café tostado (<code>#2f1303</code>) para no encandilar a quienes scrollean de madrugada.</li>
-              <li><strong>Acentos de Luz Funcional:</strong> El degradado cian-violeta guía la vista hacia los llamados a la acción y los datos científicos de la L-Teanina.</li>
-              <li><strong>Puente Directo al Hub:</strong> La biografía y las Stories convierten seguidores pasivos en usuarios activos del temporizador Pomodoro en <code>cabrales.com.ar/focus</code>.</li>
-            </ul>
+          <!-- Escaleta interactiva de 25 s -->
+          <h4 style="font-size: 0.82rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🎬 Guion Técnico por Bloques de Tiempo (25 segundos · Hacé clic para previsualizar):
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-bottom: 18px;" id="p1-beats-grid">
+            <button class="tc-btn active" data-p1-time="TRAMO 1 · 0:00 A 0:06 S" data-p1-title="Bruno frente a la notebook" data-p1-desc="Intenta estudiar o trabajar frente a la pantalla; su atención está fragmentada y dispersa.">
+              0:00–0:06 · Atención fragmentada
+            </button>
+            <button class="tc-btn" data-p1-time="TRAMO 2 · 0:06 A 0:12 S" data-p1-title="Relectura y bostezo" data-p1-desc="Relee la misma línea sin avanzar, se frota los ojos y bosteza por el cansancio acumulado.">
+              0:06–0:12 · Relee y bosteza
+            </button>
+            <button class="tc-btn" data-p1-time="TRAMO 3 · 0:12 A 0:17 S" data-p1-title="Cierra la notebook y se va" data-p1-desc="Frustrado por no poder concentrarse, baja la tapa de la notebook y se retira de cuadro.">
+              0:12–0:17 · Cierra y se retira
+            </button>
+            <button class="tc-btn" data-p1-time="TRAMO 4 · 0:17 A 0:21 S" data-p1-title="Hallazgo en otro escritorio" data-p1-desc="El encuadre revela una lata de Cabrales Focus en un escritorio cercano: la audiencia la ve antes que él.">
+              0:17–0:21 · Revelación de lata
+            </button>
+            <button class="tc-btn" data-p1-time="TRAMO 5 · 0:21 A 0:25 S" data-p1-title="Primer plano y remisión" data-p1-desc="Primer plano limpio de Cabrales Focus y remisión directa al cortometraje en el canal de YouTube.">
+              0:21–0:25 · Packshot + CTA YouTube
+            </button>
+          </div>
+
+          <!-- Copy Oficial -->
+          <div style="padding: 16px; border-radius: 14px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 12px;">
+            <span style="font-size: 0.72rem; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em;">📝 Copy Oficial de Publicación (P1)</span>
+            <p style="font-size: 0.88rem; color: var(--white); margin-top: 6px; font-style: italic;">
+              “Hay días en los que el foco parece estar en otra parte. Bruno todavía no sabe lo que se va a cruzar. Descubrí su historia en Turno de noche, en nuestro canal de YouTube. Cabrales Focus. Precisión que se toma.”
+            </p>
+          </div>
+
+          <div style="font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <span><strong>Remisión Transmedia:</strong> TikTok / IG Reels ➔ Canal de YouTube (Cortometraje <em>Turno de noche</em>).</span>
+            <span style="color: #d6bcfa;">* Antes del estreno: “Próximamente en YouTube” · Post-estreno: link en comentario fijado.</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- ======================================================================
-         MÓDULO 2: SIMULADOR INTERACTIVO DE INSTAGRAM STORIES (DIAGNÓSTICO)
+         P2: «CONOCÉ CABRALES FOCUS» (INSTAGRAM · IMAGEN 1 · CARRUSEL 6 PLACAS)
          ====================================================================== -->
-    <div class="lab-pane" id="lab-stories">
+    <div class="lab-pane" id="lab-p2">
+      <div class="simulator-split" style="grid-template-columns: 1.15fr 0.85fr;">
+        <div class="carousel-stage">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase;" id="carousel-slide-tag">PLACA 1 DE 6 · QUÉ ES CABRALES FOCUS</span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Instagram Carrusel · 6 Placas 1080×1350 (4:5)</span>
+          </div>
+
+          <!-- Contenido dinámico de las 6 placas de P2 -->
+          <div id="carousel-slide-content" style="min-height: 320px; display: flex; flex-direction: column; justify-content: center;">
+            <!-- Se hidrata desde app.js con las 6 placas oficiales de P2 -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+            <button class="btn-secondary" id="carousel-prev" style="padding: 8px 16px; font-size: 0.82rem;">◀ Placa Anterior</button>
+            <div id="carousel-dots" style="display: flex; gap: 8px;"></div>
+            <button class="btn-primary" id="carousel-next" style="padding: 8px 18px; font-size: 0.82rem;">Siguiente Placa ▶</button>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <span class="stage-pill stage-2">Publicación 2 · Imagen 1 de 2 · Carrusel de 6 Placas</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">
+            P2 — «Conocé Cabrales Focus» (Presentación de Producto y App)
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+            Carrusel informativo de <strong>6 placas verticales (1080×1350)</strong> en Instagram que presenta formalmente la propuesta de valor sin atribuir eficacia clínica ni promesas médicas:
+          </p>
+          <ol style="font-size: 0.82rem; color: var(--text-secondary); padding-left: 18px; display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px;">
+            <li><strong>1. Qué es:</strong> Coffee Cold Brew listo para tomar, concepto académico de Cabrales Focus.</li>
+            <li><strong>2. Qué contiene:</strong> Lata 240 ml; café 100% arábica de Brasil extraído en frío, 6 g de azúcar añadida, 100 mg de L-teanina y 80 mg de cafeína del café.</li>
+            <li><strong>3. Cómo se elabora:</strong> Extracción en frío (agua + café) frente a un café caliente enfriado.</li>
+            <li><strong>4. Qué lo diferencia:</strong> Portabilidad RTD, identidad Focus y L-teanina como ingrediente propuesto.</li>
+            <li><strong>5. Cómo se consume:</strong> Frío, directo de la lata, sin preparar ni diluir.</li>
+            <li><strong>6. Club Focus:</strong> App gratuita con mapa de compra, eShop, <em>Historias Focus</em> y recompensas.</li>
+          </ol>
+
+          <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 10px;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Copy Oficial de Publicación (P2)</span>
+            <p style="font-size: 0.82rem; color: var(--white); margin-top: 4px; font-style: italic;">
+              “Conocé Cabrales Focus: café cold brew en lata para acompañar tu rutina. Deslizá para descubrir el concepto, su composición propuesta y cómo disfrutarlo. En Club Focus encontrás novedades, puntos de venta y recompensas. Precisión que se toma. Producto y app propuestos para un proyecto académico.”
+            </p>
+          </div>
+          <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">
+            ➔ Remisión: Perfil de Instagram → Descarga de App Club Focus → Inicio / Ficha de producto.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         P3: «ENTRÁ A MODO FOCUS» (INSTAGRAM · IMAGEN 2 · SUGA · FÓRMULA AIDA)
+         ====================================================================== -->
+    <div class="lab-pane" id="lab-p3">
+      <div class="simulator-split">
+        <!-- Mockup de la Placa 1080x1350 de Suga que ve Bruno en el Plano 06/07 del corto -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.78rem; font-weight: 700;">
+            <span>📸 @cabralesfocus en collab con @suga</span>
+            <span style="color: var(--cyan);">1080×1350</span>
+          </div>
+
+          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(4,189,251,0.4); background: radial-gradient(circle at 50% 25%, rgba(4,189,251,0.22), #090303 78%); padding: 16px; text-align: center; position: relative;">
+            <span style="display: inline-block; padding: 3px 10px; border-radius: 99px; background: rgba(4,189,251,0.16); border: 1px solid var(--cyan); color: var(--cyan); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; margin-bottom: 8px;">
+              PIEZA PUENTE QUE DESCUBRE BRUNO (PLANOS 06 Y 07)
+            </span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.32rem; color: var(--white); letter-spacing: 0.02em; line-height: 1.1;">
+              ENTRÁ A MODO FOCUS
+            </h4>
+            <p style="font-size: 0.8rem; color: #f5f0e6; font-weight: 700; margin-top: 3px;">
+              Con Suga y Cabrales Focus
+            </p>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 14px; margin: 14px 0;">
+              <div style="width: 108px; height: 128px; border-radius: 14px; overflow: hidden; border: 2px solid var(--cyan); background: #140b1c; position: relative;">
+                <img src="assets/doc1_image14.jpg" alt="Retrato referencia Suga" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span style="position: absolute; bottom: 0; inset-x: 0; background: rgba(9,3,3,0.85); font-size: 0.64rem; font-weight: 800; color: var(--cyan); padding: 2px 4px;">SUGA (Twitch)</span>
+              </div>
+              <img src="assets/can_hero.png" alt="Lata Cabrales Focus" style="height: 138px; width: auto; filter: drop-shadow(0 0 14px rgba(4,189,251,0.45));" />
+            </div>
+
+            <div style="padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 0.75rem; display: flex; flex-direction: column; gap: 4px;">
+              <div>📍 <strong>Probá Cabrales Focus en Dot Baires Shopping</strong></div>
+              <div>🎮 <strong>Conocé Club Focus en el stream con Suga</strong></div>
+              <div style="color: var(--cyan);">🔗 <strong>Consultá la agenda en el perfil</strong></div>
+            </div>
+
+            <div style="margin-top: 8px; font-size: 0.63rem; color: var(--text-muted);">
+              Colaboración y activación propuestas · Proyecto académico
+            </div>
+          </div>
+        </div>
+
+        <!-- Desglose AIDA y Copy Oficial de P3 -->
+        <div class="glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 3 · Imagen 2 de 2 · Fórmula AIDA</span>
+            <span style="font-size: 0.78rem; color: #d6bcfa; font-weight: 700;">Conexión Directa con Escena 2 del Corto</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">
+            P3 — «Entrá a Modo Focus» (Placa con Suga · AIDA)
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+            Esta publicación cumple un doble rol: es la pieza gráfica que <strong>Bruno descubre scrolleando en su celular tras perder la ronda (Planos 06 y 07 del cortometraje)</strong> y que lo motiva a ir al día siguiente a <strong>Dot Baires Shopping</strong>, y además presenta el stream patrocinado de Suga aplicando la estructura de copywriting <strong>AIDA (Atención, Interés, Deseo y Acción)</strong>:
+          </p>
+
+          <!-- Desglose AIDA -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.28);">
+              <strong style="color: var(--cyan); font-size: 0.76rem;">👀 A · ATENCIÓN (Pregunta inicial):</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;"><em>“¿Listo para entrar en Modo Focus?”</em> Interpela directo al jugador o estudiante en su feed.</p>
+            </div>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(138,79,255,0.08); border: 1px solid rgba(138,79,255,0.28);">
+              <strong style="color: #d6bcfa; font-size: 0.76rem;">📚 I · INTERÉS (Experiencia física y app):</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">Invitación junto a <strong>Suga</strong> para descubrir el cold brew en <strong>Dot Baires Shopping</strong> y continuar en la app <em>Club Focus</em>.</p>
+            </div>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(138,79,255,0.08); border: 1px solid rgba(138,79,255,0.28);">
+              <strong style="color: #d6bcfa; font-size: 0.76rem;">💖 D · DESEO (Stream + Sorteo Major 2027):</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">Demo en vivo de Suga explicando cómo sumar 100 pts por lata y canjear bonos (máx. 10) por <strong>2 entradas al FiReMAJOR Buenos Aires 2027</strong>.</p>
+            </div>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.28);">
+              <strong style="color: var(--cyan); font-size: 0.76rem;">🛒 A · ACCIÓN (Llamado concreto):</strong>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;"><em>“Consultá la agenda de la activación y del stream desde el enlace del perfil.”</em></p>
+            </div>
+          </div>
+
+          <div style="padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Copy Oficial Completo (P3 · Fórmula AIDA)</span>
+            <p style="font-size: 0.8rem; color: var(--white); margin-top: 5px; font-style: italic; line-height: 1.45;">
+              “¿Listo para entrar en Modo Focus? Con Suga y Cabrales Focus, te invitamos a descubrir nuestro cold brew en Dot Baires Shopping. La experiencia sigue en Club Focus: conocé la app y acompañá a Suga en un stream donde mostrará cómo registrar una lata, sumar puntos y canjear un bono para participar por dos entradas al FiReMAJOR Buenos Aires 2027. Una lata registrada suma 100 puntos; un bono cuesta 100. Hasta diez bonos por usuario y un ganador de dos entradas. Consultá la agenda de la activación y del stream desde el enlace del perfil. Cabrales Focus. Precisión que se toma. #CabralesFocus #ModoFocus #ClubFocus. Colaboración, activación y sorteo propuestos para un proyecto académico.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         P4: «UNA PAUSA CON SOLANGE» (TIKTOK · VIDEO 30 S · CGU #MIVENTANAFOCUS)
+         ====================================================================== -->
+    <div class="lab-pane" id="lab-p4">
+      <div class="simulator-split">
+        <!-- Mockup Vertical TikTok 30s de Solange -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.78rem; font-weight: 700;">
+            <span>🎵 TikTok · Encuentro Casual Exterior</span>
+            <span style="color: var(--cyan);">Duración: 30 s</span>
+          </div>
+
+          <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(4,189,251,0.35); background: #070304; aspect-ratio: 9/14; display: flex; flex-direction: column; justify-content: space-between; padding: 14px;">
+            <img src="assets/doc1_image16.png" onerror="this.src='assets/doc1_image6.png'" alt="Solange Pausa Exterior P4" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, #090303 14%, rgba(9,3,3,0.25) 55%, rgba(9,3,3,0.7) 100%);"></div>
+
+            <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;">
+              <span style="padding: 4px 10px; border-radius: 99px; background: rgba(4,189,251,0.28); border: 1px solid var(--cyan); font-size: 0.68rem; font-weight: 800; color: #fff;">
+                P4 · SOLANGE & CGU (+18)
+              </span>
+              <span style="font-size: 0.7rem; color: var(--cyan); font-weight: 700;">00:30</span>
+            </div>
+
+            <!-- Diálogo interactivo de las 3 preguntas -->
+            <div id="p4-beat-preview" style="position: relative; z-index: 2; padding: 14px; border-radius: 12px; background: rgba(9,3,3,0.86); border: 1px solid rgba(4,189,251,0.4);">
+              <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">PREGUNTA 1 · 0:00 A 0:05 S</span>
+              <p style="font-size: 0.8rem; color: #d6bcfa; margin-top: 4px;">🎤 Cámara (fuera de cuadro): <em>“¿Qué estás tomando?”</em></p>
+              <p style="font-size: 0.84rem; color: var(--white); font-weight: 700; margin-top: 4px;">☀️ Solange: <em>“Un Cabrales Focus.”</em></p>
+            </div>
+
+            <div style="position: relative; z-index: 2; font-size: 0.73rem;">
+              <strong style="color: var(--white);">@cabralesfocus ✔</strong>
+              <p style="color: var(--text-secondary); margin-top: 3px; line-height: 1.35;">
+                Una pausa, un café frío y una charla antes de seguir. ¿En qué momento del día hacés tu pausa? Compartí con <strong>#MiVentanaFocus</strong> 👇
+              </p>
+              <div style="margin-top: 6px; padding: 5px 8px; border-radius: 6px; background: rgba(4,189,251,0.14); font-size: 0.68rem; color: var(--cyan);">
+                📖 Leé la historia completa de Solange en Historias Focus (App Club Focus)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ficha, Guion de 30 s y Mecánica CGU de P4 -->
+        <div class="glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 4 · Audiovisual 2 de 3 · Encuentro & CGU</span>
+            <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">Formato: 9:16 (1080×1920) · 30 s</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">
+            P4 — «Una pausa con Solange» (Expansión Cotidiana y Convocatoria CGU)
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+            Encuentro casual exterior con luz de día: la cámara se cruza con <strong>Solange</strong> tomando una lata de <em>Cabrales Focus</em> durante un descanso. Con tres preguntas breves (entrevistador fuera de cuadro y respuestas naturales), amplía el universo más allá del gaming nocturno, conecta con su <strong>relato escrito exclusivo en Club Focus</strong> y abre la participación de <strong>Contenido Generado por el Usuario (CGU)</strong> sin exigir compra ni puntos.
+          </p>
+
+          <h4 style="font-size: 0.82rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🎤 Guion de Entrevista Casual en 5 Tramos (30 segundos · Hacé clic para explorar):
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 8px; margin-bottom: 16px;" id="p4-beats-grid">
+            <button class="tc-btn active" data-p4-time="PREGUNTA 1 · 0:00 A 0:05 S" data-p4-q="“¿Qué estás tomando?”" data-p4-a="“Un Cabrales Focus.” (Muestra la lata de 240 ml en un espacio exterior tranquilo).">
+              0:00–0:05 · ¿Qué estás tomando?
+            </button>
+            <button class="tc-btn" data-p4-time="PREGUNTA 2 · 0:05 A 0:12 S" data-p4-q="“¿Estás haciendo una pausa?”" data-p4-a="Cuenta con naturalidad que salió unos minutos a tomar aire mientras está terminando de revisar un informe.">
+              0:05–0:12 · Pausa del informe
+            </button>
+            <button class="tc-btn" data-p4-time="PREGUNTA 3 · 0:12 A 0:22 S" data-p4-q="“¿Cuándo te gusta tomarlo?”" data-p4-a="“Me gusta tener un café frío a mano cuando estudio o trabajo hasta tarde.”">
+              0:12–0:22 · Café frío a mano
+            </button>
+            <button class="tc-btn" data-p4-time="TRAMO 4 · 0:22 A 0:27 S" data-p4-q="Reacción y regreso" data-p4-a="Sonríe, da un sorbo y vuelve a su actividad renovada tras la pausa breve.">
+              0:22–0:27 · Regreso a su tarea
+            </button>
+            <button class="tc-btn" data-p4-time="CIERRE CGU · 0:27 A 0:30 S" data-p4-q="Placa final a la comunidad:" data-p4-a="“¿En qué momento del día hacés tu pausa? Compartí con #MiVentanaFocus o en Historias Focus”.">
+              0:27–0:30 · Pregunta abierta CGU
+            </button>
+          </div>
+
+          <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 10px;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Copy Oficial de Publicación (P4 · Convocatoria CGU)</span>
+            <p style="font-size: 0.82rem; color: var(--white); margin-top: 4px; font-style: italic; line-height: 1.45;">
+              “Una pausa, un café frío y una charla antes de seguir. ¿En qué momento del día hacés tu pausa? Contanos o compartí tu escena con #MiVentanaFocus. Descubrí a Solange en Historias Focus. Compartir historias no requiere compra ni puntos; reutilizamos aportes solo con autorización y crédito. Convocatoria para mayores de 18 años. Escena de ficción · Proyecto académico.”
+            </p>
+          </div>
+          <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">
+            ➔ Remisión: Perfil → App Club Focus → Historias Focus → Relato escrito de Solange y Archivo de ventanas.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         P5: «UNA ÚLTIMA BALA» (IG REELS · VIDEO 40 S · RTM & CO-BRANDING MAJOR 2027)
+         ====================================================================== -->
+    <div class="lab-pane" id="lab-p5">
+      <div class="simulator-split">
+        <!-- Mockup Vertical IG Reels 40s RTM FiReSPORTS -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.78rem; font-weight: 700;">
+            <span>📸 IG Reels · RTM + Co-branding</span>
+            <span style="color: var(--cyan);">Duración: 40 s</span>
+          </div>
+
+          <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(138,79,255,0.45); background: linear-gradient(160deg, #160926 0%, #090303 60%, #041c29 100%); aspect-ratio: 9/14; display: flex; flex-direction: column; justify-content: space-between; padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="padding: 4px 10px; border-radius: 99px; background: rgba(217,20,20,0.25); border: 1px solid #ff8080; font-size: 0.66rem; font-weight: 800; color: #ff9999;">
+                🔥 P5 · REAL TIME MARKETING
+              </span>
+              <span style="font-size: 0.7rem; color: var(--cyan); font-weight: 700;">00:40</span>
+            </div>
+
+            <div style="text-align: center; margin: 6px 0;">
+              <div style="font-size: 0.68rem; color: #d6bcfa; font-weight: 800; letter-spacing: 0.08em;">CO-BRANDING PROPUESTO</div>
+              <div style="font-family: var(--font-heading); font-size: 1.05rem; color: var(--white); margin-top: 2px;">
+                CABRALES FOCUS × FiReSPORTS
+              </div>
+              <div style="font-size: 0.72rem; color: var(--cyan);">Rumbo al FiReMAJOR Buenos Aires 2027</div>
+            </div>
+
+            <!-- Pantalla interactiva del tramo de P5 -->
+            <div id="p5-beat-preview" style="padding: 14px; border-radius: 12px; background: rgba(9,3,3,0.88); border: 1px solid rgba(4,189,251,0.4); text-align: center;">
+              <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">TRAMO 1 · 0:00 A 0:06 S</span>
+              <h5 style="font-family: var(--font-heading); font-size: 0.92rem; margin: 4px 0;">El eco del FiReSPORTS Last Chance</h5>
+              <p style="font-size: 0.75rem; color: var(--text-secondary);">Recuerdo gráfico de la tensión de “la última bala” vivida en Buenos Aires (29/10 al 01/11/2026).</p>
+            </div>
+
+            <div style="font-size: 0.7rem;">
+              <div style="padding: 6px 8px; border-radius: 8px; background: rgba(255,255,255,0.05); margin-bottom: 6px; color: var(--text-secondary);">
+                🎟️ <strong>1 lata = 100 pts = 1 bono</strong> (Máx. 10 bonos/usuario · 1 ganador de 2 entradas)
+              </div>
+              <div style="font-size: 0.62rem; color: var(--text-muted); text-align: center;">
+                Co-branding y sorteo propuestos · Simulación académica
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ficha RTM, Precisión Histórica del Torneo y Escaleta de 40s -->
+        <div class="glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 5 · Audiovisual 3 de 3 · Real Time Marketing (RTM)</span>
+            <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">Formato: 9:16 (1080×1920) · 40 s</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px;">
+            P5 — «Una última bala» (RTM Last Chance 2026 → FiReMAJOR Buenos Aires 2027)
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.86rem; margin-bottom: 12px;">
+            Reacciona mediante <strong>Real Time Marketing (RTM)</strong> al cierre del torneo <strong>FiReSPORTS Last Chance</strong> disputado en Buenos Aires del <strong>29/10 al 01/11/2026</strong> (que otorgó puntos VRS rumbo al Major de Singapur 2026) y tiende un puente cultural con el mismo organizador local hacia el <strong>FiReMAJOR Buenos Aires 2027 (31/05 al 20/06/2027)</strong>, presentando el recorrido completo de participación en la app <em>Club Focus</em>:
+          </p>
+
+          <h4 style="font-size: 0.8rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🎬 Guion Técnico de 6 Bloques (40 segundos · Hacé clic para recorrer las pantallas):
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 8px; margin-bottom: 14px;" id="p5-beats-grid">
+            <button class="tc-btn active" data-p5-time="TRAMO 1 · 0:00 A 0:06 S" data-p5-title="El eco del Last Chance 2026" data-p5-desc="Recuerdo gráfico original de la tensión de 'la última bala' disputada en Buenos Aires (29/10–01/11/2026).">
+              0:00–0:06 · Last Chance BA
+            </button>
+            <button class="tc-btn" data-p5-time="TRAMO 2 · 0:06 A 0:12 S" data-p5-title="“En 2027, el Major llega a casa”" data-p5-desc="Presentación visual del co-branding propuesto Cabrales Focus × FiReSPORTS rumbo al FiReMAJOR Buenos Aires 2027.">
+              0:06–0:12 · Major 2027 en casa
+            </button>
+            <button class="tc-btn" data-p5-time="TRAMO 3 · 0:12 A 0:18 S" data-p5-title="Compra de lata y App gratuita" data-p5-desc="Paso 1 y 2: adquirir una lata de Cabrales Focus (240 ml) y descargar gratis la app Club Focus.">
+              0:12–0:18 · Lata + Descarga App
+            </button>
+            <button class="tc-btn" data-p5-time="TRAMO 4 · 0:18 A 0:25 S" data-p5-title="Registro y escaneo de QR único" data-p5-desc="Paso 3: crear cuenta gratuita y escanear el código QR único bajo la anilla (un solo uso por lata).">
+              0:18–0:25 · Escaneo QR único
+            </button>
+            <button class="tc-btn" data-p5-time="TRAMO 5 · 0:25 A 0:33 S" data-p5-title="+100 puntos y canje en Tienda" data-p5-desc="Paso 4: se acreditan +100 pts y el usuario entra a Tienda para canjear su bono (escanear solo no inscribe sin canjear).">
+              0:25–0:33 · Canje de bono (100 pts)
+            </button>
+            <button class="tc-btn" data-p5-time="TRAMO 6 · 0:33 A 0:40 S" data-p5-title="Confirmación en Mi Club" data-p5-desc="Paso 5: pantalla Mi Club confirmando el bono activo (máx. 10 bonos por usuario; 1 ganador de 2 entradas).">
+              0:33–0:40 · Confirmación Mi Club
+            </button>
+          </div>
+
+          <div style="padding: 13px; border-radius: 12px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 8px;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Copy Oficial de Publicación (P5 · RTM & Co-branding)</span>
+            <p style="font-size: 0.79rem; color: var(--white); margin-top: 4px; font-style: italic; line-height: 1.42;">
+              “Buenos Aires vivió la tensión de la última bala. En 2027, el Major llega a casa. Cabrales Focus × FiReSPORTS: una colaboración propuesta para acercarte a la tribuna del FiReMAJOR Buenos Aires 2027. Comprá una lata, descargá Club Focus, registrate y escaneá su código único. Sumá puntos y canjealos por bonos de participación. Cada lata suma 100 puntos y cada bono cuesta 100. Podés canjear hasta diez bonos por usuario; un ganador recibe dos entradas. Consultá tus participaciones en Mi Club. Precisión que se toma.”
+            </p>
+          </div>
+          <span style="font-size: 0.75rem; color: #d6bcfa;">
+            * Precisión documental: El Last Chance 2026 sumaba puntos VRS hacia Singapur 2026 (no clasificaba directo al Major argentino). Premio simulado: 1 ganador de 2 entradas (sin viaje ni alojamiento).
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         P6: «TU MOMENTO FOCUS» (IG STORIES · FORMATO LIBRE · 4 STORIES + GUÍA)
+         ====================================================================== -->
+    <div class="lab-pane" id="lab-p6">
       <div class="simulator-split">
         <div class="phone-mockup">
           <div class="phone-notch"></div>
@@ -1240,265 +1547,171 @@
                 <div class="story-bar filled" id="sbar-1"></div>
                 <div class="story-bar" id="sbar-2"></div>
                 <div class="story-bar" id="sbar-3"></div>
+                <div class="story-bar" id="sbar-4"></div>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem;">
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <img src="assets/owl_mascot.png" alt="Owl" style="width: 22px; height: 22px;" />
                   <strong>@cabralesfocus</strong>
-                  <span style="color: var(--text-muted);">· 2h</span>
+                  <span style="color: var(--text-muted);">· P6 Stories</span>
                 </div>
-                <span style="color: var(--cyan); font-weight: 700;" id="story-step-indicator">Story 1/3</span>
+                <span style="color: var(--cyan); font-weight: 700;" id="story-step-indicator">Story 1/4</span>
               </div>
             </div>
 
-            <!-- Contenido Dinámico de la Story -->
+            <!-- Contenido Dinámico de las 4 Stories Oficiales de P6 -->
             <div id="story-dynamic-body" class="story-quiz-card">
               <!-- Se hidrata desde app.js -->
             </div>
 
             <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted);">
-              <span>👆 Hacé clic en una opción para vivir la bifurcación narrativa</span>
+              <span>👆 Interactuá con las encuestas y caja de respuestas de P6 en vivo</span>
             </div>
           </div>
         </div>
 
         <div class="glass-card">
-          <span class="stage-pill stage-2">Pieza Transmedia #2 · Micro-Narrativa Ramificada</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 12px;">
-            Instagram Stories Interactivas: “Diagnóstico de Ruido Mental”
-          </h3>
-          <p style="color: var(--text-secondary); font-size: 0.94rem; margin-bottom: 16px;">
-            Esta pieza convierte al espectador en protagonista mediante una estructura de <strong>narrativa ramificada</strong>: según qué síntoma de agotamiento elija en la pantalla 1, el sistema lo clasifica en el <strong>Modo Bruno (Nocturno / Gaming & Código)</strong> o en el <strong>Modo Solange (Diurno / Análisis & Datos)</strong> y le entrega su receta exacta de <em>Calm Focus</em>.
-          </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px;">
-            <div style="padding: 14px; border-radius: 14px; background: rgba(138,79,255,0.12); border: 1px solid rgba(138,79,255,0.35);">
-              <strong style="color: #d6bcfa; font-size: 0.85rem;">Rama A: Perfil Nocturno (Bruno)</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Activa la playlist <em>Modo Clutch / Gaming & Código</em> y recomienda tomar Cabrales Focus a 6°C para sostener reflejos sin temblor.</p>
-            </div>
-            <div style="padding: 14px; border-radius: 14px; background: rgba(4,189,251,0.12); border: 1px solid rgba(4,189,251,0.35);">
-              <strong style="color: var(--cyan); font-size: 0.85rem;">Rama B: Perfil Diurno (Solange)</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Activa la playlist <em>Modo Deep Work / Análisis</em> y destaca la suavidad digestiva de la leche de coco a las 15:00 hs.</p>
-            </div>
-          </div>
-          <button class="btn-secondary" id="btn-restart-story">🔄 Reiniciar Secuencia de Stories</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         MÓDULO 3: CARRUSEL EDUCATIVO INTERACTIVO (L-TEANINA VS ENERGIZANTES)
-         ====================================================================== -->
-    <div class="lab-pane" id="lab-carrusel">
-      <div class="simulator-split" style="grid-template-columns: 1.15fr 0.85fr;">
-        <div class="carousel-stage">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-            <span style="font-size: 0.75rem; font-weight: 800; color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase;" id="carousel-slide-tag">SLIDE 1 DE 5 · PORTADA</span>
-            <span style="font-size: 0.78rem; color: var(--text-muted);">Formato IG 1080x1350 (4:5)</span>
-          </div>
-
-          <!-- Contenido dinámico del slide del carrusel -->
-          <div id="carousel-slide-content" style="min-height: 310px; display: flex; flex-direction: column; justify-content: center;">
-            <!-- Se hidrata desde app.js -->
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-            <button class="btn-secondary" id="carousel-prev" style="padding: 8px 16px; font-size: 0.82rem;">◀ Anterior</button>
-            <div id="carousel-dots" style="display: flex; gap: 8px;"></div>
-            <button class="btn-primary" id="carousel-next" style="padding: 8px 18px; font-size: 0.82rem;">Siguiente Slide ▶</button>
-          </div>
-        </div>
-
-        <div class="glass-card">
-          <span class="stage-pill stage-2">Pieza Transmedia #3 · Infografía Científica</span>
+          <span class="stage-pill stage-2">Publicación 6 · Formato Libre · Secuencia de 4 IG Stories</span>
           <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">
-            Carrusel Educativo: “Anatomía del Foco (L-Teanina + Café)”
+            P6 — «Tu momento Focus» (Escucha Activa & Remisión a Solange)
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 14px;">
-            En el ecosistema transmedia, este carrusel aporta la <strong>comprensión racional y neurocientífica</strong> de la promesa de marca. Explica visualmente por qué <strong>100 mg de L-Teanina</strong> (aminoácido natural del té verde) combinados con el Cold Brew Cabrales eliminan el nerviosismo de la cafeína aislada.
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px;">
+            Secuencia interactiva de <strong>4 historias de Instagram</strong> que operativiza la diferencia entre <strong>monitorizar</strong> (contar votos y clics) y <strong>escuchar a la comunidad (Clase 11)</strong>: recoge qué distracciones y rituales de regreso aparecen en la audiencia para nutrir futuros episodios, y deriva directamente al relato escrito de Solange y al <em>Archivo de ventanas</em> (vía gratuita, independiente de compras o sorteos).
           </p>
-          <p style="font-size: 0.84rem; color: var(--cyan); font-weight: 700;">
-            👉 Usá los botones “Anterior / Siguiente Slide” para recorrer las 5 láminas en vivo.
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <!-- ======================================================================
-         MÓDULO 4: HUB WEB CABRALES.COM.AR/FOCUS + POMODORO + SPOTIFY
-         ====================================================================== -->
-    <div class="lab-pane" id="lab-hub">
-      <div class="hub-browser-mockup">
-        <div class="browser-bar">
-          <div class="browser-dots">
-            <span style="background: #ff5f56;"></span>
-            <span style="background: #ffbd2e;"></span>
-            <span style="background: #27c93f;"></span>
-          </div>
-          <div class="browser-url">🔒 https://cabrales.com.ar/focus — Hub Interactivo Modo Focus</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted);">Prototipo Funcional en Vivo</div>
-        </div>
-
-        <div class="hub-body-grid">
-          <!-- Columna Izquierda: Reloj Pomodoro Funcional -->
-          <div class="pomodoro-box">
-            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 99px; background: rgba(4,189,251,0.14); color: var(--cyan); font-size: 0.74rem; font-weight: 700;">
-              <span>🦉 TEMPORIZADOR OFICIAL CABRALES FOCUS</span>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; font-size: 0.8rem;">
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--cyan);">Story 1 (Sticker Encuesta):</strong><br />
+              <em>“Antes de empezar, ¿qué te distrae más?”</em><br />
+              Opciones: <code>Notificaciones</code> / <code>Varias tareas</code>
             </div>
-            <h4 style="font-family: var(--font-heading); font-size: 1.3rem; margin-top: 10px;">“Activá tus 25 Minutos Sin Ruido”</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">Escaneá el QR de tu lata, elegí tu objetivo y bloqueá las distracciones.</p>
-
-            <div class="pomodoro-digits" id="pomo-display">25:00</div>
-
-            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px;">
-              <button class="btn-primary" id="pomo-start" style="padding: 10px 20px; font-size: 0.84rem;">▶ Iniciar Sesión Focus</button>
-              <button class="btn-secondary" id="pomo-pause" style="padding: 10px 16px; font-size: 0.84rem;">⏸ Pausar</button>
-              <button class="btn-secondary" id="pomo-reset" style="padding: 10px 16px; font-size: 0.84rem;">🔄 25:00</button>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--cyan);">Story 2 (Sticker Encuesta):</strong><br />
+              <em>“¿Cuándo hacés tu pausa?”</em><br />
+              Opciones: <code>Estudio</code> / <code>Trabajo</code>
             </div>
-
-            <!-- Mapa de Guaridas del Búho -->
-            <div style="text-align: left; padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
-              <strong style="font-size: 0.82rem; color: var(--white); display: block; margin-bottom: 8px;">📍 Mapa Interactivo: “Guaridas del Búho” Cercanas</strong>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="guarida-pins">
-                <button class="tab-btn active" style="padding: 6px 12px; font-size: 0.74rem;" data-guarida="UADE Monserrat (Lima 775) — Punto QR Biblioteca & Expendedora Fría Cabrales Focus">🏛️ UADE Monserrat</button>
-                <button class="tab-btn" style="padding: 6px 12px; font-size: 0.74rem;" data-guarida="UTN / Exactas CABA — Mesas Nocturnas 'La Guarida del Búho' con código de descuento">💻 UTN & Exactas</button>
-                <button class="tab-btn" style="padding: 6px 12px; font-size: 0.74rem;" data-guarida="Coworkings Palermo / Microcentro — Sampling frío 15:00 hs para Modo Deep Work">🏢 Coworks CABA</button>
-              </div>
-              <p id="guarida-info" style="font-size: 0.78rem; color: var(--cyan); margin-top: 8px;">
-                📌 UADE Monserrat (Lima 775) — Punto QR Biblioteca & Expendedora Fría Cabrales Focus
-              </p>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+              <strong style="color: #d6bcfa);">Story 3 (Caja de Respuestas):</strong><br />
+              Pregunta abierta: <em>“¿Qué hacés para volver a una tarea?”</em>
+            </div>
+            <div style="padding: 10px 12px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
+              <strong style="color: var(--white);">Story 4 (Sticker de Enlace):</strong><br />
+              <em>“Conocé la historia de Solange y compartí la tuya”</em> ➔ <strong>Historias Focus</strong>.
             </div>
           </div>
 
-          <!-- Columna Derecha: Playlists de Spotify Integradas -->
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-              <strong style="font-family: var(--font-heading); font-size: 1.15rem;">🎧 Playlists Oficiales en Spotify</strong>
-              <span style="font-size: 0.75rem; color: #1db954; font-weight: 700;">● Conectado a Spotify API</span>
-            </div>
-            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 16px;">
-              Seleccioná uno de los <strong>3 Modos de Concentración</strong> para sincronizar el paisaje sonoro con el efecto de los 100 mg de L-Teanina:
-            </p>
+          <div style="padding: 12px 14px; border-radius: 12px; background: rgba(138,79,255,0.08); border: 1px solid rgba(138,79,255,0.28); font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong style="color: #d6bcfa;">📌 Complemento en Perfil — Destacado «Club Focus» (5 Stories Guía):</strong><br />
+            Además de P6, el perfil fija una historia destacada de 5 pantallas con el paso a paso de la app (<em>1. Registro gratuito, 2. Escaneo de QR único, 3. Saldo canjeable vs. Nivel de 3 meses, 4. Canje en Tienda, 5. Confirmación de bonos del Major en Mi Club</em>). No cuenta como séptima publicación obligatoria.
+          </div>
 
-            <div class="playlist-card active" data-playlist="clutch">
-              <div>
-                <strong style="font-size: 0.92rem; color: var(--white);">1. Modo Clutch · Gaming & Código Nocturno</strong>
-                <p style="font-size: 0.76rem; color: var(--text-secondary);">Synthwave oscuro, Dark Electro & Beats sin voz · 110 BPM · 52 min</p>
-              </div>
-              <div class="sound-bars"><span></span><span></span><span></span><span></span></div>
-            </div>
-
-            <div class="playlist-card" data-playlist="deepwork">
-              <div>
-                <strong style="font-size: 0.92rem; color: var(--white);">2. Modo Deep Work · Análisis & Datos (Solange)</strong>
-                <p style="font-size: 0.76rem; color: var(--text-secondary);">Ambient Minimal, Neo-Classical & Ondas Alfa · 90 BPM · 50 min</p>
-              </div>
-              <div class="sound-bars"><span></span><span></span><span></span><span></span></div>
-            </div>
-
-            <div class="playlist-card" data-playlist="estudio">
-              <div>
-                <strong style="font-size: 0.92rem; color: var(--white);">3. Modo Estudio · Finales & Lectura Profunda</strong>
-                <p style="font-size: 0.76rem; color: var(--text-secondary);">Lo-Fi Nocturno, Lluvia suave & frecuencias binaurales · 80 BPM · 60 min</p>
-              </div>
-              <div class="sound-bars"><span></span><span></span><span></span><span></span></div>
-            </div>
-
-            <div id="playlist-now-playing" style="margin-top: 16px; padding: 16px; border-radius: 16px; background: linear-gradient(90deg, rgba(4,189,251,0.14), rgba(138,79,255,0.14)); border: 1px solid rgba(4,189,251,0.35);">
-              <span style="font-size: 0.72rem; color: var(--cyan); font-weight: 800; text-transform: uppercase;">SONANDO AHORA EN EL HUB</span>
-              <h5 style="font-family: var(--font-heading); font-size: 1rem; margin: 4px 0;" id="now-playing-title">Modo Clutch — Pista 01: “Owl Vision (02:00 AM Mix)”</h5>
-              <p style="font-size: 0.78rem; color: var(--text-secondary);" id="now-playing-desc">Ideal para mantener el pulso firme en rondas de Overtime o sesiones de debugging nocturno.</p>
-            </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn-secondary" id="btn-restart-story">🔄 Reiniciar Secuencia P6 (Story 1 a 4)</button>
+            <a href="#journey" class="btn-primary" style="padding: 10px 18px; font-size: 0.82rem;">📲 Ir al Prototipo de App Club Focus ➔</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- ======================================================================
-         MÓDULO 5: SPOT HERO AUDIOVISUAL "EL BÚHO Y LOS 5 SEGUNDOS"
+         MÓDULO COMPLEMENTARIO: VISTA GENERAL DEL PERFIL @CABRALESFOCUS
          ====================================================================== -->
-    <div class="lab-pane" id="lab-spot">
-      <div class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
-          <div>
-            <span class="stage-pill stage-2" style="margin-bottom: 6px;">Pieza Transmedia #1 · Guion Técnico Audiovisual (60s)</span>
-            <h3 style="font-family: var(--font-heading); font-size: 1.6rem;">Spot Hero / Reel / TikTok: “El Búho y los 5 Segundos”</h3>
+    <div class="lab-pane" id="lab-perfil">
+      <div class="simulator-split">
+        <!-- Teléfono con Perfil de Instagram Simulado -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.85rem; font-weight: 700;">
+            <span>@cabralesfocus <span style="color: var(--cyan);">✔</span></span>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">Cabrales S.A. · Simulación Académica</span>
           </div>
-          <span style="font-size: 0.82rem; color: var(--cyan); font-weight: 700;">Formato 9:16 y 16:9 · Protagonistas: Bruno & Solange</span>
+
+          <div class="ig-profile-header">
+            <div class="ig-avatar-ring">
+              <div class="ig-avatar-inner">
+                <img src="assets/owl_mascot.png" alt="Avatar @cabralesfocus" />
+              </div>
+            </div>
+            <div class="ig-stats">
+              <div><strong>6</strong><span>piezas P1-P6</span></div>
+              <div><strong>240ml</strong><span>cold brew</span></div>
+              <div><strong>1941</strong><span>origen Cabrales</span></div>
+            </div>
+          </div>
+
+          <div class="ig-bio">
+            <strong>Cabrales Focus · Coffee Cold Brew 🦉</strong><br />
+            Precisión que se toma. Cold brew listo para acompañar tu rutina.<br />
+            ☕ 100% Arábica Brasil · 100mg L-teanina · 6g azúcar · 80mg cafeína<br />
+            👇 Descargá gratis la app <strong>Club Focus</strong>, leé Historias Focus y consultá la agenda de Modo Focus:<br />
+            <a href="#journey">🔗 clubfocus.cabrales.com.ar (App Simulada)</a>
+          </div>
+
+          <!-- Highlights alineados a la Entrega Final -->
+          <div class="ig-highlights">
+            <div class="ig-hl-item" data-hl="Guía de 5 stories: 1) Registro gratis, 2) Escaneo QR único bajo la anilla, 3) Puntos canjeables vs. Nivel 3 meses, 4) Tienda, 5) Bonos FiReMAJOR 2027 en Mi Club.">
+              <div class="ig-hl-circle">📲</div><span>Club Focus</span>
+            </div>
+            <div class="ig-hl-item" data-hl="Secuencia P6 'Tu momento Focus': 2 encuestas de distracción y pausa, caja de respuestas y enlace directo al relato de Solange.">
+              <div class="ig-hl-circle">⚡</div><span>P6 Momento</span>
+            </div>
+            <div class="ig-hl-item" data-hl="Agenda de la activación presencial propuesta en Dot Baires Shopping y del stream patrocinado 'Guardia compartida' con Suga.">
+              <div class="ig-hl-circle">📍</div><span>Modo Focus</span>
+            </div>
+            <div class="ig-hl-item" data-hl="Co-branding propuesto Cabrales Focus × FiReSPORTS rumbo al FiReMAJOR Buenos Aires 2027 (1 bono = 100 pts, máx. 10 bonos por usuario).">
+              <div class="ig-hl-circle">🏆</div><span>Major 2027</span>
+            </div>
+            <div class="ig-hl-item" data-hl="Convocatoria abierta para mayores de 18 años (#MiVentanaFocus): compartí tu pausa sin necesidad de compra ni puntos.">
+              <div class="ig-hl-circle">📖</div><span>Historias</span>
+            </div>
+          </div>
+
+          <!-- Grilla con las piezas P1 a P5 y el Cortometraje -->
+          <div class="ig-feed-grid">
+            <div class="ig-post-tile" data-post-title="P1 · Antes de encontrar Focus (Teaser 25 s)" data-post-copy="Hay días en los que el foco parece estar en otra parte. Bruno todavía no sabe lo que se va a cruzar. Descubrí su historia en Turno de noche, en nuestro canal de YouTube.">
+              <img src="assets/doc1_image9.png" alt="P1 Teaser Bruno" />
+              <span class="ig-post-badge">🎬 P1 · 25S</span>
+            </div>
+            <div class="ig-post-tile" data-post-title="P2 · Conocé Cabrales Focus (Carrusel 6 placas)" data-post-copy="Conocé Cabrales Focus: café cold brew en lata para acompañar tu rutina. Deslizá para descubrir el concepto, su composición propuesta y cómo disfrutarlo.">
+              <img src="assets/can_front.png" alt="P2 Carrusel" />
+              <span class="ig-post-badge">📊 P2 · 6 PLACAS</span>
+            </div>
+            <div class="ig-post-tile" data-post-title="P3 · Entrá a Modo Focus con Suga (AIDA)" data-post-copy="¿Listo para entrar en Modo Focus? Con Suga y Cabrales Focus, te invitamos a descubrir nuestro cold brew en Dot Baires Shopping y sumarte al stream.">
+              <img src="assets/doc1_image14.jpg" alt="P3 Suga AIDA" />
+              <span class="ig-post-badge">🎯 P3 · AIDA</span>
+            </div>
+            <div class="ig-post-tile" data-post-title="Cortometraje · Turno de noche (3:50 en YouTube)" data-post-copy="Relato completo de Bruno en 8 escenas y 29 planos: derrota por una notificación, descubrimiento de P3, visita a Dot Baires, preparación y revancha.">
+              <img src="assets/doc1_image19.jpg" alt="Corto Turno de Noche" />
+              <span class="ig-post-badge">▶️ CORTO 3:50</span>
+            </div>
+            <div class="ig-post-tile" data-post-title="P4 · Una pausa con Solange (30 s · CGU)" data-post-copy="Una pausa, un café frío y una charla antes de seguir. ¿En qué momento del día hacés tu pausa? Contanos o compartí tu escena con #MiVentanaFocus.">
+              <img src="assets/doc1_image6.png" alt="P4 Solange" />
+              <span class="ig-post-badge">🎤 P4 · 30S</span>
+            </div>
+            <div class="ig-post-tile" data-post-title="P5 · Una última bala (40 s · RTM FiReMAJOR 2027)" data-post-copy="Buenos Aires vivió la tensión de la última bala. En 2027, el Major llega a casa. Cabrales Focus × FiReSPORTS: sumá puntos en Club Focus y canjeá bonos.">
+              <img src="assets/doc1_image12.jpg" alt="P5 Major RTM" />
+              <span class="ig-post-badge">🔥 P5 · 40S</span>
+            </div>
+          </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
-          <div style="padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
-            <span style="color: #ff8080; font-size: 0.75rem; font-weight: 800;">ACTO I (00:00 - 00:15)</span>
-            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin: 6px 0;">El Ruido Mental</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">
-              Montaje paralelo rítmico: Bruno a las 02:10 AM perdiendo una ronda decisiva y viendo código fallar; Solange a las 15:20 hs rodeada de notificaciones de Slack y planillas. El diseño sonoro satura con zumbidos y clics.
-            </p>
-          </div>
-
-          <div style="padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
-            <span style="color: #b794f4; font-size: 0.75rem; font-weight: 800;">ACTO II (00:15 - 00:30)</span>
-            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin: 6px 0;">La Mirada del Búho</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">
-              En el reflejo del monitor de Bruno y en la ventana de la oficina de Solange aparece la silueta luminosa de <strong>El Búho</strong>. Voz en off: <em>“Todo se define en los 5 segundos en que estás por largar todo…”</em>
-            </p>
-          </div>
-
-          <div style="padding: 18px; border-radius: 16px; background: rgba(4,189,251,0.09); border: 1px solid rgba(4,189,251,0.4);">
-            <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">ACTO III (00:30 - 00:45)</span>
-            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin: 6px 0;">*Pssshhh* & Zoom In</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">
-              Plano macro extremo: el dedo abre la lata negro mate de <strong>Cabrales Focus</strong>. El sonido ASMR corta el ruido en seco. <strong>Zoom In</strong> desde los ojos del Búho hacia las pupilas de Bruno y Solange con destello cian/violeta.
-            </p>
-          </div>
-
-          <div style="padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
-            <span style="color: var(--white); font-size: 0.75rem; font-weight: 800;">ACTO IV (00:45 - 01:00)</span>
-            <h4 style="font-family: var(--font-heading); font-size: 1rem; margin: 6px 0;">Precisión que se toma</h4>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">
-              Bruno gana el <em>Clutch</em> con calma absoluta; Solange detecta el patrón clave en sus datos. Packshot final de la lata 240ml junto al QR hacia el Hub. Slogan: <em>“Apagá el ruido. Encendé tu foco.”</em>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         MÓDULO 6: KIT MODO FOCUS (TWITCH/DISCORD) & GUERRILLA OOH UNIVERSIDADES
-         ====================================================================== -->
-    <div class="lab-pane" id="lab-activaciones">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
-        <!-- Pieza 5: Kit Modo Focus + Twitch & Discord Bot -->
+        <!-- Inspector de Coherencia del Perfil -->
         <div class="glass-card">
-          <span class="stage-pill stage-2">Pieza Transmedia #5 · Streamers & Discord</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px;">
-            Unboxing “Kit Modo Focus” + El Búho Bot en Discord
+          <span class="stage-pill stage-2">Coherencia de Red Social y Remisiones</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.55rem; margin-bottom: 10px;" id="ig-preview-title">
+            Arquitectura de @cabralesfocus (P1 a P6 integradas)
           </h3>
-          <div style="border-radius: 16px; overflow: hidden; margin-bottom: 14px; border: 1px solid var(--border-subtle); aspect-ratio: 16/10; background: #090303;">
-            <img src="assets/kit_modo_focus.png" onerror="this.src='assets/doc1_image12.jpg'" alt="Kit Modo Focus Streamers" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">
-            Caja magnética negro mate enviada a streamers de E-Sports (Valorant / CS2) y creadores de contenido de programación: incluye <strong>4 latas frías de Cabrales Focus</strong> iluminadas por tiras LED cian/violeta, la <strong>taza negro mate con el Búho</strong> y tarjeta metálica con QR.
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 18px;" id="ig-preview-copy">
+            Hacé clic en cualquiera de las miniaturas de la grilla o en los círculos de Historias Destacadas del teléfono a la izquierda para inspeccionar cómo cada publicación articula su copy y remite hacia YouTube, Dot Baires o la app <strong>Club Focus</strong>.
           </p>
-          <div style="padding: 12px 14px; border-radius: 12px; background: #1e1f22; border-left: 4px solid #5865f2; font-family: monospace; font-size: 0.78rem;">
-            <strong style="color: #5865f2;">🦉 El Búho Bot [APP] · Servidor Discord Estudio & Dev:</strong><br />
-            <span style="color: #dbdee1;">¡Comando <code>/foco 25</code> activado en #sala-nocturna! Silenciando notificaciones. Playlist Modo Clutch sincronizada.</span>
-          </div>
-        </div>
 
-        <!-- Pieza 6: Guerrilla OOH "La Guarida del Búho" -->
-        <div class="glass-card">
-          <span class="stage-pill stage-2">Pieza Transmedia #6 · Activación Física OOH & QR</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px;">
-            “La Guarida del Búho” en Bibliotecas y Facultades
-          </h3>
-          <div style="border-radius: 16px; overflow: hidden; margin-bottom: 14px; border: 1px solid var(--border-subtle); aspect-ratio: 16/10; background: #090303;">
-            <img src="assets/guarida_buho_ooh.png" onerror="this.src='assets/doc1_image15.png'" alt="La Guarida del Búho en Biblioteca" style="width: 100%; height: 100%; object-fit: cover;" />
-          </div>
-          <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">
-            En semanas de parciales y finales, intervenimos mesas de bibliotecas universitarias y coworkings con *tent-cards* negro mate y proyecciones nocturnas. El estudiante escanea al Búho en el momento exacto de agotamiento real.
-          </p>
-          <div style="padding: 12px 14px; border-radius: 12px; background: rgba(4,189,251,0.1); border: 1px solid rgba(4,189,251,0.35); font-size: 0.82rem;">
-            <strong style="color: var(--cyan);">Copy de Mesa en Biblioteca:</strong> <em>“¿Te pesan los párpados en la página 14? Escaneá al Búho. Desbloqueá tus 25 minutos sin ruido + 2x1 en la expendedora fría del campus.”</em>
+          <div style="padding: 16px; border-radius: 14px; background: rgba(4, 189, 251, 0.08); border: 1px solid rgba(4, 189, 251, 0.3);">
+            <strong style="color: var(--cyan); font-size: 0.84rem; display: block; margin-bottom: 6px;">Síntesis de Entregables de Redes Sociales:</strong>
+            <ul style="font-size: 0.84rem; color: var(--text-secondary); padding-left: 18px; display: flex; flex-direction: column; gap: 6px;">
+              <li><strong>3 Videos Verticales (95 s totales):</strong> P1 (25 s precuela Bruno) + P4 (30 s entrevista casual Solange / CGU) + P5 (40 s RTM Last Chance y sorteo FiReMAJOR 2027).</li>
+              <li><strong>2 Piezas de Imagen (1080×1350):</strong> P2 (Carrusel informativo de 6 placas) + P3 (Placa con Suga y fórmula AIDA que aparece en el corto).</li>
+              <li><strong>1 Secuencia Libre Interactiva:</strong> P6 (4 historias con 2 encuestas, 1 caja de preguntas y link a Solange) + Destacado guía de 5 pantallas de la app.</li>
+            </ul>
           </div>
         </div>
       </div>
