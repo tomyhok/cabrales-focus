@@ -144,6 +144,7 @@ body {
 
 .nav-brand-title span {
   background: var(--grad-focus);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -288,6 +289,7 @@ section {
 
 .text-gradient {
   background: var(--grad-focus);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -679,6 +681,7 @@ section {
   font-size: 2.5rem;
   font-weight: 900;
   background: var(--grad-focus);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
@@ -1517,6 +1520,7 @@ section {
   font-weight: 900;
   letter-spacing: 0.04em;
   background: var(--grad-focus);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 10px 0 18px;
