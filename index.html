@@ -1721,96 +1721,487 @@
   <div class="section-divider"></div>
 
   <!-- ========================================================================
-       08. ETAPA 2: ROL DEL PROSUMIDOR, USER JOURNEY (6 FASES) & #MIMODOFOCUS
+       08. ETAPA 5: PROTOTIPO NAVEGABLE DE LA APP MÓVIL «CLUB FOCUS» (4 PANTALLAS)
        ======================================================================== -->
   <section id="journey">
     <div class="section-header reveal">
-      <span class="stage-pill stage-2">Etapa 2 · Participación e Interactividad</span>
-      <h2 class="section-title">De Consumidor a <span class="text-gradient">Prosumidor (#MiModoFocus)</span></h2>
+      <span class="stage-pill stage-2">Núcleo Convergente · Comunidad, Storytelling, eShop & Fidelización</span>
+      <h2 class="section-title">App Móvil Gratuita: <span class="text-gradient">Prototipo Navegable «Club Focus»</span></h2>
       <p class="section-subtitle">
-        El usuario no es un receptor pasivo: diagnostica su ruido mental, personaliza su entorno sonoro en el Hub, interviene su escritorio con la lata y co-crea el relato compartiendo sus sesiones de logro.
+        Todas las líneas del universo transmedia convergen en <strong>Club Focus</strong>. Separa con claridad la <strong>vía narrativa gratuita</strong> (leer el relato escrito exclusivo de Solange y aportar historias al <em>Archivo de ventanas</em> sin obligación de compra ni puntos) de la <strong>vía de fidelización</strong> (escanear el QR único bajo la anilla de cada lata para sumar puntos canjeables y puntos de nivel).
       </p>
     </div>
 
-    <!-- Recorrido en 6 Fases -->
-    <div class="journey-timeline reveal">
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 01 · Trigger</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">El Detonante</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Se topa con el Reel de <em>“Los 5 Segundos”</em> a las 2 AM o con el QR en la mesa de la biblioteca universitaria.</p>
+    <!-- Barra de Estado Global de la Simulación de la App -->
+    <div class="glass-card reveal" style="margin-bottom: 28px; padding: 20px 26px; background: linear-gradient(90deg, rgba(4,189,251,0.1), rgba(138,79,255,0.12), rgba(9,3,3,0.9)); border-color: rgba(4,189,251,0.4);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em;">
+            📲 SIMULADOR FUNCIONAL EN VIVO · PROBÁ LAS REGLAS DE NEGOCIO DURANTE EL PITCH
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-top: 3px;">
+            Cuenta Activa: <span style="color: var(--cyan);">bruno_diaz (Mayor de 18 años · Registro Gratuito)</span>
+          </h3>
+        </div>
+
+        <!-- Contadores en tiempo real -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div style="padding: 8px 14px; border-radius: 12px; background: rgba(9,3,3,0.8); border: 1px solid var(--cyan); text-align: center;">
+            <span style="font-size: 0.68rem; color: var(--text-secondary); display: block; text-transform: uppercase;">Saldo para Canjear (No vence)</span>
+            <strong style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--cyan);" id="cf-redeem-pts">600 pts</strong>
+          </div>
+          <div style="padding: 8px 14px; border-radius: 12px; background: rgba(9,3,3,0.8); border: 1px solid var(--violet); text-align: center;">
+            <span style="font-size: 0.68rem; color: var(--text-secondary); display: block; text-transform: uppercase;">Puntos de Nivel (Vigencia 3 meses)</span>
+            <strong style="font-family: var(--font-heading); font-size: 1.2rem; color: #d6bcfa;" id="cf-level-pts">600 pts · Nivel 2</strong>
+          </div>
+          <div style="padding: 8px 14px; border-radius: 12px; background: rgba(9,3,3,0.8); border: 1px solid rgba(255,255,255,0.18); text-align: center;">
+            <span style="font-size: 0.68rem; color: var(--text-secondary); display: block; text-transform: uppercase;">Bonos FiReMAJOR 2027</span>
+            <strong style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--white);" id="cf-major-bonds">2 / 10 bonos</strong>
+          </div>
+        </div>
       </div>
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 02 · Interacción</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">El Diagnóstico</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Participa en las Stories interactivas de <code>@cabralesfocus</code> y descubre su perfil (Modo Bruno o Modo Solange).</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 03 · Utilidad</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">Inmersión en el Hub</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Ingresa a <code>cabrales.com.ar/focus</code>, activa el Pomodoro de 25 min y sincroniza la playlist de Spotify.</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 04 · Trial</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">Prueba Física</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Canjea su código en la <em>Guarida del Búho</em> o pide su pack RTD frío. Experimenta el <em>Calm Focus</em> sin ansiedad.</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 05 · Ritual</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">Hábito Propio</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Abrir la lata y escuchar el <em>*pssshhhh*</em> se vuelve su ritual pavloviano antes de programar, estudiar o competir.</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-step-num">Fase 06 · Prosumidor</div>
-        <h4 style="font-family: var(--font-heading); font-size: 0.96rem; margin-bottom: 6px;">Co-Creación UGC</h4>
-        <p style="font-size: 0.78rem; color: var(--text-secondary);">Comparte su setup con la lata y su credencial de horas enfocadas usando <strong>#MiModoFocus</strong>.</p>
+
+      <!-- Aviso de estado interactivo -->
+      <div id="cf-toast-banner" style="margin-top: 12px; padding: 9px 14px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span>💡 <strong>Regla verificada:</strong> Canjear recompensas o bonos descuenta <em>Saldo para canjear</em>, pero <strong>nunca reduce tus Puntos de Nivel</strong>.</span>
+        <button class="tc-btn" id="cf-quick-scan-top" style="border-color: var(--cyan); color: var(--cyan);">🥫 + Escanear Nueva Lata (+100 pts)</button>
       </div>
     </div>
 
-    <!-- Generador en Vivo de Credencial de Prosumidor #MiModoFocus -->
-    <div class="glass-card prosumer-studio reveal">
-      <div>
-        <span style="color: var(--cyan); font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">Simulador de Co-Creación (User Generated Content)</span>
-        <h3 style="font-family: var(--font-heading); font-size: 1.55rem; margin: 6px 0 12px;">
-          Generador de Credencial Nocturna “#MiModoFocus”
-        </h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 18px;">
-          Al completar bloques de estudio o trabajo en el Hub Web, el usuario desbloquea una tarjeta personalizada lista para subir a sus Stories junto a una foto de su escritorio y su lata de <strong>Cabrales Focus</strong>. ¡Probalo en vivo cambiando los datos!
-        </p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
-          <div>
-            <label style="font-size: 0.78rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">Nombre o Gamertag del Prosumidor:</label>
-            <input type="text" id="ugc-name-input" value="Bruno_Dev" style="width: 100%; padding: 11px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: var(--white); font-family: var(--font-body);" />
+    <!-- Layout Principal: Dispositivo Móvil Navegable (Izquierda) + Inspector de Pantalla y Controles (Derecha) -->
+    <div class="simulator-split reveal" style="grid-template-columns: 390px 1fr; align-items: start;">
+      <!-- TELÉFONO CON LAS 4 PANTALLAS DE LA APP CLUB FOCUS -->
+      <div class="phone-mockup" style="max-width: 390px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; min-height: 670px; padding: 18px 16px 14px;">
+        <div>
+          <div class="phone-notch"></div>
+          <!-- Header de la App -->
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/owl_mascot.png" alt="Club Focus Logo" style="width: 26px; height: 26px; object-fit: contain;" />
+              <div>
+                <strong style="font-family: var(--font-heading); font-size: 0.92rem; display: block; line-height: 1.1;">CLUB FOCUS</strong>
+                <span style="font-size: 0.65rem; color: var(--cyan);">Cabrales S.A. · App Gratuita</span>
+              </div>
+            </div>
+            <div style="text-align: right; font-size: 0.7rem;">
+              <span style="padding: 3px 8px; border-radius: 99px; background: rgba(4,189,251,0.15); color: var(--cyan); font-weight: 800;" id="cf-phone-pts-pill">600 pts</span>
+            </div>
           </div>
-          <div>
-            <label style="font-size: 0.78rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">Arquetipo / Modo Activo:</label>
-            <select id="ugc-mode-input" style="width: 100%; padding: 11px 14px; border-radius: 10px; background: #140b18; border: 1px solid var(--border-subtle); color: var(--white); font-family: var(--font-body);">
-              <option value="🦉 Modo Nocturno · Gaming & Código">🦉 Modo Nocturno · Gaming & Código</option>
-              <option value="☀️ Modo Deep Work · Análisis & Datos">☀️ Modo Deep Work · Análisis & Datos</option>
-              <option value="📚 Modo Finales · Biblioteca UADE">📚 Modo Finales · Biblioteca UADE</option>
-            </select>
+
+          <!-- PANTALLA 1: INICIO & HISTORIAS FOCUS -->
+          <div class="cf-phone-screen active" id="cf-phone-inicio">
+            <div style="padding: 10px 12px; border-radius: 12px; background: linear-gradient(135deg, rgba(4,189,251,0.18), rgba(138,79,255,0.18)); border: 1px solid rgba(4,189,251,0.35); margin-bottom: 10px;">
+              <span style="font-size: 0.64rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;"> AGENDA DESTACADA</span>
+              <h5 style="font-family: var(--font-heading); font-size: 0.88rem; margin: 2px 0;">Modo Focus en Dot Baires & Stream con Suga</h5>
+              <p style="font-size: 0.71rem; color: var(--text-secondary);">Viví la preparación presencial en Dot Baires y sumate a <em>«Guardia compartida»</em> en Twitch (35 min).</p>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong style="font-size: 0.76rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.05em;">📖 Historias Focus (Acceso libre sin compra)</strong>
+              </div>
+
+              <!-- Card 1: Cortometraje de Bruno -->
+              <div style="padding: 9px 11px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); margin-bottom: 8px; display: flex; gap: 10px; align-items: center;">
+                <img src="assets/doc1_image9.png" alt="Bruno" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;" />
+                <div style="font-size: 0.72rem;">
+                  <strong style="color: var(--cyan); display: block;">1. Cortometraje «Turno de noche» (3:50)</strong>
+                  <span style="color: var(--text-secondary);">Bruno pierde por mirar el celular, visita Dot y prepara su revancha.</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Relato Escrito Exclusivo de Solange -->
+              <div style="padding: 10px 11px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.35); margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                  <strong style="font-size: 0.74rem; color: var(--white);">2. Relato Escrito Exclusivo: Solange</strong>
+                  <span style="font-size: 0.62rem; padding: 2px 6px; border-radius: 99px; background: rgba(4,189,251,0.2); color: var(--cyan); font-weight: 700;">SOLO EN LA APP</span>
+                </div>
+                <p style="font-size: 0.7rem; color: #e2d9f3; font-style: italic; line-height: 1.38;">
+                  “Solange abrió el informe y encontró la misma frase marcada que había dejado el día anterior. En el chat había cuatro mensajes nuevos. Escribió en una hoja: ‘Primero, revisar esta página’. Dejó el teléfono a un costado y acercó su café frío…”
+                </p>
+              </div>
+
+              <!-- Card 3: Archivo de ventanas (CGU) -->
+              <div style="padding: 9px 11px; border-radius: 10px; background: rgba(138,79,255,0.1); border: 1px solid rgba(138,79,255,0.32);">
+                <strong style="font-size: 0.74rem; color: #d6bcfa; display: block; margin-bottom: 3px;">3. Archivo de ventanas (#MiVentanaFocus)</strong>
+                <p style="font-size: 0.69rem; color: var(--text-secondary);">
+                  Espacio de participación adulta (+18): enviá tu <strong>situación, decisión y consecuencia</strong> desde el panel derecho sin necesidad de compra ni puntos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANTALLA 2: DÓNDE COMPRAR (MAPA) -->
+          <div class="cf-phone-screen" id="cf-phone-mapa" style="display: none;">
+            <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800; text-transform: uppercase;">📍 PUNTOS DE VENTA Y ACTIVACIÓN</span>
+            <h5 style="font-family: var(--font-heading); font-size: 0.95rem; margin: 3px 0 8px;">Mapa Interactivo «Dónde comprar»</h5>
+
+            <!-- Mapa SVG estilizado de CABA / GBA / Mar del Plata -->
+            <div style="position: relative; height: 175px; border-radius: 12px; overflow: hidden; background: #07131d; border: 1px solid rgba(4,189,251,0.35); margin-bottom: 10px; padding: 10px;">
+              <svg viewBox="0 0 320 155" style="width: 100%; height: 100%;">
+                <line x1="0" y1="35" x2="320" y2="35" stroke="rgba(4,189,251,0.12)" />
+                <line x1="0" y1="80" x2="320" y2="80" stroke="rgba(4,189,251,0.12)" />
+                <line x1="0" y1="125" x2="320" y2="125" stroke="rgba(4,189,251,0.12)" />
+                <line x1="75" y1="0" x2="75" y2="155" stroke="rgba(4,189,251,0.12)" />
+                <line x1="165" y1="0" x2="165" y2="155" stroke="rgba(4,189,251,0.12)" />
+                <line x1="250" y1="0" x2="250" y2="155" stroke="rgba(4,189,251,0.12)" />
+                <path d="M 20 135 Q 110 60, 290 25" fill="none" stroke="rgba(138,79,255,0.4)" stroke-width="2.5" stroke-dasharray="4" />
+                <!-- Pin Dot Baires -->
+                <circle cx="95" cy="48" r="8" fill="#04bdfb" />
+                <text x="108" y="52" fill="#ffffff" font-size="10" font-weight="bold">Dot Baires (Modo Focus)</text>
+                <!-- Pin Locales Cabrales CABA -->
+                <circle cx="170" cy="82" r="7" fill="#8a4fff" />
+                <text x="182" y="86" fill="#d6bcfa" font-size="10" font-weight="bold">Tiendas Cabrales CABA</text>
+                <!-- Pin Retail & Kioscos -->
+                <circle cx="120" cy="118" r="6" fill="#04bdfb" />
+                <text x="132" y="122" fill="#90cdf4" font-size="9.5">Supermercados & Cercanía</text>
+              </svg>
+            </div>
+
+            <div id="cf-map-selected-box" style="padding: 10px 12px; border-radius: 10px; background: rgba(4,189,251,0.09); border: 1px solid rgba(4,189,251,0.35); font-size: 0.72rem; margin-bottom: 8px;">
+              <strong style="color: var(--cyan); display: block;">📌 Dot Baires Shopping (Vedia 3600, CABA)</strong>
+              <span style="color: var(--text-secondary);">Sede de la activación presencial propuesta <em>«Modo Focus»</em> (Escenas 3, 4 y 5 del corto) y punto de acceso con QR público hacia la app.</span>
+            </div>
+
+            <div style="font-size: 0.69rem; color: var(--text-secondary); padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.03);">
+              🛒 ¿Preferís entrega a domicilio? Pasá a la pestaña <strong>Tienda → Comprar productos (eShop)</strong>.
+            </div>
+          </div>
+
+          <!-- PANTALLA 3: TIENDA (COMPRAR PRODUCTOS VS CANJEAR PUNTOS) -->
+          <div class="cf-phone-screen" id="cf-phone-tienda" style="display: none;">
+            <div style="display: flex; gap: 6px; margin-bottom: 10px;">
+              <button class="tc-btn active" id="cf-subtab-canje" style="flex: 1; text-align: center;">🎁 Canjear Puntos</button>
+              <button class="tc-btn" id="cf-subtab-eshop" style="flex: 1; text-align: center;">🛒 Comprar (eShop)</button>
+            </div>
+
+            <!-- Subvista A: Canjear Puntos -->
+            <div id="cf-phone-tienda-canje">
+              <div style="padding: 9px 10px; border-radius: 10px; background: linear-gradient(90deg, rgba(217,20,20,0.2), rgba(138,79,255,0.2)); border: 1px solid #ff8080; margin-bottom: 8px; font-size: 0.71rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #ff9999;">🏆 Bono Sorteo FiReMAJOR BA 2027</strong>
+                  <span style="color: var(--cyan); font-weight: 800;">100 pts</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.67rem; margin: 3px 0;">
+                  Participá por 2 entradas para 1 ganador (31/05 al 20/06/2027). Tope: <strong>10 bonos por usuario</strong>.
+                </p>
+              </div>
+
+              <div style="padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); margin-bottom: 8px; font-size: 0.7rem;">
+                <strong style="color: var(--cyan); display: block; margin-bottom: 3px;">🏷️ Descuentos eShop según tu Nivel vigente:</strong>
+                <div>• Nivel 1 (0–499): <strong>5% OFF</strong> por <code>100 pts</code></div>
+                <div>• Nivel 2 (500–1.499): <strong>10% OFF</strong> por <code>200 pts</code></div>
+                <div>• Nivel 3 (1.500+): <strong>15% OFF</strong> por <code>300 pts</code></div>
+              </div>
+
+              <div style="padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); font-size: 0.7rem;">
+                <strong style="color: #d6bcfa; display: block; margin-bottom: 3px;">🦉 Merchandising Oficial (Cualquier nivel):</strong>
+                <div>• Botella reutilizable: <code>1.000 pts</code> · Taza: <code>1.200 pts</code></div>
+                <div>• Peluche del Búho: <code>2.000 pts</code></div>
+                <div>• Remera Búho: <code>2.500 pts</code> · Buzo: <code>3.000 pts</code> <em>(Con talle)</em></div>
+              </div>
+            </div>
+
+            <!-- Subvista B: Comprar productos (eShop) -->
+            <div id="cf-phone-tienda-eshop" style="display: none;">
+              <div style="padding: 10px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 8px; display: flex; gap: 10px; align-items: center;">
+                <img src="assets/can_hero.png" alt="Lata Focus" style="height: 58px; width: auto;" />
+                <div style="font-size: 0.72rem;">
+                  <strong style="color: var(--white); display: block;">Pack ×6 Cabrales Focus (240 ml)</strong>
+                  <span style="color: var(--cyan);">Coffee Cold Brew · Listo para tomar</span>
+                  <div style="color: var(--text-secondary); font-size: 0.66rem; margin-top: 2px;">Aplica 1 cupón de descuento por pedido (no acumulable).</div>
+                </div>
+              </div>
+              <div style="padding: 10px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); font-size: 0.71rem;">
+                <strong style="color: var(--white); display: block;">☕ Café Cabrales Brasil (Grano / Molido)</strong>
+                <span style="color: var(--text-secondary);">Línea tradicional Cabrales S.A. compatible con los códigos de 5%, 10% y 15% OFF obtenidos en el club.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANTALLA 4: MI CLUB (ESCANEO QR ÚNICO, DOBLE SALDO, NIVELES Y PARTICIPACIONES) -->
+          <div class="cf-phone-screen" id="cf-phone-miclub" style="display: none;">
+            <span style="font-size: 0.66rem; color: var(--cyan); font-weight: 800; text-transform: uppercase;">🔓 MI CLUB · REGISTRO DE LATAS Y NIVEL</span>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0 10px;">
+              <div style="padding: 8px; border-radius: 10px; background: rgba(4,189,251,0.1); border: 1px solid rgba(4,189,251,0.35); text-align: center;">
+                <span style="font-size: 0.62rem; color: var(--text-secondary); display: block;">SALDO CANJEABLE</span>
+                <strong style="font-size: 1.05rem; color: var(--cyan);" id="cf-mc-redeem">600 pts</strong>
+                <span style="font-size: 0.58rem; color: var(--cyan); display: block;">No vencen nunca</span>
+              </div>
+              <div style="padding: 8px; border-radius: 10px; background: rgba(138,79,255,0.12); border: 1px solid rgba(138,79,255,0.4); text-align: center;">
+                <span style="font-size: 0.62rem; color: var(--text-secondary); display: block;">PUNTOS DE NIVEL</span>
+                <strong style="font-size: 1.05rem; color: #d6bcfa;" id="cf-mc-level">600 pts</strong>
+                <span style="font-size: 0.58rem; color: #d6bcfa; display: block;" id="cf-mc-tier-badge">Nivel 2 (500–1.499)</span>
+              </div>
+            </div>
+
+            <!-- Aviso obligatorio de vencimiento móvil de 3 meses -->
+            <div style="padding: 8px 10px; border-radius: 9px; background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.4); font-size: 0.67rem; color: #ffe082; margin-bottom: 10px;">
+              ⏳ <strong>Próximo vencimiento de nivel (3 meses móviles):</strong><br />
+              <em>“Estos puntos dejarán de contar para tu nivel. Tus puntos para canjear no vencen.”</em>
+            </div>
+
+            <!-- Participaciones confirmadas en el sorteo -->
+            <div style="padding: 9px 10px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); font-size: 0.7rem; margin-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between;">
+                <strong style="color: var(--white);">🎟️ Sorteo FiReMAJOR BA 2027:</strong>
+                <strong style="color: var(--cyan);" id="cf-mc-bonds-text">2 / 10 bonos activos</strong>
+              </div>
+              <p style="font-size: 0.65rem; color: var(--text-secondary); margin-top: 3px;">
+                Estado: Participación registrada en Mi Club (1 ganador de 2 entradas).
+              </p>
+            </div>
+
+            <!-- Historial reciente -->
+            <div style="font-size: 0.66rem; color: var(--text-secondary);" id="cf-mc-history">
+              <strong>Últimos movimientos:</strong><br />
+              • Lata QR <code>#CF-240-A89</code> registrada (+100 canje / +100 nivel)<br />
+              • Canje Bono FiReMAJOR #2 (-100 saldo canjeable · Nivel intacto)
+            </div>
           </div>
         </div>
 
-        <div>
-          <label style="font-size: 0.78rem; color: var(--text-secondary); display: block; margin-bottom: 6px;">Misión / Logro Desbloqueado sin Ruido:</label>
-          <input type="text" id="ugc-goal-input" value="Entrega Final Narrativas Digitales + 3 Rondas Clutch" style="width: 100%; padding: 11px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); color: var(--white); font-family: var(--font-body);" />
+        <!-- Barra de Navegación Inferior del Teléfono (4 Pestañas Oficiales) -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.12); margin-top: 12px;" id="cf-bottom-nav">
+          <button class="tc-btn active" data-cf-tab="inicio" style="padding: 7px 4px; font-size: 0.68rem; text-align: center;">
+            🏠<br />Inicio
+          </button>
+          <button class="tc-btn" data-cf-tab="mapa" style="padding: 7px 4px; font-size: 0.68rem; text-align: center;">
+            📍<br />Mapa
+          </button>
+          <button class="tc-btn" data-cf-tab="tienda" style="padding: 7px 4px; font-size: 0.68rem; text-align: center;">
+            🛍️<br />Tienda
+          </button>
+          <button class="tc-btn" data-cf-tab="miclub" style="padding: 7px 4px; font-size: 0.68rem; text-align: center;">
+            🦉<br />Mi Club
+          </button>
         </div>
       </div>
 
-      <!-- Tarjeta Previsualizada en Vivo -->
-      <div class="ugc-badge-preview">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 12px;">
-          <span>@CABRALESFOCUS</span>
-          <span style="color: var(--cyan); font-weight: 700;">#MiModoFocus</span>
+      <!-- PANEL DERECHO: CONTROLES INTERACTIVOS Y ESPECIFICACIONES DE CADA PANTALLA -->
+      <div class="glass-card" id="cf-inspector-card">
+        <!-- Botonera superior sincronizada con las 4 pantallas -->
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;">
+          <button class="scene-tab-btn active" data-cf-tab="inicio">1. Inicio & Historias Focus (Solange + CGU)</button>
+          <button class="scene-tab-btn" data-cf-tab="mapa">2. Dónde Comprar (Mapa)</button>
+          <button class="scene-tab-btn" data-cf-tab="tienda">3. Tienda (eShop, Descuentos, Merch y Major)</button>
+          <button class="scene-tab-btn" data-cf-tab="miclub">4. Mi Club (Escáner QR Único y Niveles)</button>
         </div>
-        <img src="assets/owl_mascot.png" alt="Owl" style="width: 64px; height: 64px; object-fit: contain; margin: 0 auto 8px; filter: drop-shadow(0 0 12px var(--cyan));" />
-        <div style="font-size: 0.74rem; color: #b794f4; font-weight: 700; margin-bottom: 4px;" id="ugc-preview-mode">🦉 Modo Nocturno · Gaming & Código</div>
-        <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 6px;" id="ugc-preview-name">Bruno_Dev</h4>
-        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 14px;" id="ugc-preview-goal">“Entrega Final Narrativas Digitales + 3 Rondas Clutch”</p>
-        <div style="padding: 10px; border-radius: 12px; background: rgba(9,3,3,0.75); border: 1px solid rgba(4,189,251,0.35); font-size: 0.75rem;">
-          <strong style="color: var(--cyan);">4 Bloques Pomodoro Completados (100 min)</strong><br />
-          <span>100mg L-Teanina · Cold Brew · Precisión que se toma</span>
+
+        <!-- PANEL 1: INICIO, RELATO COMPLETO DE SOLANGE Y FORMULARIO ARCHIVO DE VENTANAS -->
+        <div class="cf-detail-pane active" id="cf-detail-inicio">
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">
+            Pantalla 1 de 4 · Expansión Escrita y Participación Comunitaria Gratuita
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin: 4px 0 12px;">
+            Inicio & «Historias Focus»: Relato Completo de Solange + Archivo de Ventanas
+          </h3>
+
+          <!-- Texto íntegro literal del Relato de Solange según Documentación Consolidada -->
+          <div style="padding: 18px 20px; border-radius: 16px; background: linear-gradient(135deg, rgba(4,189,251,0.09), rgba(138,79,255,0.09)); border: 1px solid rgba(4,189,251,0.35); margin-bottom: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+              <strong style="color: var(--cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;">
+                📖 Relato Escrito Exclusivo de Solange Herrera (Texto Oficial en Club Focus)
+              </strong>
+              <span style="font-size: 0.72rem; color: #d6bcfa; font-weight: 700;">Acceso gratuito · Sin necesidad de compra</span>
+            </div>
+            <blockquote style="font-family: var(--font-serif); font-style: italic; font-size: 0.96rem; color: var(--white); line-height: 1.65; padding-left: 14px; border-left: 3px solid var(--cyan);">
+              “Solange abrió el informe y encontró la misma frase marcada que había dejado el día anterior. En el chat había cuatro mensajes nuevos. Escribió en una hoja: ‘Primero, revisar esta página’. Dejó el teléfono a un costado y acercó su café frío. Al terminar el párrafo, envió una pregunta concreta a su compañero: ‘¿Este ejemplo explica lo que queríamos decir?’. La respuesta no llegó enseguida. Por primera vez esa mañana, no abrió otra ventana para llenar la espera: siguió con la siguiente página. Su nota quedó sobre el escritorio. Mañana podía servirle otra vez.”
+            </blockquote>
+          </div>
+
+          <!-- Simulador de envío al Archivo de ventanas (CGU con moderación y consentimiento) -->
+          <div style="padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 6px;">
+              ✍️ Simulador del «Archivo de ventanas» (Convocatoria CGU #MiVentanaFocus · +18)
+            </h4>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px;">
+              A diferencia del sistema de puntos, enviar una historia <strong>no exige comprar latas ni canjear puntos</strong>. Siguiendo las reglas de moderación del informe, usar el hashtag o responder encuestas no autoriza la reutilización: se solicita <strong>situación, decisión y consecuencia</strong> más permiso explícito y crédito.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+              <div>
+                <label style="font-size: 0.72rem; color: var(--cyan); font-weight: 700; display: block; margin-bottom: 4px;">1. Situación (Distracción):</label>
+                <input type="text" id="cgu-sit" value="Estudiando para el final con 15 notificaciones del grupo" style="width: 100%; padding: 8px 10px; border-radius: 8px; background: rgba(9,3,3,0.8); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.78rem;" />
+              </div>
+              <div>
+                <label style="font-size: 0.72rem; color: #d6bcfa; font-weight: 700; display: block; margin-bottom: 4px;">2. Decisión (Pausa / Ritual):</label>
+                <input type="text" id="cgu-dec" value="Silencié el teléfono 20 min y abrí un Focus frío" style="width: 100%; padding: 8px 10px; border-radius: 8px; background: rgba(9,3,3,0.8); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.78rem;" />
+              </div>
+              <div>
+                <label style="font-size: 0.72rem; color: var(--white); font-weight: 700; display: block; margin-bottom: 4px;">3. Consecuencia (Resultado):</label>
+                <input type="text" id="cgu-con" value="Cerré el resumen completo antes de volver al chat" style="width: 100%; padding: 8px 10px; border-radius: 8px; background: rgba(9,3,3,0.8); border: 1px solid var(--border-subtle); color: #fff; font-size: 0.78rem;" />
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <label style="font-size: 0.76rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" id="cgu-consent" checked />
+                Soy mayor de 18 años y autorizo publicar mi relato con crédito (puedo solicitar retirarlo en cualquier momento).
+              </label>
+              <button class="btn-primary" id="cgu-submit-btn" style="padding: 8px 16px; font-size: 0.78rem;">Enviar al Archivo de ventanas</button>
+            </div>
+
+            <div id="cgu-feed-list" style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary);">
+              <strong style="color: var(--cyan);">Relato dramatizado de ejemplo en el Archivo:</strong> <em>“Situación: Informe trabado y 4 mensajes en el chat → Decisión: Nota en papel ‘Primero revisar esta página’ y café frío → Consecuencia: Página terminada sin abrir otra pestaña.”</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: DÓNDE COMPRAR (MAPA DE PUNTOS FÍSICOS) -->
+        <div class="cf-detail-pane" id="cf-detail-mapa" style="display: none;">
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">
+            Pantalla 2 de 4 · Distribución y Puntos de Contacto Físicos
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin: 4px 0 12px;">
+            Mapa «Dónde comprar» & Conexión con Dot Baires Shopping
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Permite localizar dónde adquirir físicamente la lata de <strong>Cabrales Focus (240 ml)</strong> y consultar la agenda de la activación presencial <strong>Modo Focus</strong>. Seleccioná un nodo para actualizar el mapa del teléfono:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 16px;">
+            <button class="hotspot-card active" data-map-node="📌 Dot Baires Shopping (Vedia 3600, CABA) — Sede de la activación presencial propuesta «Modo Focus» (Escenas 3, 4 y 5 del corto) y punto con QR público de descarga de la app." style="text-align: left;">
+              <h4 style="font-size: 0.92rem; color: var(--cyan);">📍 1. Dot Baires Shopping</h4>
+              <p style="font-size: 0.78rem; color: var(--text-secondary);">Activación presencial propuesta <em>Modo Focus</em> + muestra mano a mano + QR público a la app.</p>
+            </button>
+            <button class="hotspot-card" data-map-node="☕ Locales Exclusivos Cabrales (CABA y Mar del Plata) — Venta de latas individuales frías (240 ml) y packs ×6, integrando la tradición cafetera desde 1941 con la línea Focus." style="text-align: left;">
+              <h4 style="font-size: 0.92rem; color: #d6bcfa;">☕ 2. Locales Cabrales S.A.</h4>
+              <p style="font-size: 0.78rem; color: var(--text-secondary);">Puntos propios de la marca en CABA y Mar del Plata con heladeras RTD.</p>
+            </button>
+            <button class="hotspot-card" data-map-node="🏪 Supermercados, Autoservicios y Tiendas de Cercanía — Disponibilidad de Cabrales Focus listo para tomar frío cerca de zonas de estudio, oficinas y hogares." style="text-align: left;">
+              <h4 style="font-size: 0.92rem; color: var(--white);">🏪 3. Retail & Cercanía</h4>
+              <p style="font-size: 0.78rem; color: var(--text-secondary);">Supermercados y tiendas de conveniencia para compra cotidiana.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL 3: TIENDA (ESHOP, DESCUENTOS POR NIVEL, MERCHANDISING Y SORTEO MAJOR) -->
+        <div class="cf-detail-pane" id="cf-detail-tienda" style="display: none;">
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">
+            Pantalla 3 de 4 · eShop Online + Catálogo Oficial de Recompensas
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.45rem; margin: 4px 0 10px;">
+            Tienda: «Comprar productos» vs. «Canjear puntos» (Probá los Canjes en Vivo)
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+            La Tienda separa la compra directa en la <strong>eShop</strong> del catálogo de <strong>Canje de Puntos</strong>. Hacé clic en cualquiera de los botones de abajo para simular el canje en tiempo real y comprobar que <strong>descuenta Saldo Canjeable sin bajar tus Puntos de Nivel</strong>:
+          </p>
+
+          <!-- Bloque 1: Sorteo FiReMAJOR Buenos Aires 2027 -->
+          <div style="padding: 14px 16px; border-radius: 14px; background: linear-gradient(90deg, rgba(217,20,20,0.14), rgba(138,79,255,0.14)); border: 1px solid rgba(255,128,128,0.45); margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span style="font-size: 0.68rem; font-weight: 800; color: #ff9999; text-transform: uppercase;">CO-BRANDING PROPUESTO CABRALES FOCUS × FiReSPORTS (P5)</span>
+              <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin: 2px 0;">🎟️ Bono de Participación · FiReMAJOR Buenos Aires 2027 (CS2)</h4>
+              <p style="font-size: 0.78rem; color: var(--text-secondary);">
+                Premio simulado: <strong>1 ganador recibe 2 entradas</strong> (31/05 al 20/06/2027, sin viaje ni alojamiento). Costo: <strong>100 puntos por bono</strong> · Tope máximo: <strong>10 bonos por usuario</strong>.
+              </p>
+            </div>
+            <button class="btn-primary" id="cf-btn-redeem-bond" style="padding: 9px 16px; font-size: 0.8rem;">
+              Canjear 1 Bono (-100 pts)
+            </button>
+          </div>
+
+          <!-- Bloque 2: Descuentos por Nivel en la eShop -->
+          <h4 style="font-size: 0.8rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🏷️ 1. Catálogo de Descuentos para la eShop (Desbloqueados según Nivel vigente · Vigencia 30 días, 1 uso, no acumulables):
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;">
+            <div style="padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+              <div>
+                <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">NIVEL 1 (0–499 PTS)</span>
+                <strong style="display: block; font-size: 0.95rem; margin-top: 2px;">Código 5% OFF</strong>
+                <span style="font-size: 0.74rem; color: var(--text-secondary);">Costo: 100 puntos</span>
+              </div>
+              <button class="tc-btn cf-redeem-item-btn" data-cost="100" data-req-level="1" data-name="Cupón 5% OFF en eShop (30 días)">Canjear (100 pts)</button>
+            </div>
+
+            <div style="padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+              <div>
+                <span style="font-size: 0.68rem; color: #d6bcfa; font-weight: 800;">NIVEL 2 (500–1.499 PTS)</span>
+                <strong style="display: block; font-size: 0.95rem; margin-top: 2px;">Código 10% OFF</strong>
+                <span style="font-size: 0.74rem; color: var(--text-secondary);">Costo: 200 puntos</span>
+              </div>
+              <button class="tc-btn cf-redeem-item-btn" data-cost="200" data-req-level="2" data-name="Cupón 10% OFF en eShop (30 días)">Canjear (200 pts)</button>
+            </div>
+
+            <div style="padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+              <div>
+                <span style="font-size: 0.68rem; color: #ffe082; font-weight: 800;">NIVEL 3 (1.500+ PTS)</span>
+                <strong style="display: block; font-size: 0.95rem; margin-top: 2px;">Código 15% OFF</strong>
+                <span style="font-size: 0.74rem; color: var(--text-secondary);">Costo: 300 puntos</span>
+              </div>
+              <button class="tc-btn cf-redeem-item-btn" data-cost="300" data-req-level="3" data-name="Cupón 15% OFF en eShop (30 días)">Canjear (300 pts)</button>
+            </div>
+          </div>
+
+          <!-- Bloque 3: Merchandising Oficial (Accesible desde cualquier nivel) -->
+          <h4 style="font-size: 0.8rem; color: #d6bcfa; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🦉 2. Merchandising Conceptual Cabrales Focus (Accesible desde cualquier nivel según saldo disponible):
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px;">
+            <button class="tc-btn cf-redeem-item-btn" data-cost="1000" data-req-level="1" data-name="Botella plástica reutilizable Focus">
+              🍼 Botella reutilizable<br /><strong style="color: var(--cyan);">1.000 pts</strong>
+            </button>
+            <button class="tc-btn cf-redeem-item-btn" data-cost="1200" data-req-level="1" data-name="Taza Cabrales Focus">
+              ☕ Taza Focus<br /><strong style="color: var(--cyan);">1.200 pts</strong>
+            </button>
+            <button class="tc-btn cf-redeem-item-btn" data-cost="2000" data-req-level="1" data-name="Peluche del Búho">
+              🦉 Peluche del Búho<br /><strong style="color: var(--cyan);">2.000 pts</strong>
+            </button>
+            <button class="tc-btn cf-redeem-item-btn" data-cost="2500" data-req-level="1" data-name="Remera con el Búho (Talle M/L/XL)">
+              👕 Remera Búho (Talle)<br /><strong style="color: var(--cyan);">2.500 pts</strong>
+            </button>
+            <button class="tc-btn cf-redeem-item-btn" data-cost="3000" data-req-level="1" data-name="Buzo Cabrales Focus (Talle M/L/XL)">
+              🧥 Buzo Focus (Talle)<br /><strong style="color: var(--cyan);">3.000 pts</strong>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL 4: MI CLUB (ESCANEO DE LATA ÚNICO, DOBLE CONTADOR Y REGLAS DE NIVEL) -->
+        <div class="cf-detail-pane" id="cf-detail-miclub" style="display: none;">
+          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">
+            Pantalla 4 de 4 · Reglas de Fidelización y Simulador de Escaneo QR
+          </span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.45rem; margin: 4px 0 10px;">
+            «Mi Club»: Código QR Único por Lata, Doble Contador y 3 Niveles Móviles
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+            <div style="padding: 14px; border-radius: 14px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
+              <strong style="color: var(--cyan); font-size: 0.86rem;">1. Escaneo Único bajo la Anilla (+100 / +100)</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">
+                Cada lata incluye un código QR único protegido que se descubre al abrirla. Se registra <strong>una sola vez</strong> y suma simultáneamente <strong>+100 puntos para canjear (no vencen)</strong> y <strong>+100 puntos de nivel (válidos 3 meses desde ese registro)</strong>.
+              </p>
+            </div>
+            <div style="padding: 14px; border-radius: 14px; background: rgba(138,79,255,0.09); border: 1px solid rgba(138,79,255,0.32);">
+              <strong style="color: #d6bcfa; font-size: 0.86rem;">2. Escalas de Nivel (Vigencia Individual 3 Meses)</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">
+                • <strong>Nivel 1:</strong> 0 a 499 puntos vigentes (5% OFF)<br />
+                • <strong>Nivel 2:</strong> 500 a 1.499 puntos vigentes (10% OFF)<br />
+                • <strong>Nivel 3:</strong> desde 1.500 puntos vigentes (15% OFF)<br />
+                <em>Canjear puntos descuenta saldo, pero nunca baja tu nivel.</em>
+              </p>
+            </div>
+          </div>
+
+          <!-- Simulador de Escaneo de Código QR Único vs Código Repetido -->
+          <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+            <h4 style="font-size: 0.88rem; color: var(--white); margin-bottom: 10px;">
+              🧪 Probador en Vivo de Reglas de «Mi Club» (Para demostrar ante la cátedra):
+            </h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <button class="btn-primary" id="cf-btn-scan-new" style="padding: 9px 16px; font-size: 0.8rem;">
+                🥫 Escanear QR de Lata Nueva (+100 Canje / +100 Nivel)
+              </button>
+              <button class="btn-secondary" id="cf-btn-scan-dup" style="padding: 9px 16px; font-size: 0.8rem;">
+                🚫 Intentar Escanear Código QR Ya Usado (Validación 1 uso)
+              </button>
+              <button class="btn-secondary" id="cf-btn-boost-lvl3" style="padding: 9px 16px; font-size: 0.8rem;">
+                ⚡ Simular Pack +1.000 pts (Subir a Nivel 3)
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

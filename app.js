@@ -921,6 +921,237 @@ document.addEventListener('DOMContentLoaded', () => {
   if (ugcGoalInput) ugcGoalInput.addEventListener('input', updateUgcPreview);
 
   /* ------------------------------------------------------------------------
+     12B. SIMULADOR INTERACTIVO DE LA APP MÓVIL «CLUB FOCUS» (4 PANTALLAS)
+     ------------------------------------------------------------------------ */
+  let cfRedeemablePts = 600;
+  let cfLevelPts = 600;
+  let cfMajorBonds = 2;
+  let cfScanCounter = 90;
+
+  const cfRedeemEl = document.getElementById('cf-redeem-pts');
+  const cfLevelEl = document.getElementById('cf-level-pts');
+  const cfBondsEl = document.getElementById('cf-major-bonds');
+  const cfPhonePill = document.getElementById('cf-phone-pts-pill');
+  const cfMcRedeem = document.getElementById('cf-mc-redeem');
+  const cfMcLevel = document.getElementById('cf-mc-level');
+  const cfMcTierBadge = document.getElementById('cf-mc-tier-badge');
+  const cfMcBondsText = document.getElementById('cf-mc-bonds-text');
+  const cfMcHistory = document.getElementById('cf-mc-history');
+  const cfToastBanner = document.getElementById('cf-toast-banner');
+
+  function getClubFocusTier(levelPts) {
+    if (levelPts >= 1500) return { level: 3, label: 'Nivel 3 (1.500+)' };
+    if (levelPts >= 500) return { level: 2, label: 'Nivel 2 (500–1.499)' };
+    return { level: 1, label: 'Nivel 1 (0–499)' };
+  }
+
+  function showCfMessage(msgHtml, isWarning = false) {
+    if (!cfToastBanner) return;
+    cfToastBanner.style.borderColor = isWarning ? '#ff8080' : 'var(--cyan)';
+    cfToastBanner.innerHTML = `
+      <span>${msgHtml}</span>
+      <button class="tc-btn" id="cf-quick-scan-top-dyn" style="border-color: var(--cyan); color: var(--cyan);">🥫 + Escanear Nueva Lata (+100 pts)</button>
+    `;
+    const dynBtn = document.getElementById('cf-quick-scan-top-dyn');
+    if (dynBtn) dynBtn.addEventListener('click', scanNewCanQr);
+  }
+
+  function appendCfHistory(line) {
+    if (!cfMcHistory) return;
+    cfMcHistory.innerHTML =
+      `<strong>Últimos movimientos:</strong><br />• ${line}<br />` +
+      cfMcHistory.innerHTML.replace('<strong>Últimos movimientos:</strong><br />', '');
+  }
+
+  function updateClubFocusUI() {
+    const tierInfo = getClubFocusTier(cfLevelPts);
+    if (cfRedeemEl) cfRedeemEl.textContent = `${cfRedeemablePts} pts`;
+    if (cfLevelEl) cfLevelEl.textContent = `${cfLevelPts} pts · Nivel ${tierInfo.level}`;
+    if (cfBondsEl) cfBondsEl.textContent = `${cfMajorBonds} / 10 bonos`;
+    if (cfPhonePill) cfPhonePill.textContent = `${cfRedeemablePts} pts`;
+    if (cfMcRedeem) cfMcRedeem.textContent = `${cfRedeemablePts} pts`;
+    if (cfMcLevel) cfMcLevel.textContent = `${cfLevelPts} pts`;
+    if (cfMcTierBadge) cfMcTierBadge.textContent = tierInfo.label;
+    if (cfMcBondsText) cfMcBondsText.textContent = `${cfMajorBonds} / 10 bonos activos`;
+  }
+
+  function switchClubFocusTab(tabName) {
+    document.querySelectorAll('[data-cf-tab]').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-cf-tab') === tabName);
+    });
+    ['inicio', 'mapa', 'tienda', 'miclub'].forEach((name) => {
+      const phoneScreen = document.getElementById(`cf-phone-${name}`);
+      const detailPane = document.getElementById(`cf-detail-${name}`);
+      if (phoneScreen) phoneScreen.style.display = name === tabName ? 'block' : 'none';
+      if (detailPane) detailPane.style.display = name === tabName ? 'block' : 'none';
+    });
+  }
+
+  document.querySelectorAll('[data-cf-tab]').forEach((btn) => {
+    btn.addEventListener('click', () => switchClubFocusTab(btn.getAttribute('data-cf-tab')));
+  });
+
+  const subtabCanje = document.getElementById('cf-subtab-canje');
+  const subtabEshop = document.getElementById('cf-subtab-eshop');
+  const viewCanje = document.getElementById('cf-phone-tienda-canje');
+  const viewEshop = document.getElementById('cf-phone-tienda-eshop');
+
+  if (subtabCanje && subtabEshop) {
+    subtabCanje.addEventListener('click', () => {
+      subtabCanje.classList.add('active');
+      subtabEshop.classList.remove('active');
+      if (viewCanje) viewCanje.style.display = 'block';
+      if (viewEshop) viewEshop.style.display = 'none';
+    });
+    subtabEshop.addEventListener('click', () => {
+      subtabEshop.classList.add('active');
+      subtabCanje.classList.remove('active');
+      if (viewEshop) viewEshop.style.display = 'block';
+      if (viewCanje) viewCanje.style.display = 'none';
+    });
+  }
+
+  const mapNodeBtns = document.querySelectorAll('[data-map-node]');
+  const mapSelectedBox = document.getElementById('cf-map-selected-box');
+  mapNodeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      mapNodeBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (mapSelectedBox) {
+        mapSelectedBox.innerHTML = `<span style="color: var(--white);">${btn.getAttribute('data-map-node')}</span>`;
+      }
+    });
+  });
+
+  function scanNewCanQr() {
+    playCanOpenAndCalmChord();
+    cfScanCounter++;
+    cfRedeemablePts += 100;
+    cfLevelPts += 100;
+    updateClubFocusUI();
+    const code = `#CF-240-A${cfScanCounter}`;
+    appendCfHistory(`Lata QR <code>${code}</code> registrada (+100 canje / +100 nivel)`);
+    showCfMessage(
+      `✅ <strong>Código único ${code} validado:</strong> Se acreditaron <strong>+100 pts para canjear</strong> (no vencen) y <strong>+100 pts de nivel</strong> (válidos 3 meses). Recordá: escanear no inscribe al sorteo automáticamente hasta canjear un bono.`
+    );
+  }
+
+  const btnQuickScanTop = document.getElementById('cf-quick-scan-top');
+  const btnScanNew = document.getElementById('cf-btn-scan-new');
+  const btnScanDup = document.getElementById('cf-btn-scan-dup');
+  const btnBoostLvl3 = document.getElementById('cf-btn-boost-lvl3');
+  const btnRedeemBond = document.getElementById('cf-btn-redeem-bond');
+
+  if (btnQuickScanTop) btnQuickScanTop.addEventListener('click', scanNewCanQr);
+  if (btnScanNew) btnScanNew.addEventListener('click', scanNewCanQr);
+
+  if (btnScanDup) {
+    btnScanDup.addEventListener('click', () => {
+      showCfMessage(
+        `🚫 <strong>Código QR rechazado (#CF-240-A89):</strong> Cada lata posee un QR único protegido bajo la anilla de <strong>un solo uso</strong> y ya fue asociado previamente a una cuenta.`,
+        true
+      );
+    });
+  }
+
+  if (btnBoostLvl3) {
+    btnBoostLvl3.addEventListener('click', () => {
+      playCanOpenAndCalmChord();
+      cfRedeemablePts += 1000;
+      cfLevelPts += 1000;
+      updateClubFocusUI();
+      appendCfHistory(`Acreditación simulación 10 latas (+1.000 canje / +1.000 nivel → Nivel 3 alcanzado)`);
+      showCfMessage(
+        `⚡ <strong>Ascenso a Nivel 3 (1.500+ pts vigentes):</strong> Ya tenés desbloqueado el código del <strong>15% OFF por 300 pts</strong> y saldo para merchandising o bonos.`
+      );
+    });
+  }
+
+  if (btnRedeemBond) {
+    btnRedeemBond.addEventListener('click', () => {
+      if (cfMajorBonds >= 10) {
+        showCfMessage(
+          `⚠️ <strong>Límite alcanzado (10 / 10 bonos):</strong> La campaña establece un máximo de <strong>10 bonos por usuario</strong> para el sorteo del FiReMAJOR Buenos Aires 2027.`,
+          true
+        );
+        return;
+      }
+      if (cfRedeemablePts < 100) {
+        showCfMessage(
+          `⚠️ <strong>Saldo canjeable insuficiente (${cfRedeemablePts} pts):</strong> Necesitás 100 puntos para canjear un bono. Escaneá otra lata para sumar +100 pts.`,
+          true
+        );
+        return;
+      }
+      playCanOpenAndCalmChord();
+      cfRedeemablePts -= 100;
+      cfMajorBonds += 1;
+      updateClubFocusUI();
+      appendCfHistory(`Canje Bono FiReMAJOR BA 2027 #${cfMajorBonds} (-100 saldo · Nivel intacto en ${cfLevelPts} pts)`);
+      showCfMessage(
+        `🎟️ <strong>¡Bono #${cfMajorBonds}/10 confirmado en Mi Club!</strong> Se descontaron 100 pts de tu saldo canjeable, pero tus <strong>Puntos de Nivel (${cfLevelPts} pts) permanecen intactos</strong>.`
+      );
+    });
+  }
+
+  document.querySelectorAll('.cf-redeem-item-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cost = parseInt(btn.getAttribute('data-cost') || '0', 10);
+      const reqLevel = parseInt(btn.getAttribute('data-req-level') || '1', 10);
+      const itemName = btn.getAttribute('data-name') || 'Recompensa';
+      const currentTier = getClubFocusTier(cfLevelPts).level;
+
+      if (currentTier < reqLevel) {
+        showCfMessage(
+          `🔒 <strong>Nivel insuficiente para ${itemName}:</strong> Requiere <strong>Nivel ${reqLevel}</strong> y actualmente estás en <strong>Nivel ${currentTier} (${cfLevelPts} pts vigentes)</strong>.`,
+          true
+        );
+        return;
+      }
+      if (cfRedeemablePts < cost) {
+        const missing = cost - cfRedeemablePts;
+        showCfMessage(
+          `⚠️ <strong>Puntos insuficientes para ${itemName}:</strong> Cuesta <strong>${cost} pts</strong> y tenés <strong>${cfRedeemablePts} pts</strong> (te faltan ${missing} pts).`,
+          true
+        );
+        return;
+      }
+
+      playCanOpenAndCalmChord();
+      cfRedeemablePts -= cost;
+      updateClubFocusUI();
+      appendCfHistory(`Canje exitoso: ${itemName} (-${cost} pts canjeables · Nivel intacto)`);
+      showCfMessage(
+        `🎁 <strong>Canje confirmado: ${itemName}</strong> (-${cost} pts). Tu saldo para canjear ahora es <strong>${cfRedeemablePts} pts</strong> y tu nivel sigue en <strong>${cfLevelPts} pts</strong>.`
+      );
+    });
+  });
+
+  const cguSubmitBtn = document.getElementById('cgu-submit-btn');
+  const cguFeedList = document.getElementById('cgu-feed-list');
+  if (cguSubmitBtn && cguFeedList) {
+    cguSubmitBtn.addEventListener('click', () => {
+      const sit = (document.getElementById('cgu-sit') && document.getElementById('cgu-sit').value) || '';
+      const dec = (document.getElementById('cgu-dec') && document.getElementById('cgu-dec').value) || '';
+      const con = (document.getElementById('cgu-con') && document.getElementById('cgu-con').value) || '';
+      const consent = document.getElementById('cgu-consent') && document.getElementById('cgu-consent').checked;
+
+      if (!consent) {
+        showCfMessage(
+          `⚠️ <strong>Consentimiento requerido:</strong> Según las normas de moderación del proyecto, solo se incorporan al Archivo de ventanas aportes de mayores de 18 años con autorización expresa.`,
+          true
+        );
+        return;
+      }
+
+      cguFeedList.innerHTML = `
+        <strong style="color: var(--cyan);">✅ Nuevo aporte autorizado en el Archivo de ventanas (sin compra ni puntos):</strong><br />
+        <em>“<strong>Situación:</strong> ${sit} → <strong>Decisión:</strong> ${dec} → <strong>Consecuencia:</strong> ${con}”</em> (Autorizado +18 con crédito).
+      `;
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      13. FILTRO DEL CALENDARIO DE 4 SEMANAS
      ------------------------------------------------------------------------ */
   const calendarFilterBtns = document.querySelectorAll('#calendar-filters [data-week]');
