@@ -13,12 +13,12 @@ FPS = 30
 TOTAL_DURATION = 20.0  # 20 seconds
 TOTAL_FRAMES = int(TOTAL_DURATION * FPS)  # 600 frames
 
-# Tiempos de las 5 escenas (según message.txt):
-# E1: 0 a 4s (frames 0 a 120)
-# E2: 4 a 8s (frames 120 a 240)
-# E3: 8 a 12s (frames 240 a 360)
-# E4: 12 a 17s (frames 360 a 510)
-# E5: 17 a 20s (frames 510 a 600)
+# Tiempos de las 5 escenas (según la pauta publicitaria):
+# E1: 0 a 4s (frames 0 a 120) - El Producto y la Experiencia
+# E2: 4 a 8s (frames 120 a 240) - Escaneá el QR
+# E3: 8 a 12s (frames 240 a 360) - Acumulá Puntos
+# E4: 12 a 17s (frames 360 a 510) - Canjeá por Participaciones para el Major 2027
+# E5: 17 a 20s (frames 510 a 600) - Cierre Institucional de Marca
 SCENE_TIMINGS = [
     (0, 120),    # Escena 1 (4s)
     (120, 240),  # Escena 2 (4s)
@@ -35,7 +35,7 @@ SCENE_NAMES = [
     "scene_5_cierre_marca.png"
 ]
 
-print("Cargando imágenes de alta resolución...")
+print("Cargando fotogramas de alta resolución 1080x1920...")
 scene_images = []
 for name in SCENE_NAMES:
     p = os.path.join(BASE_DIR, name)
@@ -45,7 +45,7 @@ for name in SCENE_NAMES:
     scene_images.append(img)
 
 def get_cinematic_zoom(img, zoom):
-    """Aplica zoom suave recortando desde el centro."""
+    """Aplica travelling óptico suave recortando desde el centro."""
     if zoom <= 1.0:
         return img
     new_w = int(WIDTH / zoom)
@@ -56,47 +56,64 @@ def get_cinematic_zoom(img, zoom):
     return cropped.resize((WIDTH, HEIGHT), Image.Resampling.BILINEAR)
 
 def render_scene_1_frame(base_img, local_t):
-    """Escena 1: Travelling suave de aproximación (1.00x a 1.05x) y glow sutil."""
+    """Escena 1: Travelling suave de aproximación (1.00x a 1.05x) y glow sutil en el faro del QR."""
     zoom = 1.0 + 0.05 * local_t
-    return get_cinematic_zoom(base_img, zoom)
-
-def render_scene_2_frame(base_img, local_t):
-    """Escena 2: Acercamiento suave y rayo láser de escaneo animado sobre el QR."""
-    zoom = 1.0 + 0.03 * local_t
     zoomed = get_cinematic_zoom(base_img, zoom)
     
-    # Overlay del rayo láser animado que recorre el QR
+    # Pulso del faro del QR
     overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
     
-    # El QR está en el sector de la lata y el visor del smartphone (aprox y: 520 a 760)
-    sweep_progress = (local_t * 2.5) % 1.0
-    laser_y = int(520 + 240 * sweep_progress)
+    beacon_pulse = (math.sin(local_t * math.pi * 3) + 1.0) * 0.5
+    b_radius = int(25 + 15 * beacon_pulse)
+    b_alpha = int(40 + 50 * beacon_pulse)
     
-    # Haz de luz horizontal
-    draw.line([(180, laser_y), (480, laser_y)], fill=(4, 189, 251, 230), width=3)
-    draw.line([(190, laser_y), (470, laser_y)], fill=(255, 255, 255, 255), width=1)
+    # Beacon ubicado en la zona del QR (x: 665, y: 565 escalado según zoom)
+    center_x = int(540 + (665 - 540) * zoom)
+    center_y = int(960 + (565 - 960) * zoom)
     
-    # Resplandor difuso del escaneo
+    draw.ellipse([center_x - b_radius, center_y - b_radius, center_x + b_radius, center_y + b_radius], 
+                 fill=(4, 189, 251, b_alpha))
+    overlay = overlay.filter(ImageFilter.GaussianBlur(8))
+    
+    return Image.alpha_composite(zoomed, overlay)
+
+def render_scene_2_frame(base_img, local_t):
+    """Escena 2: Acercamiento suave y haz láser animado barriendo el QR de la lata."""
+    zoom = 1.0 + 0.035 * local_t
+    zoomed = get_cinematic_zoom(base_img, zoom)
+    
+    overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    
+    # El QR y el visor están aprox en x: 200 a 450, y: 780 a 1080
+    sweep_progress = (local_t * 2.8) % 1.0
+    laser_y = int(760 + 300 * sweep_progress)
+    
+    # Haz de escaneo cian y núcleo blanco
+    draw.line([(180, laser_y), (480, laser_y)], fill=(4, 189, 251, 230), width=4)
+    draw.line([(200, laser_y), (460, laser_y)], fill=(255, 255, 255, 255), width=2)
+    
+    # Resplandor difuso del escáner
     glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     gdraw = ImageDraw.Draw(glow)
-    gdraw.rectangle([180, laser_y - 6, 480, laser_y + 6], fill=(4, 189, 251, 80))
-    glow = glow.filter(ImageFilter.GaussianBlur(4))
+    gdraw.rectangle([180, laser_y - 12, 480, laser_y + 12], fill=(4, 189, 251, 75))
+    glow = glow.filter(ImageFilter.GaussianBlur(6))
     
     combined = Image.alpha_composite(zoomed, glow)
     combined = Image.alpha_composite(combined, overlay)
     return combined
 
-# Generar posiciones fijas para partículas de la Escena 3
+# Generación estocástica consistente de partículas ascendentes para Escena 3
 np.random.seed(42)
-PARTICLES_N = 35
+PARTICLES_N = 40
 p_xs = np.random.uniform(220, 860, PARTICLES_N)
-p_ys = np.random.uniform(400, 1200, PARTICLES_N)
-p_speeds = np.random.uniform(80, 220, PARTICLES_N)
-p_sizes = np.random.uniform(4, 12, PARTICLES_N)
+p_ys = np.random.uniform(600, 1600, PARTICLES_N)
+p_speeds = np.random.uniform(120, 280, PARTICLES_N)
+p_sizes = np.random.uniform(5, 14, PARTICLES_N)
 
 def render_scene_3_frame(base_img, local_t):
-    """Escena 3: Partículas luminosas ascendiendo hacia la tarjeta de puntos."""
+    """Escena 3: Partículas luminosas ascendiendo cinéticamente hacia la tarjeta de puntos."""
     zoom = 1.0 + 0.02 * math.sin(local_t * math.pi)
     zoomed = get_cinematic_zoom(base_img, zoom)
     
@@ -104,44 +121,53 @@ def render_scene_3_frame(base_img, local_t):
     draw = ImageDraw.Draw(overlay)
     
     for i in range(PARTICLES_N):
-        curr_y = (p_ys[i] - p_speeds[i] * (local_t * 4.0)) % 800 + 400
-        curr_x = p_xs[i] + 15 * math.sin(local_t * 6 + i)
+        curr_y = (p_ys[i] - p_speeds[i] * (local_t * 4.0)) % 1000 + 600
+        curr_x = p_xs[i] + 18 * math.sin(local_t * 5 + i)
         sz = p_sizes[i]
         
-        # Color cian luminoso y blanco
-        alpha = int(180 + 75 * math.sin(local_t * 8 + i))
+        alpha = int(170 + 80 * math.sin(local_t * 8 + i))
         draw.ellipse([curr_x - sz, curr_y - sz, curr_x + sz, curr_y + sz], fill=(4, 189, 251, alpha))
         draw.ellipse([curr_x - sz*0.4, curr_y - sz*0.4, curr_x + sz*0.4, curr_y + sz*0.4], fill=(255, 255, 255, 255))
         
-    overlay = overlay.filter(ImageFilter.GaussianBlur(1.5))
+    overlay = overlay.filter(ImageFilter.GaussianBlur(2.0))
     return Image.alpha_composite(zoomed, overlay)
 
 def render_scene_4_frame(base_img, local_t):
-    """Escena 4: Luces de estadio y reflejo iridiscente en el bono de sorteo."""
+    """Escena 4: Luces volumétricas de estadio oscilando y destello holográfico en el pase del Major."""
     zoom = 1.0 + 0.04 * local_t
     zoomed = get_cinematic_zoom(base_img, zoom)
     
-    # Destello de reflector oscilante sutil
     overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
     
-    spotlight_x = int(540 + 120 * math.sin(local_t * math.pi * 1.5))
-    draw.ellipse([spotlight_x - 180, 260, spotlight_x + 180, 580], fill=(4, 189, 251, int(25 + 15 * math.sin(local_t * 4))))
-    overlay = overlay.filter(ImageFilter.GaussianBlur(40))
+    # Reflector oscilante que cruza el fondo sobre el trofeo
+    spotlight_x = int(540 + 180 * math.sin(local_t * math.pi * 1.6))
+    draw.ellipse([spotlight_x - 220, 180, spotlight_x + 220, 620], 
+                 fill=(4, 189, 251, int(30 + 18 * math.sin(local_t * 4))))
+    overlay = overlay.filter(ImageFilter.GaussianBlur(50))
     
-    return Image.alpha_composite(zoomed, overlay)
+    # Destello de banda holográfica sobre el ticket
+    holo_glare = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    hdraw = ImageDraw.Draw(holo_glare)
+    glare_x = int(180 + 720 * ((local_t * 1.5) % 1.0))
+    hdraw.rectangle([glare_x - 40, 1150, glare_x + 40, 1165], fill=(255, 255, 255, 140))
+    holo_glare = holo_glare.filter(ImageFilter.GaussianBlur(6))
+    
+    combined = Image.alpha_composite(zoomed, overlay)
+    combined = Image.alpha_composite(combined, holo_glare)
+    return combined
 
 def render_scene_5_frame(base_img, local_t):
     """Escena 5: Packshot heroico final con pulsación de halo y revelación limpia."""
-    zoom = 1.0 + 0.03 * local_t
+    zoom = 1.0 + 0.035 * local_t
     zoomed = get_cinematic_zoom(base_img, zoom)
     
-    # Resplandor dorado/cian sutil sobre la lata
     overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
-    pulse_alpha = int(35 + 20 * math.sin(local_t * math.pi * 2))
-    draw.ellipse([340, 480, 740, 1020], fill=(4, 189, 251, pulse_alpha))
-    overlay = overlay.filter(ImageFilter.GaussianBlur(50))
+    
+    pulse_alpha = int(45 + 25 * math.sin(local_t * math.pi * 2))
+    draw.ellipse([320, 520, 760, 1150], fill=(4, 189, 251, pulse_alpha))
+    overlay = overlay.filter(ImageFilter.GaussianBlur(60))
     
     return Image.alpha_composite(zoomed, overlay)
 
@@ -153,21 +179,21 @@ RENDER_FUNCS = [
     render_scene_5_frame
 ]
 
-print(f"Iniciando renderizado de video MP4 ({WIDTH}x{HEIGHT} a {FPS} fps, {TOTAL_FRAMES} frames)...")
+print(f"Iniciando renderizado de video MP4 ({WIDTH}x{HEIGHT} exactos a {FPS} fps, {TOTAL_FRAMES} frames)...")
 
-# Configuración del escritor de video con imageio-ffmpeg
+# macro_block_size=None asegura que no haya padding a 1088 y se respete 1080x1920 nativo
 writer = imageio.get_writer(
     OUTPUT_VIDEO,
     fps=FPS,
     codec="libx264",
     pixelformat="yuv420p",
+    macro_block_size=None,
     ffmpeg_params=["-crf", "18", "-preset", "fast"]
 )
 
 DISSOLVE_FRAMES = 12
 
 for f in range(TOTAL_FRAMES):
-    # Determinar qué escena está activa
     curr_scene = 0
     for idx, (s_start, s_end) in enumerate(SCENE_TIMINGS):
         if s_start <= f < s_end:
@@ -179,7 +205,7 @@ for f in range(TOTAL_FRAMES):
     
     frame_img = RENDER_FUNCS[curr_scene](scene_images[curr_scene], local_t)
     
-    # Transición de disolvencia cruzada (Cross-Dissolve) al final de la escena
+    # Transición de disolvencia cruzada (Cross-Dissolve) entre escenas
     frames_from_end = s_end - f
     if frames_from_end <= DISSOLVE_FRAMES and curr_scene < 4:
         next_scene = curr_scene + 1

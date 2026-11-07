@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 3 — Acumulá Puntos | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #040508;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  .studio-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 50%, rgba(4, 189, 251, 0.26) 0%, rgba(6, 12, 28, 0.8) 45%, #040508 85%),
+      radial-gradient(circle at 20% 75%, rgba(138, 79, 255, 0.16) 0%, transparent 50%),
+      radial-gradient(circle at 80% 25%, rgba(0, 102, 255, 0.18) 0%, transparent 50%);
+  }
+
+  .studio-atmosphere {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(4, 5, 8, 0.3) 0%, transparent 50%, rgba(4, 5, 8, 0.7) 100%);
+    pointer-events: none;
+  }
+
+  /* Centro: Tarjeta Digital Flotante de Club Focus con Contador de Puntos */
+  .card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 880px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  /* Partículas luminosas que ascienden hacia la tarjeta */
+  .particles-stream {
+    position: absolute;
+    bottom: -220px;
+    width: 700px;
+    height: 380px;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .p-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #04BDFB;
+    box-shadow: 0 0 25px #04BDFB, 0 0 40px #ffffff;
+    filter: blur(1px);
+    opacity: 0.9;
+  }
+  .d1 { transform: translateY(-40px) scale(1.4); }
+  .d2 { transform: translateY(-130px) scale(1.9); background: #ffffff; }
+  .d3 { transform: translateY(-80px) scale(1.3); }
+  .d4 { transform: translateY(-160px) scale(2.2); }
+  .d5 { transform: translateY(-60px) scale(1.6); background: #00e5ff; }
+  .d6 { transform: translateY(-190px) scale(1.8); }
+
+  /* Tarjeta Glassmorphic Club Focus */
+  .digital-pass-card {
+    position: relative;
+    width: 820px;
+    background: linear-gradient(135deg, rgba(14, 20, 36, 0.92) 0%, rgba(8, 12, 22, 0.98) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 44px;
+    border: 2px solid rgba(4, 189, 251, 0.55);
+    box-shadow: 
+      0 45px 100px rgba(0, 0, 0, 0.9),
+      0 0 60px rgba(4, 189, 251, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    padding: 55px;
+    overflow: hidden;
+  }
+
+  .card-glow-edge {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(4, 189, 251, 0.35) 0%, transparent 70%);
+    filter: blur(45px);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 35px;
+    margin-bottom: 45px;
+  }
+
+  .card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card-header-left img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .card-header-left h3 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .card-header-left p {
+    font-size: 18px;
+    color: #8fa0ba;
+    margin-top: 3px;
+  }
+
+  .membership-badge {
+    background: rgba(4, 189, 251, 0.15);
+    border: 1px solid rgba(4, 189, 251, 0.6);
+    padding: 10px 24px;
+    border-radius: 99px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.1em;
+  }
+
+  /* Puntos Acreditados (+100) */
+  .points-hero-display {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .points-toast-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(4, 189, 251, 0.18);
+    border: 1px solid #04BDFB;
+    padding: 10px 24px;
+    border-radius: 99px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+  }
+
+  .points-number {
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(180deg, #ffffff 30%, #04BDFB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    filter: drop-shadow(0 0 35px rgba(4, 189, 251, 0.5));
+  }
+
+  .points-unit {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #c4d4eb;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  /* Barra de Progreso de Nivel */
+  .level-progress-bar-wrap {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #8fa0ba;
+  }
+
+  .progress-info span:last-child {
+    color: #04BDFB;
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-fill {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #0088ff, #04BDFB, #ffffff);
+    border-radius: 99px;
+    box-shadow: 0 0 20px rgba(4, 189, 251, 0.8);
+  }
+</style>
+</head>
+<body>
+
+  <div class="studio-bg"></div>
+  <div class="studio-atmosphere"></div>
+
+  <div class="card-container">
+    
+    <!-- Partículas ascendentes de acumulación -->
+    <div class="particles-stream">
+      <div class="p-dot d1"></div>
+      <div class="p-dot d2"></div>
+      <div class="p-dot d3"></div>
+      <div class="p-dot d4"></div>
+      <div class="p-dot d5"></div>
+      <div class="p-dot d6"></div>
+    </div>
+
+    <!-- Tarjeta de Cuenta Club Focus -->
+    <div class="digital-pass-card">
+      <div class="card-glow-edge"></div>
+
+      <div class="card-header">
+        <div class="card-header-left">
+          <img src="../owl_mascot.png" alt="Búho Club Focus">
+          <div>
+            <h3>CLUB FOCUS</h3>
+            <p>Programa de Fidelización Digital</p>
+          </div>
+        </div>
+        <div class="membership-badge">NIVEL 2 · MODO PRO</div>
+      </div>
+
+      <div class="points-hero-display">
+        <div class="points-toast-pill">
+          <span>⚡</span>
+          <span>+100 PUNTOS ACREDITADOS</span>
+        </div>
+        <div class="points-number">300</div>
+        <div class="points-unit">Puntos Acumulados</div>
+      </div>
+
+      <div class="level-progress-bar-wrap">
+        <div class="progress-info">
+          <span>Progreso de Saldo</span>
+          <span>Canje habilitado para sorteo</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

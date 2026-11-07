@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 2 — Escaneá el QR | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #040508;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  .studio-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 35% 45%, rgba(4, 189, 251, 0.24) 0%, rgba(6, 12, 26, 0.75) 45%, #040508 85%),
+      radial-gradient(circle at 80% 55%, rgba(138, 79, 255, 0.15) 0%, transparent 55%);
+  }
+
+  .studio-atmosphere {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(4, 5, 8, 0.2) 0%, transparent 50%, rgba(4, 5, 8, 0.7) 100%);
+    pointer-events: none;
+  }
+
+  /* Stage Content en Perspectiva Cinematográfica */
+  .stage-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  /* Lata Cabrales Focus mostrando el QR */
+  .can-section {
+    position: relative;
+    width: 440px;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .can-glow {
+    position: absolute;
+    width: 480px;
+    height: 800px;
+    background: radial-gradient(circle at center, rgba(4, 189, 251, 0.32) 0%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .can-angled-img {
+    position: relative;
+    width: 420px;
+    height: 900px;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.9));
+  }
+
+  /* Callout del código QR único en la lata */
+  .qr-callout-target {
+    position: absolute;
+    top: 360px;
+    left: 210px;
+    width: 160px;
+    height: 160px;
+    border: 2px dashed rgba(4, 189, 251, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(4, 189, 251, 0.6), inset 0 0 20px rgba(4, 189, 251, 0.3);
+    z-index: 5;
+  }
+
+  .laser-sweep-line {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    right: -15px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #04BDFB, #ffffff, #04BDFB, transparent);
+    box-shadow: 0 0 20px #04BDFB, 0 0 35px #00e5ff;
+    z-index: 6;
+  }
+
+  .qr-tag {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(4, 189, 251, 0.95);
+    color: #040508;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 99px;
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+  }
+
+  /* Haz óptico de conexión entre escáner y la lata */
+  .optical-beam {
+    position: absolute;
+    top: 50%;
+    left: 360px;
+    width: 200px;
+    height: 140px;
+    background: linear-gradient(90deg, rgba(4, 189, 251, 0.35) 0%, rgba(4, 189, 251, 0.05) 100%);
+    clip-path: polygon(0% 40%, 100% 10%, 100% 90%, 0% 60%);
+    filter: blur(8px);
+    z-index: 8;
+    pointer-events: none;
+  }
+
+  /* Smartphone realista con visor de la App Club Focus */
+  .phone-device {
+    position: relative;
+    width: 500px;
+    height: 1040px;
+    background: #0b0e17;
+    border-radius: 60px;
+    padding: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 40px 100px rgba(0, 0, 0, 0.9),
+      0 0 0 1px rgba(4, 189, 251, 0.35),
+      inset 0 0 25px rgba(0, 0, 0, 0.85);
+    z-index: 15;
+    transform: perspective(1200px) rotateY(-10deg) rotateX(4deg);
+    overflow: hidden;
+  }
+
+  .phone-glass-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.02) 45%, transparent 65%);
+    pointer-events: none;
+    z-index: 30;
+    border-radius: 58px;
+  }
+
+  .phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #060810;
+    border-radius: 46px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .app-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .app-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .app-brand span {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+  }
+
+  .app-status-badge {
+    background: rgba(4, 189, 251, 0.15);
+    border: 1px solid rgba(4, 189, 251, 0.5);
+    color: #04BDFB;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 99px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Viewport del escáner en Club Focus */
+  .scanner-viewport {
+    position: relative;
+    flex: 1;
+    margin: 35px 0;
+    border-radius: 28px;
+    background: radial-gradient(circle at center, rgba(4, 189, 251, 0.08) 0%, rgba(5, 7, 14, 0.85) 70%);
+    border: 1px solid rgba(4, 189, 251, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    overflow: hidden;
+  }
+
+  .hud-crosshairs {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin-top: 50px;
+  }
+
+  .hud-corner {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-color: #04BDFB;
+    border-style: solid;
+  }
+  .hud-tl { top: 0; left: 0; border-width: 4px 0 0 4px; border-top-left-radius: 12px; }
+  .hud-tr { top: 0; right: 0; border-width: 4px 4px 0 0; border-top-right-radius: 12px; }
+  .hud-bl { bottom: 0; left: 0; border-width: 0 0 4px 4px; border-bottom-left-radius: 12px; }
+  .hud-br { bottom: 0; right: 0; border-width: 0 4px 4px 0; border-bottom-right-radius: 12px; }
+
+  .laser-scanner-hud {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #04BDFB;
+    box-shadow: 0 0 20px #04BDFB, 0 0 35px #ffffff;
+  }
+
+  .detected-banner {
+    width: 100%;
+    background: rgba(9, 14, 25, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(4, 189, 251, 0.55);
+    border-radius: 20px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  }
+
+  .detected-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #04BDFB;
+    color: #040508;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .detected-text h4 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+  }
+
+  .detected-text p {
+    font-size: 15px;
+    color: #04BDFB;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <div class="studio-bg"></div>
+  <div class="studio-atmosphere"></div>
+
+  <div class="stage-content">
+    
+    <!-- Lata de Cabrales Focus con callout de QR -->
+    <div class="can-section">
+      <div class="can-glow"></div>
+      <img src="../can_angle_3.png" alt="Lata Cabrales Focus ángulo lateral" class="can-angled-img">
+      
+      <div class="qr-callout-target">
+        <div class="laser-sweep-line"></div>
+        <div class="qr-tag">QR ÚNICO</div>
+      </div>
+    </div>
+
+    <div class="optical-beam"></div>
+
+    <!-- Smartphone moderno con la App Club Focus escaneando -->
+    <div class="phone-device">
+      <div class="phone-glass-glare"></div>
+      <div class="phone-screen">
+        
+        <div class="screen-header">
+          <div class="app-brand">
+            <img src="../owl_mascot.png" alt="Owl">
+            <span>Club Focus</span>
+          </div>
+          <div class="app-status-badge">Escanear Lata</div>
+        </div>
+
+        <div class="scanner-viewport">
+          <div class="hud-crosshairs">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+            <div class="laser-scanner-hud"></div>
+          </div>
+
+          <div class="detected-banner">
+            <div class="detected-icon">✓</div>
+            <div class="detected-text">
+              <h4>LATA CABRALES FOCUS</h4>
+              <p>Código detectado · Registro exitoso</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

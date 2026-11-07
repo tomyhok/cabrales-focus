@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 5 — Cierre de Marca | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #030407;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  /* Fondo de estudio profundo con iluminación dramática */
+  .studio-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 42%, rgba(4, 189, 251, 0.28) 0%, rgba(6, 11, 25, 0.75) 45%, #030407 85%),
+      radial-gradient(circle at 15% 30%, rgba(0, 102, 255, 0.20) 0%, transparent 55%),
+      radial-gradient(circle at 85% 30%, rgba(138, 79, 255, 0.16) 0%, transparent 55%);
+  }
+
+  /* Bokeh y destellos de escenario en segundo plano */
+  .trophy-bokeh-silhouette {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 420px;
+    opacity: 0.18;
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  .trophy-bokeh-silhouette svg {
+    width: 100%;
+    height: 100%;
+    fill: #04BDFB;
+  }
+
+  /* Piso de estudio oscuro con reflejo especular */
+  .studio-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 680px;
+    background: linear-gradient(to bottom, rgba(7, 10, 18, 0.4) 0%, #020305 100%);
+    border-top: 1px solid rgba(4, 189, 251, 0.28);
+    perspective: 1200px;
+    z-index: 3;
+  }
+
+  .floor-reflection-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px;
+    height: 350px;
+    background: radial-gradient(ellipse at top, rgba(4, 189, 251, 0.4) 0%, rgba(0, 85, 255, 0.2) 40%, transparent 75%);
+    filter: blur(50px);
+  }
+
+  /* Cinta Roja Tradicional Cabrales (Superior) */
+  .top-brand-lockup {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 25;
+  }
+
+  .cabrales-ribbon-img {
+    height: 95px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.85));
+  }
+
+  .brand-subtext {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    color: #c4d4eb;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  /* Protagonista: Lata Real de Cabrales Focus en Primer Plano Heroico */
+  .hero-packshot-wrapper {
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 720px;
+    height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .packshot-aura {
+    position: absolute;
+    width: 620px;
+    height: 800px;
+    background: radial-gradient(ellipse at center, rgba(4, 189, 251, 0.45) 0%, rgba(0, 85, 255, 0.22) 45%, transparent 70%);
+    filter: blur(70px);
+    z-index: 1;
+  }
+
+  .packshot-image {
+    position: relative;
+    height: 900px;
+    width: auto;
+    object-fit: contain;
+    z-index: 5;
+    filter: 
+      drop-shadow(0 30px 70px rgba(0, 0, 0, 0.95))
+      drop-shadow(0 0 55px rgba(4, 189, 251, 0.38));
+  }
+
+  .packshot-mirror {
+    position: absolute;
+    top: 890px;
+    height: 420px;
+    transform: scaleY(-1);
+    opacity: 0.28;
+    filter: blur(6px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 75%);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* Cierre Publicitario: Eslogan y Cierre Institucional con Espacio Negativo */
+  .cinematic-closing-section {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    width: 100%;
+    padding: 0 75px;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .claim-box {
+    width: 100%;
+    background: rgba(9, 13, 24, 0.90);
+    backdrop-filter: blur(35px);
+    border: 1px solid rgba(4, 189, 251, 0.45);
+    border-radius: 36px;
+    padding: 42px 50px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+  }
+
+  .brand-claim-title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+
+  .brand-claim-title span {
+    color: #04BDFB;
+  }
+
+  .institutional-signature {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-top: 20px;
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .institutional-signature span {
+    color: #04BDFB;
+  }
+</style>
+</head>
+<body>
+
+  <div class="studio-bg"></div>
+
+  <!-- Silueta Bokeh del Trofeo de Esports en Fondo Desenfoque -->
+  <div class="trophy-bokeh-silhouette">
+    <svg viewBox="0 0 200 240">
+      <path d="M70 190 H130 V210 H70 Z M50 210 H150 V225 H50 Z M40 225 H160 V235 H40 Z M92 155 H108 V190 H92 Z M60 70 C60 145 80 155 100 155 C120 155 140 145 140 70 Z M60 85 C35 85 30 115 50 135 C62 147 75 145 75 145 C75 145 62 135 55 125 C45 110 50 95 60 95 Z M140 85 C165 85 170 115 150 135 C138 147 125 145 125 145 C125 145 138 135 145 125 C155 110 150 95 140 95 Z"/>
+      <ellipse cx="100" cy="70" rx="40" ry="12"/>
+      <polygon points="100,28 106,44 122,44 109,54 114,70 100,60 86,70 91,54 78,44 94,44"/>
+    </svg>
+  </div>
+
+  <div class="studio-floor">
+    <div class="floor-reflection-glow"></div>
+  </div>
+
+  <!-- Identidad Superior: Cinta Tradicional Cabrales -->
+  <div class="top-brand-lockup">
+    <img src="../cabrales_ribbon.png" alt="Cabrales Desde 1941" class="cabrales-ribbon-img">
+    <div class="brand-subtext">CABRALES · DESDE 1941</div>
+  </div>
+
+  <!-- Packshot Heroico de la Lata Real -->
+  <div class="hero-packshot-wrapper">
+    <div class="packshot-aura"></div>
+    <img src="../can_hero.png" alt="Cabrales Focus Lata Oficial" class="packshot-image">
+    <img src="../can_hero.png" alt="Reflejo" class="packshot-mirror">
+  </div>
+
+  <!-- Cierre Comercial: Claim y Firma de Marca -->
+  <div class="cinematic-closing-section">
+    <div class="claim-box">
+      <h2 class="brand-claim-title">
+        Enfocá tu energía en <span>lo que te apasiona</span>.
+      </h2>
+      <div class="institutional-signature">
+        PORQUE SOMOS CABRALES. <span>SOMOS FOCUS.</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

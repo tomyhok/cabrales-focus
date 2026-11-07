@@ -4945,20 +4945,84 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const p5Beats = document.querySelectorAll('#p5-beats-grid [data-p5-time]');
-  const p5Preview = document.getElementById('p5-beat-preview');
-  p5Beats.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      p5Beats.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (p5Preview) {
-        p5Preview.innerHTML = `
-          <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">${btn.getAttribute('data-p5-time')}</span>
-          <h5 style="font-family: var(--font-heading); font-size: 0.92rem; margin: 4px 0;">${btn.getAttribute('data-p5-title')}</h5>
-          <p style="font-size: 0.75rem; color: var(--text-secondary);">${btn.getAttribute('data-p5-desc')}</p>
-        `;
-      }
-    });
+const p5QuickJumps = document.querySelectorAll('.p5-quick-jump');
+const p5Video = document.getElementById('p5-spot-video');
+const p5Img = document.getElementById('p5-preview-img');
+const p5Time = document.getElementById('p5-preview-time');
+const p5Title = document.getElementById('p5-preview-title');
+const p5Vo = document.getElementById('p5-preview-vo');
+const p5Desc = document.getElementById('p5-preview-desc');
+
+function selectP5Scene(btn, seekVideo = true) {
+  if (!btn) return;
+  p5Beats.forEach((b) => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const seekSec = parseFloat(btn.getAttribute('data-p5-seek') || '0');
+  const timeText = btn.getAttribute('data-p5-time') || '';
+  const titleText = btn.getAttribute('data-p5-title') || '';
+  const descText = btn.getAttribute('data-p5-desc') || '';
+  const voText = btn.getAttribute('data-p5-vo') || '';
+  const imgUrl = btn.getAttribute('data-p5-img') || '';
+
+  if (p5Time) p5Time.textContent = timeText;
+  if (p5Title) p5Title.textContent = titleText;
+  if (p5Vo) p5Vo.textContent = `“${voText}”`;
+  if (p5Desc) p5Desc.textContent = descText;
+  if (p5Img && imgUrl) p5Img.src = imgUrl;
+
+  p5QuickJumps.forEach((qBtn) => {
+    const qJump = parseFloat(qBtn.getAttribute('data-jump') || '0');
+    if (Math.abs(qJump - seekSec) < 1) {
+      qBtn.classList.add('active');
+    } else {
+      qBtn.classList.remove('active');
+    }
   });
+
+  if (seekVideo && p5Video) {
+    p5Video.currentTime = seekSec;
+    p5Video.play().catch(() => {});
+  }
+}
+
+p5Beats.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    selectP5Scene(btn, true);
+  });
+});
+
+p5QuickJumps.forEach((qBtn) => {
+  qBtn.addEventListener('click', () => {
+    const jumpSec = parseFloat(qBtn.getAttribute('data-jump') || '0');
+    const matchBtn = Array.from(p5Beats).find(
+      (b) => Math.abs(parseFloat(b.getAttribute('data-p5-seek') || '0') - jumpSec) < 1
+    );
+    if (matchBtn) {
+      selectP5Scene(matchBtn, true);
+    } else if (p5Video) {
+      p5Video.currentTime = jumpSec;
+      p5Video.play().catch(() => {});
+    }
+  });
+});
+
+if (p5Video) {
+  p5Video.addEventListener('timeupdate', () => {
+    const cur = p5Video.currentTime;
+    let targetIdx = 0;
+    if (cur >= 17) targetIdx = 4;
+    else if (cur >= 12) targetIdx = 3;
+    else if (cur >= 8) targetIdx = 2;
+    else if (cur >= 4) targetIdx = 1;
+    else targetIdx = 0;
+
+    const activeBtn = p5Beats[targetIdx];
+    if (activeBtn && !activeBtn.classList.contains('active')) {
+      selectP5Scene(activeBtn, false);
+    }
+  });
+}
 
   /* ------------------------------------------------------------------------
      9B. SIMULADOR INTERACTIVO DE P6 — SECUENCIA DE 4 INSTAGRAM STORIES
