@@ -1,0 +1,9 @@
+# Ignorar archivos mayores a 100MB para GitHub
+assets/cortometraje_yt/*.mp4
+*.zip
+
+# Archivos de caché del sistema y temporales
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

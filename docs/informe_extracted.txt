@@ -1,0 +1,263 @@
+EXPANSIÓN TRANSMEDIA Y STORYTELLING | TRABAJO PRÁCTICO 2
+TALLER DE NARRATIVAS DIGITALES · UADEFRANCO DENK · TOMAS HOKAMA
+STORYTELLING CENTRAL
+Corazón de marca
+Cabrales Focus es un concepto académico de café cold brew listo para tomar en lata de 240 ml. Base propuesta: café 100 % arábica de Brasil, inspirado en Cabrales Brasil; café extraído en frío (agua y café), azúcar y L-teanina. Objetivos por lata: 6 g de azúcar añadida, 100 mg de L-teanina y 80 mg de cafeína proveniente del café, sin cafeína añadida. Sin leche, crema ni saborizantes añadidos. Servir frío, sin preparar ni diluir. Las cantidades son decisiones de diseño académico, no resultados de laboratorio ni una fórmula industrial validada. No se fijan vencimiento, conservación a temperatura ambiente ni tabla nutricional completa. Firma: “Precisión que se toma”. Comunicación: “Cold brew con azúcar y L-teanina, listo para acompañar tu rutina”, sin promesas de eficacia. Referencias: https://www.cabrales.com/cafes-tostados/ y https://www.lacolombe.com/products/cold-brew .
+Relato conductor
+Bruno pierde una ronda decisiva de VALORANT al distraerse con el celular. Mientras scrollea descubre una publicación de Suga que invita a probar Cabrales Focus en Modo Focus, en Dot Baires Shopping. Al día siguiente visita el lugar y recibe una lata. Esa noche prepara otra partida: aparta el celular, abre el café y se acomoda los auriculares. Ante un nuevo uno contra uno, escucha, espera y gana. Su mirada se funde con los ojos gráficos del búho; aparecen el producto, el llamado a compra y los créditos. La victoria con la lata cierra la historia, sin una escena posterior de abandono del juego.
+Personajes y continuidad
+Bruno representa al jugador adulto que busca disfrutar una partida y preparar su atención. Solange representa a quien alterna estudio o trabajo con mensajes y documentos; su historia se desarrolla por escrito en Club Focus. Ambos perfiles se retoman del TP1 como construcciones de diseño, no como personas encuestadas.
+El búho representa observación, actividad nocturna y precisión. No es un personaje que visita ventanas, habla o modifica los acontecimientos. En el corto aparece únicamente como transición gráfica de los ojos al producto.
+Solange existe como buyer persona y protagonista del relato escrito de Club Focus; se propone también como personaje del reel P4. Su participación requiere una intérprete, a confirmar. El reel suma una escena cotidiana complementaria al relato escrito.
+Bruno gana con la lata presente. La puesta en escena también muestra preparación, escucha y reducción de distracciones; no se añade un desenlace donde apaga el juego.
+Cada expansión se entiende por sí sola y aporta un episodio, una perspectiva o una participación nueva. Repetir un clip en otra red es distribución, no otra expansión.
+Producto, colaboración con Suga, activación, app Club Focus, compra, puntos, recompensas y sorteo son simulaciones académicas. No se presentan como acuerdos, ventas, testimonios o resultados reales.
+DISEÑO DE LA EXPERIENCIA TRANSMEDIA
+La campaña reúne seis plataformas y formatos audiovisuales, gráficos, escritos e interactivos. Con Jenkins y Scolari, trabajados en las clases 4 y 5, cada medio amplía el mundo con contenido autónomo y complementario. La publicación que invita al evento no sustituye la experiencia de Bruno que responde a ella.
+Plataforma
+Contenido
+Aporte narrativo
+YouTube
+Turno de noche, 3:50 horizontal
+Relato completo de Bruno: derrota, descubrimiento, visita y victoria.
+Instagram
+Carrusel P2, placa P3, Reel P5 y stories P6
+Precuela de la partida, invitación que descubre Bruno y elecciones de la comunidad.
+TikTok
+P1 teaser y P4 Solange; P5 en Instagram Reels
+Anticipación de producto con Bruno y pausa cotidiana de Solange; RTM del Major en Instagram.
+Twitch
+Guardia compartida con Suga, 35 min, propuesta
+Dos dilemas inéditos discutidos y votados en vivo; la comunidad propone un tercero.
+Modo Focus en Dot
+Activación presencial propuesta
+El visitante elige una distracción, realiza una preparación breve y recibe el objeto que lleva a su próxima partida.
+Club Focus
+App móvil gratuita: comunidad, compra y fidelización
+Historias Focus y Archivo de ventanas; mapa de compra, eShop, puntos, niveles y recompensas.
+Red de remisiones
+Origen
+Destino y propósito
+YouTube
+Descripción hacia Club Focus y P4.
+Instagram
+Perfil hacia agenda de Modo Focus; P6 hacia relato de Solange.
+TikTok
+Perfil hacia Historias Focus; P5 hacia Tienda y sorteo del Major en la app.
+Twitch
+Chat fijado hacia Club Focus; archivo devuelve casos para el vivo.
+Modo Focus en Dot
+QR de acceso a la app y al corto; distinto del QR único de registro de cada lata.
+Club Focus
+Inicio enlaza historias, redes, agenda y Twitch; Tienda y Mi Club articulan compra y recompensas.
+Club Focus es la app móvil gratuita de comunidad y fidelización de Cabrales Focus, con registro gratuito. Inicio reúne noticias, redes sociales e Historias Focus: el corto de Bruno, el relato de Solange y el Archivo de ventanas. Dónde comprar muestra un mapa de puntos de venta. Tienda ofrece pedidos online y canjes. Mi Club reúne registro de latas, saldo, nivel y participaciones en sorteos.
+Cada lata incorpora un QR único protegido, accesible tras abrirla; se registra una sola vez y queda asociado a la cuenta. Cada registro suma 100 puntos para canjear, que no vencen, y 100 puntos de nivel, válidos durante tres meses desde ese registro. El vencimiento es individual, sin reinicio general. Canjear descuenta saldo, pero no puntos de nivel. Nivel 1: 0–499 puntos vigentes; nivel 2: 500–1.499; nivel 3: desde 1.500. Al vencer puntos de nivel puede bajar la categoría; el saldo canjeable permanece intacto. Mi Club muestra ambos contadores y el próximo vencimiento con el aviso “Estos puntos dejarán de contar para tu nivel. Tus puntos para canjear no vencen”.
+Catálogo de descuentos: nivel 1 desbloquea código del 5 % por 100 puntos; nivel 2, 10 % por 200; nivel 3, 15 % por 300. Aplican a Focus y otros productos Cabrales en la eShop. Un uso, vigencia de 30 días desde el canje, un código por pedido y sin acumular descuentos. Bajar de nivel bloquea nuevos canjes de la categoría anterior, pero no invalida códigos obtenidos.
+Merchandising accesible desde cualquier nivel según saldo y stock: botella plástica reutilizable 1.000 puntos; taza 1.200; peluche del búho 2.000; remera con el búho 2.500; buzo 3.000. Remera y buzo requieren elegir talle. Tienda separa “Comprar productos” de “Canjear puntos”; muestra costo, disponibilidad y puntos faltantes. Diseño físico, stock, talles y entrega se representan como ejemplos pendientes de concreción.
+P5 propone un sorteo de entradas al Major de Counter-Strike 2 (CS2) dentro del catálogo de recompensas. Recorrido: publicación → app Club Focus → registro gratuito → registro de latas → puntos → canje por participaciones. Registrarse no basta para entrar al sorteo: se requieren los puntos del canje. El premio propuesto corresponde al FiReMAJOR Buenos Aires 2027, organizado por FiReSPORTS y previsto del 31/05 al 20/06/2027. Se propone co-branding académico con FiReSPORTS; premio confirmado para la simulación: un ganador recibe dos entradas, sin viaje ni alojamiento. Cada bono cuesta 100 puntos, con máximo de diez por usuario para esta campaña. Faltan jornada, sector, fechas y condiciones restantes. El Last Chance 2026 sumaba VRS para Singapur 2026, no clasificaba directamente al Major argentino.
+Para el TPO, la app, los pedidos, códigos, puntos, niveles, recompensas y sorteo se representan mediante pantallas y un recorrido simulado, sin pagos, pedidos ni premios reales. Las historias pueden consultarse sin compra y la participación narrativa de P4/P6 no exige puntos; esa vía se distingue del canje de recompensas.
+Recorridos: P1 → YouTube; P2 → ficha de producto y app Club Focus; P3 → agenda Modo Focus y stream de Suga; P4/P6 → Solange y Archivo de ventanas; P5 → Tienda / sorteo Major → canje → Mi Club. Suga demuestra esta mecánica tras el anuncio. El QR de acceso a la app se distingue del código único de cada lata.
+Colaboración propuesta con Suga
+Suga (Malena Souto), creadora argentina vinculada a VALORANT, encaja con la práctica de juego de Bruno y permite conectar una recomendación digital con la activación. Streams Charts informa 125.939 seguidores en la versión accesible consultada el 31/10/2026, con último stream listado el 7/10/2026. Es un registro de referencia, no un corte en tiempo real. Según los rangos de la clase 8, corresponde a macroinfluencer (100.000 a 1 millón). No se dispone de datos verificados sobre edad, ubicación ni engagement de su audiencia; la afinidad temática es una hipótesis de selección. Fuente: https://streamscharts.com/channels/suga
+La colaboración propuesta comprende P3, Modo Focus y un stream patrocinado de 35 minutos: Suga presenta la lata y Club Focus, conversa con la comunidad y demuestra el sorteo del FiReMAJOR Buenos Aires 2027. Muestra registro, escaneo, puntos, canje de bono y confirmación en Mi Club. Explica que escanear suma puntos pero no inscribe automáticamente. El bloque se publica junto con P5 o después; se reutiliza como clip y destacado. Acuerdo simulado para el TPO, sin contratación ni emisión real obligatoria.
+SEIS PUBLICACIONES PARA REDES SOCIALES
+P1 Antes de encontrar Focus
+TikTok / Instagram Reels · Audiovisual · 25 s · 9:16 · teaser y precuela
+Primera publicación en redes sobre Cabrales Focus. Bruno intenta estudiar o trabajar, relee, se distrae y bosteza. Cierra la notebook y se retira; queda visible una lata en otro escritorio. El espectador descubre el producto antes que él. Ocurre antes del corto de YouTube.
+Guion: 0–6 s, Bruno frente a la notebook, atención fragmentada; 6–12 s, relee y bosteza; 12–17 s, cierra la notebook y se va; 17–21 s, el encuadre revela la lata en otro escritorio; 21–25 s, primer plano de producto y remisión a YouTube. La lata no provoca una transformación instantánea.
+Copy: “Hay días en los que el foco parece estar en otra parte. Bruno todavía no sabe lo que se va a cruzar. Descubrí su historia en Turno de noche, en nuestro canal de YouTube. Cabrales Focus. Precisión que se toma.”
+Antes del estreno: sustituir la invitación por “Próximamente en YouTube”. Tras el estreno: descripción y comentario fijado con acceso al corto. Preparar portada y mockup de TikTok/Reels.
+P2 Conocé Cabrales Focus
+Instagram · Imagen · carrusel informativo de 6 placas
+1. Qué es: Coffee Cold Brew listo para tomar, concepto académico de Cabrales Focus.
+2. Qué contiene: lata de 240 ml; café arábica de Brasil extraído en frío, azúcar y L-teanina. Objetivos académicos: 6 g de azúcar y 100 mg de L-teanina por lata. No presentar estos valores como análisis de un producto comercial.
+3. Cómo se elabora: explicar el proceso cold brew como extracción en frío, diferenciándolo de un café caliente enfriado; validar el texto final con la ficha de producto.
+4. Qué lo diferencia: café portátil listo para consumir, identidad Focus y L-teanina como ingrediente propuesto, sin atribuir eficacia validada.
+5. Cómo se consume: listo para tomar; mostrar el uso de la lata y validar indicaciones de conservación y consumo con la etiqueta.
+6. Club Focus: app gratuita con mapa, eShop, historias y recompensas. CTA a conocer la app y sus funciones.
+Copy: “Conocé Cabrales Focus: café cold brew en lata para acompañar tu rutina. Deslizá para descubrir el concepto, su composición propuesta y cómo disfrutarlo. En Club Focus encontrás novedades, puntos de venta y recompensas. Precisión que se toma. Producto y app propuestos para un proyecto académico.”
+Remisión: perfil → Club Focus → Inicio / ficha de producto. P2 cuenta con seis placas SVG de 1080 × 1350, copy y mockup local integrados al HTML. La estética inicial no fue aprobada y queda pausada; no considerar la pieza finalizada. Se preparó un prompt para rediseñarla en Figma con lata, etiqueta, logos y referencias originales. Dirección: campaña editorial de café contemporánea, producto protagonista, negro/cian/blanco cálido, sin estética de dashboard, emojis ni neón excesivo. Conservar la lata y etiqueta sin redibujarlas; usar capas editables y prototipo navegable. Falta ejecutar y revisar el rediseño.
+P3 Entrá a Modo Focus
+Instagram · Imagen · placa con Suga · AIDA
+Conservar la invitación a Modo Focus en Dot Baires Shopping que Bruno descubre en el corto. Se renumera la pieza, sin exigir reeditar el cortometraje terminado. La colaboración incluye un stream patrocinado propuesto donde Suga presenta la lata, Club Focus y una demostración del sorteo.
+P3: imagen ya generada según confirmación del equipo; conservar el arte existente. Las siguientes indicaciones sirven para cotejarlo, no para exigir su rediseño. Placa de Instagram 1080 × 1350, con Suga y la lata como protagonistas; negro, blanco cálido y cian. Usar retrato de referencia autorizado y render original, sin simular una foto documental de un acuerdo real. Jerarquía: “ENTRÁ A MODO FOCUS” / “Con Suga y Cabrales Focus” / “Probá Cabrales Focus en Dot Baires Shopping” / “Conocé Club Focus en el stream con Suga” / “Consultá la agenda en el perfil”. Pie: “Colaboración y activación propuestas · Proyecto académico”. Mantener el foco visual en la activación; el detalle del sorteo va en el copy y la demo, no en un bloque adicional dentro de la placa. Fecha y horario no confirmados: no inventarlos.
+Copy: “¿Listo para entrar en Modo Focus? Con Suga y Cabrales Focus, te invitamos a descubrir nuestro cold brew en Dot Baires Shopping. La experiencia sigue en Club Focus: conocé la app y acompañá a Suga en un stream donde mostrará cómo registrar una lata, sumar puntos y canjear un bono para participar por dos entradas al FiReMAJOR Buenos Aires 2027. Una lata registrada suma 100 puntos; un bono cuesta 100. Hasta diez bonos por usuario y un ganador de dos entradas. Consultá la agenda de la activación y del stream desde el enlace del perfil. Cabrales Focus. Precisión que se toma. #CabralesFocus #ModoFocus #ClubFocus. Colaboración, activación y sorteo propuestos para un proyecto académico.”
+AIDA: pregunta / experiencia / interés por probar y participar / consulta de agenda. Remisión: perfil → Inicio de Club Focus → agenda de activación y stream. La demostración del sorteo se emite junto con P5 o después de su anuncio. No se requiere contratar ni filmar a Suga para el TPO.
+P4 Una pausa con Solange
+TikTok · Audiovisual · 30 s · 9:16 · encuentro simulado y CGU
+Encuentro casual en la calle o espacio cotidiano exterior: la cámara encuentra a Solange tomando Focus durante una pausa. Tres preguntas breves, entrevistador fuera de cuadro y respuestas naturales. Conecta su rutina de estudio/trabajo con su relato escrito, sin presentar un testimonio real ni eficacia demostrada.
+Guion: 0–5 s, “¿Qué estás tomando?” / “Un Cabrales Focus”; 5–12 s, “¿Estás haciendo una pausa?” / cuenta que está terminando un informe; 12–22 s, repregunta sobre cuándo lo toma / “Me gusta tener un café frío a mano cuando estudio o trabajo hasta tarde”; 22–27 s, reacción y regreso a su actividad; 27–30 s, “¿En qué momento del día hacés tu pausa?”.
+Copy: “Una pausa, un café frío y una charla antes de seguir. ¿En qué momento del día hacés tu pausa? Contanos o compartí tu escena con #MiVentanaFocus. Descubrí a Solange en Historias Focus. Compartir historias no requiere compra ni puntos; reutilizamos aportes solo con autorización y crédito. Convocatoria para mayores de 18 años. Escena de ficción · Proyecto académico.”
+Remisión: perfil → Club Focus → Historias Focus → Solange y Archivo de ventanas. Confirmar intérprete, locación tranquila y audio; preparar subtítulos, portada y mockup.
+P5 Una última bala
+Instagram Reels · Audiovisual · 40 s · 9:16 · RTM y co-branding propuesto
+El FiReSPORTS Last Chance se disputó en Buenos Aires del 29/10 al 01/11/2026. Fue una oportunidad de sumar VRS antes de las invitaciones al Major de Singapur 2026, no un clasificatorio directo al Major argentino. El puente creativo al FiReMAJOR Buenos Aires 2027 es la escena local y el organizador compartido, FiReSPORTS.
+El FiReMAJOR Buenos Aires 2027 está previsto del 31/05 al 20/06/2027. Se propone para el TPO un co-branding Cabrales Focus × FiReSPORTS y un sorteo de entradas a ese evento. No existe un acuerdo real confirmado por el proyecto.
+Guion: 0–6 s, recuerdo gráfico del Last Chance y la última bala; 6–12 s, “En 2027, el Major llega a casa”, identidad de la colaboración propuesta; 12–18 s, comprar una lata y descargar Club Focus gratis; 18–25 s, registrarse y escanear el código único; 25–33 s, puntos acreditados y canje de bono en Tienda; 33–40 s, confirmación en Mi Club y consulta de condiciones.
+Copy: “Buenos Aires vivió la tensión de la última bala. En 2027, el Major llega a casa. Cabrales Focus × FiReSPORTS: una colaboración propuesta para acercarte a la tribuna del FiReMAJOR Buenos Aires 2027. Comprá una lata, descargá Club Focus, registrate y escaneá su código único. Sumá puntos y canjealos por bonos de participación. Cada lata suma 100 puntos y cada bono cuesta 100. Podés canjear hasta diez bonos por usuario; un ganador recibe dos entradas. Consultá tus participaciones en Mi Club. Precisión que se toma.”
+Pie visible: “Co-branding y sorteo propuestos · Simulación académica”. Un código se registra una sola vez. Descargar, registrarse o escanear no inscribe automáticamente: hace falta canjear. Un bono es una participación, no una entrada asegurada. Reglas: 100 puntos por lata y por bono; máximo diez bonos por usuario; un ganador de dos entradas, sin viaje ni alojamiento. Faltan jornada, sector, fechas y condiciones restantes.
+Remisión: perfil → Club Focus → Tienda / recompensa Major → canje → Mi Club. Usar gráficos originales o material autorizado; no reutilizar la transmisión por ser un evento local. Suga amplifica esta pieza mediante una demo del mismo recorrido.
+P6 Tu momento Focus
+Instagram Stories · Libre · secuencia interactiva de 4 historias
+1. “Antes de empezar, ¿qué te distrae más?” Encuesta: “Notificaciones” / “Varias tareas”.
+2. “¿Cuándo hacés tu pausa?” Encuesta: “Estudio” / “Trabajo”.
+3. “¿Qué hacés para volver a una tarea?” Caja de respuestas.
+4. “Conocé la historia de Solange y compartí la tuya”. Acceso a Historias Focus / Archivo de ventanas.
+Copy: “Cada partida y cada tarea empiezan de una forma distinta. Elegí, contá y descubrí otras historias. Solo publicaremos aportes con autorización.”
+Remisión: Club Focus → Historias Focus. Participación narrativa gratuita, independiente de puntos y sorteos. Preparar mockup con encuestas y caja visibles.
+Complementos y límites de producción
+Stories de guía de la app, guardadas en el destacado “Club Focus”: registro, escaneo, saldo/nivel, canje y confirmación de bonos. Se reutilizan las pantallas de P5 y la demo propuesta de Suga. No cuentan como una séptima pieza obligatoria.
+Opcional de menor prioridad: tres publicaciones fijadas que formen un mosaico de la lata; cada una debe entenderse por separado. El búho conserva su función de identidad y cierre del corto, pero deja de tener un video social independiente.
+Entregables sociales: tres videos (P1, P4 y P5), dos piezas de imagen (P2 y P3), una secuencia libre (P6), cada uno con copy, portada cuando corresponda y mockup en su red. Duraciones objetivo: 25 + 30 + 40 = 95 s. No es necesario ejecutar el stream, la app, el comercio o el sorteo reales.
+PLANIFICACIÓN
+Orden de publicación propuesto: P1 teaser (primera aparición de Focus en redes) → P2 carrusel informativo → P3 Suga y activación → P4 Solange → P5 Last Chance / Major → P6 interacción. El calendario de producción es distinto: el cortometraje ya está completo.
+P1 precede cronológicamente al corto. Antes del estreno remite a “Próximamente en YouTube”; después, se actualiza el enlace. P3 conserva la invitación que ve Bruno y antecede a Modo Focus; el corto se publica tras esa activación dentro del calendario ficticio.
+P5 responde al cierre del Last Chance del 01/11/2026 y se sitúa en los días posteriores en el calendario hipotético. Las piezas anteriores se ubican antes de ese anuncio sin afirmar que se publicaron realmente. El stream patrocinado y la demo de Suga se programan junto con P5 o después. Las stories guía quedan en el destacado Club Focus; P6 recoge respuestas posteriormente.
+GUION HÍBRIDO DEL EJE AUDIOVISUAL
+Turno de noche · 3:50 · 16:9 · 1920 × 1080 · 25 fps. Un protagonista visible y dos integrantes de producción. PG: general; PM: medio; PP: primer plano; PD: detalle. Cámara fija salvo indicación. Tiempos previstos de montaje.
+La estructura de tres actos trabajada con Lupton en clase 3 organiza derrota y descubrimiento, visita y preparación, y victoria. La notificación concreta el conflicto y la apertura de la lata suma el detalle sensorial trabajado con Buster. La transformación sintetizada en cinco segundos (clase 6) es pasar de distraerse en una ronda a preparar una revancha y ganarla.
+1 · La derrota · 0:00 a 0:45
+Interior habitación, noche. Bruno queda solo en la ronda. Una notificación le hace apartar la mirada; reacciona tarde y pierde.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+010:00–0:10
+PG lateral: juega, celular junto al mouse, sin lata.
+Monitor y lámpara rebotada; teclado y respiración.
+020:10–0:22
+Captura propia: uno contra uno, cobertura.
+Pasos del rival; rótulo “Último jugador. Una oportunidad”.
+030:22–0:35
+PP: mira el celular y vuelve tarde al monitor.
+Notificación y derrota sincronizadas con la mirada.
+040:35–0:45
+PM: baja los auriculares y toma el celular.
+“Lo tenía… miré para otro lado”.
+2 · El descubrimiento · 0:45 a 1:15
+Interior, misma noche. Bruno scrollea, vuelve a la publicación de Suga y guarda la invitación a Modo Focus.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+050:45–0:51
+PD sobre hombro: pasa dos publicaciones ficticias.
+Picado suave; ambiente del cuarto.
+060:51–0:59
+Inserto: vuelve a P3 con Suga y la lata.
+Captura del mockup local; música suave sin voz de Suga.
+070:59–1:09
+P3 a pantalla completa: Modo Focus en Dot Baires.
+Texto legible; “Colaboración propuesta · Simulación académica”.
+081:09–1:15
+PP: asiente y bloquea el teléfono.
+“Mañana paso”. Corte a día.
+3 · La llegada · 1:15 a 1:40
+Exterior y acceso de Dot, día siguiente. Con otra remera, Bruno llega y reconoce el lugar de la invitación.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+091:15–1:24
+PG: fachada, Bruno camina al acceso.
+Luz natural; rótulo “Al día siguiente”.
+101:24–1:32
+PM lateral: consulta P3 guardada y guarda el teléfono.
+Ambiente urbano; sin diálogo.
+111:32–1:40
+PG desde atrás: cruza la entrada.
+Pasos; puente sonoro hacia interior.
+4 · La entrega · 1:40 a 1:55
+Interior sugerido de Dot. Solo dos manos: una ofrece la lata y Bruno la recibe. No se necesita montar un stand.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+121:40–1:45
+PD: mano espera a izquierda; entra lata cerrada desde derecha.
+Cámara apoyada; fondo neutro.
+131:45–1:51
+Mismo PD continuo: Bruno recibe la lata.
+Ambos integrantes aportan una mano; cámara fija.
+141:51–1:55
+PD: gira la etiqueta hasta que se lee Focus.
+Luz sin reflejo; roce del envase.
+5 · La salida · 1:55 a 2:10
+Exterior, día. Bruno sale con la lata cerrada, la observa y se aleja.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+151:55–2:01
+PG: cruza la salida, lata en la misma mano.
+Luz natural y ambiente exterior.
+162:01–2:06
+PM: mira la lata y sigue.
+No abre ni bebe; cámara fija.
+172:06–2:10
+PD: lata cerrada baja y sale de cuadro.
+Corte por movimiento al escritorio.
+6 · La preparación · 2:10 a 2:45
+Habitación, noche del segundo día. Bruno prepara su espacio, aparta el celular, abre la lata y se dispone a jugar.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+182:10–2:17
+PG igual a 01: lata a izquierda del teclado.
+Rótulo “Esa noche”; misma luz de habitación.
+192:17–2:23
+PD: activa silencio y deja celular boca abajo y lejos.
+Sonido de bloqueo, antes de abrir la lata.
+202:23–2:28
+PD: abre la anilla; etiqueta hacia cámara.
+Apertura limpia, sin destellos ni efectos mágicos.
+212:28–2:35
+PM: sorbo, apoya lata, respira y se pone auriculares.
+La música baja y entra audio del juego.
+222:35–2:45
+PM sobre hombro: entra en partida, lata visible.
+“Dale. Una cosa a la vez”.
+7 · La victoria · 2:45 a 3:25
+Misma noche. Nuevo uno contra uno: escucha, espera y actúa. Gana la ronda y sonríe con la lata abierta a su lado.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+232:45–2:55
+Captura propia: uno contra uno, mismo mapa y zona.
+“Otra ronda. La misma oportunidad”; pasos claros.
+242:55–3:05
+PM: escucha y espera; lata en primer término lateral.
+Celular en silencio; continuidad del audio de juego.
+253:05–3:17
+Captura: sale de cobertura, dispara y gana. Resultado visible 3 s.
+Captura real propia preparada; sonido de victoria.
+263:17–3:25
+PP: exhala, sonríe y sostiene ojos últimos 2 s.
+“Ahora sí”. No hay otra escena de Bruno después.
+8 · El cierre · 3:25 a 3:50
+Gráfica. Los ojos de Bruno se funden con los del isotipo. Producto, llamado a compra y créditos cierran el corto.
+Plano y tiempo
+Imagen y acción
+Cámara luz y sonido
+273:25–3:29
+Ojos gráficos del búho alineados con plano 26.
+Fundido de 8 a 12 fotogramas; nota musical breve.
+283:29–3:35
+Lata: “Cabrales Focus. Precisión que se toma”. CTA: “Elegí Focus para tu próxima partida. Compralo en Club Focus”.
+Pie legible: “Producto y compra simulados · Proyecto académico”.
+293:35–3:50
+Dos cartelas, 8 y 7 s: nombres por rol y ficha académica.
+Franco Denk y Tomas Hokama; música, recursos y herramientas efectivamente usados.
+Subtítulos y créditos
+Subtitular “Lo tenía… miré para otro lado”, “Mañana paso”, “Dale. Una cosa a la vez” y “Ahora sí”, además de notificación, apertura y victoria cuando expliquen la acción. Ajustar sincronía al montaje. Dos líneas como máximo, alto contraste y sin tapar el juego. Créditos de Franco Denk y Tomas Hokama por sus roles efectivos: guion, dirección, Bruno, cámara y sonido, montaje y gráfica; agregar recursos y herramientas utilizados. No atribuir roles ejecutados antes de confirmarlos.
+Storyboard y realización
+El cortometraje está completo según confirmación del equipo del 05/11/2026. El guion y storyboard se conservan como documentación de producción; cotejar su correspondencia con el montaje final sin programar nuevo rodaje. Incorporar o verificar el enlace de YouTube no listado y los créditos de la versión terminada.
+ENLACES AUDIOVISUALES
+Contenido
+Estado del enlace
+Turno de noche · 3:50
+Completo según el equipo · enlace de YouTube pendiente de incorporar/verificar
+P1 Antes de encontrar Focus · 25 s
+Pendiente de producción y enlace
+P5 Una última bala · 40 s
+Pendiente de producción y enlace
+P4 Una pausa con Solange · 30 s
+Pendiente de grabación, edición y enlace
+Se registran el largo y los tres videos sociales por separado. La entrega de mockups y enlaces se completa con los archivos reales antes de presentar.
+Referencias
+Consigna TP Final, puntos 1 a 6 y rúbrica; TND clases 3 a 6 y 8 a 11. Suga: Streams Charts, consulta 31/10/2026, registro accesible con último stream listado 7/10/2026. RTM: FiReSPORTS Last Chance 2026, Buenos Aires, 29/10–01/11/2026; HLTV, https://www.hltv.org/events/9421/fire-last-chance-2026 .

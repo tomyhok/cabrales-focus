@@ -1,0 +1,1375 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabrales Focus · Mockups Instagram Feed (Suga) & Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0b0e;
+      --bg-card: #12141a;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --focus-cyan: #00e5ff;
+      --focus-purple: #8a4fff;
+      --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      --text-main: #f0f3f6;
+      --text-muted: #8b949e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 20% 15%, rgba(0, 229, 255, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 80% 85%, rgba(138, 79, 255, 0.07) 0%, transparent 45%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 40px 24px 80px;
+    }
+
+    /* Header & Navigation */
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .badge-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--focus-cyan);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--focus-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 28px;
+      line-height: 1.5;
+    }
+
+    .nav-tabs {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      gap: 6px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: rgba(0, 229, 255, 0.15);
+      color: var(--focus-cyan);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+
+    /* Content Layouts */
+    .main-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .view-section {
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       SECCIÓN 1: POST DE FEED (SUGA x CABRALES FOCUS)
+       ========================================================= */
+    .feed-layout {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 40px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 950px) {
+      .feed-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Smartphone Frame */
+    .phone-mockup {
+      background: #000000;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.15),
+        0 25px 60px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(0, 229, 255, 0.12);
+      border: 6px solid #1f222b;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-screen {
+      background: #000;
+      border-radius: 34px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Phone Status Bar */
+    .phone-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Instagram Header */
+    .ig-post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ig-user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ig-avatar-ring {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--ig-gradient);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ig-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #111;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .ig-user-details {
+      line-height: 1.25;
+    }
+
+    .ig-username {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ig-verified {
+      color: #0095f6;
+      font-size: 12px;
+    }
+
+    .ig-location {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .ig-more-dots {
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Post Image Container */
+    .ig-media-box {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ig-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Post Actions */
+    .ig-actions {
+      padding: 10px 14px 6px;
+    }
+
+    .ig-icons-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ig-left-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .ig-icon-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease;
+    }
+
+    .ig-icon-btn:hover {
+      transform: scale(1.15);
+      color: var(--focus-cyan);
+    }
+
+    .ig-icon-btn.liked {
+      color: #ff3040;
+    }
+
+    .ig-likes-count {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    /* Post Caption */
+    .ig-caption-box {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #e4e6eb;
+      margin-bottom: 8px;
+    }
+
+    .ig-caption-author {
+      font-weight: 700;
+      color: #fff;
+      margin-right: 6px;
+    }
+
+    .ig-caption-text {
+      color: #d1d5db;
+    }
+
+    .ig-caption-tags {
+      color: #0095f6;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .ig-post-date {
+      font-size: 10px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* Academic Specification Card */
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .spec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .spec-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .spec-badge {
+      padding: 4px 12px;
+      background: rgba(138, 79, 255, 0.15);
+      border: 1px solid var(--focus-purple);
+      color: #bfa4ff;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .aida-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .aida-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--focus-cyan);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .aida-letter {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--focus-cyan);
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .aida-text {
+      font-size: 14px;
+      color: #e5e7eb;
+      line-height: 1.45;
+    }
+
+    .copy-full-box {
+      background: #07080a;
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .copy-full-box pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 13px;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--focus-cyan);
+      color: var(--focus-cyan);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--focus-cyan);
+      color: #000;
+    }
+
+    /* =========================================================
+       SECCIÓN 2: 4 STORIES INTERACTIVAS (OPINIÓN DEL BÚHO)
+       ========================================================= */
+    .stories-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 1200px) {
+      .stories-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 650px) {
+      .stories-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Individual Story Mockup Frame */
+    .story-card-wrapper {
+      background: var(--bg-card);
+      border-radius: 28px;
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .story-device {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .story-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.92);
+    }
+
+    .story-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.2) 65%,
+        rgba(0, 0, 0, 0.75) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 14px;
+      z-index: 2;
+    }
+
+    /* Story Top Bar */
+    .story-progress-row {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .story-progress-segment {
+      flex: 1;
+      height: 2.5px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .story-progress-fill {
+      height: 100%;
+      background: #ffffff;
+      width: 0%;
+    }
+
+    .story-user-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .story-user-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .story-mini-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--ig-gradient);
+      padding: 1.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-mini-avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .story-author-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .story-timestamp {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .story-close-btn {
+      color: #fff;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    /* Story Content & Interactive Stickers */
+    .story-center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 100%;
+    }
+
+    .story-speech-headline {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      line-height: 1.35;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 95%;
+    }
+
+    /* Sticker 1 & 2: Encuesta (Poll) */
+    .ig-poll-sticker {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px 12px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      color: #000;
+    }
+
+    .ig-poll-question {
+      font-size: 12px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .ig-poll-options {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ig-poll-opt {
+      flex: 1;
+      padding: 10px 6px;
+      background: #f1f2f5;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+      user-select: none;
+    }
+
+    .ig-poll-opt:hover {
+      background: #e4e6eb;
+      border-color: #0095f6;
+    }
+
+    .ig-poll-opt.voted {
+      background: rgba(0, 229, 255, 0.15);
+      color: #007799;
+      border-color: #00e5ff;
+    }
+
+    /* Sticker 3: Preguntas (Question Box) */
+    .ig-question-sticker {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 90%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    .ig-q-header {
+      background: linear-gradient(135deg, #1f2937, #111827);
+      color: #ffffff;
+      padding: 12px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .ig-q-input-mock {
+      background: #f8fafc;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* Sticker 4: Enlace (Link Sticker) */
+    .ig-link-sticker {
+      background: rgba(255, 255, 255, 0.95);
+      color: #00376b;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .ig-link-sticker:hover {
+      transform: scale(1.05);
+      background: #00e5ff;
+      color: #000;
+    }
+
+    /* Story Bottom Action */
+    .story-bottom-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .story-reply-mock {
+      flex: 1;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .story-heart-icon {
+      font-size: 20px;
+      color: #fff;
+    }
+
+    /* Story Metadata Footnote */
+    .story-meta-box {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      border-top: 1px solid var(--border-color);
+      padding-top: 10px;
+    }
+
+    .story-meta-title {
+      font-weight: 700;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    /* Full-screen Story Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .interactive-viewer-frame {
+      width: 420px;
+      height: 746px; /* 9:16 approx */
+      border-radius: 36px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+      border: 4px solid #1f222b;
+    }
+
+    .viewer-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+
+    .viewer-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .viewer-prev { left: -64px; }
+    .viewer-next { right: -64px; }
+
+    @media (max-width: 600px) {
+      .viewer-prev { left: 10px; }
+      .viewer-next { right: 10px; }
+      .interactive-viewer-frame { width: 92vw; height: 80vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <div class="badge-capsule">
+      <span>●</span> UADE · Taller de Narrativas Digitales · TP Final
+    </div>
+    <h1>Instagram Hub · Suga x Dot Baires & Stories Interactivas</h1>
+    <p class="subtitle">
+      Prototipo y especificación de publicaciones para la campaña transmedia <strong>Cabrales Focus: Turno de Noche</strong>.
+    </p>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('feed-view')">📸 Post Feed: Suga & Dot Baires (P2 - AIDA)</button>
+      <button class="tab-btn" onclick="switchTab('stories-view')">📱 Secuencia de 4 Stories: Búho (P6 - Libre)</button>
+      <button class="tab-btn" onclick="openStoryViewer(0)">▶ Reproducir Stories en Vivo</button>
+    </div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <!-- ========================================================
+         VISTA 1: FEED POST (SUGA x CABRALES FOCUS x DOT BAIRES)
+         ======================================================== -->
+    <div id="feed-view" class="view-section active">
+      <div class="feed-layout">
+
+        <!-- Smartphone Frame with Feed Post -->
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            
+            <div class="phone-status-bar">
+              <span>23:30</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span>5G</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- IG Post Header -->
+            <div class="ig-post-header">
+              <div class="ig-user-info">
+                <div class="ig-avatar-ring">
+                  <img src="pfp_focus_ig.png" class="ig-avatar" style="object-fit:cover;" alt="cabrales.focus">
+                </div>
+                <div class="ig-user-details">
+                  <div class="ig-username">
+                    cabrales.focus 
+                    <span class="ig-verified">✓</span>
+                    <span style="font-weight: normal; color: var(--text-muted); font-size: 11px;">• con</span>
+                    sugagamer
+                  </div>
+                  <div class="ig-location">Dot Baires Shopping</div>
+                </div>
+              </div>
+              <div class="ig-more-dots">•••</div>
+            </div>
+
+            <!-- Post Graphic (1080x1350 4:5) -->
+            <div class="ig-media-box">
+              <img src="p2_feed_suga_dotbaires.jpg" alt="Cabrales Focus x Suga en Dot Baires Shopping" />
+            </div>
+
+            <!-- IG Actions -->
+            <div class="ig-actions">
+              <div class="ig-icons-bar">
+                <div class="ig-left-icons">
+                  <button class="ig-icon-btn liked" id="likeBtn" onclick="toggleLike()">❤️</button>
+                  <button class="ig-icon-btn">💬</button>
+                  <button class="ig-icon-btn">🚀</button>
+                </div>
+                <button class="ig-icon-btn">🔖</button>
+              </div>
+
+              <div class="ig-likes-count" id="likesCounter">Le gusta a <strong>sugagamer</strong> y <strong>4.821 personas más</strong></div>
+
+              <!-- Caption AIDA -->
+              <div class="ig-caption-box">
+                <span class="ig-caption-author">cabrales.focus</span>
+                <span class="ig-caption-text">
+                  ¿Cuántas ventanas tenés abiertas, además de esta?
+                  <br><br>
+                  En <strong>Modo Focus</strong>, el universo de <em>Turno de noche</em> sale de la pantalla: pistas, una bitácora interactiva y un espacio diseñado para elegir qué sigue.
+                  <br><br>
+                  Vení a descubrir tu próxima historia y a compartir una decisión cotidiana con la comunidad en nuestro stand en Dot Baires Shopping. No necesitás una jugada perfecta ni comprar una lata para participar.
+                  <br><br>
+                  📍 Consultá la agenda y el recorrido completo en el enlace del perfil.
+                  <br>
+                  <strong>Cabrales Focus. Precisión que se toma.</strong>
+                </span>
+                <span class="ig-caption-tags">#ModoFocus #TurnoDeNoche #CabralesFocus #DotBaires #VALORANT #Gaming</span>
+              </div>
+
+              <div class="ig-post-date">HACE 2 HORAS · SIMULACIÓN ACADÉMICA</div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Academic Spec Details -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <div>
+              <h2 class="spec-title">P2 · Publicación Feed (Imagen 2)</h2>
+              <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Colaboración propuesta con Suga & Stand Dot Baires Shopping</p>
+            </div>
+            <span class="spec-badge">Fórmula AIDA</span>
+          </div>
+
+          <p style="font-size: 14px; color: #9ca3af; margin-bottom: 20px; line-height: 1.5;">
+            Esta pieza cumple el requisito de <strong>segunda publicación de imagen</strong> de la campaña transmedia. Conecta el relato audiovisual (ficción de Bruno) con el mundo real gamer a través de <strong>Suga</strong> (streamer de VALORANT) y convoca al evento presencial en el Dot Baires Shopping sin promesas mágicas.
+          </p>
+
+          <div class="aida-grid">
+            <div class="aida-item">
+              <div class="aida-letter">Atención (A)</div>
+              <div class="aida-text">“¿Cuántas ventanas tenés abiertas, además de esta?” — Apela directo a la sobreestimulación digital y multitarea del target joven.</div>
+            </div>
+            <div class="aida-item">
+              <div class="aida-letter">Interés (I)</div>
+              <div class="aida-text">“En Modo Focus, el universo de Turno de noche sale de la pantalla: pistas, una bitácora y un espacio para elegir qué sigue.” — Traslada la narrativa a una experiencia palpable.</div>
+            </div>
+            <div class="aida-item">
+              <div class="aida-letter">Deseo (D)</div>
+              <div class="aida-text">“Vení a descubrir tu próxima historia y a compartir una decisión cotidiana con la comunidad. No necesitás una jugada perfecta ni comprar una lata para participar.” — Invita a la pertenencia comunitaria y prosumo sin barreras comerciales.</div>
+            </div>
+            <div class="aida-item">
+              <div class="aida-letter">Acción (A)</div>
+              <div class="aida-text">“Consultá la agenda y el recorrido en el enlace del perfil. Cabrales Focus. Precisión que se toma.” — Conduce al tráfico de la landing de campaña y calendario del stand.</div>
+            </div>
+          </div>
+
+          <div class="copy-full-box">
+            <button class="copy-btn" onclick="copyCaption()">Copiar Texto Completo</button>
+            <div style="font-size: 11px; text-transform: uppercase; color: var(--focus-cyan); font-weight: 800; margin-bottom: 8px;">Texto / Copy Final Oficial:</div>
+            <pre id="captionText">¿Cuántas ventanas tenés abiertas, además de esta?
+
+En Modo Focus, el universo de Turno de noche sale de la pantalla: pistas, una bitácora y un espacio para elegir qué sigue.
+
+Vení a descubrir tu próxima historia y a compartir una decisión cotidiana con la comunidad. No necesitás una jugada perfecta ni comprar una lata para participar.
+
+Consultá la agenda y el recorrido en el enlace del perfil. Cabrales Focus. Precisión que se toma. #ModoFocus #TurnoDeNoche #CabralesFocus</pre>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ========================================================
+         VISTA 2: SECUENCIA DE 4 STORIES (P6 - OPINIÓN DEL BÚHO)
+         ======================================================== -->
+    <div id="stories-view" class="view-section">
+      
+      <div style="text-align: center; margin-bottom: 28px;">
+        <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 8px;">P6 · Secuencia Interactiva de Instagram Stories</h2>
+        <p style="color: var(--text-muted); font-size: 14px; max-width: 750px; margin: 0 auto;">
+          Cuatro historias 9:16 (1080 × 1920) sobre los fondos generados. Diseñadas para recolectar opiniones y decisiones de la audiencia nocturna hacia el <em>Archivo de ventanas</em>.
+        </p>
+      </div>
+
+      <div class="stories-overview-grid">
+
+        <!-- Story 1: Ventana Noche -->
+        <div class="story-card-wrapper">
+          <div class="story-device">
+            <img src="story_1_bg_ventana.jpg" class="story-bg-img" alt="Story 1 Background" />
+            <div class="story-overlay">
+              
+              <div>
+                <div class="story-progress-row">
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                </div>
+                <div class="story-user-header">
+                  <div class="story-user-left">
+                    <div class="story-mini-avatar"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="cabrales.focus"></div>
+                    <span class="story-author-name">cabrales.focus</span>
+                    <span class="story-timestamp">2 h</span>
+                  </div>
+                  <span class="story-close-btn">✕</span>
+                </div>
+              </div>
+
+              <!-- Interactive Sticker: Encuesta 1 -->
+              <div class="story-center-content">
+                <div class="story-speech-headline">¿Qué ruido te sigue cuando cerrás la compu?</div>
+
+                <div class="ig-poll-sticker">
+                  <div class="ig-poll-question">El búho pregunta:</div>
+                  <div class="ig-poll-options">
+                    <div class="ig-poll-opt" onclick="votePoll(this, '62%', '38%')">Los pendientes</div>
+                    <div class="ig-poll-opt" onclick="votePoll(this, '38%', '62%')">Las notificaciones</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="story-bottom-bar">
+                <div class="story-reply-mock">Enviar mensaje...</div>
+                <div class="story-heart-icon">🤍</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="story-meta-box">
+            <div class="story-meta-title">Historia 01 · Tensión & Ruido mental</div>
+            <div><strong>Fondo:</strong> Ventana nocturna y ciudad en calma.</div>
+            <div><strong>Sticker:</strong> Encuesta binaria (50/50).</div>
+          </div>
+        </div>
+
+        <!-- Story 2: Escritorio con Celular -->
+        <div class="story-card-wrapper">
+          <div class="story-device">
+            <img src="story_2_bg_escritorio.jpg" class="story-bg-img" alt="Story 2 Background" />
+            <div class="story-overlay">
+              
+              <div>
+                <div class="story-progress-row">
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                </div>
+                <div class="story-user-header">
+                  <div class="story-user-left">
+                    <div class="story-mini-avatar"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="cabrales.focus"></div>
+                    <span class="story-author-name">cabrales.focus</span>
+                    <span class="story-timestamp">2 h</span>
+                  </div>
+                  <span class="story-close-btn">✕</span>
+                </div>
+              </div>
+
+              <!-- Interactive Sticker: Encuesta 2 -->
+              <div class="story-center-content">
+                <div class="story-speech-headline">Tenés diez minutos.<br>¿Qué elegís primero?</div>
+
+                <div class="ig-poll-sticker">
+                  <div class="ig-poll-question">Tu próxima decisión:</div>
+                  <div class="ig-poll-options">
+                    <div class="ig-poll-opt" onclick="votePoll(this, '47%', '53%')">Ordenar una tarea</div>
+                    <div class="ig-poll-opt" onclick="votePoll(this, '53%', '47%')">Hacer una pausa</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="story-bottom-bar">
+                <div class="story-reply-mock">Enviar mensaje...</div>
+                <div class="story-heart-icon">🤍</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="story-meta-box">
+            <div class="story-meta-title">Historia 02 · El Dilema de la pausa</div>
+            <div><strong>Fondo:</strong> Teclado en penumbra y celular activo.</div>
+            <div><strong>Sticker:</strong> Encuesta de acción inmediata.</div>
+          </div>
+        </div>
+
+        <!-- Story 3: Cuaderno Iluminado -->
+        <div class="story-card-wrapper">
+          <div class="story-device">
+            <img src="story_3_bg_cuaderno.jpg" class="story-bg-img" alt="Story 3 Background" />
+            <div class="story-overlay">
+              
+              <div>
+                <div class="story-progress-row">
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+                </div>
+                <div class="story-user-header">
+                  <div class="story-user-left">
+                    <div class="story-mini-avatar"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="cabrales.focus"></div>
+                    <span class="story-author-name">cabrales.focus</span>
+                    <span class="story-timestamp">2 h</span>
+                  </div>
+                  <span class="story-close-btn">✕</span>
+                </div>
+              </div>
+
+              <!-- Interactive Sticker: Caja de Preguntas UGC -->
+              <div class="story-center-content">
+                <div class="story-speech-headline">No hay respuesta perfecta.<br>Contanos una decisión que te sirvió hoy.</div>
+
+                <div class="ig-question-sticker">
+                  <div class="ig-q-header">Escribí acá tu próxima ventana:</div>
+                  <div class="ig-q-input-mock">
+                    <span>Mi próxima ventana fue...</span>
+                    <span>✍️</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="story-bottom-bar">
+                <div class="story-reply-mock">Enviar mensaje...</div>
+                <div class="story-heart-icon">🤍</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="story-meta-box">
+            <div class="story-meta-title">Historia 03 · Prosumidor & UGC</div>
+            <div><strong>Fondo:</strong> Bitácora abierta con luz focalizada.</div>
+            <div><strong>Sticker:</strong> Caja de Preguntas abierta.</div>
+          </div>
+        </div>
+
+        <!-- Story 4: Setup Monitor y Auriculares -->
+        <div class="story-card-wrapper">
+          <div class="story-device">
+            <img src="story_4_bg_setup.jpg" class="story-bg-img" alt="Story 4 Background" />
+            <div class="story-overlay">
+              
+              <div>
+                <div class="story-progress-row">
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                  <div class="story-progress-segment"><div class="story-progress-fill" style="width: 100%;"></div></div>
+                </div>
+                <div class="story-user-header">
+                  <div class="story-user-left">
+                    <div class="story-mini-avatar"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="cabrales.focus"></div>
+                    <span class="story-author-name">cabrales.focus</span>
+                    <span class="story-timestamp">2 h</span>
+                  </div>
+                  <span class="story-close-btn">✕</span>
+                </div>
+              </div>
+
+              <!-- Interactive Sticker: Link a la Landing -->
+              <div class="story-center-content">
+                <div class="story-speech-headline">Hay más de una forma de seguir.<br>Leé la nota de Solange y sumá tu historia.</div>
+
+                <div class="ig-link-sticker" onclick="alert('Redirigiendo a: cabrales.focus/archivo')">
+                  <span>🔗</span>
+                  <span>ARCHIVO DE VENTANAS</span>
+                  <span style="font-size: 10px; opacity: 0.7;">↗</span>
+                </div>
+              </div>
+
+              <div class="story-bottom-bar">
+                <div class="story-reply-mock">Enviar mensaje...</div>
+                <div class="story-heart-icon">🤍</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="story-meta-box">
+            <div class="story-meta-title">Historia 04 · Remisión Transmedia</div>
+            <div><strong>Fondo:</strong> Setup apagado y auriculares.</div>
+            <div><strong>Sticker:</strong> Enlace externo a la Landing/Archivo.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Modal Interactivo para ver Stories en pantalla grande -->
+  <div class="modal-backdrop" id="storyModal">
+    <button class="modal-close-btn" onclick="closeStoryViewer()">✕</button>
+    <div style="position: relative;">
+      <button class="viewer-nav-btn viewer-prev" onclick="changeViewerStory(-1)">❮</button>
+      <div class="interactive-viewer-frame" id="viewerFrame">
+        <!-- Render dinámico de Story -->
+      </div>
+      <button class="viewer-nav-btn viewer-next" onclick="changeViewerStory(1)">❯</button>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(viewId) {
+      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(viewId).classList.add('active');
+      
+      const buttons = document.querySelectorAll('.tab-btn');
+      if (viewId === 'feed-view') buttons[0].classList.add('active');
+      if (viewId === 'stories-view') buttons[1].classList.add('active');
+    }
+
+    let isLiked = true;
+    function toggleLike() {
+      const btn = document.getElementById('likeBtn');
+      const counter = document.getElementById('likesCounter');
+      isLiked = !isLiked;
+      if (isLiked) {
+        btn.innerHTML = '❤️';
+        btn.classList.add('liked');
+        counter.innerHTML = 'Le gusta a <strong>sugagamer</strong> y <strong>4.821 personas más</strong>';
+      } else {
+        btn.innerHTML = '🤍';
+        btn.classList.remove('liked');
+        counter.innerHTML = 'Le gusta a <strong>sugagamer</strong> y <strong>4.820 personas más</strong>';
+      }
+    }
+
+    function copyCaption() {
+      const text = document.getElementById('captionText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = '¡Copiado al Portapapeles!';
+        setTimeout(() => { btn.innerText = 'Copiar Texto Completo'; }, 2000);
+      });
+    }
+
+    function votePoll(el, valA, valB) {
+      const parent = el.closest('.ig-poll-options');
+      const opts = parent.querySelectorAll('.ig-poll-opt');
+      opts.forEach((opt, idx) => {
+        opt.style.pointerEvents = 'none';
+        opt.innerText += ` (${idx === 0 ? valA : valB})`;
+      });
+      el.classList.add('voted');
+    }
+
+    /* Modal Viewer */
+    const storiesData = [
+      {
+        bg: 'story_1_bg_ventana.jpg',
+        title: '¿Qué ruido te sigue cuando cerrás la compu?',
+        sticker: `
+          <div class="ig-poll-sticker">
+            <div class="ig-poll-question">El búho pregunta:</div>
+            <div class="ig-poll-options">
+              <div class="ig-poll-opt" onclick="votePoll(this, '62%', '38%')">Los pendientes</div>
+              <div class="ig-poll-opt" onclick="votePoll(this, '38%', '62%')">Las notificaciones</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        bg: 'story_2_bg_escritorio.jpg',
+        title: 'Tenés diez minutos.<br>¿Qué elegís primero?',
+        sticker: `
+          <div class="ig-poll-sticker">
+            <div class="ig-poll-question">Tu próxima decisión:</div>
+            <div class="ig-poll-options">
+              <div class="ig-poll-opt" onclick="votePoll(this, '47%', '53%')">Ordenar una tarea</div>
+              <div class="ig-poll-opt" onclick="votePoll(this, '53%', '47%')">Hacer una pausa</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        bg: 'story_3_bg_cuaderno.jpg',
+        title: 'No hay respuesta perfecta.<br>Contanos una decisión que te sirvió hoy.',
+        sticker: `
+          <div class="ig-question-sticker">
+            <div class="ig-q-header">Escribí acá tu próxima ventana:</div>
+            <div class="ig-q-input-mock">
+              <span>Mi próxima ventana fue...</span>
+              <span>✍️</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        bg: 'story_4_bg_setup.jpg',
+        title: 'Hay más de una forma de seguir.<br>Leé la nota de Solange y sumá tu historia.',
+        sticker: `
+          <div class="ig-link-sticker" onclick="alert('Redirigiendo a: cabrales.focus/archivo')">
+            <span>🔗</span>
+            <span>ARCHIVO DE VENTANAS</span>
+            <span style="font-size: 10px; opacity: 0.7;">↗</span>
+          </div>
+        `
+      }
+    ];
+
+    let currentStoryIndex = 0;
+
+    function openStoryViewer(idx) {
+      currentStoryIndex = idx;
+      renderStoryViewer();
+      document.getElementById('storyModal').classList.add('open');
+    }
+
+    function closeStoryViewer() {
+      document.getElementById('storyModal').classList.remove('open');
+    }
+
+    function changeViewerStory(delta) {
+      currentStoryIndex = (currentStoryIndex + delta + storiesData.length) % storiesData.length;
+      renderStoryViewer();
+    }
+
+    function renderStoryViewer() {
+      const data = storiesData[currentStoryIndex];
+      const progressBars = storiesData.map((_, i) => {
+        const fillWidth = i < currentStoryIndex ? '100%' : (i === currentStoryIndex ? '100%' : '0%');
+        const opacity = i <= currentStoryIndex ? '1' : '0.4';
+        return `<div class="story-progress-segment" style="opacity: ${opacity}"><div class="story-progress-fill" style="width: ${fillWidth};"></div></div>`;
+      }).join('');
+
+      document.getElementById('viewerFrame').innerHTML = `
+        <img src="${data.bg}" class="story-bg-img" alt="Story" />
+        <div class="story-overlay">
+          <div>
+            <div class="story-progress-row">${progressBars}</div>
+            <div class="story-user-header">
+              <div class="story-user-left">
+                <div class="story-mini-avatar"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="cabrales.focus"></div>
+                <span class="story-author-name">cabrales.focus</span>
+                <span class="story-timestamp">Historia ${currentStoryIndex + 1} de 4</span>
+              </div>
+              <span class="story-close-btn" onclick="closeStoryViewer()" style="cursor: pointer;">✕</span>
+            </div>
+          </div>
+
+          <div class="story-center-content">
+            <div class="story-speech-headline">${data.title}</div>
+            ${data.sticker}
+          </div>
+
+          <div class="story-bottom-bar">
+            <div class="story-reply-mock">Enviar mensaje...</div>
+            <div class="story-heart-icon">🤍</div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

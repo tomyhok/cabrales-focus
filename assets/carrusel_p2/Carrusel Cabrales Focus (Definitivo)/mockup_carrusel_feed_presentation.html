@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 2560px;
+    height: 1440px;
+    background: radial-gradient(circle at 50% 30%, #151821 0%, #08090d 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+  }
+
+  .ambient-glow {
+    position: absolute;
+    width: 1600px;
+    height: 800px;
+    background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.12) 0%, rgba(138, 79, 255, 0.1) 45%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+  }
+
+  .title-bar {
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
+  }
+  .pill-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 99px;
+    background: rgba(0, 229, 255, 0.12);
+    border: 1.5px solid #00e5ff;
+    color: #00e5ff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  h1 {
+    font-size: 46px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+  .sub {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-top: 6px;
+  }
+
+  .content-grid {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+    padding: 30px 50px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    max-width: 2200px;
+  }
+
+  /* Phone Mockup */
+  .phone-card {
+    width: 580px;
+    background: #000;
+    border-radius: 46px;
+    padding: 14px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 229, 255, 0.15);
+    border: 6px solid #232733;
+    overflow: hidden;
+  }
+  .phone-inner {
+    border-radius: 34px;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .ig-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .ig-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ig-av {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 2px;
+  }
+  .ig-av-in {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    color: #00e5ff;
+  }
+  .ig-name {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .ig-loc {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  .ig-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+  }
+  .ig-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slide-pill {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .ig-footer {
+    padding: 12px 18px 18px;
+  }
+  .ig-dots-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+  .ig-d {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .ig-d.active {
+    background: #0095f6;
+    width: 7px;
+    height: 7px;
+  }
+
+  .ig-icons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .ig-likes {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .ig-cap {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #d1d5db;
+  }
+
+  /* Info Panel */
+  .info-panel {
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .info-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 24px;
+  }
+  .info-box h3 {
+    font-size: 18px;
+    color: #00e5ff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .slide-step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .step-num {
+    color: #00e5ff;
+    font-weight: 800;
+    min-width: 28px;
+  }
+</style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <div class="title-bar">
+    <div class="pill-badge">Instagram Feed · Imagen 1 (P1)</div>
+    <h1>Carrusel Informativo: Cabrales Focus (6 Placas Definitivas)</h1>
+    <div class="sub">Campaña Transmedia «Turno de Noche» · Estrategia Educativa de Producto, Formulación & Fidelización</div>
+  </div>
+
+  <div class="content-grid">
+    <!-- Phone Mockup -->
+    <div class="phone-card">
+      <div class="phone-inner">
+        <div class="ig-header">
+          <div class="ig-user">
+            <div class="ig-av"><img src="pfp_focus_ig.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;" alt="cabrales.focus"></div>
+            <div>
+              <div class="ig-name">cabrales.focus</div>
+              <div class="ig-loc">Club Focus · Buenos Aires</div>
+            </div>
+          </div>
+          <div style="font-size: 18px; color: #fff;">•••</div>
+        </div>
+
+        <div class="ig-img-wrap">
+          <img src="1.png" alt="Placa 1 - Hero">
+          <div class="slide-pill">1/6</div>
+        </div>
+
+        <div class="ig-footer">
+          <div class="ig-dots-row">
+            <div class="ig-d active"></div>
+            <div class="ig-d"></div>
+            <div class="ig-d"></div>
+            <div class="ig-d"></div>
+            <div class="ig-d"></div>
+            <div class="ig-d"></div>
+          </div>
+
+          <div class="ig-icons">
+            <div style="display: flex; gap: 16px;">
+              <span>❤️</span><span>💬</span><span>🚀</span>
+            </div>
+            <span>🔖</span>
+          </div>
+          <div class="ig-likes">Le gusta a <strong>sugagamer</strong> y <strong>5.294 personas más</strong></div>
+          <div class="ig-cap">
+            <strong>cabrales.focus</strong> Ni azúcar añadida, ni picos bruscos de cafeína. Cuando la noche o tu jornada te exige máxima concentración, necesitás precisión, no temblores. ⚡️🦉... <em>más</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defense & Structure Panel -->
+    <div class="info-panel">
+      <div class="info-box">
+        <h3>Secuencia Narrativa del Carrusel</h3>
+        <div class="slide-step"><span class="step-num">01.</span><div><strong>Concepto & Hero:</strong> Presentación del producto (240 ml, energía limpia y foco mental).</div></div>
+        <div class="slide-step"><span class="step-num">02.</span><div><strong>Tres Pilares:</strong> 110 mg de Cafeína + 100 mg de L-Teanina (sinergia 1:1) + Extracción lenta.</div></div>
+        <div class="slide-step"><span class="step-num">03.</span><div><strong>Por Qué Cold Brew:</strong> Comparativa técnica vs. café caliente (67% menos acidez, sin caídas bruscas).</div></div>
+        <div class="slide-step"><span class="step-num">04.</span><div><strong>Precisión que se toma:</strong> 0% azúcares añadidos, calidad Cabrales 80+ años y el Búho guardián.</div></div>
+        <div class="slide-step"><span class="step-num">05.</span><div><strong>Cómo experimentarlo:</strong> Servir bien frío (4° a 8°C), lata 100% reciclable y anilla interactiva.</div></div>
+        <div class="slide-step"><span class="step-num">06.</span><div><strong>Sumate al Club Focus:</strong> Gamificación con anillas QR, app móvil y enlace en bio.</div></div>
+      </div>
+
+      <div class="info-box" style="border-color: rgba(0, 229, 255, 0.3); background: rgba(0, 229, 255, 0.05);">
+        <h3 style="color: #00e5ff;">Fundamentación Transmedia para la Cátedra</h3>
+        <p style="font-size: 15px; line-height: 1.5; color: #d1d5db; margin-bottom: 12px;">
+          <strong>• Función de Anclaje Racional:</strong> Mientras el cortometraje de YouTube y las Stories desarrollan la empatía y el relato de Bruno/Solange, el carrusel actúa como el nodo educativo que valida los atributos del producto.
+        </p>
+        <p style="font-size: 15px; line-height: 1.5; color: #d1d5db;">
+          <strong>• Continuidad Visual (Seamless):</strong> La salpicadura fluida de café frío atraviesa las 6 placas de manera ininterrumpida, incentivando el swipe completo en el feed de Instagram.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

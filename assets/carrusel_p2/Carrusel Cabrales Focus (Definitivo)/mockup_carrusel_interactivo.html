@@ -1,0 +1,909 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabrales Focus · Mockup Carrusel Informativo (6 Placas Definitivas)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0b0e;
+      --bg-card: #12141a;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --focus-cyan: #00e5ff;
+      --focus-purple: #8a4fff;
+      --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      --text-main: #f0f3f6;
+      --text-muted: #8b949e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(138, 79, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(112, 46, 11, 0.08) 0%, transparent 60%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 40px 24px 80px;
+    }
+
+    /* Header */
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .badge-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--focus-cyan);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--focus-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 28px;
+      line-height: 1.5;
+    }
+
+    .nav-tabs {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      gap: 6px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: rgba(0, 229, 255, 0.15);
+      color: var(--focus-cyan);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+
+    .main-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .view-section {
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       TAB 1: SIMULADOR DE FEED (CARRUSEL SWIPABLE)
+       ========================================================= */
+    .feed-layout {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 40px;
+      align-items: start;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 950px) {
+      .feed-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .phone-mockup {
+      background: #000000;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.15),
+        0 25px 60px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(0, 229, 255, 0.12);
+      border: 6px solid #1f222b;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-screen {
+      background: #000;
+      border-radius: 34px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .ig-post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ig-user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ig-avatar-ring {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--ig-gradient);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ig-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #090303;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00e5ff;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .ig-username {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ig-verified {
+      color: #0095f6;
+      font-size: 12px;
+    }
+
+    .ig-location {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Carousel Media Box with Controls */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: #000;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .carousel-slides-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .carousel-slide-item {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-slide-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-badge-counter {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 5;
+    }
+
+    .nav-arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      color: #111;
+      border: none;
+      font-size: 16px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s;
+      z-index: 6;
+    }
+
+    .nav-arrow-btn:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nav-prev { left: 10px; }
+    .nav-next { right: 10px; }
+
+    /* Actions and Dots */
+    .ig-actions {
+      padding: 10px 14px 6px;
+    }
+
+    .ig-middle-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      margin: -2px 0 6px;
+    }
+
+    .ig-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.2s;
+    }
+
+    .ig-dot.active {
+      background: #0095f6;
+      width: 7px;
+      height: 7px;
+    }
+
+    .ig-icons-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ig-left-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .ig-icon-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease;
+    }
+
+    .ig-icon-btn:hover {
+      transform: scale(1.15);
+      color: var(--focus-cyan);
+    }
+
+    .ig-icon-btn.liked {
+      color: #ff3040;
+    }
+
+    .ig-likes-count {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .ig-caption-box {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #e4e6eb;
+      margin-bottom: 8px;
+    }
+
+    .ig-caption-author {
+      font-weight: 700;
+      color: #fff;
+      margin-right: 6px;
+    }
+
+    .ig-caption-text {
+      color: #d1d5db;
+    }
+
+    .ig-caption-tags {
+      color: #0095f6;
+      margin-top: 6px;
+      display: block;
+    }
+
+    .ig-post-date {
+      font-size: 10px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* Specification Panel */
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .spec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .spec-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .spec-badge {
+      padding: 4px 12px;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--focus-cyan);
+      color: var(--focus-cyan);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .slides-breakdown-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .slide-item-desc {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--focus-cyan);
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .slide-item-desc:hover, .slide-item-desc.active {
+      background: rgba(0, 229, 255, 0.08);
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    .slide-num-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--focus-cyan);
+      margin-bottom: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    .slide-title-tag {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .slide-detail-tag {
+      font-size: 12px;
+      color: #9ca3af;
+      line-height: 1.4;
+    }
+
+    .copy-full-box {
+      background: #07080a;
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .copy-full-box pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 13px;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--focus-cyan);
+      color: var(--focus-cyan);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--focus-cyan);
+      color: #000;
+    }
+
+    /* =========================================================
+       TAB 2: PANORAMA CONTINUO (6 PLACAS SEAMLESS)
+       ========================================================= */
+    .panorama-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .panorama-scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .panorama-card {
+      flex: 0 0 320px;
+      aspect-ratio: 4 / 5;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      scroll-snap-align: start;
+      background: #000;
+    }
+
+    .panorama-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .panorama-card-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      color: var(--focus-cyan);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <div class="badge-capsule">
+      <span>●</span> UADE · Taller de Narrativas Digitales · TP Final
+    </div>
+    <h1>Carrusel Informativo · Cabrales Focus</h1>
+    <p class="subtitle">
+      Publicación educativa y de producto (6 Placas 1080 × 1350 px · Formato Seamless Continuo) dentro de la campaña transmedia <strong>Turno de Noche</strong>.
+    </p>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('feed-view')">📱 Simulador Interactivo de Feed (6 Slides)</button>
+      <button class="tab-btn" onclick="switchTab('panorama-view')">🎞️ Panorama Continuo (6 Placas Alineadas)</button>
+    </div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <!-- TAB 1: FEED SIMULATOR -->
+    <div id="feed-view" class="view-section active">
+      <div class="feed-layout">
+
+        <!-- Smartphone Frame -->
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            
+            <div class="phone-status-bar">
+              <span>14:30</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span>5G</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- Header -->
+            <div class="ig-post-header">
+              <div class="ig-user-info">
+                <div class="ig-avatar-ring">
+                  <img src="pfp_focus_ig.png" class="ig-avatar" style="object-fit:cover;" alt="cabrales.focus">
+                </div>
+                <div class="ig-user-details">
+                  <div class="ig-username">
+                    cabrales.focus 
+                    <span class="ig-verified">✓</span>
+                  </div>
+                  <div class="ig-location">Club Focus · Buenos Aires</div>
+                </div>
+              </div>
+              <div style="color: #fff; font-size: 16px;">•••</div>
+            </div>
+
+            <!-- Swipable Carousel Track -->
+            <div class="carousel-container" id="carouselBox">
+              <div class="slide-badge-counter" id="slideCounter">1/6</div>
+              
+              <button class="nav-arrow-btn nav-prev" id="prevBtn" onclick="moveSlide(-1)" disabled>❮</button>
+              <button class="nav-arrow-btn nav-next" id="nextBtn" onclick="moveSlide(1)">❯</button>
+
+              <div class="carousel-slides-track" id="slidesTrack">
+                <div class="carousel-slide-item"><img src="1.png" alt="Placa 1 - Hero" /></div>
+                <div class="carousel-slide-item"><img src="2.png" alt="Placa 2 - Pilares" /></div>
+                <div class="carousel-slide-item"><img src="3.png" alt="Placa 3 - Cold Brew" /></div>
+                <div class="carousel-slide-item"><img src="4.png" alt="Placa 4 - Sinergia" /></div>
+                <div class="carousel-slide-item"><img src="5.png" alt="Placa 5 - Experiencia" /></div>
+                <div class="carousel-slide-item"><img src="6.png" alt="Placa 6 - App y CTA" /></div>
+              </div>
+            </div>
+
+            <!-- Actions & Pagination Dots -->
+            <div class="ig-actions">
+              <div class="ig-icons-bar">
+                <div class="ig-left-icons">
+                  <button class="ig-icon-btn liked" id="likeBtn" onclick="toggleLike()">❤️</button>
+                  <button class="ig-icon-btn">💬</button>
+                  <button class="ig-icon-btn">🚀</button>
+                </div>
+
+                <!-- Middle Dots (6 dots) -->
+                <div class="ig-middle-dots" id="dotsBar">
+                  <div class="ig-dot active"></div>
+                  <div class="ig-dot"></div>
+                  <div class="ig-dot"></div>
+                  <div class="ig-dot"></div>
+                  <div class="ig-dot"></div>
+                  <div class="ig-dot"></div>
+                </div>
+
+                <button class="ig-icon-btn">🔖</button>
+              </div>
+
+              <div class="ig-likes-count" id="likesCounter">Le gusta a <strong>sugagamer</strong> y <strong>5.294 personas más</strong></div>
+
+              <!-- Caption -->
+              <div class="ig-caption-box">
+                <span class="ig-caption-author">cabrales.focus</span>
+                <span class="ig-caption-text">
+                  Ni azúcar añadida, ni picos bruscos de cafeína. Cuando la noche o tu jornada te exige máxima concentración, necesitás precisión, no temblores. ⚡️🦉
+                  <br><br>
+                  Deslizá para descubrir cómo combinamos 80 años de maestría cafetera con la ciencia de la <strong>L-Teanina</strong> y el proceso artesanal de <strong>Cold Brew por 16 horas</strong>.
+                  <br><br>
+                  📍 <strong>Lata 240 ml · 100% Reciclable</strong>
+                  <br>
+                  📲 Escaneá el QR bajo la anilla y sumate al Club Focus desde el enlace en nuestra bio.
+                  <br><br>
+                  <strong>Cabrales Focus. Precisión que se toma.</strong>
+                </span>
+                <span class="ig-caption-tags">#CabralesFocus #ColdBrew #LTeanina #PrecisionQueSeToma #TurnoDeNoche #Gaming #Productividad</span>
+              </div>
+
+              <div class="ig-post-date">HACE 4 HORAS · PUBLICACIÓN INFORMATIVA</div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Specification & Slide Details -->
+        <div class="spec-card">
+          <div class="spec-header">
+            <div>
+              <h2 class="spec-title">Carrusel Informativo (6 Placas)</h2>
+              <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">P1 / Publicación de Imagen en Feed · Ecosistema Cabrales Focus</p>
+            </div>
+            <span class="spec-badge">Seamless 4:5</span>
+          </div>
+
+          <p style="font-size: 14px; color: #9ca3af; margin-bottom: 20px; line-height: 1.5;">
+            Diseñado con salpicadura continua de café frío y acentos cian/violeta. Educa a la audiencia sobre la formulación diferencial (L-Teanina + Cold Brew) y los introduce al <strong>Club Focus</strong> y su mecánica de gamificación.
+          </p>
+
+          <div class="slides-breakdown-list">
+            <div class="slide-item-desc active" onclick="goToSlide(0)">
+              <div class="slide-num-tag">Placa 01 · Concepto & Hero</div>
+              <div class="slide-title-tag">Conocé Cabrales Focus</div>
+              <div class="slide-detail-tag">Presentación de la lata 240ml, Cold Brew, energía limpia y foco mental sin taurina.</div>
+            </div>
+
+            <div class="slide-item-desc" onclick="goToSlide(1)">
+              <div class="slide-num-tag">Placa 02 · Tres Pilares</div>
+              <div class="slide-title-tag">3 Pilares en Cada Lata</div>
+              <div class="slide-detail-tag">110 mg de cafeína + 100 mg de L-Teanina (proporción 1:1) + extracción suave sin acidez.</div>
+            </div>
+
+            <div class="slide-item-desc" onclick="goToSlide(2)">
+              <div class="slide-num-tag">Placa 03 · Proceso Diferencial</div>
+              <div class="slide-title-tag">¿Por qué Cold Brew?</div>
+              <div class="slide-detail-tag">Comparativa funcional: 16 hs de extracción en frío, 67% menos acidez vs. café caliente con caídas bruscas.</div>
+            </div>
+
+            <div class="slide-item-desc" onclick="goToSlide(3)">
+              <div class="slide-num-tag">Placa 04 · Identidad de Marca</div>
+              <div class="slide-title-tag">Precisión que se toma</div>
+              <div class="slide-detail-tag">0% azúcares añadidos (Keto friendly), calidad Cabrales 80+ años y el Búho guardián.</div>
+            </div>
+
+            <div class="slide-item-desc" onclick="goToSlide(4)">
+              <div class="slide-num-tag">Placa 05 · Ritual & Envase</div>
+              <div class="slide-title-tag">Cómo experimentarlo</div>
+              <div class="slide-detail-tag">Servir frío (4° a 8°C), lata de aluminio 100% reciclable y anilla interactiva con código QR.</div>
+            </div>
+
+            <div class="slide-item-desc" onclick="goToSlide(5)">
+              <div class="slide-num-tag">Placa 06 · Gamificación & Cierre</div>
+              <div class="slide-title-tag">Sumate al Club Focus</div>
+              <div class="slide-detail-tag">Mockup de la App móvil: canje de anillas, mapa de puntos de venta y enlace en bio.</div>
+            </div>
+          </div>
+
+          <div class="copy-full-box">
+            <button class="copy-btn" onclick="copyCaption()">Copiar Texto Completo</button>
+            <div style="font-size: 11px; text-transform: uppercase; color: var(--focus-cyan); font-weight: 800; margin-bottom: 8px;">Texto / Copy Oficial para Feed:</div>
+            <pre id="captionText">Ni azúcar añadida, ni picos bruscos de cafeína. Cuando la noche o tu jornada te exige máxima concentración, necesitás precisión, no temblores. ⚡️🦉
+
+Deslizá para descubrir cómo combinamos más de 80 años de maestría cafetera con la ciencia de la L-Teanina y el proceso artesanal de Cold Brew durante 16 horas.
+
+1️⃣ Coffee Cold Brew (240 ml)
+2️⃣ Sinergia 1:1: 110 mg de Cafeína + 100 mg de L-Teanina
+3️⃣ 67% menos acidez y 0% azúcares añadidos
+4️⃣ Anilla interactiva con QR: escaneá y sumá puntos
+
+📲 Descargá la app del Club Focus desde el enlace en nuestra bio y encontrá tu punto de recarga más cercano.
+
+Cabrales Focus. Precisión que se toma.
+
+#CabralesFocus #ColdBrew #LTeanina #PrecisionQueSeToma #TurnoDeNoche #Gaming #Productividad</pre>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: PANORAMA VIEW -->
+    <div id="panorama-view" class="view-section">
+      <div class="panorama-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div>
+            <h2 style="font-size: 24px; font-weight: 800; color: #fff;">Secuencia Continua · 6 Placas (1080 × 1350 px)</h2>
+            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">La salpicadura de café y la iluminación nocturna conectan visualmente las láminas de izquierda a derecha.</p>
+          </div>
+          <span style="font-size: 12px; color: var(--focus-cyan); background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.3); padding: 6px 14px; border-radius: 99px; font-weight: 700;">
+            Deslizá horizontalmente ↔
+          </span>
+        </div>
+
+        <div class="panorama-scroll">
+          <div class="panorama-card">
+            <img src="1.png" alt="Placa 1" />
+            <div class="panorama-card-tag">01 / Concepto & Hero</div>
+          </div>
+          <div class="panorama-card">
+            <img src="2.png" alt="Placa 2" />
+            <div class="panorama-card-tag">02 / 3 Pilares</div>
+          </div>
+          <div class="panorama-card">
+            <img src="3.png" alt="Placa 3" />
+            <div class="panorama-card-tag">03 / Por Qué Cold Brew</div>
+          </div>
+          <div class="panorama-card">
+            <img src="4.png" alt="Placa 4" />
+            <div class="panorama-card-tag">04 / Precisión que se toma</div>
+          </div>
+          <div class="panorama-card">
+            <img src="5.png" alt="Placa 5" />
+            <div class="panorama-card-tag">05 / Cómo experimentarlo</div>
+          </div>
+          <div class="panorama-card">
+            <img src="6.png" alt="Placa 6" />
+            <div class="panorama-card-tag">06 / Sumate al Club Focus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(viewId) {
+      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(viewId).classList.add('active');
+      
+      const buttons = document.querySelectorAll('.tab-btn');
+      if (viewId === 'feed-view') buttons[0].classList.add('active');
+      if (viewId === 'panorama-view') buttons[1].classList.add('active');
+    }
+
+    let currentSlide = 0;
+    const totalSlides = 6;
+    const track = document.getElementById('slidesTrack');
+    const counter = document.getElementById('slideCounter');
+    const dots = document.querySelectorAll('.ig-dot');
+    const descItems = document.querySelectorAll('.slide-item-desc');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      counter.innerText = `${currentSlide + 1}/${totalSlides}`;
+
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+
+      descItems.forEach((item, idx) => {
+        item.classList.toggle('active', idx === currentSlide);
+      });
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function moveSlide(dir) {
+      currentSlide = Math.max(0, Math.min(totalSlides - 1, currentSlide + dir));
+      updateCarousel();
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateCarousel();
+    }
+
+    let isLiked = true;
+    function toggleLike() {
+      const btn = document.getElementById('likeBtn');
+      const counter = document.getElementById('likesCounter');
+      isLiked = !isLiked;
+      if (isLiked) {
+        btn.innerHTML = '❤️';
+        btn.classList.add('liked');
+        counter.innerHTML = 'Le gusta a <strong>sugagamer</strong> y <strong>5.294 personas más</strong>';
+      } else {
+        btn.innerHTML = '🤍';
+        btn.classList.remove('liked');
+        counter.innerHTML = 'Le gusta a <strong>sugagamer</strong> y <strong>5.293 personas más</strong>';
+      }
+    }
+
+    function copyCaption() {
+      const text = document.getElementById('captionText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = '¡Copiado al Portapapeles!';
+        setTimeout(() => { btn.innerText = 'Copiar Texto Completo'; }, 2000);
+      });
+    }
+
+    // Touch/Swipe support
+    let startX = 0;
+    const box = document.getElementById('carouselBox');
+    box.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+    box.addEventListener('touchend', (e) => {
+      const diffX = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) moveSlide(1);
+        else moveSlide(-1);
+      }
+    });
+  </script>
+</body>
+</html>
