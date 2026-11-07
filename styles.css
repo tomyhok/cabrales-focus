@@ -229,7 +229,8 @@ body {
   padding: 8px 18px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex-wrap: nowrap;
+  gap: 14px;
   z-index: 950;
   max-width: 95vw;
 }
@@ -244,10 +245,28 @@ body {
   padding: 8px 16px;
   border-radius: 999px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1;
   transition: all 0.2s ease;
+  user-select: none;
+}
+
+.hud-btn-arrow {
+  display: inline-block;
+  line-height: 1;
+  font-size: 0.82rem;
+}
+
+.hud-btn-text {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .hud-btn:hover {

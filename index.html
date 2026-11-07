@@ -53,13 +53,22 @@
        PROJECTOR HUD: CONTROLES FLOTANTES PARA EXPOSICIÓN EN AULA
        ======================================================================== -->
   <aside class="projector-hud" aria-label="Controles de presentación en proyector">
-    <button type="button" class="hud-btn" id="hud-prev-btn" title="Slide anterior (Flecha Izq / PageUp)">◀ Ant</button>
+    <button type="button" class="hud-btn" id="hud-prev-btn" title="Slide anterior (Flecha Izq / PageUp)">
+      <span class="hud-btn-arrow">◀</span>
+      <span class="hud-btn-text">Anterior</span>
+    </button>
     <div class="hud-status">
       <span class="hud-slide-index">SLIDE 01 / 10</span>
       <span class="hud-slide-title">01 · Apertura del Pitch & Agencia</span>
     </div>
-    <button type="button" class="hud-btn" id="hud-next-btn" title="Slide siguiente (Flecha Der / Espacio / PageDown)">Sig ▶</button>
-    <button type="button" class="hud-btn" id="hud-fullscreen-btn" title="Pantalla completa para proyector (Tecla F)">⛶ Pantalla Completa</button>
+    <button type="button" class="hud-btn" id="hud-next-btn" title="Slide siguiente (Flecha Der / Espacio / PageDown)">
+      <span class="hud-btn-text">Siguiente</span>
+      <span class="hud-btn-arrow">▶</span>
+    </button>
+    <button type="button" class="hud-btn" id="hud-fullscreen-btn" title="Pantalla completa para proyector (Tecla F)">
+      <span class="hud-btn-arrow">⛶</span>
+      <span class="hud-btn-text">Pantalla Completa</span>
+    </button>
     <div class="hud-shortcuts">
       <span>Atajos: <kbd>◀</kbd> <kbd>▶</kbd> / <kbd>Espacio</kbd> · <kbd>F</kbd> Fullscreen</span>
     </div>
@@ -394,11 +403,16 @@
       <div class="grid-asym-2-3">
         <!-- Perfil Suga -->
         <div class="glass-card highlight-cyan">
-          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
-            <img src="assets/instagram_suga_stories/pfp_focus_ig.png" alt="Suga Twitch" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--cyan);" />
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 14px;">
+            <img src="assets/sugavct_pfp.jpg" alt="Foto de perfil de Suga (@sugavct)" style="width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid var(--cyan); object-fit: cover; box-shadow: 0 0 16px var(--cyan-glow);" />
             <div>
-              <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff;">Suga (Malena Souto)</h3>
-              <span style="font-size: 0.78rem; color: var(--cyan); text-transform: uppercase; font-weight: 700;">Macroinfluencer · VALORANT Argentina</span>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: #fff; display: flex; align-items: center; gap: 6px;">
+                Suga (Malena Souto) <span style="color: #0095f6; font-size: 1.05rem;" title="Verificada">✓</span>
+              </h3>
+              <div style="font-size: 0.84rem; color: var(--cyan); font-weight: 700; margin-top: 2px;">
+                <span>Instagram: <strong>@sugavct</strong></span> · <span>Twitch: /suga</span>
+              </div>
+              <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Macroinfluencer · VALORANT Argentina</span>
             </div>
           </div>
 
@@ -654,7 +668,7 @@ Cabrales Focus. Precisión que se toma.
                 <button type="button" class="ig-icon-btn">🔖</button>
               </div>
 
-              <div class="ig-likes-count">Le gusta a <strong>sugagamer</strong> y <strong>12.840 personas más</strong></div>
+              <div class="ig-likes-count">Le gusta a <strong>sugavct</strong> y <strong>12.840 personas más</strong></div>
 
               <!-- Caption -->
               <div class="ig-caption-box">
@@ -740,11 +754,11 @@ Cabrales Focus. Precisión que se toma.
             <div class="ig-post-header">
               <div class="ig-user-info">
                 <div class="ig-avatar-ring">
-                  <img src="assets/instagram_suga_stories/pfp_focus_ig.png" class="ig-avatar" alt="suga.souto" />
+                  <img src="assets/sugavct_pfp.jpg" class="ig-avatar" alt="sugavct" />
                 </div>
                 <div class="ig-user-details">
                   <div class="ig-username">
-                    suga.souto
+                    sugavct
                     <span class="ig-verified">✓</span>
                   </div>
                   <div class="ig-location">Dot Baires Shopping · Buenos Aires</div>
@@ -773,7 +787,7 @@ Cabrales Focus. Precisión que se toma.
 
               <!-- Caption AIDA -->
               <div class="ig-caption-box">
-                <span class="ig-caption-author">suga.souto</span>
+                <span class="ig-caption-author">sugavct</span>
                 <span class="ig-caption-text">
                   ¿Listo para entrar en Modo Focus? Con Cabrales Focus te invitamos a descubrir nuestro cold brew en Dot Baires Shopping.
                   <br><br>
@@ -781,7 +795,7 @@ Cabrales Focus. Precisión que se toma.
                   <br><br>
                   🎟️ 1 lata = 100 puntos = 1 bono. Consultá la agenda en el enlace del perfil.
                 </span>
-                <span class="ig-caption-tags">#CabralesFocus #ModoFocus #ClubFocus #DotBaires #Suga #VALORANT</span>
+                <span class="ig-caption-tags">#CabralesFocus #ModoFocus #ClubFocus #DotBaires #Suga #sugavct #VALORANT</span>
               </div>
 
               <div class="ig-post-date">HACE 2 HORAS · COLABORACIÓN PROPUESTA · SIMULACIÓN ACADÉMICA</div>
@@ -831,7 +845,7 @@ La experiencia sigue en Club Focus: conocé la app y acompañá a Suga en un str
 Una lata registrada suma 100 puntos; un bono cuesta 100. Hasta diez bonos por usuario y un ganador de dos entradas. Consultá la agenda de la activación y del stream desde el enlace del perfil.
 
 Cabrales Focus. Precisión que se toma.
-#CabralesFocus #ModoFocus #ClubFocus #DotBaires #Suga #VALORANT</pre>
+#CabralesFocus #ModoFocus #ClubFocus #DotBaires #Suga #sugavct #VALORANT</pre>
           </div>
         </div>
       </div>
