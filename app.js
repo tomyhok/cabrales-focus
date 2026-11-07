@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------------------------------------------------
   const pubTabs = document.querySelectorAll('.pub-tab-btn');
   const pubPanes = document.querySelectorAll('.pub-detail-pane');
+  const p5Video = document.getElementById('p5-reels-video');
 
   pubTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -166,55 +167,62 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('active');
       const targetPane = document.getElementById(targetId);
       if (targetPane) targetPane.classList.add('active');
+
+      // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
+      if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
+        p5Video.pause();
+      }
     });
   });
 
-  // Carrusel Interactivo P2 (6 Placas)
-  const carruselPlates = [
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/1.png",
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/2.png",
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/3.png",
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/4.png",
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/5.png",
-    "assets/carrusel_p2/Carrusel Cabrales Focus (Definitivo)/6.png"
-  ];
-
+  // Carrusel Interactivo P2 (6 Placas en Track)
+  const slidesTrack = document.getElementById('p2-slides-track');
+  const p2Counter = document.getElementById('p2-slide-counter');
+  const p2PrevBtn = document.getElementById('p2-btn-prev');
+  const p2NextBtn = document.getElementById('p2-btn-next');
+  const p2Dots = document.querySelectorAll('#p2-middle-dots .ig-dot');
   let currentPlateIdx = 0;
-  const plateImg = document.getElementById('p2-active-plate-img');
-  const plateCounter = document.getElementById('p2-plate-counter');
-  const plateDots = document.querySelectorAll('.carrusel-dot');
-  const prevPlateBtn = document.getElementById('p2-prev-plate');
-  const nextPlateBtn = document.getElementById('p2-next-plate');
+  const totalPlates = 6;
 
   function setCarruselPlate(idx) {
-    if (idx < 0 || idx >= carruselPlates.length) return;
+    if (idx < 0) idx = 0;
+    if (idx >= totalPlates) idx = totalPlates - 1;
     currentPlateIdx = idx;
-    if (plateImg) plateImg.src = carruselPlates[idx];
-    if (plateCounter) plateCounter.textContent = `Placa ${idx + 1} de 6`;
-    plateDots.forEach((dot, dIdx) => {
-      dot.classList.toggle('active', dIdx === idx);
+
+    if (slidesTrack) {
+      slidesTrack.style.transform = `translateX(-${currentPlateIdx * 100}%)`;
+    }
+    if (p2Counter) {
+      p2Counter.textContent = `${currentPlateIdx + 1}/${totalPlates}`;
+    }
+    p2Dots.forEach((dot, dIdx) => {
+      dot.classList.toggle('active', dIdx === currentPlateIdx);
+    });
+
+    if (p2PrevBtn) p2PrevBtn.disabled = (currentPlateIdx === 0);
+    if (p2NextBtn) p2NextBtn.disabled = (currentPlateIdx === totalPlates - 1);
+  }
+
+  if (p2PrevBtn) {
+    p2PrevBtn.addEventListener('click', () => {
+      if (currentPlateIdx > 0) setCarruselPlate(currentPlateIdx - 1);
     });
   }
 
-  if (prevPlateBtn) {
-    prevPlateBtn.addEventListener('click', () => {
-      const newIdx = (currentPlateIdx - 1 + carruselPlates.length) % carruselPlates.length;
-      setCarruselPlate(newIdx);
+  if (p2NextBtn) {
+    p2NextBtn.addEventListener('click', () => {
+      if (currentPlateIdx < totalPlates - 1) setCarruselPlate(currentPlateIdx + 1);
     });
   }
 
-  if (nextPlateBtn) {
-    nextPlateBtn.addEventListener('click', () => {
-      const newIdx = (currentPlateIdx + 1) % carruselPlates.length;
-      setCarruselPlate(newIdx);
-    });
-  }
-
-  plateDots.forEach((dot, dIdx) => {
+  p2Dots.forEach((dot, dIdx) => {
     dot.addEventListener('click', () => setCarruselPlate(dIdx));
   });
 
-  // Stories Interactivas P6 (4 Historias)
+  // Inicializar estado del carrusel P2
+  setCarruselPlate(0);
+
+  // Stories Interactivas P6 (4 Historias con Barras de Progreso)
   const storiesList = [
     "assets/instagram_suga_stories/story_1_final.png",
     "assets/instagram_suga_stories/story_2_final.png",
@@ -222,31 +230,69 @@ document.addEventListener('DOMContentLoaded', () => {
     "assets/instagram_suga_stories/story_4_final.png"
   ];
   let currentStoryIdx = 0;
-  const storyImg = document.getElementById('p6-active-story-img');
-  const storyCounter = document.getElementById('p6-story-counter');
-  const prevStoryBtn = document.getElementById('p6-prev-story');
-  const nextStoryBtn = document.getElementById('p6-next-story');
+  const p6StoryImg = document.getElementById('p6-story-img');
+  const p6StoryCounter = document.getElementById('p6-story-counter');
+  const p6PrevBtn = document.getElementById('p6-btn-prev');
+  const p6NextBtn = document.getElementById('p6-btn-next');
+  const storySegs = [
+    document.getElementById('p6-seg-0'),
+    document.getElementById('p6-seg-1'),
+    document.getElementById('p6-seg-2'),
+    document.getElementById('p6-seg-3')
+  ];
 
   function setStory(idx) {
-    if (idx < 0 || idx >= storiesList.length) return;
+    if (idx < 0) idx = 0;
+    if (idx >= storiesList.length) idx = storiesList.length - 1;
     currentStoryIdx = idx;
-    if (storyImg) storyImg.src = storiesList[idx];
-    if (storyCounter) storyCounter.textContent = `Story ${idx + 1} de 4`;
+
+    if (p6StoryImg) {
+      p6StoryImg.style.opacity = '0.7';
+      p6StoryImg.src = storiesList[currentStoryIdx];
+      setTimeout(() => { p6StoryImg.style.opacity = '1'; }, 100);
+    }
+    if (p6StoryCounter) {
+      p6StoryCounter.textContent = `Story ${currentStoryIdx + 1} de 4`;
+    }
+
+    storySegs.forEach((seg, sIdx) => {
+      if (seg) {
+        seg.classList.toggle('active', sIdx <= currentStoryIdx);
+      }
+    });
+
+    if (p6PrevBtn) p6PrevBtn.disabled = (currentStoryIdx === 0);
+    if (p6NextBtn) p6NextBtn.disabled = (currentStoryIdx === storiesList.length - 1);
   }
 
-  if (prevStoryBtn) {
-    prevStoryBtn.addEventListener('click', () => {
-      const newIdx = (currentStoryIdx - 1 + storiesList.length) % storiesList.length;
-      setStory(newIdx);
+  if (p6PrevBtn) {
+    p6PrevBtn.addEventListener('click', () => {
+      if (currentStoryIdx > 0) setStory(currentStoryIdx - 1);
     });
   }
 
-  if (nextStoryBtn) {
-    nextStoryBtn.addEventListener('click', () => {
-      const newIdx = (currentStoryIdx + 1) % storiesList.length;
-      setStory(newIdx);
+  if (p6NextBtn) {
+    p6NextBtn.addEventListener('click', () => {
+      if (currentStoryIdx < storiesList.length - 1) setStory(currentStoryIdx + 1);
     });
   }
+
+  // Click directo en la story para avanzar o retroceder
+  if (p6StoryImg) {
+    p6StoryImg.addEventListener('click', (e) => {
+      const rect = p6StoryImg.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (clickX > rect.width / 2) {
+        if (currentStoryIdx < storiesList.length - 1) setStory(currentStoryIdx + 1);
+        else setStory(0);
+      } else {
+        if (currentStoryIdx > 0) setStory(currentStoryIdx - 1);
+      }
+    });
+  }
+
+  // Inicializar estado de Stories P6
+  setStory(0);
 
   // ------------------------------------------------------------------------
   // 3. SIMULADOR DE APP CLUB FOCUS (SLIDE 7)
