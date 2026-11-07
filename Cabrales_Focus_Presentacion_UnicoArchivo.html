@@ -3362,98 +3362,112 @@ table.transmedia-table tr:hover td {
     </div>
 
     <!-- ======================================================================
-         P5: «UNA ÚLTIMA BALA» (IG REELS · VIDEO 40 S · RTM & CO-BRANDING MAJOR 2027)
+         P5: SPOT PUBLICITARIO CABRALES FOCUS × FIRESPORTS (MAJOR BUENOS AIRES 2027)
          ====================================================================== -->
     <div class="lab-pane" id="lab-p5">
       <div class="simulator-split">
-        <!-- Mockup Vertical IG Reels 40s RTM FiReSPORTS -->
+        <!-- Mockup Smartphone con Reproductor de Video Vertical Full HD (9:16) -->
         <div class="phone-mockup">
           <div class="phone-notch"></div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.78rem; font-weight: 700;">
-            <span>📸 IG Reels · RTM + Co-branding</span>
-            <span style="color: var(--cyan);">Duración: 40 s</span>
+            <span>🎬 Spot Publicitario Vertical (9:16)</span>
+            <span style="color: var(--cyan);">Duración: 20 s</span>
           </div>
 
-          <div style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(138,79,255,0.45); background: linear-gradient(160deg, #160926 0%, #090303 60%, #041c29 100%); aspect-ratio: 9/14; display: flex; flex-direction: column; justify-content: space-between; padding: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="padding: 4px 10px; border-radius: 99px; background: rgba(217,20,20,0.25); border: 1px solid #ff8080; font-size: 0.66rem; font-weight: 800; color: #ff9999;">
-                🔥 P5 · REAL TIME MARKETING
+          <!-- Reproductor de Video MP4 Real -->
+          <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(4,189,251,0.5); background: #050609; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.85); margin-bottom: 10px;">
+            <video id="p5-spot-video" playsinline controls loop poster="assets/spot_p5_major2027/scene_5_cierre_marca.png" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <source src="assets/spot_p5_major2027/spot_cabrales_focus_major_2027.mp4" type="video/mp4" />
+              Tu navegador no soporta reproducción de video MP4.
+            </video>
+            
+            <div style="position: absolute; top: 12px; left: 12px; pointer-events: none; z-index: 5;">
+              <span style="padding: 4px 10px; border-radius: 99px; background: rgba(9,13,22,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(4,189,251,0.5); font-size: 0.65rem; font-weight: 800; color: #04BDFB;">
+                ⚡ FULL HD · 1080×1920
               </span>
-              <span style="font-size: 0.7rem; color: var(--cyan); font-weight: 700;">00:40</span>
             </div>
+          </div>
 
-            <div style="text-align: center; margin: 6px 0;">
-              <div style="font-size: 0.68rem; color: #d6bcfa; font-weight: 800; letter-spacing: 0.08em;">CO-BRANDING PROPUESTO</div>
-              <div style="font-family: var(--font-heading); font-size: 1.05rem; color: var(--white); margin-top: 2px;">
-                CABRALES FOCUS × FiReSPORTS
-              </div>
-              <div style="font-size: 0.72rem; color: var(--cyan);">Rumbo al FiReMAJOR Buenos Aires 2027</div>
+          <!-- Controles de Salto Rápido por Escena -->
+          <div style="display: flex; gap: 4px; justify-content: space-between; margin-bottom: 8px;">
+            <button class="p5-quick-jump tc-btn active" data-jump="0" style="flex: 1; padding: 4px 2px; font-size: 0.64rem;">E1 (0s)</button>
+            <button class="p5-quick-jump tc-btn" data-jump="4" style="flex: 1; padding: 4px 2px; font-size: 0.64rem;">E2 (4s)</button>
+            <button class="p5-quick-jump tc-btn" data-jump="8" style="flex: 1; padding: 4px 2px; font-size: 0.64rem;">E3 (8s)</button>
+            <button class="p5-quick-jump tc-btn" data-jump="12" style="flex: 1; padding: 4px 2px; font-size: 0.64rem;">E4 (12s)</button>
+            <button class="p5-quick-jump tc-btn" data-jump="17" style="flex: 1; padding: 4px 2px; font-size: 0.64rem;">E5 (17s)</button>
+          </div>
+
+          <!-- Links de descarga y visualización en alta definición -->
+          <div style="font-size: 0.7rem; display: flex; flex-direction: column; gap: 5px;">
+            <div style="padding: 7px 10px; border-radius: 10px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.25); display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: var(--white); font-weight: 600;">📥 Archivo Master:</span>
+              <a href="assets/spot_p5_major2027/spot_cabrales_focus_major_2027.mp4" download style="color: var(--cyan); font-weight: 700; text-decoration: underline;">Descargar MP4 (8.7 MB)</a>
             </div>
-
-            <!-- Pantalla interactiva del tramo de P5 -->
-            <div id="p5-beat-preview" style="padding: 14px; border-radius: 12px; background: rgba(9,3,3,0.88); border: 1px solid rgba(4,189,251,0.4); text-align: center;">
-              <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">TRAMO 1 · 0:00 A 0:06 S</span>
-              <h5 style="font-family: var(--font-heading); font-size: 0.92rem; margin: 4px 0;">El eco del FiReSPORTS Last Chance</h5>
-              <p style="font-size: 0.75rem; color: var(--text-secondary);">Recuerdo gráfico de la tensión de “la última bala” vivida en Buenos Aires (29/10 al 01/11/2026).</p>
-            </div>
-
-            <div style="font-size: 0.7rem;">
-              <div style="padding: 6px 8px; border-radius: 8px; background: rgba(255,255,255,0.05); margin-bottom: 6px; color: var(--text-secondary);">
-                🎟️ <strong>1 lata = 100 pts = 1 bono</strong> (Máx. 10 bonos/usuario · 1 ganador de 2 entradas)
-              </div>
-              <div style="font-size: 0.62rem; color: var(--text-muted); text-align: center;">
-                Co-branding y sorteo propuestos · Simulación académica
-              </div>
+            <div style="padding: 7px 10px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: var(--text-secondary);">🖼️ Storyboard Panorámico:</span>
+              <a href="assets/spot_p5_major2027/spot_p5_storyboard_presentation.png" target="_blank" style="color: #d6bcfa; font-weight: 700; text-decoration: underline;">Ver 2560×1440 HD</a>
             </div>
           </div>
         </div>
 
-        <!-- Ficha RTM, Precisión Histórica del Torneo y Escaleta de 40s -->
+        <!-- Ficha RTM, Precisión Histórica del Torneo y Escaleta de 20s -->
         <div class="glass-card">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
-            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 5 · Audiovisual 3 de 3 · Real Time Marketing (RTM)</span>
-            <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">Formato: 9:16 (1080×1920) · 40 s</span>
+            <span class="stage-pill stage-2" style="margin-bottom: 0;">Publicación 5 · Audiovisual 3 de 3 · Spot Publicitario RTM</span>
+            <span style="font-size: 0.78rem; color: var(--cyan); font-weight: 700;">Formato: 9:16 (1080×1920) · 20 s · 30 FPS</span>
           </div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px;">
-            P5 — «Una última bala» (RTM Last Chance 2026 → FiReMAJOR Buenos Aires 2027)
+          <h3 style="font-family: var(--font-heading); font-size: 1.48rem; margin-bottom: 6px;">
+            P5 — Spot Publicitario Cabrales Focus × FiReSPORTS (Major Buenos Aires 2027)
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.86rem; margin-bottom: 12px;">
-            Reacciona mediante <strong>Real Time Marketing (RTM)</strong> al cierre del torneo <strong>FiReSPORTS Last Chance</strong> disputado en Buenos Aires del <strong>29/10 al 01/11/2026</strong> (que otorgó puntos VRS rumbo al Major de Singapur 2026) y tiende un puente cultural con el mismo organizador local hacia el <strong>FiReMAJOR Buenos Aires 2027 (31/05 al 20/06/2027)</strong>, presentando el recorrido completo de participación en la app <em>Club Focus</em>:
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.45;">
+            Pieza publicitaria vertical producida para presentar el producto en estudio oscuro profesional, ilustrar visualmente el funcionamiento del programa de recompensas en la app gratuita <strong>Club Focus</strong> y culminar con la identidad institucional de <strong>Cabrales Focus</strong>. Conecta con el histórico <strong>FIReMAJOR Buenos Aires 2027</strong> (31/05 al 20/06/2027), el primer mundial de Counter-Strike 2 en Argentina:
           </p>
 
-          <h4 style="font-size: 0.8rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
-            🎬 Guion Técnico de 6 Bloques (40 segundos · Hacé clic para recorrer las pantallas):
+          <h4 style="font-size: 0.78rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            🎬 Guion Técnico de 5 Escenas (Hacé clic para saltar en el video y ver el fotograma HD):
           </h4>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 8px; margin-bottom: 14px;" id="p5-beats-grid">
-            <button class="tc-btn active" data-p5-time="TRAMO 1 · 0:00 A 0:06 S" data-p5-title="El eco del Last Chance 2026" data-p5-desc="Recuerdo gráfico original de la tensión de 'la última bala' disputada en Buenos Aires (29/10–01/11/2026).">
-              0:00–0:06 · Last Chance BA
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-bottom: 12px;" id="p5-beats-grid">
+            <button class="tc-btn active" data-p5-seek="0" data-p5-time="ESCENA 1 · 0:00 A 0:04 S" data-p5-title="El Producto y la Experiencia" data-p5-desc="Lata real de Cabrales Focus en escenario de estudio oscuro con iluminación lateral azul/blanca. Ángulo bajo y travelling suave revelando código QR." data-p5-vo="Y en Cabrales Focus queremos que vos también puedas vivir esta experiencia." data-p5-tech="Studio Dark · Rim Light Cian · Reflejo en piso · 9:16 Full HD" data-p5-img="assets/spot_p5_major2027/scene_1_producto_experiencia.png">
+              0:00–0:04 · E1: Producto Hero
             </button>
-            <button class="tc-btn" data-p5-time="TRAMO 2 · 0:06 A 0:12 S" data-p5-title="“En 2027, el Major llega a casa”" data-p5-desc="Presentación visual del co-branding propuesto Cabrales Focus × FiReSPORTS rumbo al FiReMAJOR Buenos Aires 2027.">
-              0:06–0:12 · Major 2027 en casa
+            <button class="tc-btn" data-p5-seek="4" data-p5-time="ESCENA 2 · 0:04 A 0:08 S" data-p5-title="Escaneo QR & Registro en App" data-p5-desc="Smartphone moderno acercándose a la lata. Cámara enfoca código QR con animación láser HUD y confirmación limpia en Club Focus." data-p5-vo="Escaneá el QR de tu lata, registralo en la app gratuita Club Focus..." data-p5-tech="Macro dinámico · Haz de escaneo láser · UI Club Focus minimalista" data-p5-img="assets/spot_p5_major2027/scene_2_escaneo_qr.png">
+              0:04–0:08 · E2: Escaneo QR
             </button>
-            <button class="tc-btn" data-p5-time="TRAMO 3 · 0:12 A 0:18 S" data-p5-title="Compra de lata y App gratuita" data-p5-desc="Paso 1 y 2: adquirir una lata de Cabrales Focus (240 ml) y descargar gratis la app Club Focus.">
-              0:12–0:18 · Lata + Descarga App
+            <button class="tc-btn" data-p5-seek="8" data-p5-time="ESCENA 3 · 0:08 A 0:12 S" data-p5-title="Acumulación de Puntos Focus" data-p5-desc="Partículas luminosas ascendiendo hacia tarjeta digital de Club Focus (+100 Pts acreditados). Progreso de saldo sin dinero ni monedas." data-p5-vo="...acumulá puntos..." data-p5-tech="Motion graphics cinético · Partículas de datos cian · Tarjeta digital" data-p5-img="assets/spot_p5_major2027/scene_3_acumula_puntos.png">
+              0:08–0:12 · E3: Acumulá Puntos
             </button>
-            <button class="tc-btn" data-p5-time="TRAMO 4 · 0:18 A 0:25 S" data-p5-title="Registro y escaneo de QR único" data-p5-desc="Paso 3: crear cuenta gratuita y escanear el código QR único bajo la anilla (un solo uso por lata).">
-              0:18–0:25 · Escaneo QR único
+            <button class="tc-btn" data-p5-seek="12" data-p5-time="ESCENA 4 · 0:12 A 0:17 S" data-p5-title="Canje por Participaciones Major 2027" data-p5-desc="Puntos fluyen hacia interfaz de recompensas y transicionan a Bono Holográfico de Sorteo (2 entradas). Silueta de trofeo en arena de esports." data-p5-vo="...y canjealos por participaciones para el sorteo de entradas al Major 2027." data-p5-tech="Trofeo monumental Counter-Strike · Reflectores de estadio · Bono sorteo" data-p5-img="assets/spot_p5_major2027/scene_4_canje_participaciones.png">
+              0:12–0:17 · E4: Canje Bono Major
             </button>
-            <button class="tc-btn" data-p5-time="TRAMO 5 · 0:25 A 0:33 S" data-p5-title="+100 puntos y canje en Tienda" data-p5-desc="Paso 4: se acreditan +100 pts y el usuario entra a Tienda para canjear su bono (escanear solo no inscribe sin canjear).">
-              0:25–0:33 · Canje de bono (100 pts)
-            </button>
-            <button class="tc-btn" data-p5-time="TRAMO 6 · 0:33 A 0:40 S" data-p5-title="Confirmación en Mi Club" data-p5-desc="Paso 5: pantalla Mi Club confirmando el bono activo (máx. 10 bonos por usuario; 1 ganador de 2 entradas).">
-              0:33–0:40 · Confirmación Mi Club
+            <button class="tc-btn" data-p5-seek="17" data-p5-time="ESCENA 5 · 0:17 A 0:20 S" data-p5-title="Cierre Institucional de Marca" data-p5-desc="Lata real en packshot heroico con trofeo bokeh de fondo. Cinta roja Cabrales 'Desde 1941', claim principal y firma de marca." data-p5-vo="Enfocá tu energía en lo que te apasiona. Porque somos Cabrales. Somos Focus." data-p5-tech="Packshot publicitario premium · Espacio negativo de marca · Co-branding" data-p5-img="assets/spot_p5_major2027/scene_5_cierre_marca.png">
+              0:17–0:20 · E5: Cierre de Marca
             </button>
           </div>
 
-          <div style="padding: 13px; border-radius: 12px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 8px;">
-            <span style="font-size: 0.7rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Copy Oficial de Publicación (P5 · RTM & Co-branding)</span>
-            <p style="font-size: 0.79rem; color: var(--white); margin-top: 4px; font-style: italic; line-height: 1.42;">
-              “Buenos Aires vivió la tensión de la última bala. En 2027, el Major llega a casa. Cabrales Focus × FiReSPORTS: una colaboración propuesta para acercarte a la tribuna del FiReMAJOR Buenos Aires 2027. Comprá una lata, descargá Club Focus, registrate y escaneá su código único. Sumá puntos y canjealos por bonos de participación. Cada lata suma 100 puntos y cada bono cuesta 100. Podés canjear hasta diez bonos por usuario; un ganador recibe dos entradas. Consultá tus participaciones en Mi Club. Precisión que se toma.”
+          <!-- Pantalla interactiva con fotograma y detalle de la escena activa -->
+          <div id="p5-beat-preview" style="padding: 14px; border-radius: 12px; background: rgba(9,3,3,0.88); border: 1px solid rgba(4,189,251,0.4); margin-bottom: 10px;">
+            <div style="display: flex; gap: 14px; align-items: center;">
+              <img id="p5-preview-img" src="assets/spot_p5_major2027/scene_1_producto_experiencia.png" alt="Fotograma Escena" style="width: 85px; height: 110px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(4,189,251,0.35); flex-shrink: 0;" />
+              <div style="flex: 1;">
+                <span id="p5-preview-time" style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">ESCENA 1 · 0:00 A 0:04 S</span>
+                <h5 id="p5-preview-title" style="font-family: var(--font-heading); font-size: 0.95rem; margin: 3px 0; color: #ffffff;">El Producto y la Experiencia</h5>
+                <p id="p5-preview-vo" style="font-size: 0.77rem; color: #c4d4eb; font-style: italic; margin-bottom: 4px;">“Y en Cabrales Focus queremos que vos también puedas vivir esta experiencia.”</p>
+                <p id="p5-preview-desc" style="font-size: 0.72rem; color: var(--text-secondary);">Lata real de Cabrales Focus en escenario de estudio oscuro con iluminación lateral azul/blanca. Ángulo bajo y travelling suave revelando código QR.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 12px 14px; border-radius: 12px; background: rgba(4,189,251,0.07); border: 1px solid rgba(4,189,251,0.3); margin-bottom: 8px;">
+            <span style="font-size: 0.68rem; font-weight: 800; color: var(--cyan); text-transform: uppercase;">📝 Pitch y Locución Completa del Spot (20 Segundos)</span>
+            <p style="font-size: 0.77rem; color: var(--white); margin-top: 4px; font-style: italic; line-height: 1.45;">
+              “Y en Cabrales Focus queremos que vos también puedas vivir esta experiencia. Escaneá el QR de tu lata, registralo en la app gratuita Club Focus, acumulá puntos y canjealos por participaciones para el sorteo de entradas al Major 2027. Enfocá tu energía en lo que te apasiona. Porque somos Cabrales. Somos Focus.”
             </p>
           </div>
-          <span style="font-size: 0.75rem; color: #d6bcfa;">
-            * Precisión documental: El Last Chance 2026 sumaba puntos VRS hacia Singapur 2026 (no clasificaba directo al Major argentino). Premio simulado: 1 ganador de 2 entradas (sin viaje ni alojamiento).
-          </span>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: #8fa0ba; flex-wrap: wrap; gap: 6px;">
+            <span>🎟️ <strong>Regla Club Focus:</strong> 1 lata = 100 pts = 1 bono (Máx. 10 bonos/usuario · 1 ganador de 2 entradas)</span>
+            <span style="color: #d6bcfa;">🏆 Co-branding Cabrales Focus × FiReSPORTS Rumbo al FIReMAJOR 2027</span>
+          </div>
         </div>
       </div>
     </div>

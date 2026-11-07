@@ -503,668 +503,83 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const p5Beats = document.querySelectorAll('#p5-beats-grid [data-p5-time]');
-  const p5Preview = document.getElementById('p5-beat-preview');
-  p5Beats.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      p5Beats.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (p5Preview) {
-        p5Preview.innerHTML = `
-          <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">${btn.getAttribute('data-p5-time')}</span>
-          <h5 style="font-family: var(--font-heading); font-size: 0.92rem; margin: 4px 0;">${btn.getAttribute('data-p5-title')}</h5>
-          <p style="font-size: 0.75rem; color: var(--text-secondary);">${btn.getAttribute('data-p5-desc')}</p>
-        `;
-      }
-    });
-  });
+const p5QuickJumps = document.querySelectorAll('.p5-quick-jump');
+const p5Video = document.getElementById('p5-spot-video');
+const p5Img = document.getElementById('p5-preview-img');
+const p5Time = document.getElementById('p5-preview-time');
+const p5Title = document.getElementById('p5-preview-title');
+const p5Vo = document.getElementById('p5-preview-vo');
+const p5Desc = document.getElementById('p5-preview-desc');
 
-  /* ------------------------------------------------------------------------
-     9B. SIMULADOR INTERACTIVO DE P6 — SECUENCIA DE 4 INSTAGRAM STORIES
-     ------------------------------------------------------------------------ */
-  const storyBody = document.getElementById('story-dynamic-body');
-  const storyStepIndicator = document.getElementById('story-step-indicator');
-  const sbar1 = document.getElementById('sbar-1');
-  const sbar2 = document.getElementById('sbar-2');
-  const sbar3 = document.getElementById('sbar-3');
-  const sbar4 = document.getElementById('sbar-4');
-  const btnRestartStory = document.getElementById('btn-restart-story');
+function selectP5Scene(btn, seekVideo = true) {
+  if (!btn) return;
+  p5Beats.forEach((b) => b.classList.remove('active'));
+  btn.classList.add('active');
 
-  function setStoryBars(step) {
-    if (sbar1) sbar1.classList.toggle('filled', step >= 1);
-    if (sbar2) sbar2.classList.toggle('filled', step >= 2);
-    if (sbar3) sbar3.classList.toggle('filled', step >= 3);
-    if (sbar4) sbar4.classList.toggle('filled', step >= 4);
-  }
+  const seekSec = parseFloat(btn.getAttribute('data-p5-seek') || '0');
+  const timeText = btn.getAttribute('data-p5-time') || '';
+  const titleText = btn.getAttribute('data-p5-title') || '';
+  const descText = btn.getAttribute('data-p5-desc') || '';
+  const voText = btn.getAttribute('data-p5-vo') || '';
+  const imgUrl = btn.getAttribute('data-p5-img') || '';
 
-  function renderStoryStep1() {
-    if (!storyBody) return;
-    setStoryBars(1);
-    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 1/4 · Encuesta';
+  if (p5Time) p5Time.textContent = timeText;
+  if (p5Title) p5Title.textContent = titleText;
+  if (p5Vo) p5Vo.textContent = `“${voText}”`;
+  if (p5Desc) p5Desc.textContent = descText;
+  if (p5Img && imgUrl) p5Img.src = imgUrl;
 
-    storyBody.innerHTML = `
-      <div style="text-align: center; margin-bottom: 12px;">
-        <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800; letter-spacing: 0.08em;">P6 · TU MOMENTO FOCUS (STORY 1/4)</span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.08rem; margin-top: 6px;">
-          ANTES DE EMPEZAR, ¿QUÉ TE DISTRAE MÁS?
-        </h4>
-        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 4px;">
-          Sticker interactivo de encuesta (votación de 2 opciones):
-        </p>
-      </div>
-      <button class="story-option-btn" data-p6-s1="Notificaciones">
-        📱 A. Notificaciones (mensajes y alertas del celular)
-      </button>
-      <button class="story-option-btn" data-p6-s1="Varias tareas">
-        🗂️ B. Varias tareas abiertas al mismo tiempo
-      </button>
-    `;
-
-    storyBody.querySelectorAll('[data-p6-s1]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        renderStoryStep2(btn.getAttribute('data-p6-s1'));
-      });
-    });
-  }
-
-  function renderStoryStep2(choice1) {
-    setStoryBars(2);
-    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 2/4 · Encuesta';
-
-    storyBody.innerHTML = `
-      <div style="text-align: center; margin-bottom: 12px;">
-        <span style="display: inline-block; padding: 3px 10px; border-radius: 99px; background: rgba(4,189,251,0.16); color: var(--cyan); font-size: 0.68rem; font-weight: 800; margin-bottom: 6px;">
-          Elegiste: ${choice1} ✔
-        </span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.08rem;">
-          ¿CUÁNDO HACÉS TU PAUSA?
-        </h4>
-        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 4px;">
-          Segunda encuesta para identificar el contexto cotidiano:
-        </p>
-      </div>
-      <button class="story-option-btn" data-p6-s2="Estudio">
-        📚 A. Estudio (lecturas, parciales o entregas)
-      </button>
-      <button class="story-option-btn" data-p6-s2="Trabajo">
-        💻 B. Trabajo (informes, reuniones o turnos largos)
-      </button>
-    `;
-
-    storyBody.querySelectorAll('[data-p6-s2]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        renderStoryStep3(choice1, btn.getAttribute('data-p6-s2'));
-      });
-    });
-  }
-
-  function renderStoryStep3(choice1, choice2) {
-    setStoryBars(3);
-    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 3/4 · Caja Abierta';
-
-    storyBody.innerHTML = `
-      <div style="text-align: center;">
-        <span style="font-size: 0.68rem; color: #d6bcfa; font-weight: 800; letter-spacing: 0.08em;">STORY 3/4 · CAJA DE RESPUESTAS (ESCUCHA ACTIVA)</span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin: 6px 0;">
-          ¿QUÉ HACÉS PARA VOLVER A UNA TAREA?
-        </h4>
-        <input
-          type="text"
-          id="p6-open-input"
-          value="Pongo el celular boca abajo 10 min y tomo algo frío"
-          style="width: 100%; padding: 9px 11px; border-radius: 10px; border: 1px solid var(--cyan); background: rgba(9,3,3,0.85); color: #fff; font-size: 0.78rem; margin: 8px 0 10px;"
-        />
-        <button class="btn-primary" id="p6-to-step4" style="width: 100%; justify-content: center; padding: 9px; font-size: 0.78rem;">
-          Enviar respuesta y pasar a Story 4/4 ➔
-        </button>
-      </div>
-    `;
-
-    document.getElementById('p6-to-step4').addEventListener('click', () => {
-      const val = document.getElementById('p6-open-input').value || 'Silenciar notificaciones';
-      renderStoryStep4(choice1, choice2, val);
-    });
-  }
-
-  function renderStoryStep4(choice1, choice2, ritual) {
-    setStoryBars(4);
-    if (storyStepIndicator) storyStepIndicator.textContent = 'Story 4/4 · Link a App';
-    playCanOpenAndCalmChord();
-
-    storyBody.innerHTML = `
-      <div style="text-align: center;">
-        <span style="font-size: 0.66rem; color: var(--cyan); font-weight: 800;">STORY 4/4 · REMISIÓN NARRATIVA SIN COMPRA</span>
-        <h4 style="font-family: var(--font-heading); font-size: 1.02rem; margin: 6px 0;">
-          “CONOCÉ LA HISTORIA DE SOLANGE Y COMPARTÍ LA TUYA”
-        </h4>
-        <p style="font-size: 0.74rem; color: var(--text-secondary); margin-bottom: 10px;">
-          Tu aporte (<em>${choice1} · ${choice2} · “${ritual}”</em>) nutre la escucha de la comunidad. Solo se publican aportes con autorización expresa.
-        </p>
-        <a href="#journey" class="story-option-btn" style="display: block; text-align: center; background: var(--grad-focus); color: #090303; font-weight: 800; text-decoration: none;">
-          🔗 ABRIR HISTORIAS FOCUS / ARCHIVO DE VENTANAS
-        </a>
-      </div>
-    `;
-  }
-
-  renderStoryStep1();
-  if (btnRestartStory) btnRestartStory.addEventListener('click', renderStoryStep1);
-
-  /* ------------------------------------------------------------------------
-     10. CARRUSEL INTERACTIVO P2 DE 6 PLACAS («CONOCÉ CABRALES FOCUS»)
-     ------------------------------------------------------------------------ */
-  const carouselSlides = [
-    {
-      tag: 'PLACA 1 DE 6 · QUÉ ES CABRALES FOCUS',
-      html: `
-        <div style="display: grid; grid-template-columns: 1fr 170px; gap: 20px; align-items: center;">
-          <div>
-            <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">1 · CONCEPTO DE PRODUCTO</span>
-            <h3 style="font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.15; margin: 8px 0 12px;">
-              COFFEE COLD BREW LISTO PARA TOMAR EN LATA DE 240 ML
-            </h3>
-            <p style="color: var(--text-secondary); font-size: 0.88rem;">
-              Una extensión académica de <strong>Cabrales S.A.</strong> pensada para acompañar rutinas adultas de estudio, trabajo y gaming con el sello <em>“Precisión que se toma”</em>.
-            </p>
-          </div>
-          <div style="text-align: center;">
-            <img src="assets/can_hero.png" alt="Cabrales Focus" style="height: 230px; width: auto;" />
-          </div>
-        </div>
-      `,
-    },
-    {
-      tag: 'PLACA 2 DE 6 · QUÉ CONTIENE (FICHA ACADÉMICA)',
-      html: `
-        <div>
-          <span style="color: #d6bcfa; font-size: 0.75rem; font-weight: 800;">2 · COMPOSICIÓN PROPUESTA POR LATA (240 ML)</span>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 12px;">
-            Café 100% Arábica de Brasil extraído en frío, azúcar y L-teanina
-          </h4>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px;">
-            <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
-              <strong style="color: var(--cyan); font-size: 1.05rem;">80 mg Cafeína</strong>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Proveniente íntegramente del café arábica (sin cafeína sintética añadida).</p>
-            </div>
-            <div style="padding: 14px; border-radius: 12px; background: rgba(138,79,255,0.1); border: 1px solid rgba(138,79,255,0.35);">
-              <strong style="color: #d6bcfa; font-size: 1.05rem;">100 mg L-Teanina</strong>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Objetivo académico de formulación funcional por envase de 240 ml.</p>
-            </div>
-            <div style="padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle);">
-              <strong style="color: var(--white); font-size: 1.05rem;">6 g de Azúcar</strong>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">Sin leche, sin crema ni saborizantes añadidos. Valores de diseño académico.</p>
-            </div>
-          </div>
-        </div>
-      `,
-    },
-    {
-      tag: 'PLACA 3 DE 6 · CÓMO SE ELABORA EL COLD BREW',
-      html: `
-        <div>
-          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">3 · PROCESO DE EXTRACCIÓN EN FRÍO</span>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
-            Extracción en frío vs. Café caliente enfriado
-          </h4>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div style="padding: 16px; border-radius: 14px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.3);">
-              <strong style="color: var(--cyan);">❄️ Verdadero Cold Brew (Agua + Café)</strong>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
-                Infusionado directamente en frío con granos 100% arábica de Brasil (inspirado en <em>Cabrales Brasil</em>), logrando un perfil limpio, suave y de baja acidez natural.
-              </p>
-            </div>
-            <div style="padding: 16px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
-              <strong style="color: #ff8080;">☕ Diferencia con café enfriado</strong>
-              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
-                No es un espresso preparado con agua caliente y luego enfriado con hielo; conserva sus notas tostadas originales listo en lata.
-              </p>
-            </div>
-          </div>
-        </div>
-      `,
-    },
-    {
-      tag: 'PLACA 4 DE 6 · QUÉ LO DIFERENCIA',
-      html: `
-        <div>
-          <span style="color: #d6bcfa; font-size: 0.75rem; font-weight: 800;">4 · IDENTIDAD & DIFERENCIAL</span>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
-            Portabilidad, Herencia Cafetera e Identidad Focus
-          </h4>
-          <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">
-            Combina la trayectoria cafetera de <strong>Cabrales</strong> con un formato portátil para el escritorio o la mochila, el isotipo del búho y la incorporación propuesta de L-teanina, comunicando <em>“Cold brew con azúcar y L-teanina, listo para acompañar tu rutina”</em> sin promesas exageradas ni eficacia clínica validada.
-          </p>
-        </div>
-      `,
-    },
-    {
-      tag: 'PLACA 5 DE 6 · CÓMO SE CONSUME',
-      html: `
-        <div>
-          <span style="color: var(--cyan); font-size: 0.75rem; font-weight: 800;">5 · MODO DE CONSUMO Y ETIQUETA</span>
-          <h4 style="font-family: var(--font-heading); font-size: 1.35rem; margin: 6px 0 10px;">
-            Servir frío, listo para tomar, sin preparar ni diluir
-          </h4>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-            <div style="padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.04);">
-              <strong style="color: var(--white);">🥫 Directo de la lata de 240 ml</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Acompaña pausas de estudio, trabajo o preparación antes de una partida competitiva.</p>
-            </div>
-            <div style="padding: 14px; border-radius: 12px; background: rgba(4,189,251,0.08); border: 1px solid rgba(4,189,251,0.28);">
-              <strong style="color: var(--cyan);">🔓 Código QR único bajo la anilla</strong>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Al abrir la lata accedés a un código único de un solo uso para registrar en la app <em>Club Focus</em>.</p>
-            </div>
-          </div>
-        </div>
-      `,
-    },
-    {
-      tag: 'PLACA 6 DE 6 · APP GRATUITA CLUB FOCUS (CTA)',
-      html: `
-        <div style="text-align: center;">
-          <img src="assets/owl_mascot.png" alt="El Búho" style="width: 62px; height: 62px; margin-bottom: 8px;" />
-          <span style="display: block; color: var(--cyan); font-size: 0.74rem; font-weight: 800;">6 · ECOSISTEMA DIGITAL Y FIDELIZACIÓN</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.45rem; margin: 6px 0 8px;">
-            DESCARGÁ GRATIS LA APP «CLUB FOCUS»
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto 14px;">
-            Leé <strong>Historias Focus</strong> (sin necesidad de compra), encontrá puntos de venta en el mapa, hacé pedidos en la eShop y sumá puntos con cada lata para canjear descuentos, merchandising o bonos del <em>FiReMAJOR 2027</em>.
-          </p>
-          <span class="stage-pill">🦉 Cabrales Focus · Precisión que se toma</span>
-        </div>
-      `,
-    },
-  ];
-
-  let currentSlideIdx = 0;
-  const slideTagEl = document.getElementById('carousel-slide-tag');
-  const slideContentEl = document.getElementById('carousel-slide-content');
-  const slideDotsEl = document.getElementById('carousel-dots');
-  const btnPrevSlide = document.getElementById('carousel-prev');
-  const btnNextSlide = document.getElementById('carousel-next');
-
-  function renderCarouselSlide(idx) {
-    currentSlideIdx = (idx + carouselSlides.length) % carouselSlides.length;
-    if (slideTagEl) slideTagEl.textContent = carouselSlides[currentSlideIdx].tag;
-    if (slideContentEl) slideContentEl.innerHTML = carouselSlides[currentSlideIdx].html;
-    if (slideDotsEl) {
-      slideDotsEl.innerHTML = carouselSlides
-        .map(
-          (_, i) =>
-            `<span style="width: ${i === currentSlideIdx ? '24px' : '8px'}; height: 8px; border-radius: 99px; background: ${
-              i === currentSlideIdx ? 'var(--cyan)' : 'rgba(255,255,255,0.2)'
-            }; transition: all 0.25s ease; cursor: pointer;" data-dot="${i}"></span>`
-        )
-        .join('');
-      slideDotsEl.querySelectorAll('[data-dot]').forEach((dot) => {
-        dot.addEventListener('click', () => renderCarouselSlide(Number(dot.getAttribute('data-dot'))));
-      });
+  p5QuickJumps.forEach((qBtn) => {
+    const qJump = parseFloat(qBtn.getAttribute('data-jump') || '0');
+    if (Math.abs(qJump - seekSec) < 1) {
+      qBtn.classList.add('active');
+    } else {
+      qBtn.classList.remove('active');
     }
-  }
-
-  renderCarouselSlide(0);
-  if (btnPrevSlide) btnPrevSlide.addEventListener('click', () => renderCarouselSlide(currentSlideIdx - 1));
-  if (btnNextSlide) btnNextSlide.addEventListener('click', () => renderCarouselSlide(currentSlideIdx + 1));
-
-  /* ------------------------------------------------------------------------
-     11. HUB WEB CABRALES.COM.AR/FOCUS: RELOJ POMODORO REAL + SPOTIFY + MAPA
-     ------------------------------------------------------------------------ */
-  let pomoSeconds = 25 * 60;
-  let pomoTimer = null;
-  const pomoDisplay = document.getElementById('pomo-display');
-  const btnPomoStart = document.getElementById('pomo-start');
-  const btnPomoPause = document.getElementById('pomo-pause');
-  const btnPomoReset = document.getElementById('pomo-reset');
-
-  function formatTime(sec) {
-    const m = String(Math.floor(sec / 60)).padStart(2, '0');
-    const s = String(sec % 60).padStart(2, '0');
-    return `${m}:${s}`;
-  }
-
-  if (btnPomoStart) {
-    btnPomoStart.addEventListener('click', () => {
-      playCanOpenAndCalmChord();
-      if (pomoTimer) return;
-      btnPomoStart.textContent = '🔥 En Modo Focus...';
-      pomoTimer = setInterval(() => {
-        if (pomoSeconds > 0) {
-          pomoSeconds--;
-          pomoDisplay.textContent = formatTime(pomoSeconds);
-        } else {
-          clearInterval(pomoTimer);
-          pomoTimer = null;
-          btnPomoStart.textContent = '▶ Iniciar Sesión Focus';
-        }
-      }, 1000);
-    });
-  }
-
-  if (btnPomoPause) {
-    btnPomoPause.addEventListener('click', () => {
-      clearInterval(pomoTimer);
-      pomoTimer = null;
-      if (btnPomoStart) btnPomoStart.textContent = '▶ Reanudar Focus';
-    });
-  }
-
-  if (btnPomoReset) {
-    btnPomoReset.addEventListener('click', () => {
-      clearInterval(pomoTimer);
-      pomoTimer = null;
-      pomoSeconds = 25 * 60;
-      if (pomoDisplay) pomoDisplay.textContent = '25:00';
-      if (btnPomoStart) btnPomoStart.textContent = '▶ Iniciar Sesión Focus';
-    });
-  }
-
-  // Selector de Guaridas en el Mapa del Hub
-  const guaridaBtns = document.querySelectorAll('[data-guarida]');
-  const guaridaInfo = document.getElementById('guarida-info');
-  guaridaBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      guaridaBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (guaridaInfo) guaridaInfo.textContent = `📌 ${btn.getAttribute('data-guarida')}`;
-    });
   });
 
-  // Selector de Playlists de Spotify
-  const playlistData = {
-    clutch: {
-      title: 'Modo Clutch — Pista 01: “Owl Vision (02:00 AM Mix)”',
-      desc: 'Ideal para mantener el pulso firme en rondas de Overtime o sesiones de debugging nocturno.',
-    },
-    deepwork: {
-      title: 'Modo Deep Work — Pista 01: “Alpha Waves & Cold Brew (15:00 PM)”',
-      desc: 'Frecuencias minimalistas diseñadas para análisis de datos, lectura técnica y presentaciones.',
-    },
-    estudio: {
-      title: 'Modo Estudio — Pista 01: “Guarida Silenciosa (Binaural Focus)”',
-      desc: 'Acompañamiento acústico de 60 minutos sin letra para memorización y preparación de finales.',
-    },
-  };
-
-  const playlistCards = document.querySelectorAll('.playlist-card');
-  const nowPlayingTitle = document.getElementById('now-playing-title');
-  const nowPlayingDesc = document.getElementById('now-playing-desc');
-
-  playlistCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      playlistCards.forEach((c) => c.classList.remove('active'));
-      card.classList.add('active');
-      const key = card.getAttribute('data-playlist');
-      if (playlistData[key]) {
-        nowPlayingTitle.textContent = playlistData[key].title;
-        nowPlayingDesc.textContent = playlistData[key].desc;
-      }
-    });
-  });
-
-  /* ------------------------------------------------------------------------
-     12. GENERADOR DE CREDENCIAL DE PROSUMIDOR (#MIMODOFOCUS)
-     ------------------------------------------------------------------------ */
-  const ugcNameInput = document.getElementById('ugc-name-input');
-  const ugcModeInput = document.getElementById('ugc-mode-input');
-  const ugcGoalInput = document.getElementById('ugc-goal-input');
-  const ugcPreviewName = document.getElementById('ugc-preview-name');
-  const ugcPreviewMode = document.getElementById('ugc-preview-mode');
-  const ugcPreviewGoal = document.getElementById('ugc-preview-goal');
-
-  function updateUgcPreview() {
-    if (ugcPreviewName && ugcNameInput) ugcPreviewName.textContent = ugcNameInput.value || 'Prosumidor_Focus';
-    if (ugcPreviewMode && ugcModeInput) ugcPreviewMode.textContent = ugcModeInput.value;
-    if (ugcPreviewGoal && ugcGoalInput) ugcPreviewGoal.textContent = `“${ugcGoalInput.value}”`;
+  if (seekVideo && p5Video) {
+    p5Video.currentTime = seekSec;
+    p5Video.play().catch(() => {});
   }
+}
 
-  if (ugcNameInput) ugcNameInput.addEventListener('input', updateUgcPreview);
-  if (ugcModeInput) ugcModeInput.addEventListener('change', updateUgcPreview);
-  if (ugcGoalInput) ugcGoalInput.addEventListener('input', updateUgcPreview);
-
-  /* ------------------------------------------------------------------------
-     12B. SIMULADOR INTERACTIVO DE LA APP MÓVIL «CLUB FOCUS» (4 PANTALLAS)
-     ------------------------------------------------------------------------ */
-  let cfRedeemablePts = 600;
-  let cfLevelPts = 600;
-  let cfMajorBonds = 2;
-  let cfScanCounter = 90;
-
-  const cfRedeemEl = document.getElementById('cf-redeem-pts');
-  const cfLevelEl = document.getElementById('cf-level-pts');
-  const cfBondsEl = document.getElementById('cf-major-bonds');
-  const cfPhonePill = document.getElementById('cf-phone-pts-pill');
-  const cfMcRedeem = document.getElementById('cf-mc-redeem');
-  const cfMcLevel = document.getElementById('cf-mc-level');
-  const cfMcTierBadge = document.getElementById('cf-mc-tier-badge');
-  const cfMcBondsText = document.getElementById('cf-mc-bonds-text');
-  const cfMcHistory = document.getElementById('cf-mc-history');
-  const cfToastBanner = document.getElementById('cf-toast-banner');
-
-  function getClubFocusTier(levelPts) {
-    if (levelPts >= 1500) return { level: 3, label: 'Nivel 3 (1.500+)' };
-    if (levelPts >= 500) return { level: 2, label: 'Nivel 2 (500–1.499)' };
-    return { level: 1, label: 'Nivel 1 (0–499)' };
-  }
-
-  function showCfMessage(msgHtml, isWarning = false) {
-    if (!cfToastBanner) return;
-    cfToastBanner.style.borderColor = isWarning ? '#ff8080' : 'var(--cyan)';
-    cfToastBanner.innerHTML = `
-      <span>${msgHtml}</span>
-      <button class="tc-btn" id="cf-quick-scan-top-dyn" style="border-color: var(--cyan); color: var(--cyan);">🥫 + Escanear Nueva Lata (+100 pts)</button>
-    `;
-    const dynBtn = document.getElementById('cf-quick-scan-top-dyn');
-    if (dynBtn) dynBtn.addEventListener('click', scanNewCanQr);
-  }
-
-  function appendCfHistory(line) {
-    if (!cfMcHistory) return;
-    cfMcHistory.innerHTML =
-      `<strong>Últimos movimientos:</strong><br />• ${line}<br />` +
-      cfMcHistory.innerHTML.replace('<strong>Últimos movimientos:</strong><br />', '');
-  }
-
-  function updateClubFocusUI() {
-    const tierInfo = getClubFocusTier(cfLevelPts);
-    if (cfRedeemEl) cfRedeemEl.textContent = `${cfRedeemablePts} pts`;
-    if (cfLevelEl) cfLevelEl.textContent = `${cfLevelPts} pts · Nivel ${tierInfo.level}`;
-    if (cfBondsEl) cfBondsEl.textContent = `${cfMajorBonds} / 10 bonos`;
-    if (cfPhonePill) cfPhonePill.textContent = `${cfRedeemablePts} pts`;
-    if (cfMcRedeem) cfMcRedeem.textContent = `${cfRedeemablePts} pts`;
-    if (cfMcLevel) cfMcLevel.textContent = `${cfLevelPts} pts`;
-    if (cfMcTierBadge) cfMcTierBadge.textContent = tierInfo.label;
-    if (cfMcBondsText) cfMcBondsText.textContent = `${cfMajorBonds} / 10 bonos activos`;
-  }
-
-  function switchClubFocusTab(tabName) {
-    document.querySelectorAll('[data-cf-tab]').forEach((btn) => {
-      btn.classList.toggle('active', btn.getAttribute('data-cf-tab') === tabName);
-    });
-    ['inicio', 'mapa', 'tienda', 'miclub'].forEach((name) => {
-      const phoneScreen = document.getElementById(`cf-phone-${name}`);
-      const detailPane = document.getElementById(`cf-detail-${name}`);
-      if (phoneScreen) phoneScreen.style.display = name === tabName ? 'block' : 'none';
-      if (detailPane) detailPane.style.display = name === tabName ? 'block' : 'none';
-    });
-  }
-
-  document.querySelectorAll('[data-cf-tab]').forEach((btn) => {
-    btn.addEventListener('click', () => switchClubFocusTab(btn.getAttribute('data-cf-tab')));
-  });
-
-  const subtabCanje = document.getElementById('cf-subtab-canje');
-  const subtabEshop = document.getElementById('cf-subtab-eshop');
-  const viewCanje = document.getElementById('cf-phone-tienda-canje');
-  const viewEshop = document.getElementById('cf-phone-tienda-eshop');
-
-  if (subtabCanje && subtabEshop) {
-    subtabCanje.addEventListener('click', () => {
-      subtabCanje.classList.add('active');
-      subtabEshop.classList.remove('active');
-      if (viewCanje) viewCanje.style.display = 'block';
-      if (viewEshop) viewEshop.style.display = 'none';
-    });
-    subtabEshop.addEventListener('click', () => {
-      subtabEshop.classList.add('active');
-      subtabCanje.classList.remove('active');
-      if (viewEshop) viewEshop.style.display = 'block';
-      if (viewCanje) viewCanje.style.display = 'none';
-    });
-  }
-
-  const mapNodeBtns = document.querySelectorAll('[data-map-node]');
-  const mapSelectedBox = document.getElementById('cf-map-selected-box');
-  mapNodeBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      mapNodeBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (mapSelectedBox) {
-        mapSelectedBox.innerHTML = `<span style="color: var(--white);">${btn.getAttribute('data-map-node')}</span>`;
-      }
-    });
-  });
-
-  function scanNewCanQr() {
-    playCanOpenAndCalmChord();
-    cfScanCounter++;
-    cfRedeemablePts += 100;
-    cfLevelPts += 100;
-    updateClubFocusUI();
-    const code = `#CF-240-A${cfScanCounter}`;
-    appendCfHistory(`Lata QR <code>${code}</code> registrada (+100 canje / +100 nivel)`);
-    showCfMessage(
-      `✅ <strong>Código único ${code} validado:</strong> Se acreditaron <strong>+100 pts para canjear</strong> (no vencen) y <strong>+100 pts de nivel</strong> (válidos 3 meses). Recordá: escanear no inscribe al sorteo automáticamente hasta canjear un bono.`
-    );
-  }
-
-  const btnQuickScanTop = document.getElementById('cf-quick-scan-top');
-  const btnScanNew = document.getElementById('cf-btn-scan-new');
-  const btnScanDup = document.getElementById('cf-btn-scan-dup');
-  const btnBoostLvl3 = document.getElementById('cf-btn-boost-lvl3');
-  const btnRedeemBond = document.getElementById('cf-btn-redeem-bond');
-
-  if (btnQuickScanTop) btnQuickScanTop.addEventListener('click', scanNewCanQr);
-  if (btnScanNew) btnScanNew.addEventListener('click', scanNewCanQr);
-
-  if (btnScanDup) {
-    btnScanDup.addEventListener('click', () => {
-      showCfMessage(
-        `🚫 <strong>Código QR rechazado (#CF-240-A89):</strong> Cada lata posee un QR único protegido bajo la anilla de <strong>un solo uso</strong> y ya fue asociado previamente a una cuenta.`,
-        true
-      );
-    });
-  }
-
-  if (btnBoostLvl3) {
-    btnBoostLvl3.addEventListener('click', () => {
-      playCanOpenAndCalmChord();
-      cfRedeemablePts += 1000;
-      cfLevelPts += 1000;
-      updateClubFocusUI();
-      appendCfHistory(`Acreditación simulación 10 latas (+1.000 canje / +1.000 nivel → Nivel 3 alcanzado)`);
-      showCfMessage(
-        `⚡ <strong>Ascenso a Nivel 3 (1.500+ pts vigentes):</strong> Ya tenés desbloqueado el código del <strong>15% OFF por 300 pts</strong> y saldo para merchandising o bonos.`
-      );
-    });
-  }
-
-  if (btnRedeemBond) {
-    btnRedeemBond.addEventListener('click', () => {
-      if (cfMajorBonds >= 10) {
-        showCfMessage(
-          `⚠️ <strong>Límite alcanzado (10 / 10 bonos):</strong> La campaña establece un máximo de <strong>10 bonos por usuario</strong> para el sorteo del FiReMAJOR Buenos Aires 2027.`,
-          true
-        );
-        return;
-      }
-      if (cfRedeemablePts < 100) {
-        showCfMessage(
-          `⚠️ <strong>Saldo canjeable insuficiente (${cfRedeemablePts} pts):</strong> Necesitás 100 puntos para canjear un bono. Escaneá otra lata para sumar +100 pts.`,
-          true
-        );
-        return;
-      }
-      playCanOpenAndCalmChord();
-      cfRedeemablePts -= 100;
-      cfMajorBonds += 1;
-      updateClubFocusUI();
-      appendCfHistory(`Canje Bono FiReMAJOR BA 2027 #${cfMajorBonds} (-100 saldo · Nivel intacto en ${cfLevelPts} pts)`);
-      showCfMessage(
-        `🎟️ <strong>¡Bono #${cfMajorBonds}/10 confirmado en Mi Club!</strong> Se descontaron 100 pts de tu saldo canjeable, pero tus <strong>Puntos de Nivel (${cfLevelPts} pts) permanecen intactos</strong>.`
-      );
-    });
-  }
-
-  document.querySelectorAll('.cf-redeem-item-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const cost = parseInt(btn.getAttribute('data-cost') || '0', 10);
-      const reqLevel = parseInt(btn.getAttribute('data-req-level') || '1', 10);
-      const itemName = btn.getAttribute('data-name') || 'Recompensa';
-      const currentTier = getClubFocusTier(cfLevelPts).level;
-
-      if (currentTier < reqLevel) {
-        showCfMessage(
-          `🔒 <strong>Nivel insuficiente para ${itemName}:</strong> Requiere <strong>Nivel ${reqLevel}</strong> y actualmente estás en <strong>Nivel ${currentTier} (${cfLevelPts} pts vigentes)</strong>.`,
-          true
-        );
-        return;
-      }
-      if (cfRedeemablePts < cost) {
-        const missing = cost - cfRedeemablePts;
-        showCfMessage(
-          `⚠️ <strong>Puntos insuficientes para ${itemName}:</strong> Cuesta <strong>${cost} pts</strong> y tenés <strong>${cfRedeemablePts} pts</strong> (te faltan ${missing} pts).`,
-          true
-        );
-        return;
-      }
-
-      playCanOpenAndCalmChord();
-      cfRedeemablePts -= cost;
-      updateClubFocusUI();
-      appendCfHistory(`Canje exitoso: ${itemName} (-${cost} pts canjeables · Nivel intacto)`);
-      showCfMessage(
-        `🎁 <strong>Canje confirmado: ${itemName}</strong> (-${cost} pts). Tu saldo para canjear ahora es <strong>${cfRedeemablePts} pts</strong> y tu nivel sigue en <strong>${cfLevelPts} pts</strong>.`
-      );
-    });
-  });
-
-  const cguSubmitBtn = document.getElementById('cgu-submit-btn');
-  const cguFeedList = document.getElementById('cgu-feed-list');
-  if (cguSubmitBtn && cguFeedList) {
-    cguSubmitBtn.addEventListener('click', () => {
-      const sit = (document.getElementById('cgu-sit') && document.getElementById('cgu-sit').value) || '';
-      const dec = (document.getElementById('cgu-dec') && document.getElementById('cgu-dec').value) || '';
-      const con = (document.getElementById('cgu-con') && document.getElementById('cgu-con').value) || '';
-      const consent = document.getElementById('cgu-consent') && document.getElementById('cgu-consent').checked;
-
-      if (!consent) {
-        showCfMessage(
-          `⚠️ <strong>Consentimiento requerido:</strong> Según las normas de moderación del proyecto, solo se incorporan al Archivo de ventanas aportes de mayores de 18 años con autorización expresa.`,
-          true
-        );
-        return;
-      }
-
-      cguFeedList.innerHTML = `
-        <strong style="color: var(--cyan);">✅ Nuevo aporte autorizado en el Archivo de ventanas (sin compra ni puntos):</strong><br />
-        <em>“<strong>Situación:</strong> ${sit} → <strong>Decisión:</strong> ${dec} → <strong>Consecuencia:</strong> ${con}”</em> (Autorizado +18 con crédito).
-      `;
-    });
-  }
-
-  /* ------------------------------------------------------------------------
-     13. FILTRO DEL CALENDARIO DE 4 SEMANAS
-     ------------------------------------------------------------------------ */
-  const calendarFilterBtns = document.querySelectorAll('#calendar-filters [data-week]');
-  const calendarRows = document.querySelectorAll('#calendar-table tbody tr');
-
-  calendarFilterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      calendarFilterBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const week = btn.getAttribute('data-week');
-      calendarRows.forEach((row) => {
-        row.style.display = week === 'all' || row.getAttribute('data-week') === week ? '' : 'none';
-      });
-    });
+p5Beats.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    selectP5Scene(btn, true);
   });
 });
+
+p5QuickJumps.forEach((qBtn) => {
+  qBtn.addEventListener('click', () => {
+    const jumpSec = parseFloat(qBtn.getAttribute('data-jump') || '0');
+    const matchBtn = Array.from(p5Beats).find(
+      (b) => Math.abs(parseFloat(b.getAttribute('data-p5-seek') || '0') - jumpSec) < 1
+    );
+    if (matchBtn) {
+      selectP5Scene(matchBtn, true);
+    } else if (p5Video) {
+      p5Video.currentTime = jumpSec;
+      p5Video.play().catch(() => {});
+    }
+  });
+});
+
+if (p5Video) {
+  p5Video.addEventListener('timeupdate', () => {
+    const cur = p5Video.currentTime;
+    let targetIdx = 0;
+    if (cur >= 17) targetIdx = 4;
+    else if (cur >= 12) targetIdx = 3;
+    else if (cur >= 8) targetIdx = 2;
+    else if (cur >= 4) targetIdx = 1;
+    else targetIdx = 0;
+
+    const activeBtn = p5Beats[targetIdx];
+    if (activeBtn && !activeBtn.classList.contains('active')) {
+      selectP5Scene(activeBtn, false);
+    }
+  });
+}
+
+

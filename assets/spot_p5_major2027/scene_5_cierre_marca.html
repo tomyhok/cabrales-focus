@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 5 — Cierre de Marca | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #050609;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  /* Fondo de estudio publicitario premium con halo de luz épica */
+  .studio-epic-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 48%, rgba(4, 189, 251, 0.28) 0%, rgba(13, 22, 45, 0.7) 40%, #050609 85%),
+      radial-gradient(circle at 50% 15%, rgba(0, 102, 255, 0.25) 0%, transparent 60%);
+  }
+
+  /* Trofeo desenfocado en segundo plano atmosférico */
+  .background-trophy-bokeh {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 520px;
+    opacity: 0.28;
+    filter: blur(14px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Safe Area / Header Institucional Superior */
+  .institutional-header {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 25;
+  }
+
+  /* Cinta Roja Tradicional de Cabrales */
+  .cabrales-ribbon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(0 12px 25px rgba(0,0,0,0.8));
+    margin-bottom: 12px;
+  }
+
+  .cabrales-ribbon-img {
+    height: 95px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .brand-subtext {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    color: #c4d4eb;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* Protagonista: Lata Real de Cabrales Focus en Primer Plano Heroico */
+  .hero-packshot-wrapper {
+    position: absolute;
+    top: 290px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 680px;
+    height: 880px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .packshot-aura {
+    position: absolute;
+    width: 580px;
+    height: 720px;
+    background: radial-gradient(ellipse at center, rgba(4, 189, 251, 0.42) 0%, rgba(0, 85, 255, 0.2) 45%, transparent 70%);
+    filter: blur(65px);
+    z-index: 1;
+  }
+
+  .packshot-image {
+    position: relative;
+    height: 820px;
+    width: auto;
+    object-fit: contain;
+    z-index: 5;
+    filter: 
+      drop-shadow(0 25px 60px rgba(0, 0, 0, 0.95))
+      drop-shadow(0 0 50px rgba(4, 189, 251, 0.35));
+  }
+
+  .packshot-mirror {
+    position: absolute;
+    top: 810px;
+    height: 350px;
+    transform: scaleY(-1);
+    opacity: 0.25;
+    filter: blur(6px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 70%);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* Cierre Publicitario: Eslogan y Cierre Institucional */
+  .cinematic-closing-section {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 100%;
+    padding: 0 65px;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .claim-box {
+    width: 100%;
+    background: rgba(9, 13, 22, 0.88);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(4, 189, 251, 0.38);
+    border-radius: 30px;
+    padding: 38px 45px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  }
+
+  .scene-badge-mini {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .brand-claim-title {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 14px;
+    text-transform: none;
+  }
+
+  .brand-claim-title span {
+    color: #04BDFB;
+  }
+
+  .institutional-signature {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-top: 18px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .institutional-signature .focus-word {
+    color: #04BDFB;
+  }
+
+  .cobranding-footer-tag {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #8fa0ba;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .cobranding-footer-tag span {
+    color: #ffffff;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+  <div class="studio-epic-bg"></div>
+
+  <!-- Trofeo Major desenfocado de fondo -->
+  <div class="background-trophy-bokeh">
+    <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+      <path d="M60 215H140V230H60V215Z" fill="#04BDFB"/>
+      <path d="M70 195H130V215H70V195Z" fill="#ffffff"/>
+      <path d="M85 160H115V195H85V160Z" fill="#04BDFB"/>
+      <path d="M50 60C50 60 45 130 95 155H105C155 130 150 60 150 60H50Z" fill="#04BDFB"/>
+      <path d="M50 75C25 80 20 120 58 135" stroke="#04BDFB" stroke-width="12"/>
+      <path d="M150 75C175 80 180 120 142 135" stroke="#04BDFB" stroke-width="12"/>
+    </svg>
+  </div>
+
+  <!-- Header Institucional con Marca Cabrales -->
+  <div class="institutional-header">
+    <div class="cabrales-ribbon-wrapper">
+      <img src="../cabrales_ribbon.png" alt="Cabrales Desde 1941" class="cabrales-ribbon-img">
+    </div>
+    <div class="brand-subtext">PASIÓN POR EL CAFÉ · DESDE 1941</div>
+  </div>
+
+  <!-- Lata Heroica Cabrales Focus -->
+  <div class="hero-packshot-wrapper">
+    <div class="packshot-aura"></div>
+    <img src="../can_hero.png" alt="Cabrales Focus" class="packshot-image">
+    <img src="../can_hero.png" alt="Reflejo" class="packshot-mirror">
+  </div>
+
+  <!-- Sección de Cierre Publicitario -->
+  <div class="cinematic-closing-section">
+    <div class="claim-box">
+      <div class="scene-badge-mini">ESCENA 5 · CIERRE DE MARCA (17 A 22s)</div>
+      
+      <h2 class="brand-claim-title">
+        “Enfocá tu energía en <span>lo que te apasiona</span>.”
+      </h2>
+      
+      <div class="institutional-signature">
+        <span>Porque somos Cabrales.</span>
+        <span class="focus-word">Somos Focus.</span>
+      </div>
+
+      <div class="cobranding-footer-tag">
+        <span>CABRALES FOCUS × FIRESPORTS</span>
+        <span>•</span>
+        <span>Rumbo al FIReMAJOR BA 2027</span>
+        <span>•</span>
+        <span>App Club Focus</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

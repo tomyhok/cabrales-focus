@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 1 — El Producto y la Experiencia | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #06070a;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  /* Fondo de estudio cinematográfico con iluminación lateral */
+  .studio-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 45%, rgba(4, 189, 251, 0.16) 0%, rgba(6, 12, 28, 0.6) 45%, #050609 85%),
+      radial-gradient(circle at 85% 35%, rgba(0, 102, 255, 0.14) 0%, transparent 50%),
+      radial-gradient(circle at 15% 60%, rgba(138, 79, 255, 0.10) 0%, transparent 45%);
+  }
+
+  /* Piso de estudio oscuro con reflejo especular */
+  .studio-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom, rgba(5, 7, 12, 0.2) 0%, #030406 100%);
+    border-top: 1px solid rgba(4, 189, 251, 0.15);
+    perspective: 1000px;
+  }
+
+  .floor-reflection-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 250px;
+    background: radial-gradient(ellipse at top, rgba(4, 189, 251, 0.25) 0%, rgba(0, 85, 255, 0.12) 40%, transparent 75%);
+    filter: blur(40px);
+  }
+
+  /* Safe Area / Header publicitario */
+  .cinematic-header {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    z-index: 20;
+  }
+
+  .brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(9, 13, 22, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(4, 189, 251, 0.35);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #e2f4ff;
+    text-transform: uppercase;
+  }
+
+  .brand-pill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .tc-badge {
+    font-size: 20px;
+    font-family: "SF Mono", Menlo, monospace;
+    color: #04BDFB;
+    background: rgba(4, 189, 251, 0.12);
+    border: 1px solid rgba(4, 189, 251, 0.3);
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Hero Can Container - Ángulo contrapicado / presencia imponente */
+  .hero-can-wrapper {
+    position: absolute;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 720px;
+    height: 980px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  /* Halo de contraluz detrás de la lata */
+  .can-backlight {
+    position: absolute;
+    width: 550px;
+    height: 750px;
+    background: radial-gradient(ellipse at center, rgba(4, 189, 251, 0.35) 0%, rgba(0, 102, 255, 0.18) 45%, transparent 70%);
+    filter: blur(60px);
+    z-index: 1;
+  }
+
+  .can-image {
+    position: relative;
+    height: 860px;
+    width: auto;
+    object-fit: contain;
+    z-index: 5;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 40px rgba(4, 189, 251, 0.25));
+  }
+
+  /* Reflejo de la lata en el piso */
+  .can-mirror {
+    position: absolute;
+    top: 850px;
+    height: 400px;
+    transform: scaleY(-1);
+    opacity: 0.22;
+    filter: blur(5px) mask-image(linear-gradient(to bottom, rgba(0,0,0,1) 0%, transparent 80%));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 75%);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* Destellos de iluminación de estudio */
+  .studio-flare-left {
+    position: absolute;
+    top: 500px;
+    left: 120px;
+    width: 4px;
+    height: 380px;
+    background: linear-gradient(to bottom, transparent, rgba(4, 189, 251, 0.6), transparent);
+    filter: blur(2px);
+    z-index: 15;
+  }
+
+  .studio-flare-right {
+    position: absolute;
+    top: 480px;
+    right: 140px;
+    width: 3px;
+    height: 420px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+    filter: blur(1.5px);
+    z-index: 15;
+  }
+
+  /* Información inferior y Locución */
+  .cinematic-footer {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    padding: 0 70px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scene-card {
+    background: rgba(9, 13, 22, 0.82);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(4, 189, 251, 0.28);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  }
+
+  .scene-tag {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .voiceover-box {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  .voiceover-box span {
+    color: #04BDFB;
+    font-style: normal;
+  }
+
+  .technical-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #8fa0ba;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .camera-move {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d6bcfa;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Fondo de estudio -->
+  <div class="studio-bg"></div>
+  <div class="studio-floor">
+    <div class="floor-reflection-glow"></div>
+  </div>
+
+  <!-- Header Cinematográfico -->
+  <div class="cinematic-header">
+    <div class="brand-pill">
+      <img src="../owl_mascot.png" alt="Búho Focus">
+      <span>CABRALES FOCUS</span>
+    </div>
+    <div class="tc-badge">0:00 – 0:04 | ESCENA 1</div>
+  </div>
+
+  <!-- Hero Can y Luces de Estudio -->
+  <div class="hero-can-wrapper">
+    <div class="can-backlight"></div>
+    <img src="../can_hero.png" alt="Lata Cabrales Focus" class="can-image">
+    <img src="../can_hero.png" alt="Reflejo" class="can-mirror">
+  </div>
+
+  <div class="studio-flare-left"></div>
+  <div class="studio-flare-right"></div>
+
+  <!-- Footer con Locución y Dirección de Arte -->
+  <div class="cinematic-footer">
+    <div class="scene-card">
+      <div class="scene-tag">ESCENA 1 · EL PRODUCTO Y LA EXPERIENCIA (0 A 4s)</div>
+      <div class="voiceover-box">
+        “Y en <span>Cabrales Focus</span> queremos que vos también puedas vivir esta experiencia.”
+      </div>
+      <div class="technical-note">
+        <span class="camera-move">🎥 Travelling suave en ángulo bajo + revelación gradual de QR</span>
+        <span>Studio Dark · Rim Light Cian · 9:16 Full HD</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

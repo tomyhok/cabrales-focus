@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 2 — Escaneá el QR | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #050609;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  .studio-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 35% 40%, rgba(4, 189, 251, 0.18) 0%, rgba(7, 12, 24, 0.7) 45%, #050609 85%),
+      radial-gradient(circle at 80% 60%, rgba(138, 79, 255, 0.12) 0%, transparent 50%);
+  }
+
+  /* Safe Area / Header */
+  .cinematic-header {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    z-index: 25;
+  }
+
+  .brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(9, 13, 22, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(4, 189, 251, 0.35);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #e2f4ff;
+    text-transform: uppercase;
+  }
+
+  .brand-pill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .tc-badge {
+    font-size: 20px;
+    font-family: "SF Mono", Menlo, monospace;
+    color: #04BDFB;
+    background: rgba(4, 189, 251, 0.12);
+    border: 1px solid rgba(4, 189, 251, 0.3);
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Split Visual: Lata con QR a la izquierda y Smartphone escaneando a la derecha */
+  .stage-content {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 960px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  /* Lata Cabrales Focus mostrando el QR y la anilla */
+  .can-section {
+    position: relative;
+    width: 440px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .can-glow {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    background: radial-gradient(circle at center, rgba(4, 189, 251, 0.25) 0%, transparent 70%);
+    filter: blur(50px);
+  }
+
+  .can-angled-img {
+    position: relative;
+    width: 380px;
+    height: 750px;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.85));
+  }
+
+  /* Callout del código QR único en la lata */
+  .qr-callout-target {
+    position: absolute;
+    top: 290px;
+    left: 200px;
+    width: 140px;
+    height: 140px;
+    border: 2px dashed rgba(4, 189, 251, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(4, 189, 251, 0.5), inset 0 0 15px rgba(4, 189, 251, 0.2);
+    z-index: 5;
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  .laser-sweep-line {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    right: -10px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #04BDFB, #ffffff, #04BDFB, transparent);
+    box-shadow: 0 0 15px #04BDFB, 0 0 25px #00e5ff;
+    z-index: 6;
+  }
+
+  .qr-tag {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(4, 189, 251, 0.9);
+    color: #050609;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 99px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  /* Smartphone realista con visor de la App Club Focus */
+  .phone-device {
+    position: relative;
+    width: 460px;
+    height: 920px;
+    background: #0c0f18;
+    border-radius: 54px;
+    padding: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 35px 80px rgba(0, 0, 0, 0.85),
+      0 0 0 1px rgba(4, 189, 251, 0.3),
+      inset 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: 15;
+    transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+    overflow: hidden;
+  }
+
+  /* Reflejo de cristal sobre el chasis del teléfono */
+  .phone-glass-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 40%, transparent 60%);
+    pointer-events: none;
+    z-index: 30;
+    border-radius: 52px;
+  }
+
+  .phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #080a11;
+    border-radius: 42px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    margin-bottom: 24px;
+  }
+
+  .app-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .app-brand img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .app-brand span {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+  }
+
+  .app-status-badge {
+    font-size: 13px;
+    background: rgba(4, 189, 251, 0.15);
+    color: #04BDFB;
+    border: 1px solid rgba(4, 189, 251, 0.4);
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-weight: 700;
+  }
+
+  /* Visor HUD de escaneo en la pantalla */
+  .scanner-viewport {
+    flex: 1;
+    position: relative;
+    border-radius: 28px;
+    background: radial-gradient(circle at center, rgba(4, 189, 251, 0.08) 0%, rgba(13, 17, 28, 0.9) 80%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  .hud-crosshairs {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border: 2px solid rgba(4, 189, 251, 0.4);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hud-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: #04BDFB;
+    border-style: solid;
+  }
+  .hud-tl { top: -2px; left: -2px; border-width: 4px 0 0 4px; border-top-left-radius: 12px; }
+  .hud-tr { top: -2px; right: -2px; border-width: 4px 4px 0 0; border-top-right-radius: 12px; }
+  .hud-bl { bottom: -2px; left: -2px; border-width: 0 0 4px 4px; border-bottom-left-radius: 12px; }
+  .hud-br { bottom: -2px; right: -2px; border-width: 0 4px 4px 0; border-bottom-right-radius: 12px; }
+
+  .laser-scanner-hud {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #04BDFB;
+    box-shadow: 0 0 20px #04BDFB, 0 0 30px #ffffff;
+  }
+
+  .detected-banner {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+    background: rgba(14, 21, 35, 0.92);
+    border: 1px solid rgba(4, 189, 251, 0.5);
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .detected-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #04BDFB;
+    color: #050609;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  .detected-text h4 {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .detected-text p {
+    font-size: 13px;
+    color: #04BDFB;
+    margin-top: 2px;
+  }
+
+  /* Conexión lumínica entre la lata y el smartphone */
+  .optical-beam {
+    position: absolute;
+    top: 380px;
+    left: 280px;
+    width: 280px;
+    height: 120px;
+    background: linear-gradient(90deg, rgba(4, 189, 251, 0.3) 0%, rgba(4, 189, 251, 0.05) 100%);
+    transform: rotate(-15deg);
+    filter: blur(15px);
+    z-index: 8;
+  }
+
+  /* Footer con Locución */
+  .cinematic-footer {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    padding: 0 70px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scene-card {
+    background: rgba(9, 13, 22, 0.82);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(4, 189, 251, 0.28);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  }
+
+  .scene-tag {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .voiceover-box {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  .voiceover-box span {
+    color: #04BDFB;
+    font-style: normal;
+  }
+
+  .technical-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #8fa0ba;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+</head>
+<body>
+
+  <div class="studio-bg"></div>
+
+  <div class="cinematic-header">
+    <div class="brand-pill">
+      <img src="../owl_mascot.png" alt="Búho Focus">
+      <span>CLUB FOCUS · APP</span>
+    </div>
+    <div class="tc-badge">0:04 – 0:08 | ESCENA 2</div>
+  </div>
+
+  <div class="stage-content">
+    
+    <!-- Lata de Cabrales Focus con callout de QR -->
+    <div class="can-section">
+      <div class="can-glow"></div>
+      <img src="../can_angle_3.png" alt="Lata Cabrales Focus ángulo lateral" class="can-angled-img">
+      
+      <div class="qr-callout-target">
+        <div class="laser-sweep-line"></div>
+        <div class="qr-tag">QR ÚNICO BAJO ANILLA</div>
+      </div>
+    </div>
+
+    <div class="optical-beam"></div>
+
+    <!-- Smartphone moderno con la App Club Focus escaneando -->
+    <div class="phone-device">
+      <div class="phone-glass-glare"></div>
+      <div class="phone-screen">
+        
+        <div class="screen-header">
+          <div class="app-brand">
+            <img src="../owl_mascot.png" alt="Owl">
+            <span>Club Focus</span>
+          </div>
+          <div class="app-status-badge">Escanear Lata</div>
+        </div>
+
+        <div class="scanner-viewport">
+          <div class="hud-crosshairs">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+            <div class="laser-scanner-hud"></div>
+          </div>
+
+          <div class="detected-banner">
+            <div class="detected-icon">✓</div>
+            <div class="detected-text">
+              <h4>LATA CABRALES FOCUS</h4>
+              <p>Código detectado · 240 ml</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer con Locución -->
+  <div class="cinematic-footer">
+    <div class="scene-card">
+      <div class="scene-tag">ESCENA 2 · ESCANEÁ EL QR (4 A 8s)</div>
+      <div class="voiceover-box">
+        “<span>Escaneá el QR</span> de tu lata, registralo en la app gratuita <span>Club Focus</span>...”
+      </div>
+      <div class="technical-note">
+        <span>📱 Macro smartphone + haz de luz HUD sobre código único de lata</span>
+        <span>App Club Focus · Registro inmediato</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Storyboard Spot Publicitario — Cabrales Focus × FiReSPORTS</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 2560px;
+    height: 1440px;
+    background: radial-gradient(circle at 50% 25%, #0f1424 0%, #050609 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    padding: 60px 80px;
+  }
+
+  /* Efecto ambiental de luz cinematográfica */
+  .ambient-glow {
+    position: absolute;
+    width: 1800px;
+    height: 700px;
+    background: radial-gradient(ellipse at center, rgba(4, 189, 251, 0.18) 0%, rgba(138, 79, 255, 0.12) 45%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Header Superior de Presentación */
+  .title-bar {
+    text-align: center;
+    z-index: 10;
+  }
+
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(4, 189, 251, 0.12);
+    border: 1px solid rgba(4, 189, 251, 0.45);
+    color: #04BDFB;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 8px 24px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    background: linear-gradient(180deg, #ffffff 40%, #04BDFB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: #8fa0ba;
+    letter-spacing: 0.04em;
+  }
+
+  /* Grilla de las 5 Escenas del Storyboard */
+  .storyboard-strip {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .scene-card {
+    flex: 1;
+    max-width: 440px;
+    background: rgba(12, 17, 28, 0.78);
+    backdrop-filter: blur(25px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .scene-frame-container {
+    width: 100%;
+    aspect-ratio: 9/15;
+    background: #030406;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(4, 189, 251, 0.25);
+  }
+
+  .scene-frame-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .scene-badge-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(5, 7, 12, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(4, 189, 251, 0.5);
+    color: #04BDFB;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 99px;
+    letter-spacing: 0.08em;
+  }
+
+  .scene-details {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 12px;
+  }
+
+  .scene-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #04BDFB;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .scene-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+  }
+
+  .scene-voiceover {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #c4d4eb;
+    font-style: italic;
+    background: rgba(4, 189, 251, 0.06);
+    border-left: 3px solid #04BDFB;
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .scene-technical {
+    font-size: 12.5px;
+    color: #7b8ea8;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 10px;
+  }
+
+  /* Footer con Especificaciones Técnicas */
+  .footer-specs {
+    width: 100%;
+    background: rgba(10, 15, 25, 0.85);
+    border: 1px solid rgba(4, 189, 251, 0.25);
+    border-radius: 20px;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: #8fa0ba;
+    z-index: 10;
+  }
+
+  .specs-item strong {
+    color: #ffffff;
+  }
+
+  .specs-item span {
+    color: #04BDFB;
+  }
+</style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <div class="title-bar">
+    <div class="pill-badge">
+      <span>🔥</span>
+      <span>PUBLICACIÓN 5 · PIEZA AUDIOVISUAL RTM · STORYBOARD COMPLETO</span>
+    </div>
+    <h1>SPOT CABRALES FOCUS × FIRESPORTS — MAJOR BUENOS AIRES 2027</h1>
+    <div class="subtitle">
+      Fragmento de 20 Segundos (Vertical 9:16 · 1080×1920) · Recorrido: Lata Real → Escaneo QR → Puntos → Bono Sorteo → Cierre
+    </div>
+  </div>
+
+  <!-- 5 Escenas del Storyboard -->
+  <div class="storyboard-strip">
+
+    <!-- Escena 1 -->
+    <div class="scene-card">
+      <div class="scene-frame-container">
+        <img src="scene_1_producto_experiencia.png" alt="Escena 1" class="scene-frame-img">
+        <div class="scene-badge-overlay">0:00 – 0:04</div>
+      </div>
+      <div class="scene-details">
+        <div>
+          <div class="scene-header-info">
+            <span>Escena 01</span>
+            <span>4 Segundos</span>
+          </div>
+          <div class="scene-title">El Producto y la Experiencia</div>
+        </div>
+        <div class="scene-voiceover">
+          “Y en Cabrales Focus queremos que vos también puedas vivir esta experiencia.”
+        </div>
+        <div class="scene-technical">
+          <strong>Cámara:</strong> Ángulo bajo heroico con travelling suave revelando lateral del envase y QR.<br>
+          <strong>Iluminación:</strong> Estudio oscuro con rim light cian y reflejo especular en piso.
+        </div>
+      </div>
+    </div>
+
+    <!-- Escena 2 -->
+    <div class="scene-card">
+      <div class="scene-frame-container">
+        <img src="scene_2_escaneo_qr.png" alt="Escena 2" class="scene-frame-img">
+        <div class="scene-badge-overlay">0:04 – 0:08</div>
+      </div>
+      <div class="scene-details">
+        <div>
+          <div class="scene-header-info">
+            <span>Escena 02</span>
+            <span>4 Segundos</span>
+          </div>
+          <div class="scene-title">Escaneo QR & Registro</div>
+        </div>
+        <div class="scene-voiceover">
+          “Escaneá el QR de tu lata, registralo en la app gratuita Club Focus...”
+        </div>
+        <div class="scene-technical">
+          <strong>Cámara:</strong> Macro dinámico con aproximación de smartphone hacia código único.<br>
+          <strong>Efecto:</strong> Haz de luz láser HUD recorriendo el QR y toast de confirmación limpia.
+        </div>
+      </div>
+    </div>
+
+    <!-- Escena 3 -->
+    <div class="scene-card">
+      <div class="scene-frame-container">
+        <img src="scene_3_acumula_puntos.png" alt="Escena 3" class="scene-frame-img">
+        <div class="scene-badge-overlay">0:08 – 0:12</div>
+      </div>
+      <div class="scene-details">
+        <div>
+          <div class="scene-header-info">
+            <span>Escena 03</span>
+            <span>4 Segundos</span>
+          </div>
+          <div class="scene-title">Acumulación de Puntos</div>
+        </div>
+        <div class="scene-voiceover">
+          “...acumulá puntos...”
+        </div>
+        <div class="scene-technical">
+          <strong>Cámara:</strong> Plano medio centrado en tarjeta digital Club Focus.<br>
+          <strong>Motion:</strong> Partículas luminosas ascendiendo e incrementando el saldo (+100 pts). Sin dinero.
+        </div>
+      </div>
+    </div>
+
+    <!-- Escena 4 -->
+    <div class="scene-card">
+      <div class="scene-frame-container">
+        <img src="scene_4_canje_participaciones.png" alt="Escena 4" class="scene-frame-img">
+        <div class="scene-badge-overlay">0:12 – 0:17</div>
+      </div>
+      <div class="scene-details">
+        <div>
+          <div class="scene-header-info">
+            <span>Escena 04</span>
+            <span>5 Segundos</span>
+          </div>
+          <div class="scene-title">Canje Bono Major 2027</div>
+        </div>
+        <div class="scene-voiceover">
+          “...y canjealos por participaciones para el sorteo de entradas al Major 2027.”
+        </div>
+        <div class="scene-technical">
+          <strong>Cámara:</strong> Revelación de reflectores de arena y silueta de trofeo internacional.<br>
+          <strong>Recompensa:</strong> Puntos transicionan a bono holográfico de sorteo de 2 entradas.
+        </div>
+      </div>
+    </div>
+
+    <!-- Escena 5 -->
+    <div class="scene-card">
+      <div class="scene-frame-container">
+        <img src="scene_5_cierre_marca.png" alt="Escena 5" class="scene-frame-img">
+        <div class="scene-badge-overlay">0:17 – 0:22</div>
+      </div>
+      <div class="scene-details">
+        <div>
+          <div class="scene-header-info">
+            <span>Escena 05</span>
+            <span>5 Segundos</span>
+          </div>
+          <div class="scene-title">Cierre Institucional de Marca</div>
+        </div>
+        <div class="scene-voiceover">
+          “Enfocá tu energía en lo que te apasiona. Porque somos Cabrales. Somos Focus.”
+        </div>
+        <div class="scene-technical">
+          <strong>Cámara:</strong> Packshot heroico final de lata real + trofeo bokeh de fondo.<br>
+          <strong>Cierre:</strong> Cinta roja Cabrales + Claim principal + Co-branding FiReSPORTS.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Specs -->
+  <div class="footer-specs">
+    <div class="specs-item"><strong>Formato:</strong> <span>Vertical 9:16 (1080×1920)</span></div>
+    <div class="specs-item"><strong>Duración:</strong> <span>20 Segundos (Full HD 30 FPS)</span></div>
+    <div class="specs-item"><strong>Voz en Off:</strong> <span>Locución Oficial de Campaña</span></div>
+    <div class="specs-item"><strong>Mundo Transmedia:</strong> <span>P5 (RTM) → Club Focus → FIReMAJOR 2027</span></div>
+    <div class="specs-item"><strong>Herramientas:</strong> <span>Estudio Cabrales Focus · Adobe Premiere Pro Ready</span></div>
+  </div>
+
+</body>
+</html>

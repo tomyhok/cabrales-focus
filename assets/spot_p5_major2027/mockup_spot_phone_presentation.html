@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mockup Smartphone Spot Cabrales Focus — Major 2027</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 2560px;
+    height: 1440px;
+    background: radial-gradient(circle at 45% 30%, #111728 0%, #050609 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    gap: 120px;
+    padding: 80px 140px;
+  }
+
+  .ambient-glow {
+    position: absolute;
+    width: 1600px;
+    height: 800px;
+    background: radial-gradient(ellipse at center, rgba(4, 189, 251, 0.2) 0%, rgba(138, 79, 255, 0.12) 45%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+  }
+
+  /* Smartphone Container */
+  .phone-mockup-wrapper {
+    position: relative;
+    width: 540px;
+    height: 1080px;
+    background: #090c14;
+    border-radius: 64px;
+    padding: 16px;
+    border: 4px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 50px 120px rgba(0, 0, 0, 0.95),
+      0 0 60px rgba(4, 189, 251, 0.35),
+      inset 0 0 25px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+  }
+
+  .phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #000000;
+  }
+
+  .phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Overlay de UI Social / Reels */
+  .reels-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 28px 30px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 20%, transparent 70%, rgba(0,0,0,0.7) 100%);
+  }
+
+  .reels-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pill-live {
+    background: rgba(217, 20, 20, 0.85);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 99px;
+    letter-spacing: 0.08em;
+  }
+
+  .progress-bar-video {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .progress-fill {
+    width: 75%;
+    height: 100%;
+    background: #04BDFB;
+    box-shadow: 0 0 10px #04BDFB;
+  }
+
+  /* Columna Derecha: Información Editorial y Técnica */
+  .info-column {
+    flex: 1;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    z-index: 10;
+  }
+
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(4, 189, 251, 0.12);
+    border: 1px solid rgba(4, 189, 251, 0.45);
+    color: #04BDFB;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 8px 24px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #ffffff 40%, #04BDFB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description-lead {
+    font-size: 21px;
+    line-height: 1.5;
+    color: #c4d4eb;
+  }
+
+  .info-glass-card {
+    background: rgba(14, 20, 32, 0.8);
+    backdrop-filter: blur(25px);
+    border-radius: 28px;
+    border: 1px solid rgba(4, 189, 251, 0.28);
+    padding: 32px 36px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  }
+
+  .info-glass-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .official-copy {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #e2ecf8;
+    font-style: italic;
+    background: rgba(4, 189, 251, 0.06);
+    border-left: 3px solid #04BDFB;
+    padding: 18px 22px;
+    border-radius: 0 16px 16px 0;
+    margin-bottom: 20px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .feature-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .feature-item strong {
+    font-size: 15px;
+    color: #ffffff;
+  }
+
+  .feature-item span {
+    font-size: 13.5px;
+    color: #8fa0ba;
+  }
+</style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Mockup Smartphone con la Escena 5 en Pantalla -->
+  <div class="phone-mockup-wrapper">
+    <div class="phone-screen">
+      <img src="scene_5_cierre_marca.png" alt="Spot Cabrales Focus Major 2027">
+      <div class="reels-overlay">
+        <div class="reels-top">
+          <div class="pill-live">RTM · FIReMAJOR 2027</div>
+          <span style="font-family: monospace; font-size: 14px; color: #04BDFB; font-weight: 700;">00:20 / 00:20</span>
+        </div>
+      </div>
+      <div class="progress-bar-video">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Información Editorial y de Producción -->
+  <div class="info-column">
+    <div class="badge-tag">
+      <span>🎯</span>
+      <span>CAMPAÑA CABRALES FOCUS × FIRESPORTS</span>
+    </div>
+
+    <h1>Spot Publicitario Oficial · Major Buenos Aires 2027</h1>
+
+    <div class="description-lead">
+      Fragmento de 20 segundos producido para presentar el producto, ilustrar visualmente el funcionamiento del programa de recompensas en la app gratuita <strong>Club Focus</strong> y cerrar con la identidad institucional de <strong>Cabrales Focus</strong>.
+    </div>
+
+    <div class="info-glass-card">
+      <h3>Copy Oficial de Campaña</h3>
+      <div class="official-copy">
+        “Y en Cabrales Focus queremos que vos también puedas vivir esta experiencia. Escaneá el QR de tu lata, registralo en la app gratuita Club Focus, acumulá puntos y canjealos por participaciones para el sorteo de entradas al Major 2027. Enfocá tu energía en lo que te apasiona. Porque somos Cabrales. Somos Focus.”
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <strong>Lata Real Protagonista</strong>
+          <span>Fotografía de estudio, colores originales y cinta roja tradicional respetados al 100%.</span>
+        </div>
+        <div class="feature-item">
+          <strong>Club Focus Integrada</strong>
+          <span>Escaneo del código QR bajo la anilla + acumulación de puntos sin elementos de dinero.</span>
+        </div>
+        <div class="feature-item">
+          <strong>Bono Sorteo Major 2027</strong>
+          <span>Canje de 100 pts por participación para sorteo de 2 entradas (no venta directa de tickets).</span>
+        </div>
+        <div class="feature-item">
+          <strong>Especificaciones Técnicas</strong>
+          <span>Vertical 9:16 · 1080×1920 Full HD · Ritmo dinámico cinematográfico de 20 segundos.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

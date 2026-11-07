@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escena 4 — Canjeá por Participaciones para el Major | Cabrales Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #030407;
+    overflow: hidden;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+  }
+
+  /* Fondo de Estadio / Arena de Esports con focos y atmósfera */
+  .arena-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 25%, rgba(0, 102, 255, 0.28) 0%, rgba(4, 189, 251, 0.12) 35%, #030407 80%),
+      radial-gradient(circle at 20% 40%, rgba(138, 79, 255, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 40%, rgba(4, 189, 251, 0.2) 0%, transparent 50%);
+  }
+
+  /* Rayos de reflectores de estadio de Counter-Strike */
+  .spotlight-beam-1 {
+    position: absolute;
+    top: -50px;
+    left: 100px;
+    width: 250px;
+    height: 900px;
+    background: linear-gradient(170deg, rgba(4, 189, 251, 0.35) 0%, transparent 75%);
+    transform: rotate(20deg);
+    filter: blur(35px);
+    pointer-events: none;
+  }
+
+  .spotlight-beam-2 {
+    position: absolute;
+    top: -50px;
+    right: 100px;
+    width: 250px;
+    height: 900px;
+    background: linear-gradient(190deg, rgba(138, 79, 255, 0.35) 0%, transparent 75%);
+    transform: rotate(-20deg);
+    filter: blur(35px);
+    pointer-events: none;
+  }
+
+  /* Silueta del Trofeo de Esports en el fondo */
+  .trophy-monument {
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 440px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    opacity: 0.85;
+  }
+
+  .trophy-glow {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(4, 189, 251, 0.45) 0%, rgba(0, 102, 255, 0.2) 50%, transparent 75%);
+    filter: blur(40px);
+  }
+
+  .trophy-svg {
+    position: relative;
+    width: 320px;
+    height: 380px;
+    filter: drop-shadow(0 0 35px rgba(4, 189, 251, 0.7));
+  }
+
+  /* Header Cinematográfico */
+  .cinematic-header {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    z-index: 25;
+  }
+
+  .brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(9, 13, 22, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(4, 189, 251, 0.35);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #e2f4ff;
+    text-transform: uppercase;
+  }
+
+  .brand-pill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .tc-badge {
+    font-size: 20px;
+    font-family: "SF Mono", Menlo, monospace;
+    color: #04BDFB;
+    background: rgba(4, 189, 251, 0.12);
+    border: 1px solid rgba(4, 189, 251, 0.3);
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Tarjeta Holográfica de Sorteo (Bono de Participación) */
+  .sweepstakes-ticket-wrapper {
+    position: absolute;
+    top: 560px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 820px;
+    z-index: 15;
+  }
+
+  .ticket-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(16, 22, 38, 0.94) 0%, rgba(8, 12, 20, 0.98) 100%);
+    backdrop-filter: blur(30px);
+    border-radius: 36px;
+    border: 2px solid rgba(4, 189, 251, 0.6);
+    box-shadow: 
+      0 35px 85px rgba(0, 0, 0, 0.9),
+      0 0 60px rgba(4, 189, 251, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    padding: 42px;
+    overflow: hidden;
+  }
+
+  /* Brillo iridiscente holográfico */
+  .ticket-hologram-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #ff007a, #7b42ff, #04BDFB, #00ffcc, #ff007a);
+    background-size: 300% 100%;
+    box-shadow: 0 0 25px rgba(4, 189, 251, 0.8);
+  }
+
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(4, 189, 251, 0.35);
+    padding-bottom: 22px;
+    margin-bottom: 26px;
+  }
+
+  .ticket-type-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(4, 189, 251, 0.15);
+    border: 1px solid #04BDFB;
+    color: #04BDFB;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+
+  .ticket-id {
+    font-family: "SF Mono", monospace;
+    font-size: 15px;
+    color: #8fa0ba;
+    letter-spacing: 0.05em;
+  }
+
+  .ticket-event-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .ticket-major-name {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 8px 0 16px 0;
+    background: linear-gradient(180deg, #ffffff 40%, #c4e4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ticket-benefit-row {
+    background: rgba(4, 189, 251, 0.08);
+    border-radius: 20px;
+    padding: 18px 24px;
+    border: 1px solid rgba(4, 189, 251, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .benefit-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .benefit-desc strong {
+    font-size: 19px;
+    color: #ffffff;
+  }
+
+  .benefit-desc span {
+    font-size: 14px;
+    color: #8fa0ba;
+  }
+
+  .cost-badge {
+    background: #04BDFB;
+    color: #030407;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(4, 189, 251, 0.5);
+  }
+
+  .ticket-disclaimer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #7d8b9e;
+    line-height: 1.4;
+  }
+
+  /* Footer con Locución */
+  .cinematic-footer {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    padding: 0 70px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scene-card {
+    background: rgba(9, 13, 22, 0.82);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(4, 189, 251, 0.28);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  }
+
+  .scene-tag {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 800;
+    color: #04BDFB;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .voiceover-box {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  .voiceover-box span {
+    color: #04BDFB;
+    font-style: normal;
+  }
+
+  .technical-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #8fa0ba;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+</head>
+<body>
+
+  <div class="arena-bg"></div>
+  <div class="spotlight-beam-1"></div>
+  <div class="spotlight-beam-2"></div>
+
+  <div class="cinematic-header">
+    <div class="brand-pill">
+      <img src="../owl_mascot.png" alt="Búho Focus">
+      <span>TIENDA CLUB FOCUS</span>
+    </div>
+    <div class="tc-badge">0:12 – 0:17 | ESCENA 4</div>
+  </div>
+
+  <!-- Silueta del Trofeo Monumental de Esports (Major CS2) -->
+  <div class="trophy-monument">
+    <div class="trophy-glow"></div>
+    <svg class="trophy-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Pedestal escalonado -->
+      <path d="M60 215H140V230H60V215Z" fill="#04BDFB" fill-opacity="0.6"/>
+      <path d="M70 195H130V215H70V195Z" fill="#ffffff" fill-opacity="0.8"/>
+      <path d="M85 160H115V195H85V160Z" fill="url(#metal-stem)"/>
+      <!-- Copa / Alas de Trofeo CS Major -->
+      <path d="M50 60C50 60 45 130 95 155H105C155 130 150 60 150 60H50Z" fill="url(#metal-cup)" stroke="#04BDFB" stroke-width="2"/>
+      <!-- Asas del Trofeo -->
+      <path d="M50 75C25 80 20 120 58 135" stroke="#04BDFB" stroke-width="5" stroke-linecap="round"/>
+      <path d="M150 75C175 80 180 120 142 135" stroke="#04BDFB" stroke-width="5" stroke-linecap="round"/>
+      <!-- Corona y Estrella Central -->
+      <path d="M100 80L106 96H123L109 106L114 122L100 112L86 122L91 106L77 96H94L100 80Z" fill="#04BDFB"/>
+      <!-- Gradientes metálicos -->
+      <defs>
+        <linearGradient id="metal-stem" x1="85" y1="160" x2="115" y2="195" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ffffff"/>
+          <stop offset="0.5" stop-color="#04BDFB"/>
+          <stop offset="1" stop-color="#051026"/>
+        </linearGradient>
+        <linearGradient id="metal-cup" x1="50" y1="60" x2="150" y2="155" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#0e2340"/>
+          <stop offset="0.3" stop-color="#04BDFB" stop-opacity="0.6"/>
+          <stop offset="0.7" stop-color="#ffffff" stop-opacity="0.8"/>
+          <stop offset="1" stop-color="#091322"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Tarjeta Holográfica: Bono de Sorteo FiReMAJOR 2027 -->
+  <div class="sweepstakes-ticket-wrapper">
+    <div class="ticket-card">
+      <div class="ticket-hologram-strip"></div>
+      
+      <div class="ticket-header">
+        <div class="ticket-type-pill">
+          <span>🎟️</span>
+          <span>BONO OFICIAL DE PARTICIPACIÓN</span>
+        </div>
+        <div class="ticket-id">BONO #FM27-BA-01</div>
+      </div>
+
+      <div class="ticket-event-title">CO-BRANDING CABRALES FOCUS × FIRESPORTS</div>
+      <div class="ticket-major-name">FIReMAJOR BUENOS AIRES 2027</div>
+
+      <div class="ticket-benefit-row">
+        <div class="benefit-desc">
+          <strong>1 Participación para el Sorteo</strong>
+          <span>Premio: 2 Entradas para la Gran Final del Major</span>
+        </div>
+        <div class="cost-badge">100 PTS</div>
+      </div>
+
+      <div class="ticket-disclaimer">
+        <span>* Bono canjeado con puntos en Club Focus</span>
+        <span>Máx. 10 bonos/usuario · Sorteo oficial</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer con Locución -->
+  <div class="cinematic-footer">
+    <div class="scene-card">
+      <div class="scene-tag">ESCENA 4 · CANJEÁ POR PARTICIPACIONES (12 A 17s)</div>
+      <div class="voiceover-box">
+        “...y canjealos por <span>participaciones para el sorteo de entradas al Major 2027</span>.”
+      </div>
+      <div class="technical-note">
+        <span>🏆 Trofeo monumental en arena + Bono holográfico de sorteo</span>
+        <span>Co-branding Cabrales Focus × FiReSPORTS</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
