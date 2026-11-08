@@ -213,24 +213,24 @@ body {
 }
 
 /* ==========================================================================
-   PROJECTOR HUD: CONTROLES FLOTANTES DE EXPOSICIÓN EN AULA
+   PROJECTOR HUD: CONTROLES COMPACTOS DE NAVEGACIÓN
    ========================================================================== */
 .projector-hud {
   position: fixed;
-  bottom: 16px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(14, 18, 27, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(4, 189, 251, 0.35);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(4, 189, 251, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(4, 189, 251, 0.3);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.7), 0 0 16px rgba(4, 189, 251, 0.15);
   border-radius: 999px;
-  padding: 8px 18px;
+  padding: 4px 10px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 14px;
+  gap: 10px;
   z-index: 950;
   max-width: 95vw;
 }
@@ -241,15 +241,15 @@ body {
   color: var(--text-primary);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 8px 16px;
+  font-size: 0.74rem;
+  padding: 5px 12px;
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   white-space: nowrap;
   flex-shrink: 0;
   line-height: 1;
@@ -260,7 +260,7 @@ body {
 .hud-btn-arrow {
   display: inline-block;
   line-height: 1;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
 }
 
 .hud-btn-text {
@@ -273,19 +273,20 @@ body {
   background: var(--cyan);
   color: #07090e;
   border-color: var(--cyan);
-  box-shadow: 0 0 12px var(--cyan-glow);
+  box-shadow: 0 0 10px var(--cyan-glow);
 }
 
 .hud-status {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: #ffffff;
   white-space: nowrap;
+  padding: 0 4px;
 }
 
 .hud-slide-index {
@@ -295,29 +296,10 @@ body {
 .hud-slide-title {
   color: var(--text-secondary);
   font-weight: 500;
-  max-width: 280px;
+  max-width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.hud-shortcuts {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  padding-left: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.hud-shortcuts kbd {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.68rem;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
@@ -605,11 +587,13 @@ body {
   width: 100%;
 }
 
-.video-player-container video {
+.video-player-container video,
+.video-player-container iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border: none;
 }
 
 .scenes-breakdown-list {
@@ -1474,79 +1458,142 @@ body {
 
 
 /* ==========================================================================
-   SLIDE 7: APP CLUB FOCUS SHOWCASE & SIMULADOR
+   SLIDE 7: APP CLUB FOCUS SHOWCASE & SIMULADOR (PANTALLAS REALES 9:16)
    ========================================================================== */
 .app-simulator-layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 28px;
+  grid-template-columns: 350px 1fr;
+  gap: 32px;
   align-items: start;
 }
 
-.app-phone-mockup {
-  background: #111520;
-  border: 3px solid #2b3548;
-  border-radius: 36px;
-  padding: 14px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(4, 189, 251, 0.15);
-  position: relative;
+@media (max-width: 900px) {
+  .app-simulator-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-.app-screen-content {
-  background: #090d16;
-  border-radius: 26px;
-  min-height: 480px;
-  padding: 16px;
+.app-phone-container {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.app-screen-header {
+.app-screen-selector-tabs {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-screen-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.app-screen-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.app-screen-tab.active {
+  color: #07090e;
+  background: var(--cyan);
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(4, 189, 251, 0.4);
+}
+
+.app-phone-mockup {
+  background: #000000;
+  border-radius: 46px;
+  padding: 10px;
+  box-shadow: 
+    0 0 0 2px rgba(255, 255, 255, 0.14),
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(4, 189, 251, 0.2);
+  border: 4px solid #1c212d;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.phone-dynamic-island {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: #000000;
+  border-radius: 12px;
+  z-index: 20;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.app-screen-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #050608;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.app-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.app-screen-hint-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
+  padding: 22px 14px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 12px;
-}
-
-.app-screen-tab-pane {
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.app-screen-tab-pane.active {
-  display: flex;
-}
-
-.app-nav-bar-sim {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  text-align: center;
-}
-
-.app-sim-tab-btn {
-  background: none;
-  border: none;
-  color: var(--text-muted);
   font-size: 0.68rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  cursor: pointer;
-  padding: 6px 2px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  color: #fff;
+  pointer-events: none;
 }
 
-.app-sim-tab-btn.active {
+.app-screen-tap-tip {
   color: var(--cyan);
-  background: rgba(4, 189, 251, 0.1);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
 }
+
+
 
 /* ==========================================================================
    THEORETICAL FRAMEWORK PILLS & BADGES
@@ -1609,11 +1656,107 @@ body {
     grid-template-columns: 1fr;
   }
   .projector-hud {
-    width: 95%;
-    gap: 8px;
-    padding: 6px 12px;
+    width: auto;
+    max-width: 96%;
+    gap: 6px;
+    padding: 3px 8px;
   }
-  .hud-shortcuts {
-    display: none;
+  .hud-slide-title {
+    max-width: 140px;
   }
+}
+
+/* Fallback elegante para reproductor YouTube en protocolo file:/// */
+.local-video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050608;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.local-video-fallback .fallback-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.38;
+  filter: brightness(0.65) contrast(1.1);
+  transition: transform 0.4s ease;
+}
+
+.video-player-container:hover .local-video-fallback .fallback-poster {
+  transform: scale(1.03);
+}
+
+.local-video-fallback .fallback-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.local-video-fallback .fallback-badge {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  background: rgba(4, 189, 251, 0.15);
+  border: 1px solid var(--border-cyan);
+  padding: 4px 12px;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+
+.local-video-fallback .fallback-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 2px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.local-video-fallback .fallback-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.local-video-fallback .fallback-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 10px 24px;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.45);
+  transition: all 0.25s ease;
+  margin-top: 4px;
+}
+
+.local-video-fallback .fallback-play-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(255, 0, 0, 0.7);
+  color: #ffffff;
 }
