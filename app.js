@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const fullScreenBtn = document.getElementById('hud-fullscreen-btn');
 
   const slideTitles = [
-    "01 · Apertura del Pitch & Agencia",
-    "02 · Storytelling Central & Mundo",
-    "03 · Cortometraje Canon: Turno de Noche",
-    "04 · Ecosistema & Modo Focus en Dot",
-    "05 · Influencer: Suga & Stream Twitch",
-    "06 · Las 6 Publicaciones (P1-P6)",
-    "07 · App Club Focus & Fidelización",
-    "08 · Red de Remisiones & Calendario",
-    "09 · Fundamentos Teóricos & Fuentes",
-    "10 · Cierre de Propuesta & Q&A"
+    "01 · Agencia & Oportunidad de Campaña (Tomás)",
+    "02 · Cortometraje Canon: Turno de Noche (3:50)",
+    "03 · Análisis del Corto & Ecosistema (Franco)",
+    "04 · Activación: Suga & Dot Baires (Tomás)",
+    "05 · Embudo de Lanzamiento P1–P3 (Tomás)",
+    "06 · Expansión P4–P6 & Doble Embudo (Franco)",
+    "07 · Plataforma D2C: Club Focus (Tomás)",
+    "08 · Red de Remisiones & Cronograma (Tomás)",
+    "09 · Cierre Comercial & Demo en Vivo (Franco)",
+    "10 · Anexo: Fundamentos Teóricos & Fuentes"
   ];
 
   let currentSlideIndex = 0;
