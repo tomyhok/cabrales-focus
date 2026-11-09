@@ -1779,3 +1779,129 @@ body {
   display: block;
   background: #000;
 }
+
+/* ==========================================================================
+   PITCH-PREP REFACTOR: STYLES FOR STAGES 3 & 4 (SLIDES 4, 5, 6 & 7)
+   ========================================================================== */
+.funnel-pipeline-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.funnel-step-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.funnel-step-pill.step-p1 {
+  border-left: 3px solid var(--cyan);
+}
+
+.funnel-step-pill.step-p2 {
+  border-left: 3px solid #f59e0b;
+}
+
+.funnel-step-pill.step-p3 {
+  border-left: 3px solid var(--violet);
+}
+
+.funnel-step-icon {
+  font-size: 1.3rem;
+}
+
+.funnel-step-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.funnel-step-name {
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.funnel-step-purpose {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+}
+
+.double-funnel-card {
+  margin-top: 24px;
+  background: rgba(18, 12, 10, 0.85);
+  border: 1px solid var(--border-cyan);
+  border-radius: 12px;
+  padding: 18px 24px;
+}
+
+.double-funnel-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.funnel-route-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.funnel-route-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.funnel-hub-badge {
+  background: radial-gradient(circle, rgba(4, 189, 251, 0.25), rgba(138, 79, 255, 0.2));
+  border: 1.5px solid var(--cyan);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.72rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 20px var(--cyan-glow);
+}
+
+.points-equation-box {
+  background: rgba(4, 189, 251, 0.06);
+  border: 1px solid var(--border-cyan);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+}
+
+.points-equation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.points-equation-item {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 10px;
+}

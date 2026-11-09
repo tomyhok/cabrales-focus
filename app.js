@@ -151,27 +151,31 @@ document.addEventListener('DOMContentLoaded', () => {
   slides.forEach(slide => slideObserver.observe(slide));
 
   // ------------------------------------------------------------------------
-  // 2. VISUALIZADOR DE PUBLICACIONES (SLIDE 6)
+  // 2. VISUALIZADORES DE PUBLICACIONES (SLIDE 5 & SLIDE 6)
   // ------------------------------------------------------------------------
-  const pubTabs = document.querySelectorAll('.pub-tab-btn');
-  const pubPanes = document.querySelectorAll('.pub-detail-pane');
   const p5Video = document.getElementById('p5-reels-video');
 
-  pubTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetId = tab.getAttribute('data-pub-target');
+  document.querySelectorAll('.pub-selector-tabs').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.pub-tab-btn');
+    const parentSection = tabGroup.closest('.slide-section');
+    const panes = parentSection ? parentSection.querySelectorAll('.pub-detail-pane') : [];
 
-      pubTabs.forEach(t => t.classList.remove('active'));
-      pubPanes.forEach(p => p.classList.remove('active'));
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-pub-target');
 
-      tab.classList.add('active');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) targetPane.classList.add('active');
+        tabs.forEach(t => t.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
 
-      // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
-      if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
-        p5Video.pause();
-      }
+        tab.classList.add('active');
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) targetPane.classList.add('active');
+
+        // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
+        if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
+          p5Video.pause();
+        }
+      });
     });
   });
 
