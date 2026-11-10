@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "01 · Agencia Focus & Brief de Campaña",
     "02 · Base Narrativa: El Ritual del Foco",
     "03 · Buyer Personas: Bruno Díaz & Solange Herrera",
-    "04 · Cortometraje Canon: Turno de Noche",
+    "04 · Cortometraje Central: Turno de Noche",
     "05 · Análisis del Corto & Ecosistema Multiplataforma",
     "06 · Influencer Marketing: Colaboración con Suga",
     "07 · Activación Offline: Modo Focus en Dot Baires",
@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "09 · Expansión Transmedia & Doble Embudo",
     "10 · Plataforma D2C: Club Focus",
     "11 · Red de Remisiones & Cronograma",
-    "12 · Cierre Comercial & Demo en Vivo",
-    "13 · Anexo: Fundamentos Teóricos & Fuentes"
+    "12 · Cierre Comercial & Demo en Vivo"
   ];
 
   let currentSlideIndex = 0;
