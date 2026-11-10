@@ -68,7 +68,7 @@
       <span class="hud-btn-arrow">▶</span>
     </button>
     <button type="button" class="hud-btn" id="hud-fullscreen-btn" title="Pantalla completa para proyector (Tecla F)">
-      <span class="hud-btn-arrow">⛶</span>
+      <span class="hud-btn-arrow"><svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span>
       <span class="hud-btn-text">Pantalla Completa</span>
     </button>
   </aside>
@@ -93,14 +93,18 @@
           <!-- Presentación del Equipo de la Agencia -->
           <div class="team-cards-row">
             <div class="team-member-card highlight-tomas">
-              <span class="team-avatar-icon">🎯</span>
+              <span class="team-avatar-icon" aria-hidden="true">
+                <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </span>
               <div>
                 <div class="team-member-name">Tomás Hokama</div>
                 <div class="team-member-role">Director de Estrategia & Cuentas (Brand Planner)</div>
               </div>
             </div>
             <div class="team-member-card highlight-franco">
-              <span class="team-avatar-icon">🎬</span>
+              <span class="team-avatar-icon" aria-hidden="true">
+                <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m3 9 2.44-6"/><path d="m9 9 2.44-6"/><path d="m15 9 2.44-6"/><path d="m21 9-2.44-6"/><path d="M3 9h18"/></svg>
+              </span>
               <div>
                 <div class="team-member-name">Franco Denk</div>
                 <div class="team-member-role">Director Creativo & Producción Audiovisual</div>
@@ -187,7 +191,7 @@
         <!-- Pilar 1 -->
         <div class="narrative-pillar-card" style="border-top: 3px solid #ff4444;">
           <div class="narrative-pillar-badge" style="background: rgba(255, 68, 68, 0.15); color: #ff6666;">
-            <span>📱</span> 1. La Tensión Contemporánea
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg> 1. La Tensión Contemporánea
           </div>
           <div class="narrative-pillar-title">La Distracción en el Segundo Crítico</div>
           <div class="narrative-pillar-desc">
@@ -198,7 +202,7 @@
         <!-- Pilar 2 -->
         <div class="narrative-pillar-card" style="border-top: 3px solid var(--cyan);">
           <div class="narrative-pillar-badge" style="background: rgba(4, 189, 251, 0.15); color: var(--cyan);">
-            <span>☕</span> 2. El Ritual Consciente
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Z"/><path d="M6 2v2"/><line x1="3" x2="17" y1="20" y2="20"/><path d="M17 9h1a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-1"/></svg> 2. El Ritual Consciente
           </div>
           <div class="narrative-pillar-title">Preparación vs. Brebaje Mágico</div>
           <div class="narrative-pillar-desc">
@@ -209,7 +213,7 @@
         <!-- Pilar 3 -->
         <div class="narrative-pillar-card" style="border-top: 3px solid var(--violet);">
           <div class="narrative-pillar-badge" style="background: rgba(138, 79, 255, 0.15); color: var(--violet);">
-            <span>🦉</span> 3. Dimensión Sensorial
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> 3. Dimensión Sensorial
           </div>
           <div class="narrative-pillar-title">El Anclaje Táctil y la Mirada Fija</div>
           <div class="narrative-pillar-desc">
@@ -230,11 +234,11 @@
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--cyan); font-weight: 700;">
-            🧊 Cold Brew Macerado
+          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--cyan); font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="m17 5-5 5-5-5"/><path d="m17 19-5-5-5 5"/><path d="M2 12h20"/><path d="m5 7 5 5-5 5"/><path d="m19 7-5 5 5 5"/></svg> Cold Brew Macerado
           </span>
-          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--violet); font-weight: 700;">
-            🎧 Ritual de Foco
+          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--violet); font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg> Ritual de Foco
           </span>
         </div>
       </div>
@@ -261,7 +265,9 @@
         <div class="persona-card persona-bruno">
           <div class="persona-header-row">
             <div class="persona-avatar-box">
-              <div class="persona-avatar-icon">🎮</div>
+              <div class="persona-avatar-icon" aria-hidden="true">
+                <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="6"/></svg>
+              </div>
               <div>
                 <div class="persona-name-title">Bruno Díaz</div>
                 <div class="persona-subinfo">26 años · Estudiante universitario y Gamer (VALORANT) · CABA</div>
@@ -307,7 +313,9 @@
         <div class="persona-card persona-solange">
           <div class="persona-header-row">
             <div class="persona-avatar-box">
-              <div class="persona-avatar-icon">📊</div>
+              <div class="persona-avatar-icon" aria-hidden="true">
+                <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+              </div>
               <div>
                 <div class="persona-name-title">Solange Herrera</div>
                 <div class="persona-subinfo">28 años · Analista de Datos en software (Remoto / Híbrido) · CABA</div>
@@ -415,25 +423,25 @@
 
       <!-- Ficha Técnica de Producción Audiovisual -->
       <div style="display: flex; justify-content: center; gap: 14px; align-items: center; margin-top: 16px; flex-wrap: wrap;">
-        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
-          🎬 <strong>Master:</strong> 1080p FHD (16:9 · 24fps)
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 5px;">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m3 9 2.44-6"/><path d="m9 9 2.44-6"/><path d="m15 9 2.44-6"/><path d="m21 9-2.44-6"/><path d="M3 9h18"/></svg> <strong>Master:</strong> 1080p FHD (16:9 · 24fps)
         </span>
-        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
-          🔊 <strong>Diseño Sonoro:</strong> Plano detalle foley de anilla (*"clic-pshh"*)
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 5px;">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <strong>Diseño Sonoro:</strong> Foley de anilla (*"clic-pshh"*)
         </span>
-        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
-          🌐 <strong>Distribución:</strong> YouTube con conexión directa a Club Focus
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 5px;">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <strong>Distribución:</strong> YouTube con puente a Club Focus
         </span>
-        <span style="font-size: 0.76rem; background: rgba(4, 189, 251, 0.1); border: 1px solid var(--border-cyan); padding: 5px 12px; border-radius: 6px; color: var(--cyan); font-weight: 700;">
-          🦉 Aparición y remisión al Isotipo del Búho
+        <span style="font-size: 0.76rem; background: rgba(4, 189, 251, 0.1); border: 1px solid var(--border-cyan); padding: 5px 12px; border-radius: 6px; color: var(--cyan); font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Isotipo Búho Integrado
         </span>
         <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="social-live-btn yt-live-btn" style="text-decoration: none;" title="Ver estreno de 'Turno de Noche' en YouTube">
           <span class="live-pulse"></span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           Ver Corto en YouTube ↗
         </a>
-        <button type="button" class="social-live-btn" id="toggle-yt-embed-btn" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: #fff;" title="Alternar reproductor embebido de YouTube">
-          <span>📺</span> Ver Embebido
+        <button type="button" class="social-live-btn" id="toggle-yt-embed-btn" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: #fff; display: inline-flex; align-items: center; gap: 5px;" title="Alternar reproductor embebido de YouTube">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="3" rx="2"/><polyline points="8 21 12 17 16 21"/></svg> Ver Embebido
         </button>
       </div>
     </section>
@@ -483,7 +491,8 @@
       <!-- Matriz de las 6 Plataformas -->
       <div class="glass-card">
         <h3 class="card-title" style="margin-bottom: 12px; font-size: 1.05rem;">
-          <span>🌐</span> Matriz Transmedia: Funciones Autónomas y Complementarias
+          <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Matriz Transmedia: Funciones Autónomas y Complementarias
         </h3>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
           <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
@@ -631,7 +640,7 @@
         <div class="dot-location-card">
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
-              <span>🏢</span> Dot Baires Shopping · Sede Oficial
+              <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cabrales-gold);"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg> Dot Baires Shopping · Sede Oficial
             </div>
             <span style="font-size: 0.72rem; color: #ffd88a; font-weight: 700; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); padding: 3px 8px; border-radius: 4px;">
               Punto de Activación BTL
@@ -641,7 +650,7 @@
           <img src="assets/dot_baires_shopping.jpg" alt="Fachada exterior iluminada de Dot Baires Shopping" class="dot-facade-img" />
 
           <div class="dot-address-chip">
-            <span style="font-size: 1.2rem;">📍</span>
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cabrales-gold);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
               <div style="font-weight: 800; color: #fff;">Vedia 3600, Saavedra, CABA</div>
               <div style="font-size: 0.74rem; color: #e0d0b0; margin-top: 1px;">
@@ -651,8 +660,8 @@
           </div>
 
           <div class="dot-map-wrapper">
-            <div style="font-size: 1.8rem; background: rgba(245, 158, 11, 0.15); width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              🗺️
+            <div style="background: rgba(245, 158, 11, 0.15); width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--cabrales-gold);">
+              <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
             </div>
             <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">
               <strong style="color: #fff;">Por qué Dot Baires:</strong> Concentra el público objetivo de 18 a 30 años de CABA y Zona Norte, con cines, patio de comidas tecnológico y cercanía a corredores universitarios.
@@ -664,7 +673,7 @@
         <div class="dot-stand-card">
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
-              <span>🦉</span> Stand Inmersivo: "La Guarida del Búho"
+              <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg> Stand Inmersivo: "La Guarida del Búho"
             </div>
             <span style="font-size: 0.72rem; color: var(--cyan); font-weight: 700; background: rgba(4, 189, 251, 0.12); border: 1px solid var(--border-cyan); padding: 3px 8px; border-radius: 4px;">
               Experiencia Sensorial 3 Min
@@ -709,7 +718,9 @@
       <!-- Barra de Embudo Visual -->
       <div class="funnel-pipeline-bar">
         <div class="funnel-step-pill step-p1">
-          <span class="funnel-step-icon">🎬</span>
+          <span class="funnel-step-icon">
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m3 9 2.44-6"/><path d="m9 9 2.44-6"/><path d="m15 9 2.44-6"/><path d="m21 9-2.44-6"/><path d="M3 9h18"/></svg>
+          </span>
           <div>
             <div class="funnel-step-tag">FASE 1 · INTRIGA</div>
             <div class="funnel-step-name">P1 · Teaser Bruno (TikTok)</div>
@@ -717,7 +728,9 @@
           </div>
         </div>
         <div class="funnel-step-pill step-p2">
-          <span class="funnel-step-icon">☕</span>
+          <span class="funnel-step-icon">
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Z"/><path d="M6 2v2"/><line x1="3" x2="17" y1="20" y2="20"/><path d="M17 9h1a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-1"/></svg>
+          </span>
           <div>
             <div class="funnel-step-tag">FASE 2 · EDUCACIÓN</div>
             <div class="funnel-step-name">P2 · Carrusel Cold Brew (IG)</div>
@@ -725,7 +738,9 @@
           </div>
         </div>
         <div class="funnel-step-pill step-p3">
-          <span class="funnel-step-icon">🎯</span>
+          <span class="funnel-step-icon">
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </span>
           <div>
             <div class="funnel-step-tag">FASE 3 · CONVERSIÓN AIDA</div>
             <div class="funnel-step-name">P3 · Suga Modo Focus (IG)</div>
@@ -1477,8 +1492,8 @@ Cabrales Focus. Precisión que se toma.
         <div class="double-funnel-grid">
           <!-- Ruta A: Emocional & Comunidad -->
           <div class="funnel-route-card" style="border-left: 3px solid var(--violet);">
-            <div class="funnel-route-title" style="color: var(--violet);">
-              <span>📖</span> Vía 1: Historias, Comunidad & CGU
+            <div class="funnel-route-title" style="color: var(--violet); display: flex; align-items: center; gap: 6px;">
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg> Vía 1: Historias, Comunidad & CGU
             </div>
             <div style="font-size: 0.8rem; color: #fff; font-weight: 700; margin-bottom: 4px;">
               P4 (TikTok Solange) + P6 (Stories Interactivas)
@@ -1490,14 +1505,14 @@ Cabrales Focus. Precisión que se toma.
 
           <!-- Centro: El Hub Central Club Focus -->
           <div class="funnel-hub-badge">
-            <span style="font-size: 1.1rem;">🦉</span>
+            <img src="assets/owl_mascot.png" alt="Búho Cabrales Focus" style="width: 28px; height: 28px; filter: drop-shadow(0 0 8px var(--cyan));" />
             <span>CLUB<br/>FOCUS</span>
           </div>
 
           <!-- Ruta B: Transaccional & Recompensas -->
           <div class="funnel-route-card" style="border-left: 3px solid var(--cabrales-red);">
-            <div class="funnel-route-title" style="color: #ff8888;">
-              <span>🎟️</span> Vía 2: Transaccional & Lealtad (RTM)
+            <div class="funnel-route-title" style="color: #ff8888; display: flex; align-items: center; gap: 6px;">
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg> Vía 2: Transaccional & Lealtad (RTM)
             </div>
             <div style="font-size: 0.8rem; color: #fff; font-weight: 700; margin-bottom: 4px;">
               P5 (Spot Reels Major) + Sampling Dot Baires
@@ -1528,8 +1543,9 @@ Cabrales Focus. Precisión que se toma.
       <!-- Caja de la Ecuación de Lealtad -->
       <div class="points-equation-box">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="color: var(--cyan); font-family: var(--font-heading); font-size: 0.88rem;">
-            ⚡ Regla de Oro de Gamificación: "Registrar una lata suma puntos; canjearlos genera la participación o descuento"
+          <strong style="color: var(--cyan); font-family: var(--font-heading); font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Regla de Oro de Gamificación: "Registrar una lata suma puntos; canjearlos genera la participación o descuento"
           </strong>
           <span style="font-size: 0.72rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px;">Código QR Único bajo la Anilla</span>
         </div>
@@ -1555,13 +1571,13 @@ Cabrales Focus. Precisión que se toma.
           <!-- Selector de Pantallas de la App -->
           <div class="app-screen-selector-tabs" role="tablist">
             <button type="button" class="app-screen-tab active" data-app-idx="0">
-              <span>🏠</span> Inicio
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Inicio
             </button>
             <button type="button" class="app-screen-tab" data-app-idx="1">
-              <span>📷</span> Escáner QR
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/></svg> Escáner QR
             </button>
             <button type="button" class="app-screen-tab" data-app-idx="2">
-              <span>🛍️</span> Tienda
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Tienda
             </button>
           </div>
 
@@ -1587,7 +1603,8 @@ Cabrales Focus. Precisión que se toma.
           <div class="glass-card highlight-cyan">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
               <h3 class="card-title" style="font-size: 1.05rem;">
-                <span>🔑</span> Sistema de Fidelización con Código QR Único
+                <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/></svg>
+                Sistema de Fidelización con Código QR Único
               </h3>
               <span id="demo-level-badge" style="font-size: 0.72rem; color: var(--cyan); font-weight: 800; background: rgba(4,189,251,0.12); padding: 3px 10px; border-radius: 6px; border: 1px solid var(--border-cyan);">Nivel 1 (Inicial)</span>
             </div>
@@ -1611,8 +1628,9 @@ Cabrales Focus. Precisión que se toma.
                 <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block;">Saldo del Usuario en Vivo</span>
                 <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; color: #fff;"><span id="demo-points-count" style="color: var(--cyan);">200</span> <span style="font-size: 0.85rem; color: var(--text-secondary);">PTS</span></span>
               </div>
-              <button type="button" id="demo-scan-can-btn" class="hud-btn" style="background: var(--cyan); color: #07090e; border-color: var(--cyan); font-weight: 800; font-size: 0.8rem; padding: 8px 16px;">
-                ⚡ Simular Registro de Lata (+100 pts)
+              <button type="button" id="demo-scan-can-btn" class="hud-btn" style="background: var(--cyan); color: #07090e; border-color: var(--cyan); font-weight: 800; font-size: 0.8rem; padding: 8px 16px; display: inline-flex; align-items: center; gap: 6px;">
+                <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Simular Registro de Lata (+100 pts)
               </button>
             </div>
             <div id="demo-scan-feedback" style="display: none; font-size: 0.75rem; color: #a3e635; margin-top: 8px; font-weight: 700;"></div>
@@ -1621,7 +1639,8 @@ Cabrales Focus. Precisión que se toma.
           <!-- Tarjeta 2: Sorteo FiReMAJOR 2027 -->
           <div class="glass-card highlight-violet">
             <h3 class="card-title" style="font-size: 1.05rem;">
-              <span>🎟️</span> Sorteo FiReMAJOR Buenos Aires 2027
+              <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--violet);"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              Sorteo FiReMAJOR Buenos Aires 2027
             </h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
               Para premiar a la comunidad gamer fiel, se habilita el canje de bonos en la tienda oficial de la app (pantalla 03) para el primer Major de Counter-Strike 2 en Sudamérica:
@@ -1636,7 +1655,8 @@ Cabrales Focus. Precisión que se toma.
           <!-- Tarjeta 3: Valor D2C para Cabrales -->
           <div class="glass-card" style="padding: 14px 18px;">
             <h3 class="card-title" style="font-size: 0.95rem; margin-bottom: 4px;">
-              <span>📈</span> Retención & Captura de Datos Direct-to-Consumer (D2C)
+              <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              Retención & Captura de Datos Direct-to-Consumer (D2C)
             </h3>
             <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
               La app convierte el consumo off-line en métricas accionables para Cabrales S.A.: frecuencia de apertura por franja horaria, geolocalización de consumo nocturno y contacto directo sin depender de los algoritmos de Meta o Google.
@@ -1665,7 +1685,8 @@ Cabrales Focus. Precisión que se toma.
         <!-- Mapa de Remisiones -->
         <div class="glass-card">
           <h3 class="card-title" style="margin-bottom: 12px;">
-            <span>🔄</span> Red de Remisiones Cruzadas
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+            Red de Remisiones Cruzadas
           </h3>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem;">
             <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 6px;">
@@ -1698,7 +1719,8 @@ Cabrales Focus. Precisión que se toma.
         <!-- Cronograma -->
         <div class="glass-card highlight-cyan">
           <h3 class="card-title" style="margin-bottom: 12px;">
-            <span>📅</span> Secuencia de Lanzamiento de Campaña
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Secuencia de Lanzamiento de Campaña
           </h3>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.8rem;">
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
@@ -1778,24 +1800,28 @@ Cabrales Focus. Precisión que se toma.
         <!-- Tarjeta de Llamado a la Acción & Demo Interactiva en Vivo -->
         <div class="live-demo-card">
           <div class="live-demo-title">
-            <span>📱</span> Invitación al Directorio: Experiencia de Usuario en Vivo
+            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: var(--cyan);"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            Invitación al Directorio: Experiencia de Usuario en Vivo
           </div>
           <p class="live-demo-desc">
             Los invitamos a ponerse en los zapatos del usuario final: respondan la encuesta interactiva en Instagram Stories, elijan qué distracción los afecta y descubran cómo la campaña los conduce fluidamente hacia el relato de Solange en Club Focus.
           </p>
           <div class="live-demo-actions-row">
             <button type="button" class="demo-action-btn" data-open-pub="pub-p6">
-              <span>📊</span> Probar Stories P6 en Vivo
+              <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+              Probar Stories P6 en Vivo
             </button>
             <button type="button" class="demo-action-btn btn-violet" data-open-slide="9">
-              <span>🦉</span> Abrir Simulador de Club Focus
+              <img src="assets/owl_mascot.png" alt="Búho" style="width: 18px; height: 18px; filter: drop-shadow(0 0 4px var(--cyan));" />
+              Abrir Simulador de Club Focus
             </button>
           </div>
         </div>
 
         <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08);">
-          <div style="display: inline-block; background: rgba(4,189,251,0.12); border: 1px solid var(--border-cyan); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; color: var(--cyan); margin-bottom: 12px;">
-            🎯 PRESENTACIÓN DE CAMPAÑA FINALIZADA · ESPACIO DE CONSULTAS
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(4,189,251,0.12); border: 1px solid var(--border-cyan); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; color: var(--cyan); margin-bottom: 12px;">
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            PRESENTACIÓN DE CAMPAÑA FINALIZADA · ESPACIO DE CONSULTAS
           </div>
           <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">
             <strong>Agencia Transmedia Focus</strong> · Presentación para Directorio de <strong>Cabrales S.A.</strong><br />
