@@ -298,6 +298,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar estado de Stories P6
   setStory(0);
 
+  // Navegación directa desde botones de acción / demo
+  document.querySelectorAll('[data-open-pub]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetPub = btn.getAttribute('data-open-pub');
+      const targetSlideIdx = 5; // Slide 6 es índice 5
+      goToSlide(targetSlideIdx);
+      setTimeout(() => {
+        const pubTab = document.querySelector(`.pub-tab-btn[data-pub-target="${targetPub}"]`);
+        if (pubTab) pubTab.click();
+      }, 350);
+    });
+  });
+
+  document.querySelectorAll('[data-open-slide]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const slideIdx = parseInt(btn.getAttribute('data-open-slide'), 10);
+      goToSlide(slideIdx);
+    });
+  });
+
   // ------------------------------------------------------------------------
   // 3. SIMULADOR DE APP CLUB FOCUS (SLIDE 7)
   // ------------------------------------------------------------------------
