@@ -202,6 +202,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ------------------------------------------------------------------------
+  // Cortometraje Canon (Slide 4): Fallback Inteligente para GitHub Pages
+  // ------------------------------------------------------------------------
+  const shortfilmVideo = document.getElementById('main-shortfilm-video');
+  const ytFakePlayer = document.getElementById('yt-fake-player');
+  const embedToggleBtn = document.getElementById('toggle-yt-embed-btn');
+
+  function activateYtFakePlayer() {
+    if (shortfilmVideo && ytFakePlayer) {
+      shortfilmVideo.style.display = 'none';
+      ytFakePlayer.style.display = 'block';
+    }
+  }
+
+  if (shortfilmVideo) {
+    shortfilmVideo.addEventListener('error', activateYtFakePlayer, true);
+    const source = shortfilmVideo.querySelector('source');
+    if (source) {
+      source.addEventListener('error', activateYtFakePlayer);
+    }
+  }
+
+  // Si estamos en GitHub Pages (o entorno web donde el archivo de 122MB no se sube por límite de GitHub)
+  if (window.location.protocol.startsWith('http')) {
+    if (window.location.hostname.includes('github.io')) {
+      activateYtFakePlayer();
+    } else {
+      const source = shortfilmVideo ? shortfilmVideo.querySelector('source') : null;
+      if (source && source.src) {
+        fetch(source.src, { method: 'HEAD' })
+          .then(res => {
+            if (!res.ok) activateYtFakePlayer();
+          })
+          .catch(() => activateYtFakePlayer());
+      }
+    }
+  }
+
+  // Alternar Reproductor Embebido de YouTube en Slide 4
+  if (embedToggleBtn) {
+    embedToggleBtn.addEventListener('click', () => {
+      const cinemaContainer = document.querySelector('.cinema-player-container');
+      if (!cinemaContainer) return;
+
+      const existingIframe = cinemaContainer.querySelector('iframe');
+      if (existingIframe) {
+        existingIframe.remove();
+        if (ytFakePlayer) ytFakePlayer.style.display = 'block';
+        embedToggleBtn.innerHTML = '<span>📺</span> Ver Embebido';
+      } else {
+        if (shortfilmVideo) shortfilmVideo.style.display = 'none';
+        if (ytFakePlayer) ytFakePlayer.style.display = 'none';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/iTbCR-DOe7E?autoplay=1&rel=0&modestbranding=1';
+        iframe.style.width = '100%';
+        iframe.style.aspectRatio = '16 / 9';
+        iframe.style.border = 'none';
+        iframe.style.display = 'block';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        cinemaContainer.appendChild(iframe);
+
+        embedToggleBtn.innerHTML = '<span>✕</span> Quitar Embebido';
+      }
+    });
+  }
+
   // Carrusel Interactivo P2 (6 Placas en Track)
   const slidesTrack = document.getElementById('p2-slides-track');
   const p2Counter = document.getElementById('p2-slide-counter');

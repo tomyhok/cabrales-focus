@@ -383,6 +383,34 @@
           <source src="assets/cortometraje_yt/Cortometraje final - Cabrales Focus.mp4" type="video/mp4" />
           Tu navegador no soporta el reproductor de video HTML5.
         </video>
+
+        <!-- Fake Player de YouTube para GitHub Pages / Fallback -->
+        <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="yt-fake-player" id="yt-fake-player" style="display: none;" title="Abrir estreno oficial en YouTube">
+          <div class="yt-fake-overlay">
+            <div class="yt-fake-top">
+              <span class="yt-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                ESTRENO EN YOUTUBE · 1080p FHD
+              </span>
+              <span class="yt-time-tag">3:00 MIN</span>
+            </div>
+            
+            <div class="yt-fake-center">
+              <div class="yt-big-play-btn">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="yt-fake-hint">Clic para ver en YouTube ↗</div>
+            </div>
+            
+            <div class="yt-fake-bottom">
+              <div>
+                <div class="yt-fake-title">Cabrales Focus · "Turno de noche" (Cortometraje Canon)</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 2px;">Campaña Transmedia · Dirección de Arte y Sonido Foley</div>
+              </div>
+              <div class="yt-fake-sub">youtu.be/iTbCR-DOe7E ↗</div>
+            </div>
+          </div>
+        </a>
       </div>
 
       <!-- Ficha Técnica de Producción Audiovisual -->
@@ -399,11 +427,14 @@
         <span style="font-size: 0.76rem; background: rgba(4, 189, 251, 0.1); border: 1px solid var(--border-cyan); padding: 5px 12px; border-radius: 6px; color: var(--cyan); font-weight: 700;">
           🦉 Aparición y remisión al Isotipo del Búho
         </span>
-        <a href="https://www.youtube.com/@CabralesFocus" target="_blank" rel="noopener noreferrer" class="social-live-btn yt-live-btn" style="text-decoration: none;" title="Canal Oficial de Cabrales Focus en YouTube">
+        <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="social-live-btn yt-live-btn" style="text-decoration: none;" title="Ver estreno de 'Turno de Noche' en YouTube">
           <span class="live-pulse"></span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Canal en YouTube ↗
+          Ver Corto en YouTube ↗
         </a>
+        <button type="button" class="social-live-btn" id="toggle-yt-embed-btn" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: #fff;" title="Alternar reproductor embebido de YouTube">
+          <span>📺</span> Ver Embebido
+        </button>
       </div>
     </section>
 
