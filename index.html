@@ -1484,124 +1484,97 @@ Cabrales Focus. Precisión que se toma.
       </div>
 
       <div class="app-simulator-layout">
-        <!-- Mockup Teléfono Simulador -->
-        <div class="app-phone-mockup">
-          <div class="app-screen-content">
-            <div class="app-screen-header">
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <img src="assets/owl_mascot.png" alt="Búho" style="width: 20px; height: 20px;" />
-                <span style="font-family: var(--font-heading); font-weight: 900; font-size: 0.78rem; color: #fff;">CLUB <span style="color: var(--cyan);">FOCUS</span></span>
-              </div>
-              <span id="demo-level-badge" style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px;">Nivel 1 (Inicial)</span>
-            </div>
+        <!-- Mockup Smartphone Auténtico con Pantallas Reales Generadas con IA -->
+        <div class="app-phone-container">
+          <!-- Selector de Pantallas de la App -->
+          <div class="app-screen-selector-tabs" role="tablist">
+            <button type="button" class="app-screen-tab active" data-app-idx="0">
+              <span>🏠</span> Inicio
+            </button>
+            <button type="button" class="app-screen-tab" data-app-idx="1">
+              <span>📷</span> Escáner QR
+            </button>
+            <button type="button" class="app-screen-tab" data-app-idx="2">
+              <span>🛍️</span> Tienda
+            </button>
+          </div>
 
-            <!-- Pantalla Inicio -->
-            <div class="app-screen-tab-pane active" id="app-screen-inicio">
-              <div style="background: rgba(4,189,251,0.1); border: 1px solid var(--border-cyan); padding: 10px; border-radius: 8px;">
-                <span style="font-size: 0.68rem; color: var(--cyan); font-weight: 800;">HISTORIAS FOCUS</span>
-                <p style="font-size: 0.74rem; color: #fff; margin-top: 2px;">"La primera página" · Relato escrito de Solange Herrera.</p>
-              </div>
-              <div style="background: rgba(255,255,255,0.04); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                <span style="font-size: 0.68rem; color: var(--text-muted);">ARCHIVO DE VENTANAS</span>
-                <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">4 historias de concentración de la comunidad aprobadas.</p>
-              </div>
-              <div style="background: rgba(217,20,20,0.12); padding: 10px; border-radius: 8px; border: 1px solid rgba(217,20,20,0.3);">
-                <span style="font-size: 0.68rem; color: #ff8888; font-weight: 700;">EVENTO DESTACADO</span>
-                <p style="font-size: 0.72rem; color: #fff;">Sorteo 2 Entradas FiReMAJOR Buenos Aires 2027.</p>
-              </div>
-            </div>
+          <!-- Dispositivo Móvil Fotorrealista -->
+          <div class="app-phone-mockup">
+            <!-- Dynamic Island / Speaker Notch -->
+            <div class="phone-dynamic-island"></div>
 
-            <!-- Pantalla Dónde Comprar -->
-            <div class="app-screen-tab-pane" id="app-screen-mapa">
-              <div style="font-size: 0.75rem; font-weight: 800; color: #fff; margin-bottom: 6px;">📍 Puntos de Venta Cercanos</div>
-              <div style="background: rgba(255,255,255,0.04); padding: 8px; border-radius: 6px; font-size: 0.72rem;">
-                <strong style="color: var(--cyan);">Dot Baires Shopping:</strong> Stand Modo Focus.
+            <!-- Pantalla del Celular 9:16 con Imagen de IA -->
+            <div class="app-screen-device" id="app-screen-interactive-frame" title="Click para alternar entre pantallas">
+              <img id="app-screen-display" src="assets/app_club_focus/app_homepage.jpg" alt="Pantalla App Club Focus - Inicio" class="app-screen-img" />
+              <div class="app-screen-hint-badge">
+                <span id="app-screen-name-tag">Dashboard & Puntos</span>
+                <span class="app-screen-tap-tip">Tocar para avanzar ➔</span>
               </div>
-              <div style="background: rgba(255,255,255,0.04); padding: 8px; border-radius: 6px; font-size: 0.72rem;">
-                <strong style="color: #fff;">Cafeterías de Especialidad:</strong> CABA & Zona Norte.
-              </div>
-              <div style="background: rgba(255,255,255,0.04); padding: 8px; border-radius: 6px; font-size: 0.72rem;">
-                <strong style="color: #fff;">Tiendas Gaming & Arenas:</strong> FiReSPORTS Center.
-              </div>
-            </div>
-
-            <!-- Pantalla Tienda -->
-            <div class="app-screen-tab-pane" id="app-screen-tienda">
-              <div style="font-size: 0.75rem; font-weight: 800; color: #fff; margin-bottom: 4px;">🛍️ Tienda & Canjes</div>
-              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.7rem;">
-                <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.04); padding: 6px; border-radius: 4px;">
-                  <span>Pack 6 Latas Focus 240ml</span>
-                  <strong style="color: var(--cyan);">$14.400</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.04); padding: 6px; border-radius: 4px;">
-                  <span>Taza Cerámica Focus</span>
-                  <strong style="color: var(--cyan);">1.200 pts</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.04); padding: 6px; border-radius: 4px;">
-                  <span>Peluche Búho Focus</span>
-                  <strong style="color: var(--cyan);">2.000 pts</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; background: rgba(217,20,20,0.15); padding: 6px; border-radius: 4px; border: 1px solid rgba(217,20,20,0.4);">
-                  <span>Bono Sorteo FiReMAJOR 2027</span>
-                  <strong style="color: #ff8888;">100 pts</strong>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pantalla Mi Club -->
-            <div class="app-screen-tab-pane" id="app-screen-club">
-              <div style="background: rgba(4,189,251,0.12); padding: 10px; border-radius: 8px; text-align: center;">
-                <span style="font-size: 0.65rem; color: var(--text-muted);">SALDO DE PUNTOS CANJEABLES</span>
-                <div style="font-size: 1.5rem; font-family: var(--font-heading); font-weight: 900; color: var(--cyan);" id="demo-points-count">200</div>
-                <span style="font-size: 0.65rem; color: #a5f3fc;">Tus puntos para canjear NO vencen</span>
-              </div>
-              <button type="button" id="demo-scan-can-btn" style="background: var(--cyan); color: #07090e; border: none; padding: 8px; border-radius: 6px; font-family: var(--font-heading); font-size: 0.72rem; font-weight: 800; cursor: pointer; margin-top: 8px;">
-                ⚡ Simular Registro de Lata (+100 pts)
-              </button>
-              <div id="demo-scan-feedback" style="display: none; font-size: 0.68rem; color: #a3e635; text-align: center; margin-top: 4px;"></div>
-            </div>
-
-            <!-- Barra inferior simulada -->
-            <div class="app-nav-bar-sim">
-              <button type="button" class="app-sim-tab-btn active" data-app-screen="app-screen-inicio">Inicio</button>
-              <button type="button" class="app-sim-tab-btn" data-app-screen="app-screen-mapa">Locales</button>
-              <button type="button" class="app-sim-tab-btn" data-app-screen="app-screen-tienda">Tienda</button>
-              <button type="button" class="app-sim-tab-btn" data-app-screen="app-screen-club">Mi Club</button>
             </div>
           </div>
         </div>
 
         <!-- Explicación de Mecánicas para el Pitch -->
         <div style="display: flex; flex-direction: column; gap: 14px;">
+          <!-- Tarjeta 1: QR & Doble Puntaje con Simulador en Vivo -->
           <div class="glass-card highlight-cyan">
-            <h3 class="card-title" style="font-size: 1.05rem;">
-              <span>🔑</span> Sistema de Fidelización con Código QR Único
-            </h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              Cada lata de Cabrales Focus incluye un código QR único protegido bajo la anilla de apertura. Se registra una sola vez en la app para evitar fraudes y acredita una doble recompensa:
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+              <h3 class="card-title" style="font-size: 1.05rem;">
+                <span>🔑</span> Sistema de Fidelización con Código QR Único
+              </h3>
+              <span id="demo-level-badge" style="font-size: 0.72rem; color: var(--cyan); font-weight: 800; background: rgba(4,189,251,0.12); padding: 3px 10px; border-radius: 6px; border: 1px solid var(--border-cyan);">Nivel 1 (Inicial)</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px;">
+              Cada lata de Cabrales Focus incluye un código QR único en su etiqueta posterior (visible en la pantalla 02). Se escanea con la cámara de la app y acredita una doble recompensa:
             </p>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.8rem;">
-              <div style="background: rgba(0,0,0,0.4); padding: 8px; border-radius: 6px;">
-                <strong style="color: var(--cyan);">100 Puntos para Canje:</strong> Saldo permanente sin vencimiento para canjear en la eShop y sorteos.
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.8rem; margin-bottom: 12px;">
+              <div style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 8px; border: 1px solid rgba(4,189,251,0.25);">
+                <div style="color: var(--cyan); font-weight: 800; margin-bottom: 2px;">100 Puntos para Canje</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary);">Saldo permanente sin vencimiento para canjear en la eShop de la app y participar en sorteos.</div>
               </div>
-              <div style="background: rgba(0,0,0,0.4); padding: 8px; border-radius: 6px;">
-                <strong style="color: var(--violet);">100 Puntos de Nivel:</strong> Válidos por 3 meses móviles para calificar en Nivel 1 (0-499), Nivel 2 (500-1499) o Nivel 3 (1500+).
+              <div style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 8px; border: 1px solid rgba(138,79,255,0.25);">
+                <div style="color: var(--violet); font-weight: 800; margin-bottom: 2px;">100 Puntos de Nivel</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary);">Válidos por 3 meses móviles para calificar en Nivel 1 (0-499), Nivel 2 (500-1499) o Nivel 3 (1500+).</div>
               </div>
             </div>
+
+            <!-- Simulador de Escaneo en Vivo para la Presentación -->
+            <div style="background: rgba(4,189,251,0.06); border: 1px dashed var(--border-cyan); border-radius: 8px; padding: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+              <div>
+                <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block;">Saldo del Usuario en Vivo</span>
+                <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; color: #fff;"><span id="demo-points-count" style="color: var(--cyan);">200</span> <span style="font-size: 0.85rem; color: var(--text-secondary);">PTS</span></span>
+              </div>
+              <button type="button" id="demo-scan-can-btn" class="hud-btn" style="background: var(--cyan); color: #07090e; border-color: var(--cyan); font-weight: 800; font-size: 0.8rem; padding: 8px 16px;">
+                ⚡ Simular Registro de Lata (+100 pts)
+              </button>
+            </div>
+            <div id="demo-scan-feedback" style="display: none; font-size: 0.75rem; color: #a3e635; margin-top: 8px; font-weight: 700;"></div>
           </div>
 
+          <!-- Tarjeta 2: Sorteo FiReMAJOR 2027 -->
           <div class="glass-card highlight-violet">
             <h3 class="card-title" style="font-size: 1.05rem;">
               <span>🎟️</span> Sorteo FiReMAJOR Buenos Aires 2027
             </h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-              Para premiar a la comunidad fiel, se habilita el canje de bonos para el primer Major de CS2 en Sudamérica:
+              Para premiar a la comunidad gamer fiel, se habilita el canje de bonos en la tienda oficial de la app (pantalla 03) para el primer Major de Counter-Strike 2 en Sudamérica:
             </p>
             <ul style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; list-style: square; padding-left: 18px; display: flex; flex-direction: column; gap: 4px;">
-              <li>Costo por bono: <strong>100 puntos canjeables</strong> (1 lata = 1 bono).</li>
-              <li>Límite ético de juego responsable: <strong>Máximo 10 bonos por usuario</strong>.</li>
-              <li>Premio confirmado para la simulación: <strong>1 ganador de 2 entradas</strong>.</li>
+              <li>Costo por bono: <strong>100 puntos canjeables</strong> (1 lata física = 1 cupón de sorteo).</li>
+              <li>Límite ético de juego responsable: <strong>Máximo 10 bonos por usuario</strong> para evitar compras compulsivas.</li>
+              <li>Premio confirmado para la simulación: <strong>1 ganador de 2 entradas</strong> con acceso VIP.</li>
             </ul>
+          </div>
+
+          <!-- Tarjeta 3: Valor D2C para Cabrales -->
+          <div class="glass-card" style="padding: 14px 18px;">
+            <h3 class="card-title" style="font-size: 0.95rem; margin-bottom: 4px;">
+              <span>📈</span> Retención & Captura de Datos Direct-to-Consumer (D2C)
+            </h3>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
+              La app convierte el consumo off-line en métricas accionables para Cabrales S.A.: frecuencia de apertura por franja horaria, geolocalización de consumo nocturno y contacto directo sin depender de los algoritmos de Meta o Google.
+            </p>
           </div>
         </div>
       </div>
@@ -1661,26 +1634,41 @@ Cabrales Focus. Precisión que se toma.
           <h3 class="card-title" style="margin-bottom: 12px;">
             <span>📅</span> Secuencia de Lanzamiento de Campaña
           </h3>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem;">
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.8rem;">
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 1: Teaser & Precuela</strong>
-              <div style="color: var(--text-muted);">P1 en TikTok/Reels instalando la temática de la distracción nocturna.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 1: Teaser & Precuela</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas -2 a 0</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">P1 en TikTok/Reels instalando la temática de la distracción nocturna.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 2: Lanzamiento & Canon Audiovisual</strong>
-              <div style="color: var(--text-muted);">Estreno de "Turno de noche" en YouTube + Carrusel P2 informativo + P3 Suga.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 2: Lanzamiento & Canon Audiovisual</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Día 1</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Estreno de "Turno de noche" en YouTube + Carrusel P2 informativo + P3 Suga.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 3: Activación Offline & Experiencial</strong>
-              <div style="color: var(--text-muted);">Apertura de "Modo Focus" en Dot Baires + Stream nocturno "Guardia compartida".</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 3: Activación Offline & Experiencial</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas 1 a 3</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Apertura de "Modo Focus" en Dot Baires + Stream nocturno "Guardia compartida".</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 4: Expansión Comunitaria & Real Time Marketing</strong>
-              <div style="color: var(--text-muted);">Lanzamiento de P5 (FiReMAJOR 2027) + P4 Solange (#MiVentanaFocus) + P6 Stories.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 4: Expansión Comunitaria & Real Time Marketing</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas 3 a 6</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Lanzamiento de P5 (FiReMAJOR 2027) + P4 Solange (#MiVentanaFocus) + P6 Stories.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 5: Retención Permanente en Club Focus</strong>
-              <div style="color: var(--text-muted);">Acumulación de puntos, niveles móviles a 3 meses y resolución del sorteo.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 5: Retención Permanente en Club Focus</strong>
+                <span style="font-size: 0.68rem; color: var(--cabrales-gold); background: rgba(245,158,11,0.1); padding: 2px 6px; border-radius: 4px;">Permanente</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Acumulación de puntos, niveles móviles a 3 meses y resolución del sorteo.</div>
             </div>
           </div>
         </div>
@@ -1823,6 +1811,43 @@ Cabrales Focus. Precisión que se toma.
               <span style="color: var(--text-muted);">FiReMAJOR Buenos Aires 2027 y cierre del Last Chance 2026.</span>
               <a href="https://www.hltv.org/events/8297/firemajor-buenos-aires-2027" target="_blank" rel="noopener" style="color: var(--cyan); display: block; font-size: 0.74rem;">hltv.org/events/8297/firemajor-buenos-aires-2027</a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Principios de Henry Jenkins aplicados a Cabrales Focus -->
+      <div class="glass-card" style="margin-top: 14px;">
+        <h3 class="card-title" style="margin-bottom: 10px; font-size: 0.95rem;">
+          <span>🎯</span> Aplicación de los 7 Principios Transmedia (Henry Jenkins)
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; font-size: 0.76rem;">
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">1. Expansión vs. Profundidad:</strong>
+            <span style="color: var(--text-secondary);"> Difusión viral en TikTok/Reels (P1) y Stories (P6); profundidad narrativa en el corto canon y relato de Solange.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">2. Continuidad vs. Multiplicidad:</strong>
+            <span style="color: var(--text-secondary);"> Continuidad canónica de marca y Búho; multiplicidad de miradas (Bruno gamer, Solange analista, Suga streamer).</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">3. Inmersión vs. Extraibilidad:</strong>
+            <span style="color: var(--text-secondary);"> Inmersión acústica en stand Dot Baires; extraibilidad física con la lata, stickers y anilla QR coleccionable.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">4. Worldbuilding:</strong>
+            <span style="color: var(--text-secondary);"> Universo nocturno del "Ritual del Foco" y el Archivo de Ventanas donde cohabita la comunidad productiva.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">5. Serialidad:</strong>
+            <span style="color: var(--text-secondary);"> Arco temporal secuenciado: teaser enigmático → cortometraje canon → BTL Dot Baires → RTM Major 2027 → Club Focus.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">6. Subjetividad:</strong>
+            <span style="color: var(--text-secondary);"> Exploración en primera persona del relato escrito de Solange y los testimonios de los usuarios (#MiVentanaFocus).</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan); grid-column: 1 / -1;">
+            <strong style="color: var(--cyan);">7. Performance / Prosumición:</strong>
+            <span style="color: var(--text-secondary);"> Los usuarios actúan activamente: responden encuestas en Stories P6, comparten sus ventanas en P4 y canjean puntos en la app Club Focus.</span>
           </div>
         </div>
       </div>

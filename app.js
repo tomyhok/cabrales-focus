@@ -324,23 +324,65 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
-  // 3. SIMULADOR DE APP CLUB FOCUS (SLIDE 7)
+  // 3. SHOWCASE DE APP CLUB FOCUS & SIMULADOR (SLIDE 10)
   // ------------------------------------------------------------------------
-  const appTabs = document.querySelectorAll('.app-sim-tab-btn');
-  const appPanes = document.querySelectorAll('.app-screen-tab-pane');
+  const appScreensList = [
+    {
+      src: "assets/app_club_focus/app_homepage.jpg",
+      title: "Dashboard & Puntos"
+    },
+    {
+      src: "assets/app_club_focus/app_qr_page.jpg",
+      title: "Escáner QR de Lata"
+    },
+    {
+      src: "assets/app_club_focus/app_shop_page.jpg",
+      title: "Tienda D2C & Canjes"
+    }
+  ];
 
-  appTabs.forEach(tab => {
+  let currentAppScreenIdx = 0;
+  const appScreenImg = document.getElementById('app-screen-display');
+  const appScreenNameTag = document.getElementById('app-screen-name-tag');
+  const appScreenTabs = document.querySelectorAll('.app-screen-tab');
+  const appInteractiveFrame = document.getElementById('app-screen-interactive-frame');
+
+  function setAppScreen(idx) {
+    if (idx < 0) idx = 0;
+    if (idx >= appScreensList.length) idx = appScreensList.length - 1;
+    currentAppScreenIdx = idx;
+
+    if (appScreenImg) {
+      appScreenImg.style.opacity = '0.3';
+      appScreenImg.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        appScreenImg.src = appScreensList[currentAppScreenIdx].src;
+        if (appScreenNameTag) {
+          appScreenNameTag.textContent = appScreensList[currentAppScreenIdx].title;
+        }
+        appScreenImg.style.opacity = '1';
+        appScreenImg.style.transform = 'scale(1)';
+      }, 120);
+    }
+
+    appScreenTabs.forEach((tab, tIdx) => {
+      tab.classList.toggle('active', tIdx === currentAppScreenIdx);
+    });
+  }
+
+  appScreenTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const targetScreen = tab.getAttribute('data-app-screen');
-
-      appTabs.forEach(t => t.classList.remove('active'));
-      appPanes.forEach(p => p.classList.remove('active'));
-
-      tab.classList.add('active');
-      const targetPane = document.getElementById(targetScreen);
-      if (targetPane) targetPane.classList.add('active');
+      const idx = parseInt(tab.getAttribute('data-app-idx'), 10);
+      setAppScreen(idx);
     });
   });
+
+  if (appInteractiveFrame) {
+    appInteractiveFrame.addEventListener('click', () => {
+      let nextIdx = (currentAppScreenIdx + 1) % appScreensList.length;
+      setAppScreen(nextIdx);
+    });
+  }
 
   // Demo interactiva: Escanear Lata
   const scanCanBtn = document.getElementById('demo-scan-can-btn');

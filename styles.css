@@ -1456,78 +1456,139 @@ body {
 
 
 /* ==========================================================================
-   SLIDE 7: APP CLUB FOCUS SHOWCASE & SIMULADOR
+   SLIDE 10: APP CLUB FOCUS SHOWCASE & SIMULADOR
    ========================================================================== */
 .app-simulator-layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 28px;
+  grid-template-columns: 350px 1fr;
+  gap: 32px;
   align-items: start;
 }
 
-.app-phone-mockup {
-  background: #111520;
-  border: 3px solid #2b3548;
-  border-radius: 36px;
-  padding: 14px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(4, 189, 251, 0.15);
-  position: relative;
+@media (max-width: 900px) {
+  .app-simulator-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-.app-screen-content {
-  background: #090d16;
-  border-radius: 26px;
-  min-height: 480px;
-  padding: 16px;
+.app-phone-container {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.app-screen-header {
+.app-screen-selector-tabs {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-screen-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.app-screen-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.app-screen-tab.active {
+  color: #07090e;
+  background: var(--cyan);
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(4, 189, 251, 0.4);
+}
+
+.app-phone-mockup {
+  background: #000000;
+  border-radius: 46px;
+  padding: 10px;
+  box-shadow: 
+    0 0 0 2px rgba(255, 255, 255, 0.14),
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(4, 189, 251, 0.2);
+  border: 4px solid #1c212d;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.phone-dynamic-island {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: #000000;
+  border-radius: 12px;
+  z-index: 20;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.app-screen-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #050608;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.app-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.app-screen-hint-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
+  padding: 22px 14px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 12px;
-}
-
-.app-screen-tab-pane {
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.app-screen-tab-pane.active {
-  display: flex;
-}
-
-.app-nav-bar-sim {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  text-align: center;
-}
-
-.app-sim-tab-btn {
-  background: none;
-  border: none;
-  color: var(--text-muted);
   font-size: 0.68rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  cursor: pointer;
-  padding: 6px 2px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  color: #fff;
+  pointer-events: none;
 }
 
-.app-sim-tab-btn.active {
+.app-screen-tap-tip {
   color: var(--cyan);
-  background: rgba(4, 189, 251, 0.1);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
 }
 
 /* ==========================================================================
