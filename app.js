@@ -16,16 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const fullScreenBtn = document.getElementById('hud-fullscreen-btn');
 
   const slideTitles = [
-    "01 · Agencia & Propuesta de Campaña",
-    "02 · Cortometraje Canon: Turno de Noche",
-    "03 · Análisis del Corto & Ecosistema Multiplataforma",
-    "04 · Influencer Marketing & Activación Dot Baires",
-    "05 · Embudo de Lanzamiento P1–P3",
-    "06 · Expansión Transmedia & Doble Embudo",
-    "07 · Plataforma D2C: Club Focus",
-    "08 · Red de Remisiones & Cronograma",
-    "09 · Cierre Comercial & Demo en Vivo",
-    "10 · Anexo: Fundamentos Teóricos & Fuentes"
+    "01 · Agencia Focus & Brief de Campaña",
+    "02 · Base Narrativa: El Ritual del Foco",
+    "03 · Buyer Personas: Bruno Díaz & Solange Herrera",
+    "04 · Cortometraje Canon: Turno de Noche",
+    "05 · Análisis del Corto & Ecosistema Multiplataforma",
+    "06 · Influencer Marketing & Activación Dot Baires",
+    "07 · Embudo de Lanzamiento P1–P3",
+    "08 · Expansión Transmedia & Doble Embudo",
+    "09 · Plataforma D2C: Club Focus",
+    "10 · Red de Remisiones & Cronograma",
+    "11 · Cierre Comercial & Demo en Vivo",
+    "12 · Anexo: Fundamentos Teóricos & Fuentes"
   ];
 
   let currentSlideIndex = 0;
@@ -303,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const targetPub = btn.getAttribute('data-open-pub');
-      const targetSlideIdx = 5; // Slide 6 es índice 5
+      const targetSlideIdx = 7; // Slide 8 (Expansión P4-P6) es índice 7
       goToSlide(targetSlideIdx);
       setTimeout(() => {
         const pubTab = document.querySelector(`.pub-tab-btn[data-pub-target="${targetPub}"]`);
