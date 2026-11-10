@@ -379,13 +379,8 @@
       </header>
 
       <div class="cinema-player-container">
-        <video controls preload="metadata" id="main-shortfilm-video" style="background: #000;">
-          <source src="assets/cortometraje_yt/Cortometraje final - Cabrales Focus.mp4" type="video/mp4" />
-          Tu navegador no soporta el reproductor de video HTML5.
-        </video>
-
-        <!-- Fake Player de YouTube para GitHub Pages / Fallback -->
-        <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="yt-fake-player" id="yt-fake-player" style="display: none;" title="Abrir estreno oficial en YouTube">
+        <!-- Fake Player de YouTube (Visible por defecto en Web) -->
+        <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="yt-fake-player" id="yt-fake-player" title="Abrir estreno oficial en YouTube">
           <div class="yt-fake-overlay">
             <div class="yt-fake-top">
               <span class="yt-badge">
@@ -411,6 +406,12 @@
             </div>
           </div>
         </a>
+
+        <!-- Video local HTML5 (Para reproducción offline en pendrive) -->
+        <video controls preload="metadata" id="main-shortfilm-video" style="display: none; background: #000;">
+          <source src="assets/cortometraje_yt/Cortometraje final - Cabrales Focus.mp4" type="video/mp4" />
+          Tu navegador no soporta el reproductor de video HTML5.
+        </video>
       </div>
 
       <!-- Ficha Técnica de Producción Audiovisual -->

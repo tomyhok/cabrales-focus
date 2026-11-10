@@ -203,41 +203,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
-  // Cortometraje Canon (Slide 4): Fallback Inteligente para GitHub Pages
+  // Cortometraje Canon (Slide 4): Fallback Inteligente para GitHub Pages / Offline
   // ------------------------------------------------------------------------
   const shortfilmVideo = document.getElementById('main-shortfilm-video');
   const ytFakePlayer = document.getElementById('yt-fake-player');
   const embedToggleBtn = document.getElementById('toggle-yt-embed-btn');
 
-  function activateYtFakePlayer() {
+  // Si estamos en entorno local (file://), verificamos si el archivo local existe en disco
+  if (window.location.protocol === 'file:') {
     if (shortfilmVideo && ytFakePlayer) {
-      shortfilmVideo.style.display = 'none';
-      ytFakePlayer.style.display = 'block';
+      shortfilmVideo.addEventListener('loadedmetadata', () => {
+        shortfilmVideo.style.display = 'block';
+        ytFakePlayer.style.display = 'none';
+      });
+      shortfilmVideo.addEventListener('error', () => {
+        shortfilmVideo.style.display = 'none';
+        ytFakePlayer.style.display = 'block';
+      });
+      shortfilmVideo.load();
     }
-  }
-
-  if (shortfilmVideo) {
-    shortfilmVideo.addEventListener('error', activateYtFakePlayer, true);
-    const source = shortfilmVideo.querySelector('source');
-    if (source) {
-      source.addEventListener('error', activateYtFakePlayer);
-    }
-  }
-
-  // Si estamos en GitHub Pages (o entorno web donde el archivo de 122MB no se sube por límite de GitHub)
-  if (window.location.protocol.startsWith('http')) {
-    if (window.location.hostname.includes('github.io')) {
-      activateYtFakePlayer();
-    } else {
-      const source = shortfilmVideo ? shortfilmVideo.querySelector('source') : null;
-      if (source && source.src) {
-        fetch(source.src, { method: 'HEAD' })
-          .then(res => {
-            if (!res.ok) activateYtFakePlayer();
-          })
-          .catch(() => activateYtFakePlayer());
-      }
-    }
+  } else {
+    // En Web / GitHub Pages, el fake player queda visible por defecto
+    if (shortfilmVideo) shortfilmVideo.style.display = 'none';
+    if (ytFakePlayer) ytFakePlayer.style.display = 'block';
   }
 
   // Alternar Reproductor Embebido de YouTube en Slide 4
