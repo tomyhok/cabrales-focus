@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index < 0 || index >= slides.length) return;
     currentSlideIndex = index;
 
+    // Actualizar clase active en slides para animaciones escalonadas
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
     // Actualizar HUD
     const formattedNum = String(index + 1).padStart(2, '0');
     if (hudSlideIndex) hudSlideIndex.textContent = `SLIDE ${formattedNum} / ${slides.length}`;

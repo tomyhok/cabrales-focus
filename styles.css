@@ -2290,13 +2290,20 @@ body.presentation-mode .slide-section {
 }
 
 .persona-quote-box {
-  background: rgba(0, 0, 0, 0.35);
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 14px;
-  border-radius: 0 8px 8px 0;
+  background: rgba(0, 0, 0, 0.45);
+  border-left: 3px solid var(--cyan);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.8rem;
-  color: #e0e5eb;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #f1f5f9;
+  letter-spacing: 0.01em;
+}
+
+.persona-solange .persona-quote-box {
+  border-left-color: var(--violet);
 }
 
 .persona-touchpoints-row {
@@ -2673,4 +2680,80 @@ body.presentation-mode .slide-section {
   background: var(--violet);
   color: #fff;
   box-shadow: 0 0 16px var(--violet-glow);
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA EDITORIAL (LIBRE BASKERVILLE) & LEMA DE MARCA
+   ========================================================================== */
+.brand-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   COREOGRAFÍA & ANIMACIONES ESCALONADAS (STAGGER REVEAL)
+   ========================================================================== */
+.slide-section .slide-header,
+.slide-section .hero-pitch-card,
+.slide-section .narrative-pillars-grid,
+.slide-section .narrative-sensory-bar,
+.slide-section .personas-grid,
+.slide-section .cinema-player-container,
+.slide-section .narrative-strip-grid,
+.slide-section .suga-profile-card,
+.slide-section .suga-mechanics-col,
+.slide-section .dot-baires-layout,
+.slide-section .funnel-pipeline-bar,
+.slide-section .pub-detail-pane,
+.slide-section .app-simulator-layout,
+.slide-section .double-funnel-card,
+.slide-section .grid-2 > .glass-card {
+  opacity: 0.35;
+  transform: translateY(12px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.slide-section.active .slide-header,
+.slide-section.active .hero-pitch-card,
+.slide-section.active .narrative-pillars-grid,
+.slide-section.active .narrative-sensory-bar,
+.slide-section.active .personas-grid,
+.slide-section.active .cinema-player-container,
+.slide-section.active .narrative-strip-grid,
+.slide-section.active .suga-profile-card,
+.slide-section.active .suga-mechanics-col,
+.slide-section.active .dot-baires-layout,
+.slide-section.active .funnel-pipeline-bar,
+.slide-section.active .pub-detail-pane,
+.slide-section.active .app-simulator-layout,
+.slide-section.active .double-funnel-card,
+.slide-section.active .grid-2 > .glass-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays escalonados para cadencia natural de keynote */
+.slide-section.active .slide-header {
+  transition-delay: 0.04s;
+}
+
+.slide-section.active .slide-header + * {
+  transition-delay: 0.1s;
+}
+
+.slide-section.active .grid-2 > .glass-card:nth-child(2),
+.slide-section.active .suga-mechanics-col,
+.slide-section.active .dot-stand-card {
+  transition-delay: 0.18s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-section *,
+  .slide-section.active * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
