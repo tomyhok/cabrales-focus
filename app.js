@@ -64,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (targetSlide) {
       targetSlide.scrollIntoView({ behavior: 'smooth', block: 'start' });
       updateSlideUI(index);
+
+      // Pausar videos que no pertenezcan al slide activo
+      document.querySelectorAll('video').forEach(vid => {
+        if (!targetSlide.contains(vid) && !vid.paused) {
+          vid.pause();
+        }
+      });
     }
   }
 
@@ -154,8 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
   slides.forEach(slide => slideObserver.observe(slide));
 
   // ------------------------------------------------------------------------
-  // 2. VISUALIZADORES DE PUBLICACIONES (SLIDE 5 & SLIDE 6)
+  // 2. VISUALIZADORES DE PUBLICACIONES (SLIDE 8 & SLIDE 9)
   // ------------------------------------------------------------------------
+  const p1Video = document.getElementById('p1-tiktok-video');
+  const p4Video = document.getElementById('p4-tiktok-video');
   const p5Video = document.getElementById('p5-reels-video');
 
   document.querySelectorAll('.pub-selector-tabs').forEach(tabGroup => {
@@ -174,11 +183,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetPane = document.getElementById(targetId);
         if (targetPane) targetPane.classList.add('active');
 
-        // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
-        if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
-          p5Video.pause();
-        }
+        // Pausar videos de pestañas que se ocultan
+        if (targetId !== 'pub-p1' && p1Video && !p1Video.paused) p1Video.pause();
+        if (targetId !== 'pub-p4' && p4Video && !p4Video.paused) p4Video.pause();
+        if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) p5Video.pause();
       });
+    });
+  });
+
+  // Listener para enlaces a redes sociales (Opción A: aviso si aún no está cargada la URL)
+  document.querySelectorAll('.social-live-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const href = btn.getAttribute('href');
+      if (!href || href === '#' || href === '') {
+        e.preventDefault();
+        alert('Publicación programada: una vez que subas el video a la plataforma y agreguemos su enlace oficial, este botón abrirá la publicación directamente.');
+      }
     });
   });
 

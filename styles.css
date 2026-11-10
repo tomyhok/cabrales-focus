@@ -1349,6 +1349,69 @@ body {
   color: #70c4ff;
 }
 
+/* ==========================================================================
+   BOTONES DE ACCESO DIRECTO A PUBLICACIONES SOCIALES (OPCIÓN A)
+   ========================================================================== */
+.social-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.tiktok-live-btn {
+  background: rgba(0, 242, 234, 0.12);
+  border-color: rgba(0, 242, 234, 0.35);
+  color: #00f2ea;
+  box-shadow: 0 2px 10px rgba(0, 242, 234, 0.1);
+}
+
+.tiktok-live-btn:hover {
+  background: rgba(0, 242, 234, 0.25);
+  border-color: #00f2ea;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 242, 234, 0.25);
+}
+
+.ig-live-btn {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.18), rgba(253, 29, 29, 0.18));
+  border-color: rgba(225, 48, 108, 0.45);
+  color: #ff7597;
+  box-shadow: 0 2px 10px rgba(225, 48, 108, 0.12);
+}
+
+.ig-live-btn:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.35), rgba(253, 29, 29, 0.35));
+  border-color: #e1306c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+}
+
+.live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
 /* AIDA 4-Item List */
 .aida-grid-rows {
   display: flex;
