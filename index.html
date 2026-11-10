@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Cabrales Focus · Pitch de Campaña Transmedia | Agencia Focus -> Cabrales S.A.</title>
   <!-- Fuentes Google: Montserrat, DM Sans y Libre Baskerville -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,16 +31,19 @@
     </a>
 
     <nav class="nav-pills" aria-label="Navegación de slides">
-      <a href="#slide-1" class="nav-pill active" data-slide-idx="0">01 Portada</a>
-      <a href="#slide-2" class="nav-pill" data-slide-idx="1">02 Storytelling</a>
-      <a href="#slide-3" class="nav-pill" data-slide-idx="2">03 Cortometraje</a>
-      <a href="#slide-4" class="nav-pill" data-slide-idx="3">04 Ecosistema</a>
-      <a href="#slide-5" class="nav-pill" data-slide-idx="4">05 Influencer</a>
-      <a href="#slide-6" class="nav-pill" data-slide-idx="5">06 Publicaciones</a>
-      <a href="#slide-7" class="nav-pill" data-slide-idx="6">07 Club Focus</a>
-      <a href="#slide-8" class="nav-pill" data-slide-idx="7">08 Planificación</a>
-      <a href="#slide-9" class="nav-pill" data-slide-idx="8">09 Teoría & Fuentes</a>
-      <a href="#slide-10" class="nav-pill" data-slide-idx="9">10 Cierre</a>
+      <a href="#slide-1" class="nav-pill active" data-slide-idx="0">01 Agencia & Brief</a>
+      <a href="#slide-2" class="nav-pill" data-slide-idx="1">02 Narrativa</a>
+      <a href="#slide-3" class="nav-pill" data-slide-idx="2">03 Personas</a>
+      <a href="#slide-4" class="nav-pill" data-slide-idx="3">04 Cortometraje</a>
+      <a href="#slide-5" class="nav-pill" data-slide-idx="4">05 Análisis & Medios</a>
+      <a href="#slide-6" class="nav-pill" data-slide-idx="5">06 Influencer Suga</a>
+      <a href="#slide-7" class="nav-pill" data-slide-idx="6">07 BTL Dot Baires</a>
+      <a href="#slide-8" class="nav-pill" data-slide-idx="7">08 Lanzamiento P1-P3</a>
+      <a href="#slide-9" class="nav-pill" data-slide-idx="8">09 Expansión P4-P6</a>
+      <a href="#slide-10" class="nav-pill" data-slide-idx="9">10 Club Focus D2C</a>
+      <a href="#slide-11" class="nav-pill" data-slide-idx="10">11 Planificación</a>
+      <a href="#slide-12" class="nav-pill" data-slide-idx="11">12 Cierre Comercial</a>
+      <a href="#slide-13" class="nav-pill" data-slide-idx="12">13 Anexo Teórico</a>
     </nav>
 
     <div class="nav-agency-badge">
@@ -53,18 +55,22 @@
   <!-- ========================================================================
        PROJECTOR HUD: CONTROLES FLOTANTES PARA EXPOSICIÓN EN AULA
        ======================================================================== -->
-  <aside class="projector-hud" aria-label="Controles de navegación">
-    <button type="button" class="hud-btn" id="hud-prev-btn" title="Slide anterior">
+  <aside class="projector-hud" aria-label="Controles de presentación en proyector">
+    <button type="button" class="hud-btn" id="hud-prev-btn" title="Slide anterior (Flecha Izq / PageUp)">
       <span class="hud-btn-arrow">◀</span>
       <span class="hud-btn-text">Anterior</span>
     </button>
     <div class="hud-status">
-      <span class="hud-slide-index">SLIDE 01 / 10</span>
-      <span class="hud-slide-title">01 · Apertura del Pitch & Agencia</span>
+      <span class="hud-slide-index">SLIDE 01 / 13</span>
+      <span class="hud-slide-title">01 · Agencia Focus & Brief de Campaña</span>
     </div>
-    <button type="button" class="hud-btn" id="hud-next-btn" title="Slide siguiente">
+    <button type="button" class="hud-btn" id="hud-next-btn" title="Slide siguiente (Flecha Der / Espacio / PageDown)">
       <span class="hud-btn-text">Siguiente</span>
       <span class="hud-btn-arrow">▶</span>
+    </button>
+    <button type="button" class="hud-btn" id="hud-fullscreen-btn" title="Pantalla completa para proyector (Tecla F)">
+      <span class="hud-btn-arrow">⛶</span>
+      <span class="hud-btn-text">Pantalla Completa</span>
     </button>
   </aside>
 
@@ -74,30 +80,60 @@
   <main>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 1: APERTURA DEL PITCH & LA AGENCIA
+         SLIDE 1: PRESENTACIÓN DE AGENCIA & BRIEF DE CAMPAÑA
          ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-1">
+    <section class="slide-section active" id="slide-1">
       <div class="hero-pitch-card">
         <div class="hero-text-col">
           <div class="hero-agency-badge">
             <span>AGENCIA TRANSMEDIA FOCUS</span>
             <span>→</span>
-            <span>PROPUESTA PARA EL DIRECTORIO DE CABRALES S.A.</span>
+            <span>PROPUESTA ESTRATÉGICA PARA EL DIRECTORIO DE CABRALES S.A.</span>
           </div>
-          <h1 class="hero-main-title">
+
+          <!-- Presentación del Equipo de la Agencia -->
+          <div class="team-cards-row">
+            <div class="team-member-card highlight-tomas">
+              <span class="team-avatar-icon">🎯</span>
+              <div>
+                <div class="team-member-name">Tomás Hokama</div>
+                <div class="team-member-role">Director de Estrategia & Cuentas (Brand Planner)</div>
+              </div>
+            </div>
+            <div class="team-member-card highlight-franco">
+              <span class="team-avatar-icon">🎬</span>
+              <div>
+                <div class="team-member-name">Franco Denk</div>
+                <div class="team-member-role">Director Creativo & Producción Audiovisual</div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="hero-main-title" style="margin-top: 10px;">
             CABRALES <span class="text-gradient">FOCUS</span>
           </h1>
-          <p style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--cyan); font-weight: 800; margin-bottom: 12px; letter-spacing: 0.04em;">
+          <p style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--cyan); font-weight: 800; margin-bottom: 12px; letter-spacing: 0.04em;">
             "Precisión que se toma"
           </p>
-          <p class="hero-manifesto">
-            Estimados directivos de Cabrales: hoy les presentamos la <strong>estrategia de lanzamiento transmedia</strong> concebida para posicionar a Cabrales en el corazón de la nueva generación digital. Transformamos el cold brew listo para tomar en un <strong>ritual de concentración, calma y rendimiento</strong> para gamers, creadores y profesionales nocturnos.
-          </p>
 
-          <div class="pitch-takeaway-banner">
-            <span>💡</span>
-            <div>
-              <strong>Objetivo del Pitch:</strong> Demostrar cómo una narrativa multiplataforma coherente multiplica el valor de marca, genera comunidad activa y asegura lealtad permanente sin depender de publicidad invasiva.
+          <!-- Encuadre del Brief con Cabrales -->
+          <div class="brief-banner">
+            <strong style="color: #fff;">El Brief de Cabrales S.A.:</strong> Reconocemos su liderazgo de producto. Cabrales ya formuló, testeó y aprobó internamente <strong>Cabrales Focus</strong> (Cold Brew 100% Arábica macerado en frío con L-Teanina en lata de 240ml). Nuestra responsabilidad como agencia es diseñar la <strong>campaña transmedia</strong> para posicionarlo en la nueva generación digital sin perder el linaje histórico de la marca.
+          </div>
+
+          <!-- 3 Desafíos Estratégicos del Brief -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+              <div style="font-size: 0.72rem; color: var(--cyan); font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">1. El Reto</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Insertar a Cabrales en el público 18–30 años con legitimidad cultural, superando la barrera del café frío en lata.</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+              <div style="font-size: 0.72rem; color: var(--violet); font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">2. La Solución</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Campaña transmedia orgánica anclada en una tensión real: la distracción digital frente a la necesidad de rendimiento.</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+              <div style="font-size: 0.72rem; color: #ff8888; font-weight: 800; text-transform: uppercase; margin-bottom: 4px;">3. El Retorno</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Construcción de una plataforma D2C propia (Club Focus) que captura First-Party Data y fomenta recompra recurrente.</div>
             </div>
           </div>
 
@@ -107,7 +143,7 @@
               <span class="hero-metric-label">Plataformas Conectadas</span>
             </div>
             <div class="hero-metric-item">
-              <span class="hero-metric-num">3:50</span>
+              <span class="hero-metric-num">3:00</span>
               <span class="hero-metric-label">Cortometraje Canon</span>
             </div>
             <div class="hero-metric-item">
@@ -133,342 +169,486 @@
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 2: STORYTELLING CENTRAL & UNIVERSO NARRATIVO
+         SLIDE 2: NARRATIVA CONDUCTORA: EL RITUAL DEL FOCO
          ---------------------------------------------------------------------- -->
     <section class="slide-section" id="slide-2">
       <header class="slide-header">
         <div class="slide-tag-row">
           <span class="slide-num-badge">BLOQUE 02</span>
-          <span class="slide-meta-pill">NARRATIVA TRANSMEDIA & WORLDBUILDING</span>
+          <span class="slide-meta-pill">BASE NARRATIVA · STORYTELLING TRANSMEDIA</span>
         </div>
-        <h2 class="slide-title">El Relato Conductor: <span class="text-gradient">El Ritual del Foco</span></h2>
+        <h2 class="slide-title">El Conflicto de la Atención & <span class="text-gradient">El Ritual del Foco</span></h2>
         <p class="slide-subtitle">
-          Frente a la epidemia de hiperestimulación, notificaciones y distracciones digitales, Cabrales Focus no vende un estimulante milagroso: construye un <strong>ritual de pausa deliberada y concentración serena</strong>.
+          Frente a la saturación de microdistracciones digitales, Cabrales Focus no promete un "brebaje mágico", sino el catalizador físico y sensorial de una pausa deliberada antes de la ejecución.
         </p>
-        <div class="pitch-takeaway-banner">
-          <span>🎯</span>
-          <div>
-            <strong>Fundamento Teórico:</strong> Estructura dramática en 3 actos (Ellen Lupton, <em>Design is Storytelling</em>) + Transformación en 5 segundos (Carlos Scolari) + Dimensión sensorial táctil (Buster).
-          </div>
-        </div>
       </header>
 
-      <div class="grid-3">
-        <!-- Bruno -->
-        <div class="glass-card highlight-cyan">
-          <div class="theory-pill">ARQUETIPO PROTAGONISTA · CANON AUDIOVISUAL</div>
-          <h3 class="card-title">
-            <span class="card-title-icon">🎮</span> Bruno Díaz (26 años)
-          </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-            Estudiante y gamer en Buenos Aires. Compite en VALORANT. Su gran obstáculo no es la habilidad mecánica, sino la <strong>atención fragmentada</strong>: apartar la mirada al celular en el segundo decisivo le cuesta la ronda clave.
-          </p>
-          <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: none; display: flex; flex-direction: column; gap: 6px;">
-            <li><strong style="color: #fff;">Conflicto:</strong> Sobreestímulo digital y frustración en el clutch.</li>
-            <li><strong style="color: #fff;">Punto de Contacto:</strong> Post de Suga en Instagram → Modo Focus en Dot Baires.</li>
-            <li><strong style="color: #fff;">Resolución:</strong> Silenciar el celular, abrir la lata fría, escuchar y ganar.</li>
-          </ul>
+      <!-- 3 Pilares Narrativos -->
+      <div class="narrative-pillars-grid">
+        <!-- Pilar 1 -->
+        <div class="narrative-pillar-card" style="border-top: 3px solid #ff4444;">
+          <div class="narrative-pillar-badge" style="background: rgba(255, 68, 68, 0.15); color: #ff6666;">
+            <span>📱</span> 1. La Tensión Contemporánea
+          </div>
+          <div class="narrative-pillar-title">La Distracción en el Segundo Crítico</div>
+          <div class="narrative-pillar-desc">
+            Vivimos en un estado de hiperestimulación. Notificaciones, feeds infinitos y pantallas simultáneas fragmentan la concentración en momentos decisivos. En una partida definitoria 1v1, en la entrega de un balance o en una noche de estudio, una vibración de celular cuesta la victoria.
+          </div>
         </div>
 
-        <!-- Solange -->
-        <div class="glass-card highlight-violet">
-          <div class="theory-pill">ARQUETIPO COTIDIANO · EXPANSIÓN CLUB FOCUS</div>
-          <h3 class="card-title">
-            <span class="card-title-icon">📊</span> Solange Herrera (28 años)
-          </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-            Analista de datos en empresa de software. Representa el territorio del trabajo remoto y estudio. Convive con decenas de pestañas de Chrome abiertas, chats de Slack e informes urgentes.
-          </p>
-          <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: none; display: flex; flex-direction: column; gap: 6px;">
-            <li><strong style="color: #fff;">Relato Exclusivo:</strong> Texto literario en la app Club Focus ("La primera página").</li>
-            <li><strong style="color: #fff;">Expansión Social:</strong> Formato audiovisual TikTok (P4) y diálogo de oficina.</li>
-            <li><strong style="color: #fff;">Comunidad:</strong> Convocatoria #MiVentanaFocus para historias de usuarios (CGU).</li>
-          </ul>
+        <!-- Pilar 2 -->
+        <div class="narrative-pillar-card" style="border-top: 3px solid var(--cyan);">
+          <div class="narrative-pillar-badge" style="background: rgba(4, 189, 251, 0.15); color: var(--cyan);">
+            <span>☕</span> 2. El Ritual Consciente
+          </div>
+          <div class="narrative-pillar-title">Preparación vs. Brebaje Mágico</div>
+          <div class="narrative-pillar-desc">
+            Rechazamos el cliché de la bebida energizante agresiva con taquicardia o <em>sugar crash</em>. Proponemos un ritual: apartar el smartphone, tomar la lata helada, respirar y disponerse mentalmente. La cafeína natural y la L-Teanina acompañan la claridad mental sostenida.
+          </div>
         </div>
 
-        <!-- El Búho -->
-        <div class="glass-card">
-          <div class="theory-pill">IDENTIDAD VISUAL · ANALOGÍA GRÁFICA</div>
-          <h3 class="card-title">
-            <span class="card-title-icon">🦉</span> El Búho Focus
-          </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-            El isotipo de Cabrales Focus encarna la <strong>vigilia lúcida, la serenidad y la precisión nocturna</strong>.
-          </p>
-          <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px;">
-            <strong style="color: var(--cyan);">Definición Clave para el Pitch:</strong> El búho NO es una mascota mágica que habla ni un deus ex machina que resuelve partidas. Aparece como firma gráfica y en el fundido final de ojos con Bruno en el cortometraje.
+        <!-- Pilar 3 -->
+        <div class="narrative-pillar-card" style="border-top: 3px solid var(--violet);">
+          <div class="narrative-pillar-badge" style="background: rgba(138, 79, 255, 0.15); color: var(--violet);">
+            <span>🦉</span> 3. Dimensión Sensorial (Buster)
           </div>
-          <div style="font-size: 0.78rem; color: var(--text-muted);">
-            <em>Dimensión Sensorial (Buster):</em> El sonido pop de la anilla, el frío metálico de la lata en la palma de la mano y el sorbo pausado.
+          <div class="narrative-pillar-title">El Anclaje Táctil y la Mirada Fija</div>
+          <div class="narrative-pillar-desc">
+            El foco se experimenta por los sentidos: la condensación fría de la lata, el sonido metálico <em>"clic-pshh"</em> de la anilla al abrirse y el Búho como símbolo arquetípico de vigilancia nocturna, agudeza y calma ante el desorden ambiental.
           </div>
+        </div>
+      </div>
+
+      <!-- Barra de Síntesis Sensorial y Lema de Marca -->
+      <div class="narrative-sensory-bar">
+        <img src="assets/owl_mascot.png" alt="Búho Cabrales Focus" style="width: 58px; height: 58px; filter: drop-shadow(0 0 15px var(--cyan));" />
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff;">
+            "Cabrales Focus. <span class="text-gradient">Precisión que se toma</span>"
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">
+            El relato articula toda la campaña transmedia: desde la historia de Bruno y Solange, pasando por la activación presencial en Dot Baires, hasta la fidelización en Club Focus.
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--cyan); font-weight: 700;">
+            🧊 Cold Brew Macerado
+          </span>
+          <span style="font-size: 0.72rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 20px; color: var(--violet); font-weight: 700;">
+            🎧 Ritual de Foco
+          </span>
         </div>
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 3: EJE AUDIOVISUAL CANON: CORTOMETRAJE "TURNO DE NOCHE"
+         SLIDE 3: BUYER PERSONAS FUNDACIONALES: BRUNO Y SOLANGE
          ---------------------------------------------------------------------- -->
     <section class="slide-section" id="slide-3">
       <header class="slide-header">
         <div class="slide-tag-row">
           <span class="slide-num-badge">BLOQUE 03</span>
-          <span class="slide-meta-pill">EJE AUDIOVISUAL CENTRAL (YOUTUBE)</span>
+          <span class="slide-meta-pill">INVESTIGACIÓN DE CAMPO & SEGMENTACIÓN DE AUDIENCIA</span>
         </div>
-        <h2 class="slide-title">Cortometraje: <span class="text-gradient">"Turno de Noche"</span> (3:50)</h2>
+        <h2 class="slide-title">Buyer Personas: <span class="text-gradient">Bruno Díaz & Solange Herrera</span></h2>
         <p class="slide-subtitle">
-          Pilar cinematográfico de la narrativa. Formato horizontal 16:9 (1920×1080), 25 fps. Conecta todos los nodos transmedia: la derrota inicial, el descubrimiento del post de Suga, la visita a Dot Baires y la victoria final con el ritual de la lata.
+          Construidos a partir del relevamiento muestral del TPO (73,3% de encuestados entre 18 y 29 años). La campaña demuestra que la necesidad de foco y el ritual de preparación abarcan tanto el rendimiento competitivo en eSports como la exigencia profesional y académica.
         </p>
       </header>
 
-      <div class="grid-asym-3-2">
-        <!-- Columna Reproductor -->
-        <div class="glass-card highlight-cyan" style="padding: 16px;">
-          <div class="video-player-container" id="shortfilm-player-box">
-            <iframe 
-              id="shortfilm-yt-iframe"
-              src="https://www.youtube.com/embed/iTbCR-DOe7E?rel=0&amp;enablejsapi=1" 
-              title="Cortometraje: Turno de Noche - Cabrales Focus"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-            <div id="shortfilm-local-fallback" class="local-video-fallback" style="display: none;">
-              <img src="assets/storyboard_slide.png" alt="Turno de Noche" class="fallback-poster" />
-              <div class="fallback-overlay">
-                <span class="fallback-badge">CORTOMETRAJE OFICIAL · 3:50</span>
-                <h3 class="fallback-title">Turno de Noche</h3>
-                <p class="fallback-desc">Por políticas de seguridad de Google, los videos embebidos en archivos locales (file://) se reproducen directamente en YouTube.</p>
-                <a href="https://youtu.be/iTbCR-DOe7E" target="_blank" rel="noopener noreferrer" class="fallback-play-btn">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <span>Reproducir en YouTube</span>
-                </a>
+      <!-- Grilla Comparativa de Buyer Personas -->
+      <div class="personas-grid">
+        <!-- Persona 1: Bruno Díaz -->
+        <div class="persona-card persona-bruno">
+          <div class="persona-header-row">
+            <div class="persona-avatar-box">
+              <div class="persona-avatar-icon">🎮</div>
+              <div>
+                <div class="persona-name-title">Bruno Díaz</div>
+                <div class="persona-subinfo">26 años · Estudiante universitario y Gamer (VALORANT) · CABA</div>
               </div>
             </div>
+            <span class="persona-tag-badge" style="background: rgba(4, 189, 251, 0.15); color: var(--cyan); border: 1px solid var(--border-cyan);">
+              Arquetipo Competitivo
+            </span>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 0 6px;">
-            <div style="font-size: 0.82rem; color: var(--text-secondary);">
-              <strong style="color: #fff;">Lenguaje Cinematográfico:</strong> Planos Generales (PG), Medios (PM), Primer Plano (PP) y Detalle (PD).
+
+          <div class="persona-quote-box">
+            "Entreno toda la semana con mi equipo. No hay nada que me dé más bronca que perder una ronda clutch por mirar el celular en el segundo equivocado."
+          </div>
+
+          <div class="persona-details-grid">
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Motivaciones & Deseos</div>
+              <div class="persona-detail-text">Pertenencia a su equipo, superación personal en rangos competitivos y disfrute de la adrenalina de los eSports.</div>
             </div>
-            <div style="font-size: 0.76rem; color: var(--cyan); background: var(--cyan-subtle); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-cyan);">
-              Subtitulado & Créditos Integrados
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Punto de Dolor (Tensión)</div>
+              <div class="persona-detail-text">Microdistracciones digitales nocturnas que arruinan su puntería y tiempo de reacción ante situaciones 1v1.</div>
             </div>
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Hábitos de Consumo</div>
+              <div class="persona-detail-text">Pasa +6h diarias frente a pantallas. Consume café tradicional pero busca un formato frío, práctico y sin preparación engorrosa.</div>
+            </div>
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Rol en la Campaña</div>
+              <div class="persona-detail-text">Protagonista del <strong>Cortometraje Canon</strong>. Representa el puente de entrada y credibilidad con la comunidad de gaming.</div>
+            </div>
+          </div>
+
+          <div class="persona-touchpoints-row">
+            <span style="color: var(--text-muted); font-weight: 700;">Canales:</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: #ff6666;">YouTube (Corto)</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: var(--violet);">Twitch (Suga)</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: var(--cyan);">Instagram / TikTok</span>
           </div>
         </div>
 
-        <!-- Columna Desglose de Escenas -->
-        <div class="glass-card" style="padding: 18px;">
-          <h3 class="card-title" style="font-size: 1rem; margin-bottom: 8px;">
-            <span>🎬</span> Estructura en 8 Escenas / 29 Planos
-          </h3>
-          <div class="scenes-breakdown-list">
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>1. La Derrota</span>
-                <span class="scene-time">0:00 - 0:45</span>
+        <!-- Persona 2: Solange Herrera -->
+        <div class="persona-card persona-solange">
+          <div class="persona-header-row">
+            <div class="persona-avatar-box">
+              <div class="persona-avatar-icon">📊</div>
+              <div>
+                <div class="persona-name-title">Solange Herrera</div>
+                <div class="persona-subinfo">28 años · Analista de Datos en software (Remoto / Híbrido) · CABA</div>
               </div>
-              <p class="scene-step-desc">1v1 decisivo en VALORANT. La vibración de una notificación distrae a Bruno; reacciona tarde y pierde la ronda.</p>
             </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>2. El Descubrimiento</span>
-                <span class="scene-time">0:45 - 1:15</span>
-              </div>
-              <p class="scene-step-desc">Bruno scrollea frustrado y encuentra la publicación P3 de Suga invitando a Modo Focus en Dot Baires Shopping.</p>
+            <span class="persona-tag-badge" style="background: rgba(138, 79, 255, 0.15); color: var(--violet); border: 1px solid var(--border-violet);">
+              Arquetipo Profesional
+            </span>
+          </div>
+
+          <div class="persona-quote-box">
+            "Entre reuniones, mensajes de Slack y miles de filas de datos, necesito un momento donde el mundo se pause para no cometer un error en la entrega final."
+          </div>
+
+          <div class="persona-details-grid">
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Motivaciones & Deseos</div>
+              <div class="persona-detail-text">Claridad mental, autonomía en sus tareas, entrega de reportes impecables y balance con su vida personal.</div>
             </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>3. La Llegada</span>
-                <span class="scene-time">1:15 - 1:40</span>
-              </div>
-              <p class="scene-step-desc">Al día siguiente, Bruno llega a la fachada de Dot Baires, consulta la publicación guardada y cruza el acceso.</p>
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Punto de Dolor (Tensión)</div>
+              <div class="persona-detail-text">Sobrecarga cognitiva provocada por la multitarea simultánea, notificaciones de trabajo y fatiga visual continua.</div>
             </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>4. La Entrega (Plano Detalle)</span>
-                <span class="scene-time">1:40 - 1:55</span>
-              </div>
-              <p class="scene-step-desc">Intercambio mano a mano: recibe la lata fría de Cabrales Focus; la gira y contempla la etiqueta.</p>
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Barrera Inicial</div>
+              <div class="persona-detail-text"><strong>No se siente identificada con el gaming ni con streamers</strong>. Requería un ángulo de campaña cotidiano y reflexivo.</div>
             </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>5. La Salida</span>
-                <span class="scene-time">1:55 - 2:10</span>
-              </div>
-              <p class="scene-step-desc">Sale del centro comercial con el objeto que transformará su noche; corte al escritorio.</p>
-            </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>6. La Preparación (Ritual Buster)</span>
-                <span class="scene-time">2:10 - 2:45</span>
-              </div>
-              <p class="scene-step-desc">Aparta el celular en silencio, abre la anilla de la lata, da un sorbo deliberado y se coloca los auriculares.</p>
-            </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>7. La Victoria</span>
-                <span class="scene-time">2:45 - 3:25</span>
-              </div>
-              <p class="scene-step-desc">Nuevo 1v1: concentración serena, escucha pasos, dispara y gana el clutch. Sonrisa de revancha.</p>
-            </div>
-            <div class="scene-step-card">
-              <div class="scene-step-head">
-                <span>8. Cierre & Créditos</span>
-                <span class="scene-time">3:25 - 3:50</span>
-              </div>
-              <p class="scene-step-desc">Fundido de ojos con el isotipo del búho, llamado a compra simulado en Club Focus y créditos de Franco Denk y Tomas Hokama.</p>
+            <div class="persona-detail-box">
+              <div class="persona-detail-label">Rol en la Campaña</div>
+              <div class="persona-detail-text">Pilar de <strong>Expansión Transmedia</strong> (P4 TikTok, P6 Stories y relato íntimo en Club Focus). Abre la campaña al gran público.</div>
             </div>
           </div>
+
+          <div class="persona-touchpoints-row">
+            <span style="color: var(--text-muted); font-weight: 700;">Canales:</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: var(--cyan);">TikTok (#MiVentanaFocus)</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: #ff8888;">Instagram Stories</span>
+            <span style="background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; color: var(--violet);">App Club Focus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Síntesis Estratégica -->
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+          <strong style="color: #fff;">Sinergia Transmedia:</strong> Bruno tracciona el descubrimiento masivo por afinidad cultural (eSports y streamings), mientras que Solange valida la propuesta para el segmento profesional y de estudio, impidiendo que la marca quede encasillada.
+        </div>
+        <div style="white-space: nowrap; font-size: 0.76rem; font-weight: 800; color: var(--cyan); background: rgba(4, 189, 251, 0.1); border: 1px solid var(--border-cyan); padding: 6px 14px; border-radius: 20px;">
+          73,3% TARGET 18–29 AÑOS
         </div>
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 4: ECOSISTEMA TRANSMEDIA & ACTIVACIÓN OFFLINE
+         SLIDE 4: EJE AUDIOVISUAL CENTRAL: CORTOMETRAJE "TURNO DE NOCHE"
          ---------------------------------------------------------------------- -->
     <section class="slide-section" id="slide-4">
-      <header class="slide-header">
-        <div class="slide-tag-row">
+      <header class="slide-header" style="text-align: center; margin-bottom: 18px;">
+        <div class="slide-tag-row" style="justify-content: center;">
           <span class="slide-num-badge">BLOQUE 04</span>
-          <span class="slide-meta-pill">EXPERIENCIA TRANSMEDIA & ACTIVACIÓN FÍSICA</span>
+          <span class="slide-meta-pill">PROYECCIÓN AUDIOVISUAL CENTRAL (YOUTUBE)</span>
+          <span class="slide-meta-pill" style="border-color: var(--cyan); color: var(--cyan);">DURACIÓN: 3:00 MIN</span>
         </div>
-        <h2 class="slide-title">Ecosistema Oficial: <span class="text-gradient">6 Plataformas & Dot Baires</span></h2>
-        <p class="slide-subtitle">
-          Aplicamos la máxima de Henry Jenkins y Carlos Scolari: <em>"Pedirle a cada medio lo mejor que pueda darnos"</em>. Ningún canal repite lo mismo; cada plataforma expande un ángulo único del universo de marca.
+        <h2 class="slide-title">Cortometraje Canon: <span class="text-gradient">"Turno de Noche"</span></h2>
+        <p class="slide-subtitle" style="margin: 0 auto; max-width: 820px;">
+          Pieza nodriza de la campaña. Narra el quiebre de Bruno ante la distracción digital, su descubrimiento de la activación de Suga en Instagram, la experiencia presencial en Dot Baires Shopping y el ritual de concentración que le devuelve la victoria.
         </p>
       </header>
 
-      <div class="grid-asym-3-2">
-        <!-- Matriz de las 6 Plataformas -->
-        <div class="glass-card">
-          <h3 class="card-title" style="margin-bottom: 14px;">
-            <span>🌐</span> Matriz de Aportes Narrativos Autónomos
-          </h3>
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">1. YouTube (Canon)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Cortometraje "Turno de noche" (3:50 horizontal). Relato completo de Bruno: derrota, visita y clutch.</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">2. Instagram (Visual)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Carrusel P2 (información de cold brew), placa AIDA P3 de Suga, Reel P5 (RTM) y Stories P6 interactivas.</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">3. TikTok (Ágil)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">P1 Teaser (precuela de Bruno) y P4 Solange (entrevista casual invitando a CGU con #MiVentanaFocus).</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">4. Twitch (Comunidad)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Stream en vivo "Guardia compartida" con Suga (35 min). Debate de hábitos y demo del sorteo en Club Focus.</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">5. Offline (Dot Baires)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Activación "Modo Focus" en Dot Baires Shopping. Espacio de aislamiento sensorial y entrega del producto.</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">6. App Club Focus (D2C)</div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Ecosistema móvil propio: historias transmedia escritas, mapa de cafeterías, canje de puntos y sorteo del Major.</div>
-            </div>
-          </div>
-        </div>
+      <div class="cinema-player-container">
+        <video controls preload="metadata" id="main-shortfilm-video" style="background: #000;">
+          <source src="assets/cortometraje_yt/Cortometraje final - Cabrales Focus.mp4" type="video/mp4" />
+          Tu navegador no soporta el reproductor de video HTML5.
+        </video>
+      </div>
 
-        <!-- Activación Modo Focus -->
-        <div class="glass-card highlight-cyan">
-          <div class="theory-pill">ACTIVACIÓN OFFLINE · INMERSIÓN & EXTRACCIÓN</div>
-          <h3 class="card-title">
-            <span>📍</span> Modo Focus en Dot Baires
-          </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.55;">
-            Un stand pop-up inmersivo en Dot Baires Shopping diseñado como una cápsula de silencio y concentración en medio del caos del shopping.
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem;">
-            <div style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 8px;">
-              <strong style="color: var(--cyan);">1. Inmersión Sensorial:</strong> El visitante apaga sus notificaciones por 3 minutos, experimenta iluminación tenue de tonos cian y se concentra en un mini-test de atención.
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 8px;">
-              <strong style="color: var(--cyan);">2. Extracción Física:</strong> Recibe una lata fría de Cabrales Focus para llevar a su propia rutina nocturna.
-            </div>
-            <div style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 8px;">
-              <strong style="color: var(--cyan);">3. Conexión Diegética:</strong> En el cortometraje, Bruno obtiene su lata exactamente aquí, legitimando la realidad del mundo propuesto.
-            </div>
-          </div>
-        </div>
+      <!-- Ficha Técnica de Producción Audiovisual -->
+      <div style="display: flex; justify-content: center; gap: 14px; align-items: center; margin-top: 16px; flex-wrap: wrap;">
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
+          🎬 <strong>Master:</strong> 1080p FHD (16:9 · 24fps)
+        </span>
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
+          🔊 <strong>Diseño Sonoro:</strong> Plano detalle foley de anilla (*"clic-pshh"*)
+        </span>
+        <span style="font-size: 0.76rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 6px; color: var(--text-secondary);">
+          🌐 <strong>Distribución:</strong> YouTube con puente diegético a Club Focus
+        </span>
+        <span style="font-size: 0.76rem; background: rgba(4, 189, 251, 0.1); border: 1px solid var(--border-cyan); padding: 5px 12px; border-radius: 6px; color: var(--cyan); font-weight: 700;">
+          🦉 Aparición y remisión al Isotipo del Búho
+        </span>
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 5: COLABORACIÓN CON INFLUENCER: SUGA & STREAM TWITCH
+         SLIDE 5: ANÁLISIS DEL CORTO & ECOSISTEMA DE MEDIOS
          ---------------------------------------------------------------------- -->
     <section class="slide-section" id="slide-5">
       <header class="slide-header">
         <div class="slide-tag-row">
           <span class="slide-num-badge">BLOQUE 05</span>
-          <span class="slide-meta-pill">INFLUENCER MARKETING (CLASE 8)</span>
+          <span class="slide-meta-pill">ANÁLISIS DE IMPACTO NARRATIVO & ECOSISTEMA TRANSMEDIA</span>
         </div>
-        <h2 class="slide-title">Colaboración Estratégica: <span class="text-gradient">Suga & Twitch</span></h2>
+        <h2 class="slide-title">Análisis Narrativo & <span class="text-gradient">Ecosistema Multiplataforma</span></h2>
         <p class="slide-subtitle">
-          Selección basada en <strong>afinidad temática y credibilidad comunitaria</strong> con el target de VALORANT, huyendo del influencer masivo genérico sin conexión con el ritual de juego.
+          Cómo el cortometraje construye valor para Cabrales S.A. y cómo cada uno de los 6 medios expande el relato bajo el principio de Henry Jenkins: <em>"Pedirle a cada medio lo mejor que pueda darnos, sin redundancias"</em>.
         </p>
       </header>
 
-      <div class="grid-asym-2-3">
-        <!-- Perfil Suga -->
-        <div class="glass-card highlight-cyan">
-          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 14px;">
-            <img src="assets/sugavct_pfp.jpg" alt="Foto de perfil de Suga (@sugavct)" style="width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid var(--cyan); object-fit: cover; box-shadow: 0 0 16px var(--cyan-glow);" />
-            <div>
-              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: #fff; display: flex; align-items: center; gap: 6px;">
-                Suga (Malena Souto) <span style="color: #0095f6; font-size: 1.05rem;" title="Verificada">✓</span>
-              </h3>
-              <div style="font-size: 0.84rem; color: var(--cyan); font-weight: 700; margin-top: 2px;">
-                <span>Instagram: <strong>@sugavct</strong></span> · <span>Twitch: /suga</span>
-              </div>
-              <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Macroinfluencer · VALORANT Argentina</span>
-            </div>
-          </div>
-
-          <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.06);">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.82rem;">
-              <span style="color: var(--text-muted);">Seguidores auditados:</span>
-              <strong style="color: #fff;">125.939 en Twitch</strong>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
-              <span style="color: var(--text-muted);">Clasificación (Clase 8):</span>
-              <strong style="color: var(--cyan);">Macro (100k - 1M)</strong>
-            </div>
-          </div>
-
-          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 12px;">
-            <strong style="color: #fff;">Criterio Teórico de Selección:</strong> La cátedra enseña que no se busca fama desmedida, sino <em>coherencia y reputación de nicho</em>. Suga es jugadora activa respetada por su comunidad, lo que valida naturalmente la presencia de la lata en su setup.
+      <!-- Tira Visual de los 3 Momentos del Corto -->
+      <div class="narrative-strip-grid">
+        <div class="narrative-step-card" style="border-top: 3px solid #ff4444;">
+          <div class="narrative-step-num">MOMENTO 1 · EL QUIEBRE</div>
+          <div class="narrative-step-title">Partida 1: La Distracción</div>
+          <p class="narrative-step-desc">
+            Vibración del celular en el clutch 1v1. La desconcentración momentánea le cuesta la partida a Bruno. Se instala el conflicto cultural real de la juventud frente a las pantallas sin forzar mención del producto.
           </p>
+        </div>
 
-          <div class="source-citation">
-            <span>📊</span>
-            <span>Fuente auditada: <a href="https://streamscharts.com/channels/suga" target="_blank" rel="noopener">Streams Charts (Corte Oct 2026)</a></span>
+        <div class="narrative-step-card" style="border-top: 3px solid var(--cyan);">
+          <div class="narrative-step-num">MOMENTO 2 · PUENTE DIEGÉTICO</div>
+          <div class="narrative-step-title">De Instagram a Dot Baires</div>
+          <p class="narrative-step-desc">
+            Bruno ve la publicación de Suga en redes que lo traslada a la activación física en <strong>Modo Focus en Dot Baires Shopping</strong>. La lata fría que recibe en el stand se incorpora físicamente a su rutina.
+          </p>
+        </div>
+
+        <div class="narrative-step-card" style="border-top: 3px solid var(--violet);">
+          <div class="narrative-step-num">MOMENTO 3 · EL RITUAL</div>
+          <div class="narrative-step-title">Partida 2: Sonido, Foco y Búho</div>
+          <p class="narrative-step-desc">
+            Aparta el celular, abre la lata fría (chasquido metálico <em>"clic-pshh"</em>), bebe y se predispone mentalmente. Escucha con nitidez, gana la ronda y su mirada funde con el Búho de Cabrales Focus.
+          </p>
+        </div>
+      </div>
+
+      <!-- Matriz de las 6 Plataformas -->
+      <div class="glass-card">
+        <h3 class="card-title" style="margin-bottom: 12px; font-size: 1.05rem;">
+          <span>🌐</span> Matriz Transmedia: Funciones Autónomas y Complementarias (Henry Jenkins)
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">1. YouTube (Canon)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Cortometraje completo "Turno de noche" (3:00 min). Relato cinematográfico largo y centro de gravedad narrativo de la campaña.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">2. TikTok (Inmediatez)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">P1 Teaser (precuela de Bruno) y P4 Solange (entrevista casual en su escritorio invitando a CGU con #MiVentanaFocus).</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">3. Instagram (Conversión)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Carrusel pedagógico P2 (atributos de cold brew), placa AIDA P3 de Suga, Reel P5 (RTM Major) y Stories P6 interactivas.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">4. Twitch (Comunidad)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Stream "Guardia compartida" con Suga (35 min). Diálogo en vivo sobre distracciones, votación de dilemas y demo de Club Focus.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">5. Dot Baires (Offline BTL)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Stand inmersivo "Modo Focus" en Saavedra. Sampling presencial de cold brew para quebrar la barrera de prueba y puente digital vía QR.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.85rem; margin-bottom: 4px;">6. Club Focus (App D2C)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Plataforma propia de fidelización: acumulación de puntos por anillas escaneadas, relatos literarios y sorteo de entradas al Major.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SLIDE 6: INFLUENCER MARKETING: COLABORACIÓN CON SUGA (@SUGAVCT)
+         ---------------------------------------------------------------------- -->
+    <section class="slide-section" id="slide-6">
+      <header class="slide-header">
+        <div class="slide-tag-row">
+          <span class="slide-num-badge">BLOQUE 06</span>
+          <span class="slide-meta-pill">INFLUENCER MARKETING & COMUNIDAD GAMING</span>
+        </div>
+        <h2 class="slide-title">Influencer Marketing: <span class="text-gradient">Colaboración con Suga (@sugavct)</span></h2>
+        <p class="slide-subtitle">
+          Sustento estratégico de la selección de Malena Souto (@sugavct) como embajadora de lanzamiento: legitimidad comunitaria en VALORANT, métricas de macroinfluencer auditadas en Twitch y rol pedagógico en el ritual y la app.
+        </p>
+      </header>
+
+      <div class="grid-2">
+        <!-- Columna 1: Perfil de Suga y Métricas Auditadas -->
+        <div class="suga-profile-card">
+          <div class="suga-profile-header">
+            <img src="assets/sugavct_pfp.jpg" alt="Foto de perfil de Suga (@sugavct)" class="suga-pfp-img" />
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: #fff; display: flex; align-items: center; gap: 8px;">
+                Suga (Malena Souto) <span style="color: #9146ff; font-size: 1.1rem;" title="Partner Twitch">✓</span>
+              </h3>
+              <div style="font-size: 0.85rem; color: #c4a7ff; font-weight: 700; margin-top: 2px;">
+                <span>Twitch: <strong>twitch.tv/suga</strong></span> · <span>Instagram: <strong>@sugavct</strong></span>
+              </div>
+              <span style="display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cyan); background: rgba(4,189,251,0.1); border: 1px solid var(--border-cyan); padding: 2px 8px; border-radius: 4px; font-weight: 700;">
+                Macroinfluencer de Nicho Gamer
+              </span>
+            </div>
+          </div>
+
+          <!-- Métricas Auditadas TPO -->
+          <div class="suga-metrics-grid">
+            <div class="suga-metric-item">
+              <div class="suga-metric-number" style="color: #c4a7ff;">125.939</div>
+              <div class="suga-metric-label">Seguidores en Twitch</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted); margin-top: 2px;">Auditado al 31/10/2026</div>
+            </div>
+            <div class="suga-metric-item">
+              <div class="suga-metric-number" style="color: var(--cyan);">Macro</div>
+              <div class="suga-metric-label">Rango Teórico IAB</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted); margin-top: 2px;">100k - 500k seguidores</div>
+            </div>
+            <div class="suga-metric-item">
+              <div class="suga-metric-number" style="color: #34d399;">94%</div>
+              <div class="suga-metric-label">Afinidad eSports</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted); margin-top: 2px;">Comunidad VALORANT activa</div>
+            </div>
+            <div class="suga-metric-item">
+              <div class="suga-metric-number" style="color: var(--cabrales-gold);">35 min</div>
+              <div class="suga-metric-label">Stream Patrocinado</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted); margin-top: 2px;">"Guardia compartida"</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; border: 1px solid rgba(255,255,255,0.06); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
+            <strong style="color: #fff;">Justificación Teórica (Libro Blanco IAB & Zuccherino):</strong> Suga combina el alcance masivo de un macroinfluencer con la credibilidad orgánica de un líder de opinión en eSports. No actúa como una celebridad lejana, sino como una par que comparte las mismas tensiones de rendimiento y sueño que su audiencia.
           </div>
         </div>
 
-        <!-- El Stream Patrocinado "Guardia Compartida" -->
-        <div class="glass-card highlight-violet">
-          <div class="theory-pill">ACTIVACIÓN DIGITAL EN VIVO · 35 MINUTOS</div>
-          <h3 class="card-title">
-            <span>📺</span> Stream "Guardia Compartida" & Demostración
-          </h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.5;">
-            Suga lidera una transmisión nocturna de 35 minutos en Twitch diseñada como un espacio de diálogo sobre hábitos de concentración, partidas rankeadas y preparación mental.
-          </p>
+        <!-- Columna 2: Las 3 Funciones Clave en Campaña -->
+        <div class="suga-mechanics-col">
+          <div class="suga-mechanic-card" style="border-left: 3px solid var(--cyan);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <strong style="color: var(--cyan); font-size: 0.88rem;">1. Convocatoria a Modo Focus (Placa P3)</strong>
+              <span style="font-size: 0.7rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px;">Instagram Feed</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin: 0;">
+              Suga publica en su perfil oficial la invitación diegética con fórmula AIDA. Moviliza el tráfico digital hacia el punto de experiencia física en Dot Baires Shopping (la misma escena que ve Bruno en el cortometraje).
+            </p>
+          </div>
 
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.82rem;">
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <strong style="color: var(--cyan);">1. Diálogo y Dilemas en Vivo:</strong>
-              <div style="color: var(--text-secondary); margin-top: 3px;">Se discuten y votan dos dilemas reales de distracción propuestos por la audiencia; la comunidad aporta el tercer caso para el archivo transmedia.</div>
+          <div class="suga-mechanic-card" style="border-left: 3px solid #9146ff;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <strong style="color: #c4a7ff; font-size: 0.88rem;">2. Live Stream "Guardia Compartida" (35 min)</strong>
+              <span style="font-size: 0.7rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px;">Twitch en Vivo</span>
             </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <strong style="color: var(--cyan);">2. Demostración en Directo de la App Club Focus:</strong>
-              <div style="color: var(--text-secondary); margin-top: 3px;">Suga toma una lata frente a cámara, abre la app, escanea el código QR bajo la anilla, muestra la acreditación de 100 puntos y canjea un bono para el sorteo del FiReMAJOR Buenos Aires 2027.</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin: 0;">
+              Transmisión nocturna donde reflexiona sobre el foco en el juego. Abre una encuesta en vivo en el chat donde la comunidad vota qué distracción los afecta más y propone un dilema para el Archivo de Ventanas de la app.
+            </p>
+          </div>
+
+          <div class="suga-mechanic-card" style="border-left: 3px solid var(--cabrales-gold);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <strong style="color: var(--cabrales-gold); font-size: 0.88rem;">3. Demostración en Directo del Ecosistema D2C</strong>
+              <span style="font-size: 0.7rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px;">Onboarding Club Focus</span>
             </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-              <strong style="color: var(--cyan);">3. Chat Fijado & Puente Multiplataforma:</strong>
-              <div style="color: var(--text-secondary); margin-top: 3px;">Comando !focus en el chat con enlace directo a la descarga de la app y la agenda de Modo Focus en Dot Baires.</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin: 0;">
+              Frente a cámara, Suga abre una lata fría (*"clic-pshh"*), muestra el QR único bajo la anilla, lo escanea en vivo en su teléfono, acredita 100 puntos y canjea un bono para el sorteo del Major 2027, educando a la audiencia en la mecánica de lealtad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SLIDE 7: ACTIVACIÓN OFFLINE BTL: MODO FOCUS EN DOT BAIRES SHOPPING
+         ---------------------------------------------------------------------- -->
+    <section class="slide-section" id="slide-7">
+      <header class="slide-header">
+        <div class="slide-tag-row">
+          <span class="slide-num-badge">BLOQUE 07</span>
+          <span class="slide-meta-pill">ACTIVACIÓN EXPERIENCIAL BTL & SAMPLING FÍSICO</span>
+        </div>
+        <h2 class="slide-title">Activación Offline: <span class="text-gradient">Modo Focus en Dot Baires Shopping</span></h2>
+        <p class="slide-subtitle">
+          Instalación BTL inmersiva y sampling mano a mano para quebrar la barrera de prueba del cold brew en lata (52% de desconocimiento en la muestra), conectando la vivencia física con la narrativa transmedia y Club Focus.
+        </p>
+      </header>
+
+      <div class="dot-baires-layout">
+        <!-- Columna 1: Ubicación Física & Fachada Oficial -->
+        <div class="dot-location-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
+              <span>🏢</span> Dot Baires Shopping · Sede Oficial
+            </div>
+            <span style="font-size: 0.72rem; color: #ffd88a; font-weight: 700; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); padding: 3px 8px; border-radius: 4px;">
+              Punto de Activación BTL
+            </span>
+          </div>
+
+          <img src="assets/dot_baires_shopping.jpg" alt="Fachada exterior iluminada de Dot Baires Shopping" class="dot-facade-img" />
+
+          <div class="dot-address-chip">
+            <span style="font-size: 1.2rem;">📍</span>
+            <div>
+              <div style="font-weight: 800; color: #fff;">Vedia 3600, Saavedra, CABA</div>
+              <div style="font-size: 0.74rem; color: #e0d0b0; margin-top: 1px;">
+                Cruce estratégico de Autopista Panamericana y Av. General Paz · Polo de alto flujo juvenil
+              </div>
+            </div>
+          </div>
+
+          <div class="dot-map-wrapper">
+            <div style="font-size: 1.8rem; background: rgba(245, 158, 11, 0.15); width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              🗺️
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">
+              <strong style="color: #fff;">Por qué Dot Baires:</strong> Concentra el público objetivo de 18 a 30 años de CABA y Zona Norte, con cines, patio de comidas tecnológico y cercanía a corredores universitarios.
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 2: Stand Inmersivo "La Guarida del Búho" & Sampling -->
+        <div class="dot-stand-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
+              <span>🦉</span> Stand Inmersivo: "La Guarida del Búho"
+            </div>
+            <span style="font-size: 0.72rem; color: var(--cyan); font-weight: 700; background: rgba(4, 189, 251, 0.12); border: 1px solid var(--border-cyan); padding: 3px 8px; border-radius: 4px;">
+              Experiencia Sensorial 3 Min
+            </span>
+          </div>
+
+          <img src="assets/guarida_buho_ooh.png" alt="Stand inmersivo La Guarida del Búho en Dot Baires" class="dot-stand-img" />
+
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem;">
+            <div style="background: rgba(0,0,0,0.35); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: var(--cyan);">1. Cabina Acústica de Desconexión (3 min):</strong>
+              <div style="color: var(--text-secondary); margin-top: 2px;">Espacio insonorizado con iluminación tenue cian y auriculares con cancelación de ruido activa donde el visitante identifica su distracción más recurrente.</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.35); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: var(--cyan);">2. Sampling Frío Mano a Mano:</strong>
+              <div style="color: var(--text-secondary); margin-top: 2px;">Entrega gratuita de una lata fría Cabrales Focus (240ml). El visitante recrea en primera persona la misma escena que vive Bruno en el cortometraje.</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.35); padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: var(--cyan);">3. Puente Digital con Anilla QR:</strong>
+              <div style="color: var(--text-secondary); margin-top: 2px;">El promotor invita a escanear el código QR bajo la anilla para registrarse en <em>Club Focus</em> e ingresar con 100 puntos automáticos de bienvenida.</div>
             </div>
           </div>
         </div>
@@ -476,31 +656,53 @@
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 6: LAS 6 PUBLICACIONES EN REDES SOCIALES (P1 A P6)
+         SLIDE 8: EMBUDO DE LANZAMIENTO: P1, P2 Y P3
          ---------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------------
-         SLIDE 6: LAS 6 PUBLICACIONES EN REDES SOCIALES (SIMULADOR INSTAGRAM & FEED)
-         ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-6">
+    <section class="slide-section" id="slide-8">
       <header class="slide-header">
         <div class="slide-tag-row">
-          <span class="slide-num-badge">BLOQUE 06</span>
-          <span class="slide-meta-pill">CONTENIDOS RRSS · MOCKUPS NATIVOS DE INSTAGRAM & REDES</span>
+          <span class="slide-num-badge">BLOQUE 08</span>
+          <span class="slide-meta-pill">EMBUDO DE CONVERSIÓN & CONTENIDOS DE LANZAMIENTO</span>
         </div>
-        <h2 class="slide-title">Las 6 Publicaciones: <span class="text-gradient">Simulación en Instagram & Redes</span></h2>
+        <h2 class="slide-title">Embudo de Lanzamiento: <span class="text-gradient">Secuencia P1 ➔ P2 ➔ P3</span></h2>
         <p class="slide-subtitle">
-          Cumplimiento riguroso de la consigna: <strong>2 imágenes/carrusel, 3 audiovisuales, 1 libre</strong> con copies bajo <strong>fórmula AIDA, Real Time Marketing (RTM) y Contenido Generado por Usuario (CGU)</strong>, simulados en interfaz nativa de smartphone.
+          Cómo se encadenan las primeras 3 piezas: <strong>P1</strong> instala la curiosidad; <strong>P2</strong> educa sobre los atributos del cold brew; y <strong>P3</strong> moviliza a la acción con fórmula AIDA hacia Dot Baires y Twitch.
         </p>
       </header>
 
-      <!-- Selector de publicaciones P1 a P6 -->
+      <!-- Barra de Embudo Visual -->
+      <div class="funnel-pipeline-bar">
+        <div class="funnel-step-pill step-p1">
+          <span class="funnel-step-icon">🎬</span>
+          <div>
+            <div class="funnel-step-tag">FASE 1 · INTRIGA</div>
+            <div class="funnel-step-name">P1 · Teaser Bruno (TikTok)</div>
+            <div class="funnel-step-purpose">Despierta curiosidad ➔ Deriva al estreno en YouTube</div>
+          </div>
+        </div>
+        <div class="funnel-step-pill step-p2">
+          <span class="funnel-step-icon">☕</span>
+          <div>
+            <div class="funnel-step-tag">FASE 2 · EDUCACIÓN</div>
+            <div class="funnel-step-name">P2 · Carrusel Cold Brew (IG)</div>
+            <div class="funnel-step-purpose">Educa sobre el café listo para tomar y L-teanina</div>
+          </div>
+        </div>
+        <div class="funnel-step-pill step-p3">
+          <span class="funnel-step-icon">🎯</span>
+          <div>
+            <div class="funnel-step-tag">FASE 3 · CONVERSIÓN AIDA</div>
+            <div class="funnel-step-name">P3 · Suga Modo Focus (IG)</div>
+            <div class="funnel-step-purpose">Convierte la curiosidad en asistencia a Dot Baires y stream</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selector de publicaciones P1 a P3 -->
       <div class="pub-selector-tabs">
         <button type="button" class="pub-tab-btn active" data-pub-target="pub-p1">P1 · Teaser Bruno (TikTok)</button>
         <button type="button" class="pub-tab-btn" data-pub-target="pub-p2">P2 · Carrusel Producto (Instagram)</button>
         <button type="button" class="pub-tab-btn" data-pub-target="pub-p3">P3 · Suga Modo Focus AIDA (Instagram)</button>
-        <button type="button" class="pub-tab-btn" data-pub-target="pub-p4">P4 · Solange CGU (TikTok)</button>
-        <button type="button" class="pub-tab-btn" data-pub-target="pub-p5">P5 · Spot Major RTM (Reels)</button>
-        <button type="button" class="pub-tab-btn" data-pub-target="pub-p6">P6 · Stories Votación (Instagram)</button>
       </div>
 
       <!-- ------------------------------------------------------------------
@@ -859,11 +1061,34 @@ Cabrales Focus. Precisión que se toma.
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SLIDE 9: EXPANSIÓN DE MERCADO, RTM & DOBLE EMBUDO: P4, P5 Y P6
+         ---------------------------------------------------------------------- -->
+    <section class="slide-section" id="slide-9">
+      <header class="slide-header">
+        <div class="slide-tag-row">
+          <span class="slide-num-badge">BLOQUE 09</span>
+          <span class="slide-meta-pill">EXPANSIÓN TRANSMEDIA, RTM & DOBLE EMBUDO</span>
+        </div>
+        <h2 class="slide-title">Expansión & Engagement: <span class="text-gradient">P4, P5 y P6 hacia Club Focus</span></h2>
+        <p class="slide-subtitle">
+          Diversificación del público con Solange (CGU), capitalización de coyuntura con el Major de CS2 (RTM) y cierre de participación con Stories interactivas.
+        </p>
+      </header>
+
+      <!-- Selector de publicaciones P4 a P6 -->
+      <div class="pub-selector-tabs">
+        <button type="button" class="pub-tab-btn active" data-pub-target="pub-p4">P4 · Solange CGU (TikTok)</button>
+        <button type="button" class="pub-tab-btn" data-pub-target="pub-p5">P5 · Spot Major RTM (Reels)</button>
+        <button type="button" class="pub-tab-btn" data-pub-target="pub-p6">P6 · Stories Votación (Instagram)</button>
+      </div>
 
       <!-- ------------------------------------------------------------------
            P4: TIKTOK SOLANGE (INCENTIVO CGU)
            ------------------------------------------------------------------ -->
-      <div class="pub-detail-pane" id="pub-p4">
+      <div class="pub-detail-pane active" id="pub-p4">
         <div class="phone-mockup">
           <div class="phone-screen">
             <div class="phone-status-bar">
@@ -974,7 +1199,7 @@ Cabrales Focus. Precisión que se toma.
 
             <!-- Reels Video Container with Real Video Playback -->
             <div class="reels-screen-wrapper">
-              <video id="p5-reels-video" controls loop poster="assets/spot_p5_major2027/mockup_spot_phone_presentation.png">
+              <video id="p5-reels-video" controls loop preload="metadata" style="background: #000; width: 100%; height: 100%; object-fit: cover;">
                 <source src="assets/spot_p5_major2027/P5 Definitivo.mp4" type="video/mp4" />
                 <source src="assets/spot_p5_major2027/spot_cabrales_focus_major_2027.mp4" type="video/mp4" />
               </video>
@@ -1168,25 +1393,98 @@ Cabrales Focus. Precisión que se toma.
           </div>
         </div>
       </div>
+
+      <!-- Diagrama de Síntesis del Doble Embudo hacia Club Focus -->
+      <div class="double-funnel-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--cyan); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;">ARQUITECTURA DE CONVERSIÓN DE LA CAMPAÑA</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-top: 2px;">
+              Doble Embudo de Captación hacia <span class="text-gradient">Club Focus</span>
+            </h3>
+          </div>
+          <span style="font-size: 0.76rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px;">
+            Síntesis Estratégica · Doble Embudo
+          </span>
+        </div>
+
+        <div class="double-funnel-grid">
+          <!-- Ruta A: Emocional & Comunidad -->
+          <div class="funnel-route-card" style="border-left: 3px solid var(--violet);">
+            <div class="funnel-route-title" style="color: var(--violet);">
+              <span>📖</span> Vía 1: Historias, Comunidad & CGU
+            </div>
+            <div style="font-size: 0.8rem; color: #fff; font-weight: 700; margin-bottom: 4px;">
+              P4 (TikTok Solange) + P6 (Stories Interactivas)
+            </div>
+            <p style="font-size: 0.76rem; color: var(--text-secondary); margin: 0; line-height: 1.4;">
+              Convocatoria #MiVentanaFocus y encuestas de distracciones derivan al <strong>Archivo de Ventanas</strong> y al relato escrito de Solange en la app (100% libre, sin barrera de compra).
+            </p>
+          </div>
+
+          <!-- Centro: El Hub Central Club Focus -->
+          <div class="funnel-hub-badge">
+            <span style="font-size: 1.1rem;">🦉</span>
+            <span>CLUB<br/>FOCUS</span>
+          </div>
+
+          <!-- Ruta B: Transaccional & Recompensas -->
+          <div class="funnel-route-card" style="border-left: 3px solid var(--cabrales-red);">
+            <div class="funnel-route-title" style="color: #ff8888;">
+              <span>🎟️</span> Vía 2: Transaccional & Lealtad (RTM)
+            </div>
+            <div style="font-size: 0.8rem; color: #fff; font-weight: 700; margin-bottom: 4px;">
+              P5 (Spot Reels Major) + Sampling Dot Baires
+            </div>
+            <p style="font-size: 0.76rem; color: var(--text-secondary); margin: 0; line-height: 1.4;">
+              Compra de latas y escaneo de códigos QR únicos bajo la anilla acumulan puntos en la app para canjear por <strong>bonos para el FiReMAJOR 2027</strong> y descuentos en eShop.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 7: APP MÓVIL PROPIA: CLUB FOCUS & FIDELIZACIÓN D2C
+         SLIDE 10: APP MÓVIL PROPIA: CLUB FOCUS & FIDELIZACIÓN D2C
          ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-7">
+    <section class="slide-section" id="slide-10">
       <header class="slide-header">
         <div class="slide-tag-row">
-          <span class="slide-num-badge">BLOQUE 07</span>
+          <span class="slide-num-badge">BLOQUE 10</span>
           <span class="slide-meta-pill">PLATAFORMA PROPIA & GAMIFICACIÓN (DIRECT-TO-CONSUMER)</span>
         </div>
-        <h2 class="slide-title">App Móvil Propia: <span class="text-gradient">Club Focus</span></h2>
+        <h2 class="slide-title">Plataforma Propia D2C: <span class="text-gradient">Club Focus</span></h2>
         <p class="slide-subtitle">
-          El corazón de retención de la campaña. No dejamos al usuario en redes sociales de terceros: lo atraemos a una plataforma propia donde el producto físico se convierte en <strong>puntos, historias, descuentos y experiencias</strong>.
+          El corazón de retención de la campaña. Transformamos el producto físico en un activo digital de fidelización, recompra y captura de First-Party Data para Cabrales S.A.
         </p>
       </header>
 
+      <!-- Caja de la Ecuación de Lealtad -->
+      <div class="points-equation-box">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="color: var(--cyan); font-family: var(--font-heading); font-size: 0.88rem;">
+            ⚡ Regla de Oro de Gamificación: "Registrar una lata suma puntos; canjearlos genera la participación o descuento"
+          </strong>
+          <span style="font-size: 0.72rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px;">Código QR Único bajo la Anilla</span>
+        </div>
+        <div class="points-equation-grid">
+          <div class="points-equation-item">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.78rem;">100 Pts Canjeables (Inmortales)</div>
+            <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">Saldo permanente que NO vence. Se usa para canjear merchandising del búho y bonos del Major.</div>
+          </div>
+          <div class="points-equation-item">
+            <div style="color: var(--violet); font-weight: 800; font-size: 0.78rem;">100 Pts de Nivel (Móviles a 3 Meses)</div>
+            <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">Vigencia trimestral para forzar la recurrencia de compra: Nivel 1 (5%), Nivel 2 (10%), Nivel 3 (15%).</div>
+          </div>
+          <div class="points-equation-item">
+            <div style="color: #a3e635; font-weight: 800; font-size: 0.78rem;">Acceso Libre a Contenidos (0 Pts)</div>
+            <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">El relato escrito de Solange y el Archivo de Ventanas son 100% abiertos, sin exigencia de compra.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="app-simulator-layout">
-        <!-- Mockup Smartphone Auténtico con Pantallas Reales 9:16 -->
+        <!-- Mockup Smartphone Auténtico con Pantallas Reales Generadas con IA -->
         <div class="app-phone-container">
           <!-- Selector de Pantallas de la App -->
           <div class="app-screen-selector-tabs" role="tablist">
@@ -1206,7 +1504,7 @@ Cabrales Focus. Precisión que se toma.
             <!-- Dynamic Island / Speaker Notch -->
             <div class="phone-dynamic-island"></div>
 
-            <!-- Pantalla del Celular 9:16 -->
+            <!-- Pantalla del Celular 9:16 con Imagen de IA -->
             <div class="app-screen-device" id="app-screen-interactive-frame" title="Click para alternar entre pantallas">
               <img id="app-screen-display" src="assets/app_club_focus/app_homepage.jpg" alt="Pantalla App Club Focus - Inicio" class="app-screen-img" />
               <div class="app-screen-hint-badge">
@@ -1275,7 +1573,7 @@ Cabrales Focus. Precisión que se toma.
               <span>📈</span> Retención & Captura de Datos Direct-to-Consumer (D2C)
             </h3>
             <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
-              La app convierte el consumo off-line en métricas accionables: frecuencia de apertura de latas por franja horaria, geolocalización de consumo nocturno y contacto directo sin depender de los algoritmos de Meta o Google.
+              La app convierte el consumo off-line en métricas accionables para Cabrales S.A.: frecuencia de apertura por franja horaria, geolocalización de consumo nocturno y contacto directo sin depender de los algoritmos de Meta o Google.
             </p>
           </div>
         </div>
@@ -1283,12 +1581,12 @@ Cabrales Focus. Precisión que se toma.
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 8: RED DE REMISIONES & CRONOGRAMA DE LANZAMIENTO
+         SLIDE 11: RED DE REMISIONES & CRONOGRAMA DE LANZAMIENTO
          ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-8">
+    <section class="slide-section" id="slide-11">
       <header class="slide-header">
         <div class="slide-tag-row">
-          <span class="slide-num-badge">BLOQUE 08</span>
+          <span class="slide-num-badge">BLOQUE 11</span>
           <span class="slide-meta-pill">PLANIFICACIÓN ESTRATÉGICA & CIRCULACIÓN</span>
         </div>
         <h2 class="slide-title">Red de Remisiones & <span class="text-gradient">Cronograma de Fases</span></h2>
@@ -1336,26 +1634,41 @@ Cabrales Focus. Precisión que se toma.
           <h3 class="card-title" style="margin-bottom: 12px;">
             <span>📅</span> Secuencia de Lanzamiento de Campaña
           </h3>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem;">
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.8rem;">
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 1: Teaser & Precuela</strong>
-              <div style="color: var(--text-muted);">P1 en TikTok/Reels instalando la temática de la distracción nocturna.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 1: Teaser & Precuela</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas -2 a 0</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">P1 en TikTok/Reels instalando la temática de la distracción nocturna.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 2: Lanzamiento & Canon Audiovisual</strong>
-              <div style="color: var(--text-muted);">Estreno de "Turno de noche" en YouTube + Carrusel P2 informativo + P3 Suga.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 2: Lanzamiento & Canon Audiovisual</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Día 1</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Estreno de "Turno de noche" en YouTube + Carrusel P2 informativo + P3 Suga.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 3: Activación Offline & Experiencial</strong>
-              <div style="color: var(--text-muted);">Apertura de "Modo Focus" en Dot Baires + Stream nocturno "Guardia compartida".</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 3: Activación Offline & Experiencial</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas 1 a 3</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Apertura de "Modo Focus" en Dot Baires + Stream nocturno "Guardia compartida".</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 4: Expansión Comunitaria & Real Time Marketing</strong>
-              <div style="color: var(--text-muted);">Lanzamiento de P5 (FiReMAJOR 2027) + P4 Solange (#MiVentanaFocus) + P6 Stories.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 4: Expansión Comunitaria & Real Time Marketing</strong>
+                <span style="font-size: 0.68rem; color: var(--cyan); background: rgba(4,189,251,0.1); padding: 2px 6px; border-radius: 4px;">Semanas 3 a 6</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Lanzamiento de P5 (FiReMAJOR 2027) + P4 Solange (#MiVentanaFocus) + P6 Stories.</div>
             </div>
             <div style="border-left: 2px solid var(--cyan); padding-left: 10px;">
-              <strong style="color: #fff;">Fase 5: Retención Permanente en Club Focus</strong>
-              <div style="color: var(--text-muted);">Acumulación de puntos, niveles móviles a 3 meses y resolución del sorteo.</div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: #fff;">Fase 5: Retención Permanente en Club Focus</strong>
+                <span style="font-size: 0.68rem; color: var(--cabrales-gold); background: rgba(245,158,11,0.1); padding: 2px 6px; border-radius: 4px;">Permanente</span>
+              </div>
+              <div style="color: var(--text-muted); margin-top: 2px;">Acumulación de puntos, niveles móviles a 3 meses y resolución del sorteo.</div>
             </div>
           </div>
         </div>
@@ -1363,17 +1676,82 @@ Cabrales Focus. Precisión que se toma.
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SLIDE 9: FUNDAMENTOS TEÓRICOS & FUENTES DOCUMENTALES
+         SLIDE 12: CIERRE DEL PITCH, PROPUESTA DE VALOR & DEMO
          ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-9">
+    <section class="slide-section" id="slide-12">
+      <div class="glass-card" style="text-align: center; padding: 40px 30px; background: radial-gradient(circle at 50% 10%, rgba(4,189,251,0.2), rgba(138,79,255,0.15), #090303 85%); border-color: rgba(4,189,251,0.45); max-width: 1000px; margin: 0 auto;">
+        <div class="slide-tag-row" style="justify-content: center; margin-bottom: 14px;">
+          <span class="slide-num-badge">BLOQUE 12</span>
+          <span class="slide-meta-pill">CIERRE ESTRATÉGICO & PROPUESTA DE VALOR</span>
+        </div>
+
+        <img src="assets/owl_mascot.png" alt="Búho Cabrales Focus" style="width: 76px; height: 76px; margin-bottom: 12px; filter: drop-shadow(0 0 20px var(--cyan));" />
+        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 3.8vw, 2.8rem); font-weight: 900; margin-bottom: 10px;">
+          "Precisión que se toma." <br /><span class="text-gradient">El Territorio de Cabrales Focus</span>
+        </h2>
+        <p style="color: var(--text-secondary); max-width: 760px; margin: 0 auto 20px; font-size: 1rem; line-height: 1.55;">
+          Estimados directivos de Cabrales: esta campaña no es un gasto efímero, sino la construcción de un <strong>territorio cultural permanente</strong>. Conectamos el legado histórico de calidad de Cabrales con el dinamismo del gaming, el relato cinematográfico y una plataforma Direct-to-Consumer propia.
+        </p>
+
+        <!-- 3 Pilares de Valor para Cabrales -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; text-align: left;">
+          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.88rem; margin-bottom: 4px;">1. Rejuvenecimiento</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Entrada auténtica al segmento 18-30 años sin erosionar la tradición cafetera clásica de Cabrales.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.88rem; margin-bottom: 4px;">2. Ecosistema Canon</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Cortometraje emotivo, influencers de nicho respetados y activación experiencial física en Dot Baires.</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: var(--cyan); font-weight: 800; font-size: 0.88rem; margin-bottom: 4px;">3. Activo Propio (D2C)</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Club Focus asegura base de datos propia, recompra recurrente y fidelización continua en la eShop.</div>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Llamado a la Acción & Demo Interactiva en Vivo -->
+        <div class="live-demo-card">
+          <div class="live-demo-title">
+            <span>📱</span> Invitación al Directorio: Experiencia de Usuario en Vivo
+          </div>
+          <p class="live-demo-desc">
+            Los invitamos a ponerse en los zapatos del usuario final: respondan la encuesta interactiva en Instagram Stories, elijan qué distracción los afecta y descubran cómo la campaña los conduce fluidamente hacia el relato de Solange en Club Focus.
+          </p>
+          <div class="live-demo-actions-row">
+            <button type="button" class="demo-action-btn" data-open-pub="pub-p6">
+              <span>📊</span> Probar Stories P6 en Vivo
+            </button>
+            <button type="button" class="demo-action-btn btn-violet" data-open-slide="9">
+              <span>🦉</span> Abrir Simulador de Club Focus
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div style="display: inline-block; background: rgba(4,189,251,0.12); border: 1px solid var(--border-cyan); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; color: var(--cyan); margin-bottom: 12px;">
+            🎯 PRESENTACIÓN DE CAMPAÑA FINALIZADA · ESPACIO DE CONSULTAS
+          </div>
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">
+            <strong>Agencia Transmedia Focus</strong> · Presentación para Directorio de <strong>Cabrales S.A.</strong><br />
+            Taller de Narrativas Digitales (UADE) · Prof. Lic. Carolina Dávila
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SLIDE 13: ANEXO: FUNDAMENTOS TEÓRICOS & AUDITORÍA DE FUENTES (PREGUNTAS)
+         ---------------------------------------------------------------------- -->
+    <section class="slide-section" id="slide-13">
       <header class="slide-header">
         <div class="slide-tag-row">
-          <span class="slide-num-badge">BLOQUE 09</span>
-          <span class="slide-meta-pill">RIGOR METODOLÓGICO & DEFENSA INDIVIDUAL</span>
+          <span class="slide-num-badge">BLOQUE 13</span>
+          <span class="slide-meta-pill" style="background: rgba(245,158,11,0.15); color: var(--cabrales-gold); border-color: rgba(245,158,11,0.4);">ANEXO DE RESPALDO METODOLÓGICO</span>
+          <span class="slide-meta-pill">DEFENSA INDIVIDUAL & PREGUNTAS</span>
         </div>
         <h2 class="slide-title">Fundamentos Teóricos & <span class="text-gradient">Fuentes Auditadas</span></h2>
         <p class="slide-subtitle">
-          Cada decisión creativa y operativa del proyecto responde estrictamente a la bibliografía académica del <strong>Taller de Narrativas Digitales (UADE)</strong>.
+          Cada decisión creativa, narrativa y operativa del proyecto responde estrictamente a la bibliografía del <strong>Taller de Narrativas Digitales (UADE)</strong>.
         </p>
       </header>
 
@@ -1436,44 +1814,41 @@ Cabrales Focus. Precisión que se toma.
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ----------------------------------------------------------------------
-         SLIDE 10: CIERRE DEL PITCH & PROPUESTA DE VALOR PARA CABRALES
-         ---------------------------------------------------------------------- -->
-    <section class="slide-section" id="slide-10">
-      <div class="glass-card" style="text-align: center; padding: 48px 30px; background: radial-gradient(circle at 50% 10%, rgba(4,189,251,0.2), rgba(138,79,255,0.15), #090303 85%); border-color: rgba(4,189,251,0.45); max-width: 1000px; margin: 0 auto;">
-        <img src="assets/owl_mascot.png" alt="Búho Cabrales Focus" style="width: 80px; height: 80px; margin-bottom: 12px; filter: drop-shadow(0 0 20px var(--cyan));" />
-        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 900; margin-bottom: 12px;">
-          "Precisión que se toma." <br /><span class="text-gradient">El Momento de Cabrales Focus</span>
-        </h2>
-        <p style="color: var(--text-secondary); max-width: 760px; margin: 0 auto 24px; font-size: 1.05rem; line-height: 1.6;">
-          Señores directivos de Cabrales: esta campaña no es un simple aviso publicitario, sino la creación de un <strong>territorio cultural permanente</strong>. Unimos el legado de calidad de Cabrales con el dinamismo del gaming, el contenido cinematográfico y una plataforma Direct-to-Consumer propia.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px; text-align: left;">
-          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-            <div style="color: var(--cyan); font-weight: 800; font-size: 0.9rem; margin-bottom: 4px;">1. Rejuvenecimiento</div>
-            <div style="font-size: 0.8rem; color: var(--text-secondary);">Entrada auténtica al segmento 18-30 años sin erosionar la tradición cafetera clásica.</div>
+      <!-- 7 Principios de Henry Jenkins aplicados a Cabrales Focus -->
+      <div class="glass-card" style="margin-top: 14px;">
+        <h3 class="card-title" style="margin-bottom: 10px; font-size: 0.95rem;">
+          <span>🎯</span> Aplicación de los 7 Principios Transmedia (Henry Jenkins)
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; font-size: 0.76rem;">
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">1. Expansión vs. Profundidad:</strong>
+            <span style="color: var(--text-secondary);"> Difusión viral en TikTok/Reels (P1) y Stories (P6); profundidad narrativa en el corto canon y relato de Solange.</span>
           </div>
-          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-            <div style="color: var(--cyan); font-weight: 800; font-size: 0.9rem; margin-bottom: 4px;">2. Ecosistema Canon</div>
-            <div style="font-size: 0.8rem; color: var(--text-secondary);">Cortometraje emotivo, influencers con credibilidad y activación física memorable.</div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">2. Continuidad vs. Multiplicidad:</strong>
+            <span style="color: var(--text-secondary);"> Continuidad canónica de marca y Búho; multiplicidad de miradas (Bruno gamer, Solange analista, Suga streamer).</span>
           </div>
-          <div style="background: rgba(255,255,255,0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-            <div style="color: var(--cyan); font-weight: 800; font-size: 0.9rem; margin-bottom: 4px;">3. Activo Propio (D2C)</div>
-            <div style="font-size: 0.8rem; color: var(--text-secondary);">Club Focus asegura base de datos propia, recompra recurrente y comunidad leal.</div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">3. Inmersión vs. Extraibilidad:</strong>
+            <span style="color: var(--text-secondary);"> Inmersión acústica en stand Dot Baires; extraibilidad física con la lata, stickers y anilla QR coleccionable.</span>
           </div>
-        </div>
-
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">
-          <strong>Taller de Narrativas Digitales (UADE)</strong> · Profesora: <strong>Lic. Carolina Dávila</strong><br />
-          Equipo Creativo & Defensa Oral: <strong>Franco Denk · Tomas Hokama</strong>
-        </p>
-
-        <div style="display: flex; justify-content: center; gap: 14px;">
-          <a href="#slide-1" class="hud-btn" style="text-decoration: none; padding: 10px 22px; font-size: 0.9rem;">↺ Volver a la Portada</a>
-          <button type="button" class="hud-btn" id="cierre-fullscreen-btn" onclick="document.documentElement.requestFullscreen()" style="background: var(--cyan); color: #07090e; border-color: var(--cyan); padding: 10px 22px; font-size: 0.9rem;">⛶ Modo Proyector Aula</button>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">4. Worldbuilding:</strong>
+            <span style="color: var(--text-secondary);"> Universo nocturno del "Ritual del Foco" y el Archivo de Ventanas donde cohabita la comunidad productiva.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">5. Serialidad:</strong>
+            <span style="color: var(--text-secondary);"> Arco temporal secuenciado: teaser enigmático → cortometraje canon → BTL Dot Baires → RTM Major 2027 → Club Focus.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan);">
+            <strong style="color: var(--cyan);">6. Subjetividad:</strong>
+            <span style="color: var(--text-secondary);"> Exploración en primera persona del relato escrito de Solange y los testimonios de los usuarios (#MiVentanaFocus).</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 6px; border-left: 2px solid var(--cyan); grid-column: 1 / -1;">
+            <strong style="color: var(--cyan);">7. Performance / Prosumición:</strong>
+            <span style="color: var(--text-secondary);"> Los usuarios actúan activamente: responden encuestas en Stories P6, comparten sus ventanas en P4 y canjean puntos en la app Club Focus.</span>
+          </div>
         </div>
       </div>
     </section>

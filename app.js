@@ -16,16 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const fullScreenBtn = document.getElementById('hud-fullscreen-btn');
 
   const slideTitles = [
-    "01 · Apertura del Pitch & Agencia",
-    "02 · Storytelling Central & Mundo",
-    "03 · Cortometraje Canon: Turno de Noche",
-    "04 · Ecosistema & Modo Focus en Dot",
-    "05 · Influencer: Suga & Stream Twitch",
-    "06 · Las 6 Publicaciones (P1-P6)",
-    "07 · App Club Focus & Fidelización",
-    "08 · Red de Remisiones & Calendario",
-    "09 · Fundamentos Teóricos & Fuentes",
-    "10 · Cierre de Propuesta & Q&A"
+    "01 · Agencia Focus & Brief de Campaña",
+    "02 · Base Narrativa: El Ritual del Foco",
+    "03 · Buyer Personas: Bruno Díaz & Solange Herrera",
+    "04 · Cortometraje Canon: Turno de Noche",
+    "05 · Análisis del Corto & Ecosistema Multiplataforma",
+    "06 · Influencer Marketing: Colaboración con Suga",
+    "07 · Activación Offline: Modo Focus en Dot Baires",
+    "08 · Embudo de Lanzamiento P1–P3",
+    "09 · Expansión Transmedia & Doble Embudo",
+    "10 · Plataforma D2C: Club Focus",
+    "11 · Red de Remisiones & Cronograma",
+    "12 · Cierre Comercial & Demo en Vivo",
+    "13 · Anexo: Fundamentos Teóricos & Fuentes"
   ];
 
   let currentSlideIndex = 0;
@@ -151,27 +154,31 @@ document.addEventListener('DOMContentLoaded', () => {
   slides.forEach(slide => slideObserver.observe(slide));
 
   // ------------------------------------------------------------------------
-  // 2. VISUALIZADOR DE PUBLICACIONES (SLIDE 6)
+  // 2. VISUALIZADORES DE PUBLICACIONES (SLIDE 5 & SLIDE 6)
   // ------------------------------------------------------------------------
-  const pubTabs = document.querySelectorAll('.pub-tab-btn');
-  const pubPanes = document.querySelectorAll('.pub-detail-pane');
   const p5Video = document.getElementById('p5-reels-video');
 
-  pubTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetId = tab.getAttribute('data-pub-target');
+  document.querySelectorAll('.pub-selector-tabs').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.pub-tab-btn');
+    const parentSection = tabGroup.closest('.slide-section');
+    const panes = parentSection ? parentSection.querySelectorAll('.pub-detail-pane') : [];
 
-      pubTabs.forEach(t => t.classList.remove('active'));
-      pubPanes.forEach(p => p.classList.remove('active'));
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-pub-target');
 
-      tab.classList.add('active');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) targetPane.classList.add('active');
+        tabs.forEach(t => t.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
 
-      // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
-      if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
-        p5Video.pause();
-      }
+        tab.classList.add('active');
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) targetPane.classList.add('active');
+
+        // Si cambiamos de pestaña y no es P5, pausamos el video de Reels
+        if (targetId !== 'pub-p5' && p5Video && !p5Video.paused) {
+          p5Video.pause();
+        }
+      });
     });
   });
 
@@ -294,8 +301,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar estado de Stories P6
   setStory(0);
 
+  // Navegación directa desde botones de acción / demo
+  document.querySelectorAll('[data-open-pub]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetPub = btn.getAttribute('data-open-pub');
+      const targetSlideIdx = 8; // Slide 9 (Expansión P4-P6) es índice 8
+      goToSlide(targetSlideIdx);
+      setTimeout(() => {
+        const pubTab = document.querySelector(`.pub-tab-btn[data-pub-target="${targetPub}"]`);
+        if (pubTab) pubTab.click();
+      }, 350);
+    });
+  });
+
+  document.querySelectorAll('[data-open-slide]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const slideIdx = parseInt(btn.getAttribute('data-open-slide'), 10);
+      goToSlide(slideIdx);
+    });
+  });
+
   // ------------------------------------------------------------------------
-  // 3. SHOWCASE DE APP CLUB FOCUS & SIMULADOR (SLIDE 7)
+  // 3. SHOWCASE DE APP CLUB FOCUS & SIMULADOR (SLIDE 10)
   // ------------------------------------------------------------------------
   const appScreensList = [
     {
@@ -350,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (appInteractiveFrame) {
     appInteractiveFrame.addEventListener('click', () => {
-      const nextIdx = (currentAppScreenIdx + 1) % appScreensList.length;
+      let nextIdx = (currentAppScreenIdx + 1) % appScreensList.length;
       setAppScreen(nextIdx);
     });
   }
@@ -365,17 +394,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (scanCanBtn && pointsCounter) {
     scanCanBtn.addEventListener('click', () => {
-      // Automáticamente mostramos la pantalla del escáner en el teléfono
-      setAppScreen(1);
-
       currentPoints += 100;
       pointsCounter.textContent = currentPoints;
       scanCanBtn.disabled = true;
-      scanCanBtn.textContent = '¡Lata Verificada!';
+      scanCanBtn.textContent = '¡Lata Registrada!';
 
       if (scanMsg) {
         scanMsg.style.display = 'block';
-        scanMsg.textContent = '✓ Código verificado: +100 pts de canje (permanentes) y +100 pts de nivel (válidos 3 meses)';
+        scanMsg.textContent = '+100 pts de canje (permanentes) y +100 pts de nivel (válidos 3 meses)';
       }
 
       if (levelBadge && currentPoints >= 500) {
@@ -450,13 +476,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar estado del HUD
   updateSlideUI(0);
 });
-
-  // Detección de protocolo file:// para fallback limpio de YouTube (evita Error 153 de Google)
-  if (window.location.protocol === 'file:') {
-    const ytIframe = document.getElementById('shortfilm-yt-iframe');
-    const localFallback = document.getElementById('shortfilm-local-fallback');
-    if (ytIframe && localFallback) {
-      ytIframe.style.display = 'none';
-      localFallback.style.display = 'flex';
-    }
-  }
