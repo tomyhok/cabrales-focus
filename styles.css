@@ -1398,6 +1398,21 @@ body {
   box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
 }
 
+.yt-live-btn {
+  background: rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 0, 0, 0.4);
+  color: #ff6666;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
+}
+
+.yt-live-btn:hover {
+  background: rgba(255, 0, 0, 0.32);
+  border-color: #ff3333;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
 .live-pulse {
   width: 7px;
   height: 7px;
