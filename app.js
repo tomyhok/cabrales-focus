@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Toggle Pantalla Completa
+  // Toggle Pantalla Completa & Modo Presentación
   function toggleFullScreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => {
@@ -97,6 +97,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  function handleFullscreenState() {
+    const isFullscreen = !!document.fullscreenElement;
+    document.body.classList.toggle('presentation-mode', isFullscreen);
+    
+    if (fullScreenBtn) {
+      const textSpan = fullScreenBtn.querySelector('.hud-btn-text');
+      const arrowSpan = fullScreenBtn.querySelector('.hud-btn-arrow');
+      if (textSpan) {
+        textSpan.textContent = isFullscreen ? 'Salir Completa' : 'Pantalla Completa';
+      }
+      if (arrowSpan) {
+        arrowSpan.innerHTML = isFullscreen 
+          ? `<svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg>`
+          : `<svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>`;
+      }
+    }
+  }
+
+  document.addEventListener('fullscreenchange', handleFullscreenState);
+
+  // Auto-peek para barra superior al acercar el mouse al borde superior en fullscreen
+  window.addEventListener('mousemove', (e) => {
+    if (document.body.classList.contains('presentation-mode')) {
+      if (e.clientY < 36) {
+        document.body.classList.add('nav-peek');
+      } else if (e.clientY > 80) {
+        document.body.classList.remove('nav-peek');
+      }
+    }
+  });
 
   // Event Listeners HUD
   if (prevBtn) prevBtn.addEventListener('click', prevSlide);
