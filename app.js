@@ -21,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     "03 · Buyer Personas: Bruno Díaz & Solange Herrera",
     "04 · Cortometraje Canon: Turno de Noche",
     "05 · Análisis del Corto & Ecosistema Multiplataforma",
-    "06 · Influencer Marketing & Activación Dot Baires",
-    "07 · Embudo de Lanzamiento P1–P3",
-    "08 · Expansión Transmedia & Doble Embudo",
-    "09 · Plataforma D2C: Club Focus",
-    "10 · Red de Remisiones & Cronograma",
-    "11 · Cierre Comercial & Demo en Vivo",
-    "12 · Anexo: Fundamentos Teóricos & Fuentes"
+    "06 · Influencer Marketing: Colaboración con Suga",
+    "07 · Activación Offline: Modo Focus en Dot Baires",
+    "08 · Embudo de Lanzamiento P1–P3",
+    "09 · Expansión Transmedia & Doble Embudo",
+    "10 · Plataforma D2C: Club Focus",
+    "11 · Red de Remisiones & Cronograma",
+    "12 · Cierre Comercial & Demo en Vivo",
+    "13 · Anexo: Fundamentos Teóricos & Fuentes"
   ];
 
   let currentSlideIndex = 0;
@@ -305,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const targetPub = btn.getAttribute('data-open-pub');
-      const targetSlideIdx = 7; // Slide 8 (Expansión P4-P6) es índice 7
+      const targetSlideIdx = 8; // Slide 9 (Expansión P4-P6) es índice 8
       goToSlide(targetSlideIdx);
       setTimeout(() => {
         const pubTab = document.querySelector(`.pub-tab-btn[data-pub-target="${targetPub}"]`);

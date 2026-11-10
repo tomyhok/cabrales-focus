@@ -1966,6 +1966,159 @@ body {
 }
 
 /* ==========================================================================
+   SLIDE 6 & 7: SUGA TWITCH & MODO FOCUS EN DOT BAIRES SHOPPING
+   ========================================================================== */
+.suga-profile-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 4px solid #9146ff;
+}
+
+.suga-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.suga-pfp-img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 2.5px solid #9146ff;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(145, 70, 255, 0.4);
+}
+
+.suga-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.suga-metric-item {
+  background: rgba(145, 70, 255, 0.07);
+  border: 1px solid rgba(145, 70, 255, 0.25);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.suga-metric-number {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.suga-metric-label {
+  font-size: 0.72rem;
+  color: #c4a7ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.suga-mechanics-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.suga-mechanic-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.suga-mechanic-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(145, 70, 255, 0.4);
+}
+
+/* Dot Baires */
+.dot-baires-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dot-location-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 4px solid #f59e0b;
+}
+
+.dot-facade-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.dot-address-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #ffd88a;
+}
+
+.dot-map-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dot-stand-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 4px solid var(--cyan);
+}
+
+.dot-stand-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(4, 189, 251, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 900px) {
+  .dot-baires-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
    PITCH-PREP REFACTOR: STYLES FOR STAGES 3 & 4 (SLIDES 4, 5, 6 & 7)
    ========================================================================== */
 .funnel-pipeline-bar {
