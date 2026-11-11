@@ -1789,13 +1789,13 @@ body.presentation-mode .slide-section {
 
 /* Responsive projector adjustments */
 @media (max-width: 1024px) {
-  .grid-2, .grid-asym-3-2, .grid-asym-2-3, .hero-pitch-card, .pub-detail-pane, .app-simulator-layout {
+  .grid-2, .grid-asym-3-2, .grid-asym-2-3, .hero-pitch-card, .pub-detail-pane, .app-simulator-layout, .suga-audit-pane-layout {
     grid-template-columns: 1fr;
   }
-  .grid-3 {
+  .grid-3, .suga-metrics-kpi-grid, .suga-pillars-2x2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-4 {
+  .grid-4, .suga-audience-demographics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .nav-pills {
@@ -1804,7 +1804,7 @@ body.presentation-mode .slide-section {
 }
 
 @media (max-width: 640px) {
-  .grid-3, .grid-4 {
+  .grid-3, .grid-4, .suga-metrics-kpi-grid, .suga-audience-demographics-grid, .suga-pillars-2x2 {
     grid-template-columns: 1fr;
   }
   .projector-hud {
@@ -2328,64 +2328,452 @@ body.presentation-mode .slide-section {
 }
 
 /* ==========================================================================
-   SLIDE 6 & 7: SUGA TWITCH & MODO FOCUS EN DOT BAIRES SHOPPING
+   SLIDE 6: SUGA STREAM CHARTS AUDIT & ESTRATEGIA GAMING
    ========================================================================== */
-.suga-profile-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 14px;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+
+/* Suga Master Banner */
+.suga-banner-card {
+  background: linear-gradient(135deg, rgba(145, 70, 255, 0.1) 0%, rgba(18, 12, 10, 0.88) 60%, rgba(4, 189, 251, 0.08) 100%);
+  border: 1px solid rgba(145, 70, 255, 0.32);
   border-left: 4px solid #9146ff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
 }
 
-.suga-profile-header {
+.suga-banner-left {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
+.suga-pfp-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .suga-pfp-img {
-  width: 74px;
-  height: 74px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 2.5px solid #9146ff;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(145, 70, 255, 0.4);
+  box-shadow: 0 0 20px rgba(145, 70, 255, 0.5);
+  display: block;
 }
 
-.suga-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.suga-metric-item {
-  background: rgba(145, 70, 255, 0.07);
-  border: 1px solid rgba(145, 70, 255, 0.25);
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
-}
-
-.suga-metric-number {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 900;
+.suga-twitch-partner-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #9146ff;
   color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #07090e;
+  box-shadow: 0 0 8px rgba(145, 70, 255, 0.8);
 }
 
-.suga-metric-label {
+.suga-banner-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.suga-banner-details {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.suga-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Badges */
+.badge-partner-twitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: 0.72rem;
-  color: #c4a7ff;
   font-weight: 700;
+  color: #c4a7ff;
+  background: rgba(145, 70, 255, 0.18);
+  border: 1px solid rgba(145, 70, 255, 0.35);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-vct-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ff858d;
+  background: rgba(255, 70, 85, 0.15);
+  border: 1px solid rgba(255, 70, 85, 0.35);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-macro-range {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cyan-bright);
+  background: rgba(4, 189, 251, 0.12);
+  border: 1px solid var(--border-cyan);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-audit-sc {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* Specific Action Buttons */
+.sc-live-btn {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+.sc-live-btn:hover {
+  background: rgba(16, 185, 129, 0.22);
+  color: #6ee7b7;
+  border-color: #34d399;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.suga-view-capture-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.suga-view-capture-btn:hover {
+  background: rgba(145, 70, 255, 0.2);
+  border-color: rgba(145, 70, 255, 0.45);
+  color: #c4a7ff;
+  box-shadow: 0 0 12px rgba(145, 70, 255, 0.3);
+}
+
+.twitch-live-btn {
+  background: rgba(145, 70, 255, 0.15);
+  border: 1px solid rgba(145, 70, 255, 0.4);
+  color: #c4a7ff;
+}
+.twitch-live-btn:hover {
+  background: #9146ff;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(145, 70, 255, 0.5);
+}
+
+/* Suga Tabs Nav */
+.suga-tabs-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.suga-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.suga-tab-btn:hover {
+  background: rgba(145, 70, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(145, 70, 255, 0.35);
+}
+
+.suga-tab-btn.active {
+  background: #9146ff;
+  color: #ffffff;
+  border-color: #a970ff;
+  box-shadow: 0 0 16px rgba(145, 70, 255, 0.45);
+}
+
+/* Suga Panes */
+.suga-panes-wrapper {
+  position: relative;
+  min-height: 380px;
+}
+
+.suga-pane {
+  display: none;
+  animation: sugaFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.suga-pane.active {
+  display: block;
+}
+
+@keyframes sugaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Metric Cards in Pane 1 */
+.suga-metrics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.suga-kpi-card {
+  background: rgba(18, 12, 10, 0.7);
+  border: 1px solid rgba(145, 70, 255, 0.22);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.suga-kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(145, 70, 255, 0.45);
+  box-shadow: 0 6px 20px rgba(145, 70, 255, 0.15);
+}
+
+.suga-kpi-value {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.suga-kpi-badge-diff {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.18);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.suga-kpi-label {
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #c4a7ff;
+  margin-top: 4px;
+}
+
+.suga-kpi-desc {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+/* Demographics Grid in Pane 1 */
+.suga-audience-demographics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.suga-audience-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.suga-audience-card:hover {
+  border-color: var(--border-cyan);
+  transform: translateY(-2px);
+}
+
+.suga-audience-icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.suga-audience-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.suga-audience-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
   margin-top: 2px;
 }
 
+.suga-audience-sub {
+  font-size: 0.72rem;
+  color: var(--cyan);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Strategic Fit Table in Pane 2 */
+.suga-fit-table-card {
+  background: rgba(18, 12, 10, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.suga-fit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.suga-fit-table th {
+  text-align: left;
+  padding: 8px 12px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suga-fit-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.suga-fit-table tr:last-child td {
+  border-bottom: none;
+}
+
+.suga-match-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  white-space: nowrap;
+}
+
+/* Strategic Pillars 2x2 in Pane 2 */
+.suga-pillars-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.suga-pillar-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid #9146ff;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.suga-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(145, 70, 255, 0.35);
+}
+
+.suga-pillar-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.suga-pillar-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.42;
+  margin: 0;
+}
+
+/* Transmedia Mechanics in Pane 3 */
 .suga-mechanics-col {
   display: flex;
   flex-direction: column;
@@ -2403,6 +2791,170 @@ body.presentation-mode .slide-section {
 .suga-mechanic-card:hover {
   transform: translateY(-2px);
   border-color: rgba(145, 70, 255, 0.4);
+}
+
+/* Audit Preview Pane 4 */
+.suga-audit-pane-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.suga-audit-img-container {
+  background: #000;
+  border: 1px solid rgba(145, 70, 255, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.suga-audit-img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.suga-audit-img-container:hover img {
+  transform: scale(1.02);
+}
+
+.suga-audit-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.suga-audit-img-container:hover .suga-audit-img-overlay {
+  opacity: 1;
+}
+
+.suga-audit-zoom-badge {
+  background: rgba(145, 70, 255, 0.9);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 15px rgba(145, 70, 255, 0.6);
+}
+
+/* Modal Lightbox */
+.suga-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.suga-modal.active {
+  display: flex;
+  animation: sugaModalFadeIn 0.25s ease-out forwards;
+}
+
+.suga-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 11, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.suga-modal-container {
+  position: relative;
+  z-index: 2;
+  background: #100b14;
+  border: 1px solid rgba(145, 70, 255, 0.45);
+  border-radius: 16px;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(145, 70, 255, 0.25);
+}
+
+.suga-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(145, 70, 255, 0.08);
+}
+
+.suga-modal-header-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.suga-modal-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.suga-modal-close-btn:hover {
+  background: rgba(217, 20, 20, 0.8);
+  transform: rotate(90deg);
+}
+
+.suga-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  text-align: center;
+  background: #09060c;
+}
+
+.suga-modal-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suga-modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@keyframes sugaModalFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Dot Baires */
@@ -2701,6 +3253,9 @@ body.presentation-mode .slide-section {
 .slide-section .personas-grid,
 .slide-section .cinema-player-container,
 .slide-section .narrative-strip-grid,
+.slide-section .suga-banner-card,
+.slide-section .suga-tabs-nav,
+.slide-section .suga-panes-wrapper,
 .slide-section .suga-profile-card,
 .slide-section .suga-mechanics-col,
 .slide-section .dot-baires-layout,
@@ -2722,6 +3277,9 @@ body.presentation-mode .slide-section {
 .slide-section.active .personas-grid,
 .slide-section.active .cinema-player-container,
 .slide-section.active .narrative-strip-grid,
+.slide-section.active .suga-banner-card,
+.slide-section.active .suga-tabs-nav,
+.slide-section.active .suga-panes-wrapper,
 .slide-section.active .suga-profile-card,
 .slide-section.active .suga-mechanics-col,
 .slide-section.active .dot-baires-layout,
@@ -2745,6 +3303,7 @@ body.presentation-mode .slide-section {
 
 .slide-section.active .grid-2 > .glass-card:nth-child(2),
 .slide-section.active .suga-mechanics-col,
+.slide-section.active .suga-panes-wrapper,
 .slide-section.active .dot-stand-card {
   transition-delay: 0.18s;
 }

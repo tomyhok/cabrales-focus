@@ -242,6 +242,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
+  // PESTAÑAS & MODAL AUDITORÍA DE SUGA (SLIDE 6)
+  // ------------------------------------------------------------------------
+  const sugaTabs = document.querySelectorAll('.suga-tab-btn');
+  const sugaPanes = document.querySelectorAll('.suga-pane');
+
+  sugaTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-suga-target');
+
+      sugaTabs.forEach(t => t.classList.remove('active'));
+      sugaPanes.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) targetPane.classList.add('active');
+    });
+  });
+
+  const sugaModal = document.getElementById('suga-audit-modal');
+  const sugaOpenModalTriggers = document.querySelectorAll('#suga-modal-open-btn, .suga-open-modal-trigger');
+  const sugaCloseModalTriggers = document.querySelectorAll('.suga-modal-close-btn, #suga-modal-backdrop');
+
+  sugaOpenModalTriggers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (sugaModal) {
+        sugaModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  sugaCloseModalTriggers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (sugaModal) {
+        sugaModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sugaModal && sugaModal.classList.contains('active')) {
+      sugaModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ------------------------------------------------------------------------
   // Cortometraje Canon (Slide 4): Fallback Inteligente para GitHub Pages / Offline
   // ------------------------------------------------------------------------
   const shortfilmVideo = document.getElementById('main-shortfilm-video');
