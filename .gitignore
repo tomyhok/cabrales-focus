@@ -1,6 +1,7 @@
 # Ignorar archivos mayores a 100MB para GitHub
 assets/cortometraje_yt/*.mp4
 *.zip
+Cabrales_Focus_Presentacion_UnicoArchivo.html*
 
 # Archivos de caché del sistema y temporales
 __pycache__/
