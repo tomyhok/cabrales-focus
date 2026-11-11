@@ -530,11 +530,11 @@
       <header class="slide-header">
         <div class="slide-tag-row">
           <span class="slide-num-badge">BLOQUE 06</span>
-          <span class="slide-meta-pill">INFLUENCER MARKETING & AUDITORÍA DE DATOS</span>
+          <span class="slide-meta-pill">INFLUENCER MARKETING & AUDITORÍA DE DATOS MULTIPLATAFORMA</span>
         </div>
         <h2 class="slide-title">Influencer Marketing: <span class="text-gradient">Colaboración con Suga (@sugavct)</span></h2>
         <p class="slide-subtitle">
-          Sustento estratégico y validación empírica en Streams Charts: 126K seguidores, 9.230h de atención sostenida, fit demográfico 1:1 con el arquetipo de Bruno (Top 1 Argentina y 25-29 años) y legitimidad en VCT Hispano para el lanzamiento de Cabrales Focus.
+          Sustento estratégico y validación empírica multiplataforma: 126K en Twitch (Streams Charts: 9.230h de atención sostenida, Top 1 Argentina) y 37.7K en Instagram (Modash: 3.65% Engagement Rate, 62.56% Argentina, 21.2K views/Reel), legitimidad en VCT Hispano y fit 1:1 con Bruno Díaz.
         </p>
       </header>
 
@@ -552,8 +552,9 @@
               <h3 class="suga-banner-name">Suga (Malena Souto)</h3>
               <span class="badge-partner-twitch">Partner Twitch ✓</span>
               <span class="badge-vct-team">Team: VCT Hispano</span>
-              <span class="badge-macro-range">Macroinfluencer (126K)</span>
-              <span class="badge-audit-sc">Streams Charts Auditada</span>
+              <span class="badge-macro-range">Twitch: 126K</span>
+              <span class="badge-modash-er">IG: 37.7K · 3.65% ER (Modash)</span>
+              <span class="badge-audit-sc">Auditorías Streams Charts & Modash</span>
             </div>
             <div class="suga-banner-details">
               <span>🎂 <strong>31 años</strong> (30/05/1995)</span> · 
@@ -570,9 +571,13 @@
             <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
             Streams Charts ↗
           </a>
-          <button type="button" class="suga-view-capture-btn suga-open-modal-trigger" id="suga-modal-open-btn" title="Ver captura auditada oficial de Streams Charts">
+          <a href="https://www.modash.io/engagement-rate-calculator" target="_blank" rel="noopener noreferrer" class="social-live-btn modash-live-btn" title="Ver calculadora de engagement rate en Modash.io">
+            <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Modash.io ↗
+          </a>
+          <button type="button" class="suga-view-capture-btn suga-open-modal-trigger" id="suga-modal-open-btn" data-initial-view="streamscharts" title="Ver capturas auditadas oficiales">
             <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-            Ver Captura Oficial
+            Ver Capturas Oficiales
           </button>
           <a href="https://www.twitch.tv/suga" target="_blank" rel="noopener noreferrer" class="social-live-btn twitch-live-btn" title="Canal de Twitch oficial">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
@@ -585,19 +590,23 @@
       <div class="suga-tabs-nav">
         <button type="button" class="suga-tab-btn active" data-suga-target="suga-pane-metrics">
           <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
-          1. Métricas & Audiencia (Streams Charts)
+          1. Twitch Streaming (Streams Charts)
+        </button>
+        <button type="button" class="suga-tab-btn" data-suga-target="suga-pane-instagram">
+          <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          2. Instagram Engagement (Modash.io)
         </button>
         <button type="button" class="suga-tab-btn" data-suga-target="suga-pane-fit">
           <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          2. Justificación Estratégica & Fit 1:1 (Match Bruno)
+          3. Fit Estratégico & Justificación (Match Bruno)
         </button>
         <button type="button" class="suga-tab-btn" data-suga-target="suga-pane-mechanics">
           <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          3. Mecánicas de Campaña Transmedia
+          4. Mecánicas de Campaña Transmedia
         </button>
         <button type="button" class="suga-tab-btn" data-suga-target="suga-pane-audit">
           <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
-          4. Ficha de Auditoría en Bruto
+          5. Fichas de Auditoría Oficial
         </button>
       </div>
 
@@ -655,11 +664,11 @@
             </div>
           </div>
 
-          <!-- Radiografía de Audiencia Auditada -->
+          <!-- Radiografía de Audiencia Auditada en Twitch -->
           <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
             <div style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
               <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" style="color: var(--cyan);"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              Demografía & Audiencia (Streams Charts Audience Intelligence)
+              Demografía & Audiencia Twitch (Streams Charts Intelligence)
             </div>
             <span style="font-size: 0.72rem; color: #34d399; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); padding: 2px 8px; border-radius: 4px; font-weight: 700;">
               Fuente Auditada: streamscharts.com/channels/suga
@@ -694,22 +703,148 @@
           </div>
 
           <div style="background: rgba(145, 70, 255, 0.08); border-radius: 8px; padding: 12px 16px; border: 1px solid rgba(145, 70, 255, 0.25); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
-            <strong style="color: #fff;">Conclusión de la Auditoría:</strong> La información provista por Streams Charts disipa cualquier hipótesis de dispersión geográfica: la comunidad de Suga es predominantemente argentina, joven adulta (25-29 años) y apasionada por los videojuegos. Es un calce perfecto con los objetivos de venta y activación de Cabrales Focus en Buenos Aires.
+            <strong style="color: #fff;">Conclusión de la Auditoría en Twitch:</strong> La información provista por Streams Charts confirma que la comunidad de streaming de Suga se concentra en Argentina, dentro de la franja etaria de 25 a 29 años y con afinidad total por videojuegos. Es un calce perfecto para la transmisión interactiva de 35 minutos de la "Guardia compartida".
           </div>
         </div>
 
-        <!-- PANE 2: JUSTIFICACIÓN ESTRATÉGICA & FIT CON BRUNO -->
+        <!-- PANE 2: INSTAGRAM ENGAGEMENT (MODASH.IO) -->
+        <div class="suga-pane" id="suga-pane-instagram">
+          <div class="modash-kpi-grid">
+            <div class="modash-kpi-card" style="border-left: 3px solid #ff4e8e;">
+              <div class="modash-kpi-value">
+                3.65% <span class="modash-badge-good">Por encima del benchmark</span>
+              </div>
+              <div class="modash-kpi-label">Engagement Rate (Modash)</div>
+              <div class="modash-kpi-desc">Tasa de interacción muy superior a la mediana del mercado en creadores de 30k–50k (promedio habitual: 1.8% – 2.2%).</div>
+            </div>
+
+            <div class="modash-kpi-card" style="border-left: 3px solid var(--cyan);">
+              <div class="modash-kpi-value">
+                37.7K <span style="font-size: 0.85rem; color: #fff; font-weight: 700;">Seguidores</span>
+              </div>
+              <div class="modash-kpi-label">Audiencia en Instagram (@sugavct)</div>
+              <div class="modash-kpi-desc">Comunidad de micro/mid-influencer hiperfidelizada en gaming, hardware y estilo de vida con cuenta verificada.</div>
+            </div>
+
+            <div class="modash-kpi-card" style="border-left: 3px solid #c4a7ff;">
+              <div class="modash-kpi-value">
+                1.4K <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">likes/post</span>
+              </div>
+              <div class="modash-kpi-label">Average Likes en Feed</div>
+              <div class="modash-kpi-desc">Sólida respuesta activa por publicación estática (respalda el volumen proyectado para la Placa P3 de Dot Baires).</div>
+            </div>
+
+            <div class="modash-kpi-card" style="border-left: 3px solid #34d399;">
+              <div class="modash-kpi-value">
+                21.2K <span style="font-size: 0.85rem; color: #34d399; font-weight: 700;">views/Reel</span>
+              </div>
+              <div class="modash-kpi-label">Average Reel Plays</div>
+              <div class="modash-kpi-desc">Más del 56% de su volumen de seguidores reproduce activamente cada video corto, garantizando alcance algorítmico.</div>
+            </div>
+          </div>
+
+          <!-- Grilla de Desglose de Contenido y Audiencia Instagram -->
+          <div class="grid-2" style="margin-bottom: 14px;">
+            <!-- Columna 1: Top Performing Reels -->
+            <div class="glass-card" style="background: rgba(18, 12, 10, 0.7); border: 1px solid rgba(255, 78, 142, 0.22); padding: 14px 16px;">
+              <div style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: #fff; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" style="color: #ff4e8e;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Top Performing Reels Auditados
+                </span>
+                <span style="font-size: 0.68rem; color: var(--text-muted);">Modash.io</span>
+              </div>
+
+              <div class="modash-reels-list">
+                <div class="modash-reel-item">
+                  <span class="modash-reel-title">
+                    <span style="color: #ff4e8e;">1.</span> Novedades de la nueva temporada de Fortnite
+                  </span>
+                  <span class="modash-reel-views">60.3K plays</span>
+                </div>
+                <div class="modash-reel-item">
+                  <span class="modash-reel-title">
+                    <span style="color: #ff4e8e;">2.</span> Por favor ALGÚN MMORPG con fachero con barba
+                  </span>
+                  <span class="modash-reel-views">37.7K plays</span>
+                </div>
+                <div class="modash-reel-item">
+                  <span class="modash-reel-title">
+                    <span style="color: #ff4e8e;">3.</span> PC y periféricos que usan los jugadores pro
+                  </span>
+                  <span class="modash-reel-views">33.0K plays</span>
+                </div>
+              </div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px; line-height: 1.35;">
+                Demuestra tracción inmediata y viralidad en contenido sobre hardware y gaming competitivo (el mismo universo temático de Cabrales Focus).
+              </div>
+            </div>
+
+            <!-- Columna 2: Procedencia Geográfica Auditada en Instagram -->
+            <div class="glass-card" style="background: rgba(18, 12, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.09); padding: 14px 16px;">
+              <div style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: #fff; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" style="color: var(--cyan);"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Procedencia Geográfica Auditada (Instagram)
+                </span>
+                <span style="font-size: 0.68rem; color: #34d399; font-weight: 700;">62.56% Nacional</span>
+              </div>
+
+              <div class="modash-country-bars">
+                <div class="modash-country-row">
+                  <div class="modash-country-meta">
+                    <span style="color: #fff; font-weight: 700;">🇦🇷 Argentina</span>
+                    <strong style="color: #ff4e8e;">62.56%</strong>
+                  </div>
+                  <div class="modash-bar-track">
+                    <div class="modash-bar-fill" style="width: 62.56%;"></div>
+                  </div>
+                </div>
+
+                <div class="modash-country-row">
+                  <div class="modash-country-meta">
+                    <span style="color: var(--text-secondary);">🇨🇱 Chile</span>
+                    <strong style="color: var(--text-secondary);">12.95%</strong>
+                  </div>
+                  <div class="modash-bar-track">
+                    <div class="modash-bar-fill" style="width: 12.95%; background: rgba(255,255,255,0.3);"></div>
+                  </div>
+                </div>
+
+                <div class="modash-country-row">
+                  <div class="modash-country-meta">
+                    <span style="color: var(--text-secondary);">🇲🇽 México</span>
+                    <strong style="color: var(--text-secondary);">6.25%</strong>
+                  </div>
+                  <div class="modash-bar-track">
+                    <div class="modash-bar-fill" style="width: 6.25%; background: rgba(255,255,255,0.2);"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; line-height: 1.35;">
+                Prueba cuantitativa irrefutable: casi 2 de cada 3 seguidores de Instagram radican en Argentina, garantizando que la invitación a <strong>Dot Baires Shopping</strong> moviliza público local en CABA y GBA.
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 78, 142, 0.08); border-radius: 8px; padding: 12px 16px; border: 1px solid rgba(255, 78, 142, 0.25); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
+            <strong style="color: #fff;">Sinergia Estratégica Twitch + Instagram:</strong> Mientras Twitch ofrece profundidad y escucha prolongada durante horas de transmisión (ideal para la demo de Club Focus), Instagram aporta <strong>inmediatez visual, alto engagement (3.65%) y descubrimiento algorítmico (21.2K views/Reel)</strong>. Esto valida por qué Bruno descubre la activación de Cabrales Focus precisamente scrolleando en su celular por la noche.
+          </div>
+        </div>
+
+        <!-- PANE 3: JUSTIFICACIÓN ESTRATÉGICA & FIT CON BRUNO -->
         <div class="suga-pane" id="suga-pane-fit">
           <div class="suga-fit-table-card">
             <div style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
               <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" style="color: var(--cabrales-gold);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Matriz Comparativa: Audiencia Auditada de Suga vs. Target Cabrales Focus (Bruno Díaz)
+              Matriz Comparativa Multiplataforma: Métricas de Suga vs. Target Cabrales Focus (Bruno Díaz)
             </div>
             <table class="suga-fit-table">
               <thead>
                 <tr>
                   <th>Dimensión</th>
-                  <th>Audiencia de Suga (Streams Charts)</th>
+                  <th>Audiencia de Suga (Twitch & Instagram)</th>
                   <th>Target Focus / Persona Bruno Díaz</th>
                   <th>Calce Estratégico</th>
                 </tr>
@@ -717,27 +852,27 @@
               <tbody>
                 <tr>
                   <td><strong style="color: #fff;">Ubicación Geográfica</strong></td>
-                  <td>Top #1 Argentina · Residencia en Buenos Aires</td>
+                  <td>Twitch: Top #1 Argentina · Instagram: <strong>62.56% Argentina</strong> (Modash)</td>
                   <td>CABA / Gran Buenos Aires (Sede Dot Baires)</td>
-                  <td><span class="suga-match-pill">✓ Match 100% Sin Desperdicio</span></td>
+                  <td><span class="suga-match-pill">✓ Match 100% Territorial Validado</span></td>
                 </tr>
                 <tr>
                   <td><strong style="color: #fff;">Rango Etario</strong></td>
-                  <td>Segmento líder: <strong>25 a 29 años</strong></td>
+                  <td>Twitch: <strong>25 a 29 años</strong> · IG: Audiencia universitaria/adulta</td>
                   <td>Bruno Díaz: <strong>26 años</strong> (Muestra TPO: 73,3% 18-29)</td>
                   <td><span class="suga-match-pill">✓ Match Demográfico 1:1</span></td>
                 </tr>
                 <tr>
                   <td><strong style="color: #fff;">Afinidad Temática</strong></td>
-                  <td>Videojuegos · Team oficial <strong>VCT Hispano</strong></td>
+                  <td>Team oficial <strong>VCT Hispano</strong> · Top Reels Hardware y Videojuegos</td>
                   <td>Gamer competitivo de VALORANT (Shooters tácticos)</td>
-                  <td><span class="suga-match-pill">✓ Autoridad Institucional Riot</span></td>
+                  <td><span class="suga-match-pill">✓ Autoridad eSports & Gaming</span></td>
                 </tr>
                 <tr>
-                  <td><strong style="color: #fff;">Momento de Consumo</strong></td>
-                  <td>Transmisiones nocturnas (67h de aire, 23 días/mes)</td>
-                  <td>Partidas clutch nocturnas y horas de estudio/trabajo</td>
-                  <td><span class="suga-match-pill">✓ Ritual de Foco Nocturno</span></td>
+                  <td><strong style="color: #fff;">Engagement y Atención</strong></td>
+                  <td>Twitch: 9.230h vistas · Instagram: <strong>3.65% ER</strong> (sobre mediana)</td>
+                  <td>Descubrimiento en feed móvil y directos nocturnos</td>
+                  <td><span class="suga-match-pill">✓ Doble Embudo (Alcance + Retención)</span></td>
                 </tr>
               </tbody>
             </table>
@@ -759,7 +894,7 @@
                 <span style="color: var(--cyan);">2.</span> Calidad de Atención para la Conversión D2C
               </div>
               <p class="suga-pillar-card-desc">
-                9.230 horas vistas y 138 espectadores concurrentes representan un entorno de atención profunda y chat limpio. Durante el stream de 35 min, el proceso de destape, escaneo del código QR bajo la anilla y canje de bonos en Club Focus puede explicarse con claridad didáctica y replicarse en vivo.
+                9.230 horas vistas en Twitch y 21.2K reproducciones promedio por Reel en Instagram generan un entorno de atención profunda y chat limpio. Durante el stream de 35 min, el proceso de destape, escaneo del código QR bajo la anilla y canje de bonos en Club Focus puede explicarse con claridad didáctica y replicarse en vivo.
               </p>
             </div>
 
@@ -768,22 +903,22 @@
                 <span style="color: #34d399;">3.</span> Seguridad de Marca (Brand Safety) para Cabrales S.A.
               </div>
               <p class="suga-pillar-card-desc">
-                Canal activo de forma ininterrumpida desde <strong>agosto de 2016</strong> (casi 10 años) y estatus de Partner oficial de Twitch. Suga ofrece estabilidad, profesionalismo contractual y una reputación intachable sin controversias, salvaguardando el prestigio histórico de la marca.
+                Canal activo de forma ininterrumpida desde <strong>agosto de 2016</strong> (casi 10 años), estatus de Partner oficial de Twitch y perfil verificado en Instagram. Suga ofrece estabilidad, profesionalismo contractual y una reputación intachable sin controversias, salvaguardando el prestigio histórico de la marca.
               </p>
             </div>
 
-            <div class="suga-pillar-card" style="border-left-color: var(--cabrales-gold);">
+            <div class="suga-pillar-card" style="border-left-color: #ff4e8e;">
               <div class="suga-pillar-card-title">
-                <span style="color: var(--cabrales-gold);">4.</span> Conversión O2O Real a Dot Baires Shopping
+                <span style="color: #ff85b2;">4.</span> Tracción O2O Real (62.56% Audiencia Argentina)
               </div>
               <p class="suga-pillar-card-desc">
-                Al residir en Buenos Aires y tener una audiencia localizada en el AMBA, la invitación lanzada en redes (Placa P3) tiene tracción física inmediata hacia el stand BTL en Saavedra, tal como se dramatiza en la transición narrativa del cortometraje nodriza.
+                Con un engagement rate de 3.65% y más del 62% de su base en Argentina residiendo en Buenos Aires, la invitación lanzada en redes (Placa P3) tiene tracción física inmediata hacia el stand BTL en Saavedra, tal como se dramatiza en la transición narrativa del cortometraje nodriza.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- PANE 3: MECÁNICAS DE CAMPAÑA TRANSMEDIA -->
+        <!-- PANE 4: MECÁNICAS DE CAMPAÑA TRANSMEDIA -->
         <div class="suga-pane" id="suga-pane-mechanics">
           <div class="suga-mechanics-col">
             <div class="suga-mechanic-card" style="border-left: 3px solid var(--cyan);">
@@ -818,62 +953,94 @@
           </div>
         </div>
 
-        <!-- PANE 4: FICHA DE AUDITORÍA EN BRUTO -->
+        <!-- PANE 5: FICHAS DE AUDITORÍA EN BRUTO (STREAMS CHARTS & MODASH) -->
         <div class="suga-pane" id="suga-pane-audit">
-          <div class="suga-audit-pane-layout">
-            <div class="suga-audit-img-container suga-open-modal-trigger" title="Clic para ampliar captura completa de Streams Charts">
-              <img src="assets/streamscharts_suga_stats.jpg" alt="Captura oficial de métricas de Suga en Streams Charts" />
-              <div class="suga-audit-img-overlay">
-                <span class="suga-audit-zoom-badge">
-                  <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                  Clic para Ampliar Auditoría
-                </span>
+          <div class="suga-audit-double-grid">
+            <!-- Auditoría 1: Streams Charts (Twitch) -->
+            <div class="glass-card" style="background: rgba(18, 12, 10, 0.75); border: 1px solid rgba(145, 70, 255, 0.3); padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 6px;">
+                  <span style="color: #9146ff;">●</span> Streams Charts · Twitch Analytics
+                </div>
+                <button type="button" class="suga-open-modal-trigger" data-initial-view="streamscharts" style="background: rgba(145,70,255,0.2); border: 1px solid rgba(145,70,255,0.4); color: #c4a7ff; padding: 4px 8px; border-radius: 6px; font-size: 0.72rem; cursor: pointer; font-weight: 700;">
+                  🔍 Ampliar
+                </button>
+              </div>
+
+              <div class="suga-audit-img-container suga-open-modal-trigger" data-initial-view="streamscharts" style="margin-bottom: 12px; max-height: 220px;">
+                <img src="assets/streamscharts_suga_stats.jpg" alt="Captura oficial de métricas de Suga en Streams Charts" style="object-fit: cover; object-position: top; max-height: 220px;" />
+                <div class="suga-audit-img-overlay">
+                  <span class="suga-audit-zoom-badge">Ver Streams Charts en Alta Resolución</span>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Seguidores Twitch:</span>
+                  <strong style="color: #fff;">126.000 (126K)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Horas Vistas (30d):</span>
+                  <strong style="color: #c4a7ff;">9.230 hs</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Airtime:</span>
+                  <strong style="color: #34d399;">67h 05m (23 días)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Top País / Edad:</span>
+                  <strong style="color: #fff;">Argentina 🇦🇷 · 25–29 años</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 10px;">
+                <a href="https://streamscharts.com/channels/suga" target="_blank" rel="noopener noreferrer" class="social-live-btn sc-live-btn" style="width: 100%; justify-content: center; font-size: 0.75rem; padding: 6px 10px;">
+                  <span class="live-pulse"></span>
+                  streamscharts.com/channels/suga ↗
+                </a>
               </div>
             </div>
 
-            <div class="glass-card" style="background: rgba(18, 12, 10, 0.75); border: 1px solid rgba(145, 70, 255, 0.25);">
-              <div style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                <span style="color: #34d399;">●</span> Registro Técnico Streams Charts
+            <!-- Auditoría 2: Modash.io (Instagram) -->
+            <div class="glass-card" style="background: rgba(18, 12, 10, 0.75); border: 1px solid rgba(255, 78, 142, 0.3); padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 6px;">
+                  <span style="color: #ff4e8e;">●</span> Modash.io · Instagram Audit (@sugavct)
+                </div>
+                <button type="button" class="suga-open-modal-trigger" data-initial-view="modash" style="background: rgba(255,78,142,0.2); border: 1px solid rgba(255,78,142,0.4); color: #ff85b2; padding: 4px 8px; border-radius: 6px; font-size: 0.72rem; cursor: pointer; font-weight: 700;">
+                  🔍 Ampliar
+                </button>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.78rem;">
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Canal Auditado:</span>
-                  <strong style="color: #c4a7ff;">twitch.tv/suga</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Seguidores Certificados:</span>
-                  <strong style="color: #fff;">126.000 (126K)</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Horas Vistas (30d):</span>
-                  <strong style="color: #fff;">9.230 hs</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Live Views:</span>
-                  <strong style="color: var(--cyan);">44.513</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Tiempo al Aire:</span>
-                  <strong style="color: #34d399;">67h 05m (23 días)</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">País Predominante:</span>
-                  <strong style="color: #fff;">Argentina 🇦🇷</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
-                  <span style="color: var(--text-muted);">Edad Predominante:</span>
-                  <strong style="color: #fff;">25 – 29 años</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding-bottom: 4px;">
-                  <span style="color: var(--text-muted);">Afiliación Esports:</span>
-                  <strong style="color: #ff858d;">VCT Hispano (+1)</strong>
+
+              <div class="suga-audit-img-container suga-open-modal-trigger" data-initial-view="modash" style="margin-bottom: 12px; max-height: 220px;">
+                <img src="assets/modash_suga_instagram_stats.jpg" alt="Captura oficial de engagement de Suga en Modash.io" style="object-fit: cover; object-position: top; max-height: 220px;" />
+                <div class="suga-audit-img-overlay">
+                  <span class="suga-audit-zoom-badge" style="background: rgba(255,78,142,0.9); box-shadow: 0 0 15px rgba(255,78,142,0.6);">Ver Modash.io en Alta Resolución</span>
                 </div>
               </div>
 
-              <div style="margin-top: 14px;">
-                <a href="https://streamscharts.com/channels/suga" target="_blank" rel="noopener noreferrer" class="social-live-btn sc-live-btn" style="width: 100%; justify-content: center;">
-                  <span class="live-pulse"></span>
-                  Consultar Ficha en Streams Charts ↗
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Engagement Rate:</span>
+                  <strong style="color: #ff4e8e;">3.65% (Por encima de mediana)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Seguidores IG:</span>
+                  <strong style="color: #fff;">37.7K (@sugavct)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
+                  <span style="color: var(--text-muted);">Promedio Views/Reel:</span>
+                  <strong style="color: var(--cyan);">21.2K plays</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Audiencia Argentina:</span>
+                  <strong style="color: #34d399;">62.56% Nacional</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 10px;">
+                <a href="https://www.modash.io/engagement-rate-calculator" target="_blank" rel="noopener noreferrer" class="social-live-btn modash-live-btn" style="width: 100%; justify-content: center; font-size: 0.75rem; padding: 6px 10px;">
+                  modash.io/engagement-rate-calculator ↗
                 </a>
               </div>
             </div>
@@ -882,23 +1049,29 @@
       </div>
     </section>
 
-    <!-- Modal Lightbox de Auditoría Streams Charts -->
+    <!-- Modal Lightbox de Auditorías Oficiales (Streams Charts & Modash.io) -->
     <div class="suga-modal" id="suga-audit-modal" role="dialog" aria-modal="true" aria-labelledby="suga-modal-title">
       <div class="suga-modal-backdrop" id="suga-modal-backdrop"></div>
       <div class="suga-modal-container">
         <div class="suga-modal-header">
-          <div class="suga-modal-header-title" id="suga-modal-title">
-            <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: #9146ff;"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
-            Auditoría Oficial Streams Charts · Canal twitch.tv/suga
+          <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+            <div class="suga-modal-header-title" id="suga-modal-title">
+              <svg class="ui-icon ui-icon-md" viewBox="0 0 24 24" style="color: #9146ff;"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+              Auditorías Oficiales de Suga
+            </div>
+            <div class="suga-modal-tabs">
+              <button type="button" class="suga-modal-tab-btn active" data-modal-view="streamscharts">Twitch (Streams Charts)</button>
+              <button type="button" class="suga-modal-tab-btn" data-modal-view="modash">Instagram (Modash.io)</button>
+            </div>
           </div>
           <button type="button" class="suga-modal-close-btn" aria-label="Cerrar modal">×</button>
         </div>
         <div class="suga-modal-body">
-          <img src="assets/streamscharts_suga_stats.jpg" alt="Métricas oficiales de Streams Charts para Suga" />
+          <img id="suga-modal-img" src="assets/streamscharts_suga_stats.jpg" alt="Métricas oficiales de Streams Charts para Suga" />
         </div>
         <div class="suga-modal-footer">
-          <span>Fuente: Streams Charts (streamscharts.com/channels/suga) · Datos consolidados de los últimos 30 días</span>
-          <a href="https://streamscharts.com/channels/suga" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: none; font-weight: 700;">Abrir en Streams Charts ↗</a>
+          <span id="suga-modal-footer-source">Fuente: Streams Charts (streamscharts.com/channels/suga) · Datos consolidados de los últimos 30 días</span>
+          <a id="suga-modal-link" href="https://streamscharts.com/channels/suga" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: none; font-weight: 700;">Abrir en Streams Charts ↗</a>
         </div>
       </div>
     </div>

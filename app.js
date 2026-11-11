@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
-  // PESTAÑAS & MODAL AUDITORÍA DE SUGA (SLIDE 6)
+  // PESTAÑAS & MODAL AUDITORÍA DE SUGA (SLIDE 6: TWITCH & INSTAGRAM)
   // ------------------------------------------------------------------------
   const sugaTabs = document.querySelectorAll('.suga-tab-btn');
   const sugaPanes = document.querySelectorAll('.suga-pane');
@@ -263,9 +263,60 @@ document.addEventListener('DOMContentLoaded', () => {
   const sugaModal = document.getElementById('suga-audit-modal');
   const sugaOpenModalTriggers = document.querySelectorAll('#suga-modal-open-btn, .suga-open-modal-trigger');
   const sugaCloseModalTriggers = document.querySelectorAll('.suga-modal-close-btn, #suga-modal-backdrop');
+  const sugaModalTabBtns = document.querySelectorAll('.suga-modal-tab-btn');
+  const sugaModalImg = document.getElementById('suga-modal-img');
+  const sugaModalLink = document.getElementById('suga-modal-link');
+  const sugaModalFooterSource = document.getElementById('suga-modal-footer-source');
+
+  function setModalView(viewType) {
+    sugaModalTabBtns.forEach(btn => {
+      const isTarget = btn.getAttribute('data-modal-view') === viewType;
+      btn.classList.toggle('active', isTarget);
+      if (viewType === 'modash') {
+        btn.classList.toggle('modash-active', isTarget);
+      } else {
+        btn.classList.remove('modash-active');
+      }
+    });
+
+    if (viewType === 'modash') {
+      if (sugaModalImg) {
+        sugaModalImg.src = 'assets/modash_suga_instagram_stats.jpg';
+        sugaModalImg.alt = 'Métricas oficiales de Modash para Suga en Instagram (@sugavct)';
+      }
+      if (sugaModalLink) {
+        sugaModalLink.href = 'https://www.modash.io/engagement-rate-calculator';
+        sugaModalLink.textContent = 'Abrir en Modash.io ↗';
+      }
+      if (sugaModalFooterSource) {
+        sugaModalFooterSource.textContent = 'Fuente: Modash.io Engagement Rate Calculator · Perfil @sugavct en Instagram (37.7K seguidores · 3.65% ER)';
+      }
+    } else {
+      if (sugaModalImg) {
+        sugaModalImg.src = 'assets/streamscharts_suga_stats.jpg';
+        sugaModalImg.alt = 'Métricas oficiales de Streams Charts para Suga en Twitch';
+      }
+      if (sugaModalLink) {
+        sugaModalLink.href = 'https://streamscharts.com/channels/suga';
+        sugaModalLink.textContent = 'Abrir en Streams Charts ↗';
+      }
+      if (sugaModalFooterSource) {
+        sugaModalFooterSource.textContent = 'Fuente: Streams Charts (streamscharts.com/channels/suga) · Datos consolidados de los últimos 30 días';
+      }
+    }
+  }
+
+  sugaModalTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.getAttribute('data-modal-view');
+      setModalView(view);
+    });
+  });
 
   sugaOpenModalTriggers.forEach(btn => {
     btn.addEventListener('click', () => {
+      const initialView = btn.getAttribute('data-initial-view') || 'streamscharts';
+      setModalView(initialView);
       if (sugaModal) {
         sugaModal.classList.add('active');
         document.body.style.overflow = 'hidden';
